@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ser Animal post animado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=DM+Sans:wght@400;500;700&display=block" rel="stylesheet">
+<style>
+  :root{
+    --verde:#9ECA1B; --verde-claro:#CADC8A; --verde-hoja:#4C7300;
+    --texto:#253027; --superficie:#F8FAF4; --borde:#E5E9DE; --gris:#444D45;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#111;}
+  body{display:flex;align-items:center;justify-content:center;min-height:100vh}
+  #stage{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--verde);
+    font-family:"DM Sans",sans-serif;color:var(--texto)}
+  body.render{display:block;min-height:0}
+  .scene{position:absolute;inset:0;overflow:hidden;will-change:transform,clip-path}
+  .abs{position:absolute}
+  .center-x{left:0;right:0;text-align:center}
+  .h{font-family:"Nunito",sans-serif;font-weight:800;letter-spacing:-0.5px;line-height:1.08}
+
+  /* S1 */
+  #s1{background:var(--verde)}
+  .blob{position:absolute;border-radius:50%;background:#fff;opacity:.13}
+  #s1 .logo{left:50%;top:430px;width:800px;margin-left:-400px}
+  #s1 .tag{font-size:66px}
+  /* S2 */
+  #s2{background:var(--superficie)}
+  .pill{display:inline-block;border-radius:999px;font-weight:700;padding:14px 34px;font-size:30px}
+  .sp{position:absolute;width:250px;text-align:center}
+  .sp .c{width:250px;height:250px;border-radius:50%;background:#FBF9F7;border:2px solid var(--borde);
+    box-shadow:0 14px 30px rgba(37,48,39,.10);overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .sp .c img{width:330px;height:330px}
+  .sp .l{margin-top:18px;font-weight:700;font-size:36px}
+  /* S3 */
+  #s3{background:var(--texto)}
+  .bars{left:90px;right:90px;top:268px;display:flex;gap:12px}
+  .bars div{flex:1;height:8px;border-radius:8px;background:rgba(255,255,255,.18);overflow:hidden}
+  .bars i{display:block;height:100%;width:0;background:var(--verde)}
+  .card{position:absolute;left:90px;top:304px;width:900px;height:760px;border-radius:28px;overflow:hidden;
+    box-shadow:0 30px 60px rgba(0,0,0,.35)}
+  .card img{width:100%;height:100%;object-fit:cover}
+  .ptxt{position:absolute;left:90px;right:90px;top:1102px}
+  .ptxt .n{font-size:60px;color:#fff}
+  .ptxt .d{font-size:36px;color:var(--verde-claro);margin-top:12px}
+  .mark{right:90px;top:150px;width:150px}
+  /* S4 */
+  #s4{background:#DCE3AF}
+  #s4 .photo{left:100px;width:880px;top:490px;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 16%),linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);
+    -webkit-mask-composite:source-in;
+    mask-image:linear-gradient(to bottom,transparent 0,#000 16%),linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);
+    mask-composite:intersect}
+  /* S5 */
+  #s5{background:var(--verde)}
+  #s5 .logo{left:50%;top:300px;width:760px;margin-left:-380px}
+  .assist{width:120px;height:120px;border-radius:50%;border:5px solid var(--verde);background:#FAFBF8;overflow:hidden}
+  .assist img{width:100%;height:100%}
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- Escena 1: marca -->
+  <div class="scene" id="s1">
+    <div class="blob" id="b1" style="width:520px;height:520px;left:-160px;top:-140px"></div>
+    <div class="blob" id="b2" style="width:380px;height:380px;right:-120px;top:980px"></div>
+    <div class="blob" id="b3" style="width:180px;height:180px;right:120px;top:170px"></div>
+    <img class="abs logo" id="s1logo" src="assets/logo_white.png" alt="Ser Animal">
+    <div class="abs center-x h tag" id="s1t1" style="top:690px;color:#fff">Integrantes de la familia,</div>
+    <div class="abs center-x h tag" id="s1t2" style="top:770px;color:var(--texto)">merecen lo mejor</div>
+  </div>
+
+  <!-- Escena 2: especies -->
+  <div class="scene" id="s2">
+    <div class="abs center-x" id="s2p" style="top:150px"><span class="pill" style="background:var(--verde);color:var(--texto)">Para toda la familia</span></div>
+    <div class="abs center-x h" id="s2t" style="top:250px;font-size:84px">¿Para quién estás<br>comprando?</div>
+    <div class="sp" id="sp0" style="left:90px;top:520px"><div class="c"><img src="assets/perro.png" alt=""></div><div class="l" style="color:#8B6A55">Perros</div></div>
+    <div class="sp" id="sp1" style="left:415px;top:520px"><div class="c"><img src="assets/gato.png" alt=""></div><div class="l" style="color:#B8702F">Gatos</div></div>
+    <div class="sp" id="sp2" style="left:740px;top:520px"><div class="c"><img src="assets/roedor.png" alt=""></div><div class="l" style="color:#8A63B8">Roedores</div></div>
+    <div class="sp" id="sp3" style="left:252px;top:880px"><div class="c"><img src="assets/pajaro.png" alt=""></div><div class="l" style="color:#D5202E">Pájaros</div></div>
+    <div class="sp" id="sp4" style="left:578px;top:880px"><div class="c"><img src="assets/pez.png" alt=""></div><div class="l" style="color:#2F7FD0">Peces</div></div>
+  </div>
+
+  <!-- Escena 3: productos -->
+  <div class="scene" id="s3">
+    <div class="abs h" id="s3t" style="left:90px;top:120px;font-size:62px;color:#fff">Elegí lo mejor<br><span style="color:var(--verde)">para tu mascota</span></div>
+    <div class="abs bars" id="bars"><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div></div>
+    <div class="card" id="c0"><img src="assets/duck.jpg" alt=""></div>
+    <div class="card" id="c1"><img src="assets/dog_collar.jpg" alt="" style="object-position:50% 35%"></div>
+    <div class="card" id="c2"><img src="assets/panales.jpg" alt=""></div>
+    <div class="card" id="c3"><img src="assets/chongke.jpg" alt="" style="object-position:50% 30%"></div>
+    <div class="ptxt" id="t0"><div class="h n">Juguete interactivo DUCK</div><div class="d">Estimula su mente y se lava con agua.</div></div>
+    <div class="ptxt" id="t1"><div class="h n">Collar WAUDOG</div><div class="d">Material hipoalergénico y placa QR.</div></div>
+    <div class="ptxt" id="t2"><div class="h n">Pañales para mascotas</div><div class="d">Higiene para cada etapa de tu mascota.</div></div>
+    <div class="ptxt" id="t3"><div class="h n">Mochila Chongke</div><div class="d">Tan tierna que parece un gatito de verdad.</div></div>
+  </div>
+
+  <!-- Escena 4: envíos -->
+  <div class="scene" id="s4">
+    <img class="abs photo" id="s4img" src="assets/estudio.png" alt="">
+    <div class="abs center-x h" id="s4t1" style="top:100px;font-size:84px">Envío gratis a<br>todo el país</div>
+    <div class="abs center-x" id="s4t2" style="top:310px"><span class="pill h" style="background:var(--texto);color:var(--verde);font-size:46px;padding:16px 44px">desde $1.500</span></div>
+    <div class="abs center-x" id="s4t3" style="top:425px;font-size:32px;font-weight:500;color:var(--verde-hoja)">En compras menores, $200.</div>
+  </div>
+
+  <!-- Escena 5: cierre -->
+  <div class="scene" id="s5">
+    <div class="blob" id="b4" style="width:560px;height:560px;right:-300px;top:-330px"></div>
+    <div class="blob" id="b5" style="width:300px;height:300px;left:-90px;top:1080px"></div>
+    <img class="abs logo" id="s5logo" src="assets/logo_white.png" alt="Ser Animal">
+    <div class="abs center-x h" id="s5t1" style="top:540px;font-size:58px;color:var(--texto)">Integrantes de la familia,<br><span style="color:#fff">merecen lo mejor</span></div>
+    <div class="abs center-x" id="s5t2" style="top:790px"><span class="pill h" style="background:var(--texto);color:#fff;font-size:44px;padding:20px 52px">@seranimal</span></div>
+    <div class="abs" id="s5t3" style="left:0;right:0;top:960px;display:flex;justify-content:center;align-items:center;gap:26px">
+      <div class="assist"><img src="assets/asistente.png" alt=""></div>
+      <div style="font-size:34px;line-height:1.35;color:var(--texto)"><b>Pedidos y envíos</b><br>WhatsApp 091 380 000</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DUR = 17;
+const $ = id => document.getElementById(id);
+const clamp = (v,a=0,b=1) => Math.min(b,Math.max(a,v));
+const p = (t,a,b) => clamp((t-a)/(b-a));
+const eOut = x => 1-Math.pow(1-x,3);
+const eInOut = x => x<.5 ? 4*x*x*x : 1-Math.pow(-2*x+2,3)/2;
+const eBack = x => { const c1=1.70158,c3=c1+1; return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2); };
+const lerp = (a,b,x) => a+(b-a)*x;
+function set(el, {x=0,y=0,s=1,r=0,o=1}={}){
+  el.style.transform = `translate(${x}px,${y}px) scale(${s}) rotate(${r}deg)`;
+  el.style.opacity = o;
+}
+function show(el, on){ el.style.visibility = on ? 'visible' : 'hidden'; }
+// Texto que sube y aparece
+function rise(el, t, a, d=.5, dist=50){
+  const k = eOut(p(t,a,a+d));
+  set(el,{y:(1-k)*dist,o:k});
+}
+
+const PROD_T0 = 6.0, PROD_STEP = 1.5;
+
+function render(t){
+  // ---------- Escena 1 (0 – 3.1) ----------
+  show($('s1'), t < 3.2);
+  const lk = eBack(p(t,.15,.95));
+  set($('s1logo'),{s:lerp(.55,1,lk),o:p(t,.15,.5)});
+  rise($('s1t1'),t,.85); rise($('s1t2'),t,1.05);
+  ['b1','b2','b3'].forEach((id,i)=>{
+    const k = eBack(p(t,.05+i*.12,.8+i*.12));
+    set($(id),{s:k,y:Math.sin(t*1.4+i)*14});
+  });
+  if (t>2.5){ const k=eInOut(p(t,2.5,3.1)); set($('s1'),{s:lerp(1,1.08,k)}); }
+  else set($('s1'));
+
+  // ---------- Escena 2 (2.5 – 6.1) ----------
+  show($('s2'), t>=2.5 && t<6.2);
+  const w2 = eInOut(p(t,2.5,3.1));
+  $('s2').style.clipPath = `circle(${w2*900}px at 50% 50%)`;
+  rise($('s2p'),t,2.9); rise($('s2t'),t,3.05);
+  for(let i=0;i<5;i++){
+    const a = 3.4+i*.14, k = eBack(p(t,a,a+.55));
+    const el=$('sp'+i);
+    set(el,{s:k,o:p(t,a,a+.2),y:Math.sin((t-a)*2.2+i)*8*p(t,a+.5,a+.9)});
+  }
+  const out2 = eInOut(p(t,5.6,6.1));
+  if (t>=5.6) set($('s2'),{y:-out2*500,o:1-out2*.6});
+  else if (t>=2.5) $('s2').style.transform='';
+
+  // ---------- Escena 3 (5.6 – 12.4) ----------
+  show($('s3'), t>=5.6 && t<12.5);
+  const in3 = eInOut(p(t,5.6,6.1));
+  const out3 = eInOut(p(t,11.95,12.45));
+  $('s3').style.transform = `translateY(${(1-in3)*1350}px)`;
+  rise($('s3t'),t,5.95);
+  set($('bars'),{o:p(t,6.0,6.3)});
+  const bars=document.querySelectorAll('#bars i');
+  for(let i=0;i<4;i++){
+    const a = PROD_T0 + i*PROD_STEP, b = a + PROD_STEP;
+    const kin = eOut(p(t,a-.1,a+.4));
+    const kout = i<3 ? eInOut(p(t,b-.1,b+.35)) : 0;
+    const card=$('c'+i), txt=$('t'+i);
+    const vis = t>=a-.1 && (i===3 || t<b+.35);
+    show(card,vis); show(txt,vis);
+    set(card,{x:(1-kin)*1100 - kout*1100, r:(1-kin)*6 - kout*4});
+    const img=card.querySelector('img');
+    img.style.transform=`scale(${lerp(1.12,1,eOut(p(t,a-.1,b+.3)))})`;
+    const tk = eOut(p(t,a+.15,a+.6)), tko = i<3 ? p(t,b-.15,b+.05) : 0;
+    set(txt,{y:(1-tk)*40 - tko*20, o:tk*(1-tko)});
+    bars[i].style.width = (clamp((t-a)/PROD_STEP)*100)+'%';
+  }
+  if (t>=11.95) $('s3').style.transform = `translateY(0) scale(${1-out3*.08})`;
+
+  // ---------- Escena 4 (11.95 – 14.6) ----------
+  show($('s4'), t>=11.95 && t<14.7);
+  const w4 = eInOut(p(t,11.95,12.5));
+  $('s4').style.clipPath = `circle(${w4*1800}px at 100% 100%)`;
+  const ik = eOut(p(t,12.2,12.9));
+  set($('s4img'),{y:(1-ik)*160,o:ik});
+  rise($('s4t1'),t,12.35);
+  const pk=eBack(p(t,12.7,13.2)); set($('s4t2'),{s:lerp(.6,1,pk),o:p(t,12.7,12.9)});
+  rise($('s4t3'),t,13.0,.5,30);
+
+  // ---------- Escena 5 (14.2 – 17) ----------
+  show($('s5'), t>=14.2);
+  const w5 = eInOut(p(t,14.2,14.75));
+  $('s5').style.clipPath = `circle(${w5*1800}px at 0% 0%)`;
+  const lk5 = eBack(p(t,14.55,15.25));
+  set($('s5logo'),{s:lerp(.6,1,lk5),o:p(t,14.55,14.85)});
+  rise($('s5t1'),t,14.95);
+  const pk5=eBack(p(t,15.3,15.8)); set($('s5t2'),{s:lerp(.6,1,pk5)*(1+.025*Math.sin(Math.max(0,t-15.9)*5)),o:p(t,15.3,15.5)});
+  rise($('s5t3'),t,15.55);
+  ['b4','b5'].forEach((id,i)=>{ set($(id),{s:eBack(p(t,14.5+i*.15,15.2+i*.15)),y:Math.sin(t*1.3+i)*12}); });
+}
+
+window.render = render;
+window.DUR = DUR;
+if (!location.search.includes('render')){
+  let start=null;
+  document.fonts.ready.then(()=>{
+    const loop=ts=>{ if(start===null) start=ts; render(((ts-start)/1000)%(DUR+1)); requestAnimationFrame(loop); };
+    requestAnimationFrame(loop);
+  });
+} else {
+  document.body.classList.add('render');
+  render(0);
+}
+</script>
+</body>
+</html>
