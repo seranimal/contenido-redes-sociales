@@ -16,7 +16,18 @@ Repositorio de contenido de Ser Animal, tienda especializada en productos para m
 - **Logo:** verde sobre fondos blancos, claros u oscuros, o blanco sobre el verde Ser Animal. Dejar aire alrededor. No estirarlo, rotarlo, recolorearlo ni ponerle sombras o bordes. No ponerlo sobre fotos recargadas.
 - **Asistente:** el perrito con auriculares (`marca/ilustraciones/asistente.png`) es la cara de la atención al cliente; va siempre en círculo con borde verde.
 - **Formas:** botones y chips en forma de pastilla; bordes redondeados de 10, 16 y 28 px; sombras suaves con el tono del texto.
-- **Fotografía:** mascotas reales, buena calidad, caras a la vista. Productos sobre gris clarito o un fondo liso. Nunca textos ni logos tapando a los animales.
+- **Fotografía:** mascotas reales, buena calidad, caras a la vista. Nunca textos ni logos tapando a los animales.
+
+## Redes sociales
+
+Seguir siempre `lineamientos/estilos-de-post.md`. Resumen:
+
+- **Imágenes reales o que luzcan reales.** Se puede usar IA (Higgsfield u otra) con aspecto fotográfico; el producto tiene que ser idéntico al real.
+- **Fondos:** solo foto real, verde Ser Animal o blanco, alternándolos.
+- **Tipografías en redes:** Lobster (títulos emocionales), Nunito 900 (títulos informativos, números, producto), DM Sans (textos chicos).
+- **Carrusel por defecto:** slide 1 con imagen real; después el producto sobre verde o blanco.
+- **Estilos de portada:** título con profundidad, cursiva verde, número grande, pregunta enmarcada, producto héroe (cada tanto), foto limpia y ficha con callouts.
+- **Animaciones:** a la marca le gustan mucho; se ofrecen versiones animadas de los mismos estilos.
 
 ## Tono de voz
 
