@@ -24,9 +24,9 @@ Seguir siempre `lineamientos/estilos-de-post.md`. Resumen:
 
 - **Imágenes reales o que luzcan reales.** Se puede usar IA (Higgsfield u otra) con aspecto fotográfico; el producto tiene que ser idéntico al real.
 - **Fondos:** solo foto real, verde Ser Animal o blanco, alternándolos.
-- **Tipografías en redes:** Lobster (títulos emocionales), Nunito 900 (títulos informativos, números, producto), DM Sans (textos chicos).
+- **Tipografías en redes:** solo dos. Nunito 900 como principal (todos los títulos, números y productos) y DM Sans como secundaria (textos chicos). No usar Lobster ni Montserrat.
 - **Carrusel por defecto:** slide 1 con imagen real; después el producto sobre verde o blanco.
-- **Estilos de portada:** título con profundidad, cursiva verde, número grande, pregunta enmarcada, producto héroe (cada tanto), foto limpia y ficha con callouts.
+- **Estilos de portada:** título con profundidad, título verde, número grande, pregunta enmarcada, producto héroe (cada tanto), foto limpia y ficha con callouts.
 - **Animaciones:** a la marca le gustan mucho; se ofrecen versiones animadas de los mismos estilos.
 
 ## Tono de voz

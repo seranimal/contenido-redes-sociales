@@ -17,15 +17,19 @@ Guía visual para que cada post y cada portada se vean parte del mismo feed. Las
 
 ## 2. Tipografías para redes
 
-| Uso | Fuente | Dónde |
-|---|---|---|
-| Títulos emocionales y cortos | **Lobster** | Estilos 1, 1b y 3 |
-| Títulos informativos, números y nombres de producto | **Nunito 900** | Estilos 2 y 4 |
-| Textos chicos, bajadas y callouts | **DM Sans 500 / 700** | Estilo 6 y líneas secundarias |
+Solo dos familias, las mismas del brand board:
 
-- La cursiva del feed actual es **Lobster** (verificado contra los posts publicados).
-- Los posts anteriores usaban Montserrat para los títulos rectos. Desde ahora se usa **Nunito 900**, que es la fuente del brand board, para que redes y web hablen igual. El aspecto es muy parecido (bold y redondeado).
-- Máximo dos fuentes por slide.
+| Rol | Fuente | Uso |
+|---|---|---|
+| **Principal** | **Nunito 900** (800 para textos largos) | Todos los títulos, números, nombres de producto y líneas en mayúsculas. |
+| **Secundaria** | **DM Sans 500 / 700** | Bajadas, callouts, precios y textos chicos. |
+
+![](estilos/tipografias.png)
+
+- Por qué: Nunito es redondeada y amable como la marca; con peso 900 tiene fuerza para leerse sobre fotos. DM Sans es limpia y neutra para lo chico. Con las dos, redes y web hablan igual.
+- Ya no se usan Lobster ni Montserrat, que eran las fuentes de los posts anteriores.
+- Títulos en minúscula, con mayúscula solo al principio. Las mayúsculas sostenidas quedan para líneas cortas, como «DISPONIBLE EN 3 COLORES».
+- Interletrado levemente cerrado en títulos grandes (−0,5 px).
 
 ---
 
@@ -55,17 +59,17 @@ Guía visual para que cada post y cada portada se vean parte del mismo feed. Las
 ### Estilo 1 · Título con profundidad
 ![](estilos/1-titulo-con-profundidad.jpg)
 
-- **Qué es:** foto real de uso con el título en Lobster blanco que **pasa por detrás** de un elemento de la foto (una mano, una oreja, la cabeza del perro). Es el efecto que más se destaca.
-- **Título:** Lobster blanco, 90–100 px, una línea, centrado entre y 140 y 240.
+- **Qué es:** foto real de uso con el título en Nunito 900 blanco que **pasa por detrás** de un elemento de la foto (una mano, una oreja, la cabeza del perro). Es el efecto que más se destaca.
+- **Título:** Nunito 900 blanco, 88–96 px, una línea, centrado entre y 140 y 240.
 - **Línea inferior (opcional):** Nunito 900 en mayúsculas, blanco, 42–46 px, a lo ancho, cerca de y 1250. Ejemplo: «DISPONIBLE EN 3 COLORES».
 - **Cómo se hace:** se recorta el elemento que va adelante (mano, cabeza) y se coloca encima del texto. Necesita una foto con algo que cruce la zona del título.
 - **Cuándo:** lanzamiento o destaque de un producto con foto de uso.
 
-### Estilo 1b · Título en cursiva verde
+### Estilo 1b · Título verde
 ![](estilos/1b-titulo-cursiva.jpg)
 
-- **Qué es:** foto real con fondo claro y ordenado, y título en Lobster verde arriba.
-- **Título:** Lobster `#9ECA1B`, 100–120 px, 1 o 2 líneas, centrado.
+- **Qué es:** foto real con fondo claro y ordenado, y título en Nunito 900 verde arriba.
+- **Título:** Nunito 900 `#9ECA1B`, 96–110 px, 1 o 2 líneas, centrado.
 - **Regla:** el verde solo se usa si el fondo de esa zona es claro y limpio, como una pared blanca. Si no, el título va en blanco con sombra.
 - **Cuándo:** novedades y productos nuevos.
 
@@ -87,7 +91,7 @@ Guía visual para que cada post y cada portada se vean parte del mismo feed. Las
 - **Qué es:** foto real emotiva, con un marco verde redondeado y una pregunta que plantea un problema. La slide 2 muestra la solución (el producto).
 - **Marco:** trazo `#9ECA1B` de 6 px, radio de 56 px, a 72 px de los bordes (más abajo deja lugar al sticker).
 - **Isotipo:** verde, arriba al centro, dentro del marco.
-- **Pregunta:** Lobster blanco, 66–74 px, 2 líneas, abajo dentro del marco, sobre un degradado oscuro de la foto.
+- **Pregunta:** Nunito 900 blanco, 64–70 px, 2 líneas, abajo dentro del marco, sobre un degradado oscuro de la foto.
 - **Sticker «Deslizá»:** verde, abajo a la derecha, fuera del marco.
 
 ### Estilo 4 · Producto héroe
@@ -135,7 +139,7 @@ Largo: de 2 a 5 slides.
 
 Los mismos estilos, en movimiento, para Reels o posts en video:
 
-- **Texto:** el título sube y aparece; la cursiva se «escribe»; el número entra con rebote.
+- **Texto:** el título sube y aparece palabra por palabra; el número entra con rebote.
 - **Estilo 1:** el título aparece por detrás de la mano o del perro.
 - **Estilo 3:** el marco verde se dibuja alrededor de la foto.
 - **Estilo 4:** el producto entra con escala suave y el sello gira.
@@ -174,7 +178,7 @@ Lo que se ve en el perfil es la primera slide de cada post:
 
 - [ ] La portada es una imagen real o realista.
 - [ ] Los fondos son solo foto, verde o blanco.
-- [ ] Las fuentes son Lobster, Nunito 900 o DM Sans, con máximo dos por slide.
+- [ ] Las fuentes son solo Nunito y DM Sans.
 - [ ] El texto no tapa caras y respeta los márgenes de seguridad.
 - [ ] El sticker «DESLIZÁ» está en la primera slide del carrusel.
 - [ ] El isotipo está bien usado: sin deformar, sin sombras y con aire.
