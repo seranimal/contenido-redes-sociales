@@ -1,5 +1,7 @@
 # Propuesta · 4 posts (noviembre 2026)
 
+> **Actualización:** los carruseles de producto (2 y 4) se cambian por **productos nuevos** que todavía no salieron en el feed. Los de collar WAUDOG y DUCK quedan descartados hasta definir los nuevos. Los consejos (1 y 3) siguen en pie.
+
 Dos carruseles de producto y dos de consejos. Todos siguen `lineamientos/estilos-de-post.md`: la slide 1 es imagen real o realista, después se pasa a verde o blanco, con Nunito + DM Sans. Los cuatro pueden tener versión animada.
 
 Orden sugerido en la grilla (no se repite estilo de portada seguido):
