@@ -8,6 +8,7 @@ Planificación y creación de contenido para las redes de Ser Animal (@seranimal
 |---|---|
 | `marca/` | Brand board, logos, ilustraciones de especies y fotos de marca. |
 | `lineamientos/` | Reglas de contenido: pilares, grilla del feed, portadas, textos y hashtags. |
+| `planificacion/` | Propuestas de posts y calendarios por mes. |
 | `plantillas/` | Plantillas reutilizables para cada tipo de post. |
 | `posts/` | Un subdirectorio por post: `AAAA-MM-nombre-del-post/`, con el archivo final, la portada y la fuente editable. |
 | `referencias/` | Capturas del feed actual y otras referencias visuales. |
