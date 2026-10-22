@@ -45,7 +45,8 @@ export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
   const fotos = data.results.map((p) => ({
     id: p.id,
     alt: p.alt_description ?? "",
-    src: `${p.urls.full}&w=1600&q=85`,
+    // 2400 px: alcanza para el lienzo de 1080 dibujado al doble, con margen para el zoom.
+    src: `${p.urls.full}&w=2400&q=90`,
     thumb: p.urls.small,
     ancho: p.width,
     alto: p.height,

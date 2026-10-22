@@ -22,6 +22,7 @@ Repositorio de contenido de Ser Animal, tienda especializada en productos para m
 
 Seguir siempre `lineamientos/estilos-de-post.md`. Resumen:
 
+- **Siempre HD y nítidas.** Fotos de al menos 1080 px de lado (ideal 2000 o más); nunca agrandar una foto chica. Se exporta a 1080×1350 dibujando al doble y reduciendo con suavizado de alta calidad (el Studio y los `render.js` ya lo hacen). Si la foto de origen viene chica o comprimida, se le aplica un enfoque suave o se mejora con un escalador de IA antes de usarla; si igual se ve borrosa, no se usa.
 - **Imágenes reales o que luzcan reales.** Se puede usar IA (Higgsfield u otra) con aspecto fotográfico; el producto tiene que ser idéntico al real.
 - **Fondos:** solo foto real, verde Ser Animal o blanco, alternándolos.
 - **Tipografías en redes:** solo dos. Nunito 900 como principal (todos los títulos, números y productos) y DM Sans como secundaria (textos chicos). No usar Lobster ni Montserrat.

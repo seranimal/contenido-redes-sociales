@@ -82,6 +82,13 @@ export function Inspector({ slide, posicion, total, resultados, onCambiar, onRes
     const lector = new FileReader();
     lector.onload = () => {
       const src = String(lector.result);
+      // Aviso de nitidez: el lienzo mide 1080×1350; una foto más chica se ve borrosa.
+      const prueba = new Image();
+      prueba.onload = () => {
+        const chica = prueba.naturalWidth < 1080 || prueba.naturalHeight < 1080;
+        setError(chica ? `Ojo: la foto mide ${prueba.naturalWidth}×${prueba.naturalHeight} px y se va a ver borrosa. Usá una de al menos 1080 px (ideal 2000 o más).` : "");
+      };
+      prueba.src = src;
       onCambiar({ foto: { src, thumb: src }, fotoX: 50, fotoY: 50, fotoZoom: 1 });
     };
     lector.readAsDataURL(archivo);

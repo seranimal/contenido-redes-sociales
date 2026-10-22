@@ -13,7 +13,8 @@ Guía visual para que cada post y cada portada se vean parte del mismo feed. Las
 5. **El feed es estético.** Las imágenes no llevan llamados a la venta: nada de «Pedilo por WhatsApp», teléfonos ni botones. Lo que se ve tiene que ser lindo; el WhatsApp va, si hace falta, en el texto del posteo.
 6. **Un solo acento: el verde.** El resto es blanco y el verde casi negro `#253027`.
 7. **El texto nunca tapa la cara del animal.**
-8. **Contenido de IA:** cuando la imagen es generada, se activa la etiqueta «Contenido de IA» de Instagram.
+8. **Todo en HD y nítido.** Fotos de al menos 1080 px de lado (ideal 2000 o más), nunca agrandadas. Exportación a 1080×1350 desde el doble de tamaño (supermuestreo), JPG de alta calidad. Si una foto de la tienda viene chica o comprimida: enfoque suave (máscara de enfoque) o escalado con IA; si sigue borrosa, se busca otra.
+9. **Contenido de IA:** cuando la imagen es generada, se activa la etiqueta «Contenido de IA» de Instagram.
 
 ---
 
@@ -305,6 +306,7 @@ Lo que se ve en el perfil es la primera slide de cada post:
 ## 9. Checklist antes de publicar
 
 - [ ] La portada es una imagen real o realista.
+- [ ] Las imágenes se ven nítidas al 100 % (fotos y textos), sin pixelado ni compresión.
 - [ ] Los fondos son solo foto, verde o blanco.
 - [ ] No aparece ningún precio de producto, ni en la imagen ni en el posteo.
 - [ ] Las fuentes son solo Nunito y DM Sans.

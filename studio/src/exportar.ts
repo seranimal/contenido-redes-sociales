@@ -1,11 +1,23 @@
-import { toJpeg } from "html-to-image";
+import { toCanvas } from "html-to-image";
 import JSZip from "jszip";
 
-const OPCIONES = { width: 1080, height: 1350, pixelRatio: 1, quality: 0.95 };
+// Medida final de Instagram (feed 4:5). Se dibuja al doble y se reduce con suavizado de alta calidad:
+// así las fotos y los bordes del texto quedan nítidos (supermuestreo).
+const ANCHO = 1080;
+const ALTO = 1350;
+const CALIDAD = 0.97;
 
 export async function slideAJpeg(nodo: HTMLElement): Promise<string> {
   await document.fonts.ready;
-  return toJpeg(nodo, OPCIONES);
+  const grande = await toCanvas(nodo, { width: ANCHO, height: ALTO, pixelRatio: 2 });
+  const final = document.createElement("canvas");
+  final.width = ANCHO;
+  final.height = ALTO;
+  const ctx = final.getContext("2d")!;
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
+  ctx.drawImage(grande, 0, 0, ANCHO, ALTO);
+  return final.toDataURL("image/jpeg", CALIDAD);
 }
 
 function descargar(url: string, nombre: string) {
