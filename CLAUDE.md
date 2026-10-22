@@ -10,7 +10,7 @@ Repositorio de contenido de Ser Animal, tienda especializada en productos para m
   - Verde hoja `#4C7300`: textos verdes sobre fondo claro.
   - Texto `#253027`: textos y fondos oscuros (verde casi negro, nunca negro puro).
   - Superficie `#F8FAF4`, Borde `#E5E9DE`, Gris oscuro `#444D45`.
-  - Oferta `#B4321F`: solo precios rebajados y ofertas.
+  - Oferta `#B4321F`: solo ofertas (en la web; en redes no se publican precios).
   - Especies (solo en nombres de especie): Perros `#8B6A55`, Gatos `#B8702F`, Roedores `#8A63B8`, Pájaros `#D5202E`, Peces `#2F7FD0`.
 - **Tipografía:** Nunito 800 para títulos y destacados; DM Sans 400–700 para textos, precios y botones.
 - **Logo:** verde sobre fondos blancos, claros u oscuros, o blanco sobre el verde Ser Animal. Dejar aire alrededor. No estirarlo, rotarlo, recolorearlo ni ponerle sombras o bordes. No ponerlo sobre fotos recargadas.
@@ -26,7 +26,7 @@ Seguir siempre `lineamientos/estilos-de-post.md`. Resumen:
 - **Fondos:** solo foto real, verde Ser Animal o blanco, alternándolos.
 - **Tipografías en redes:** solo dos. Nunito 900 como principal (todos los títulos, números y productos) y DM Sans como secundaria (textos chicos). No usar Lobster ni Montserrat.
 - **Carrusel por defecto:** slide 1 con imagen real; después el producto sobre verde o blanco.
-- **Estilos de portada:** título con profundidad, título verde, número grande, pregunta enmarcada, producto héroe (cada tanto), foto limpia y ficha con callouts.
+- **Estilos de portada:** título con profundidad, título verde, número grande, pregunta enmarcada, producto héroe (cada tanto), foto limpia, ficha con callouts, producto sobre fondo claro y aviso solo texto (estos dos, para variar la grilla, al estilo de Petz).
 - **Animaciones:** a la marca le gustan mucho; se ofrecen versiones animadas de los mismos estilos.
 
 ## Elementos gráficos (regla fija)
@@ -40,8 +40,9 @@ Seguir siempre `lineamientos/estilos-de-post.md`. Resumen:
 - Cercano, claro y concreto, como hablaría alguien del local.
 - Español rioplatense con voseo: «elegí», «buscá», «sumate».
 - Mayúscula solo al principio de títulos y botones.
-- Decir qué es, cuánto cuesta y cómo llega.
-- No inventar precios, descuentos, plazos ni datos. Sin exclamaciones de más ni frases vacías.
+- Decir qué es, para quién es y cómo llega.
+- **Nunca se publican precios** de productos en redes (ni en la imagen ni en el posteo). El llamado es a pedir por WhatsApp. Los únicos montos permitidos son los de los textos fijos de envíos y pedido programado.
+- No inventar descuentos, plazos ni datos. Sin exclamaciones de más ni frases vacías.
 
 ## Textos que siempre se escriben igual
 

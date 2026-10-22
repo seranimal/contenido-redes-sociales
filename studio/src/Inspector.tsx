@@ -4,13 +4,22 @@ import { NOMBRE_TIPO, TIPOS_SLIDE, type TipoSlide } from "./spec";
 import type { Foto, Slide } from "./tipos";
 
 const CON_NUMERO: TipoSlide[] = ["portada-numero", "dato", "texto"];
-const CON_FONDO: TipoSlide[] = ["dato", "texto", "producto"];
+const CON_FONDO: TipoSlide[] = ["dato", "texto", "producto", "aviso"];
+// Fotos de producto: las sube el usuario, no se buscan en Unsplash.
+const DE_PRODUCTO: TipoSlide[] = ["producto", "producto-claro"];
 const SIN_TEXTO: TipoSlide[] = ["portada-foto"];
 
 const ETIQUETA_TEXTO: Partial<Record<TipoSlide, string>> = {
   "portada-titulo": "Línea de abajo (opcional)",
   "portada-titulo-verde": "Línea de abajo (opcional)",
   producto: "Bajada",
+  "producto-claro": "Bajada (opcional)",
+  aviso: "Texto (opcional)",
+};
+
+const ETIQUETA_TITULO: Partial<Record<TipoSlide, string>> = {
+  "producto-claro": "Nombre del producto",
+  aviso: "Título (lo que va entre *asteriscos* se destaca en verde)",
 };
 
 interface Props {
@@ -30,7 +39,8 @@ export function Inspector({ slide, posicion, total, resultados, onCambiar, onRes
   const [busqueda, setBusqueda] = useState(slide.busqueda_foto);
   const [buscando, setBuscando] = useState(false);
   const [error, setError] = useState("");
-  const usaFoto = slide.tipo !== "texto";
+  const usaFoto = slide.tipo !== "texto" && slide.tipo !== "aviso";
+  const deProducto = DE_PRODUCTO.includes(slide.tipo);
 
   async function buscar(e?: React.FormEvent) {
     e?.preventDefault();
@@ -103,7 +113,7 @@ export function Inspector({ slide, posicion, total, resultados, onCambiar, onRes
       {!SIN_TEXTO.includes(slide.tipo) && (
         <>
           <label className="campo">
-            <span>Título</span>
+            <span>{ETIQUETA_TITULO[slide.tipo] ?? "Título"}</span>
             <textarea rows={2} value={slide.titulo} onChange={(e) => onCambiar({ titulo: e.target.value })} />
           </label>
           {slide.tipo !== "portada-numero" && slide.tipo !== "portada-pregunta" && (
@@ -117,7 +127,7 @@ export function Inspector({ slide, posicion, total, resultados, onCambiar, onRes
 
       {usaFoto && (
         <div className="campo">
-          <span>{slide.tipo === "producto" ? "Foto del producto (subí la foto real)" : "Foto"}</span>
+          <span>{deProducto ? "Foto del producto (subí la foto real, mejor con fondo blanco)" : "Foto"}</span>
           {slide.foto && (
             <div className="foto-actual">
               <img src={slide.foto.thumb} alt="" />
@@ -135,14 +145,14 @@ export function Inspector({ slide, posicion, total, resultados, onCambiar, onRes
             </div>
           )}
 
-          {slide.tipo !== "producto" && (
+          {!deProducto && (
             <form className="buscador" onSubmit={buscar}>
               <input value={busqueda} onChange={(e) => setBusqueda(e.target.value)} placeholder="Buscar en Unsplash (en inglés: guinea pig…)" />
               <button type="submit" disabled={buscando}>{buscando ? "…" : "Buscar"}</button>
             </form>
           )}
           {error && <p className="error">{error}</p>}
-          {resultados.length > 0 && slide.tipo !== "producto" && (
+          {resultados.length > 0 && !deProducto && (
             <div className="grilla-fotos">
               {resultados.map((f, i) => (
                 <button

@@ -114,6 +114,7 @@
   .ejemplo h3 { font-size: 26px; }
   .ejemplo p.nota { color: var(--gris); }
   .tira { display: grid; grid-template-columns: repeat(5, minmax(150px, 1fr)); gap: 10px; overflow-x: auto; padding-bottom: 6px; }
+  .tira.cuatro { grid-template-columns: repeat(4, minmax(150px, 1fr)); }
   .tira img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; }
 
   /* Calendario */
@@ -220,11 +221,11 @@
           <img src="img/p1-calor.jpg" alt="Portada: ¿Hace demasiado calor para pasear?">
           <img src="img/p2-cobayos.jpg" alt="Portada: 3 cosas que no sabías de los cobayos">
           <img src="img/p3-comunidad.jpg" alt="Portada: Mascota de la semana">
-          <img src="img/p4-producto.jpg" alt="Portada: foto limpia de un perro jugando con una soga">
+          <img src="img/claro-arenero.jpg" alt="Portada: arenero de acero inoxidable sobre fondo claro">
           <img src="img/p5-gatos.jpg" alt="Portada: 5 señales de que tu gato confía en vos">
-          <img src="img/p6-envios.jpg" alt="Portada: Te lo llevamos a casa">
+          <img src="img/aviso-envios.jpg" alt="Portada: aviso de envío gratis a todo el país">
           <img src="img/p7-peces.jpg" alt="Portada: ¿Vas a armar tu primera pecera?">
-          <img src="img/p8-pajaros.jpg" alt="Portada: 3 claves para la jaula de tu periquito">
+          <img src="img/claro-snack.jpg" alt="Portada: Brit Training S sobre fondo claro">
           <img src="img/p9-juegos.jpg" alt="Portada: Juegos para días de lluvia">
         </div>
       </div>
@@ -256,12 +257,14 @@ Pedidos por WhatsApp: 091 380 000</pre>
             <li>La base son las portadas con foto real.</li>
             <li>Nunca dos portadas seguidas con el mismo estilo.</li>
             <li>Como máximo un producto héroe sobre verde por fila.</li>
+            <li>Fondo claro (producto o aviso) para variar: nunca dos seguidas y como máximo 3 de cada 9.</li>
+            <li>Nunca se publican precios.</li>
             <li>El perfil recorta las portadas a 3:4: el título y el sticker «Deslizá» van dentro del margen de seguridad.</li>
           </ul>
           <div class="ritmo" aria-label="Ejemplo de ritmo de estilos en la grilla">
             <span class="v">Pregunta</span><span>Número</span><span class="v">Título verde</span>
-            <span>Foto limpia</span><span class="v">Número</span><span>Título</span>
-            <span class="v">Pregunta</span><span>Número</span><span class="v">Título</span>
+            <span>Producto claro</span><span class="v">Número</span><span>Aviso</span>
+            <span class="v">Pregunta</span><span>Producto claro</span><span class="v">Título</span>
           </div>
         </div>
       </div>
@@ -292,14 +295,14 @@ Pedidos por WhatsApp: 091 380 000</pre>
       <article class="pilar">
         <img src="img/p4-producto.jpg" alt="">
         <div><h3>En la tienda</h3><span class="frec">1 o 2 por semana</span>
-          <p>Productos reales de Ser Animal: novedades, fichas con callouts y producto héroe. Solo datos confirmados.</p>
-          <p><b>Portada:</b> foto de uso, foto limpia o producto héroe.</p></div>
+          <p>Productos reales de Ser Animal: novedades, fichas con callouts y producto héroe. Solo datos confirmados y nunca precios: el llamado es «Pedilo por WhatsApp».</p>
+          <p><b>Portada:</b> foto de uso, foto limpia, producto héroe o producto sobre fondo claro.</p></div>
       </article>
       <article class="pilar">
         <img src="img/p3-comunidad.jpg" alt="">
         <div><h3>La familia Ser Animal</h3><span class="frec">1 por semana</span>
           <p>Mascotas de clientes, preguntas para comentar y el servicio: envíos, pedido programado, WhatsApp.</p>
-          <p><b>Portada:</b> título verde o título blanco.</p></div>
+          <p><b>Portada:</b> título verde o título blanco; los avisos, solo texto.</p></div>
       </article>
     </div>
 
@@ -323,6 +326,16 @@ Pedidos por WhatsApp: 091 380 000</pre>
         <img src="img/cobayos-3.jpg" alt="Slide 3: Sus dientes nunca dejan de crecer">
         <img src="img/cobayos-4.jpg" alt="Slide 4: Saltan de felicidad">
         <img src="img/cobayos-5.jpg" alt="Slide 5: ¿Tenés un cobayo?">
+      </div>
+    </div>
+    <div class="ejemplo">
+      <h3>Para variar · Fondo claro</h3>
+      <p class="nota">Producto con su foto de catálogo sobre el fondo claro de la marca, y avisos solo con texto en blanco o verde. Sin precios: el llamado es a pedir por WhatsApp.</p>
+      <div class="tira cuatro">
+        <img src="img/claro-arenero.jpg" alt="Producto sobre fondo claro: arenero de acero inoxidable">
+        <img src="img/claro-snack.jpg" alt="Producto sobre fondo claro: Brit Training S">
+        <img src="img/aviso-envios.jpg" alt="Aviso: envío gratis a todo el país">
+        <img src="img/aviso-programado.jpg" alt="Aviso: tu pedido, siempre a tiempo">
       </div>
     </div>
   </div>
@@ -387,7 +400,8 @@ Pedidos por WhatsApp: 091 380 000</pre>
       <li>Fondos: solo foto, verde o blanco. Tipografías: solo Nunito y DM Sans.</li>
       <li>Los elementos salen de marca/elementos, sin redibujar.</li>
       <li>El estilo de portada no repite el del post anterior.</li>
-      <li>El texto tiene voseo y no inventa precios, plazos ni datos.</li>
+      <li>No aparece ningún precio de producto.</li>
+      <li>El texto tiene voseo y no inventa plazos ni datos.</li>
       <li>Los datos de salud están verificados con una fuente veterinaria.</li>
       <li>Si la imagen es de IA, lleva la etiqueta «Contenido de IA».</li>
     </ul>

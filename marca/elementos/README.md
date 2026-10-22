@@ -16,7 +16,8 @@ Piezas fijas para que todos los posts usen exactamente los mismos recursos. Ver 
 | Sellos | `sello-nuevo`, `sello-edicion-limitada` | Producto héroe, cerca del producto (240 px). |
 | Callouts | `callout-vertical-*`, `callout-horizontal-*` | Ficha de producto: el punto toca el producto. Blanco sobre verde; oscuro sobre blanco. Se pueden rotar. Máximo 3 por slide. |
 | Chips de especie | `chip-perros`, `chip-gatos`, `chip-roedores`, `chip-pajaros`, `chip-peces` | Para indicar la especie del post. Es el único lugar donde van los colores de especie. |
-| Pastillas | `pastilla-seranimal`, `pastilla-whatsapp`, `pastilla-pedilo` | Cierres y llamados a la acción. |
+| Pastillas | `pastilla-seranimal`, `pastilla-whatsapp`, `pastilla-pedilo`, `pastilla-atencion` | Cierres y llamados a la acción. «Pedilo por WhatsApp» va en el producto sobre fondo claro (en redes nunca hay precios). |
+| Etiquetas | `etiqueta-aviso`, `etiqueta-novedad` | Arriba del título en el estilo «aviso solo texto». Sirven sobre blanco y sobre verde. |
 | Asistente | `png/asistente-circulo.png` | Atención al cliente: siempre en círculo con borde verde. |
 
 Logos e isotipos vectoriales: `marca/logo/logo-blanco.svg`, `logo-verde.svg`, `isotipo-blanco.svg`, `isotipo-verde.svg`.
@@ -31,6 +32,8 @@ Fuentes: `marca/fuentes/` (Nunito y DM Sans, licencia libre).
 | Banda esmerilada (estilo número abajo) | 300 px de alto abajo, `background: rgba(255,255,255,.14)` + `backdrop-filter: blur(20px)`, con la línea blanca arriba |
 | Degradado para texto sobre foto | `linear-gradient(180deg, transparent 45%, rgba(37,48,39,.78) 100%)` |
 | Fondo verde de producto | `radial-gradient(circle at 50% 62%, #CADC8A 0%, #9ECA1B 70%)` |
+| Fondo claro de producto | `radial-gradient(circle at 50% 62%, #FFFFFF 0%, #F8FAF4 62%)`, con la foto del producto en `mix-blend-mode: multiply` para que su fondo blanco desaparezca |
+| Destacado en avisos | Palabras clave en verde hoja `#4C7300` sobre blanco, o `#253027` sobre verde |
 
 ## Cambiar o sumar un elemento
 

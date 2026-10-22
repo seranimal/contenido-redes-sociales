@@ -9,9 +9,10 @@ Guía visual para que cada post y cada portada se vean parte del mismo feed. Las
 1. **Imágenes reales o que luzcan reales.** Fotos propias, de proveedor o generadas con IA (Higgsfield u otra) con aspecto fotográfico. Nada de ilustración ni 3D caricaturesco en las portadas.
 2. **El producto no se inventa.** Si la imagen es de IA, el producto tiene que ser idéntico al real: forma, color, logo y detalles. Siempre se parte de una foto real del producto como referencia.
 3. **Tres fondos posibles:** foto real, verde Ser Animal `#9ECA1B` o blanco (`#FFFFFF` / superficie `#F8FAF4`). Se van mezclando. No se usan otros colores de fondo, como naranja o amarillo.
-4. **Un solo acento: el verde.** El resto es blanco y el verde casi negro `#253027`.
-5. **El texto nunca tapa la cara del animal.**
-6. **Contenido de IA:** cuando la imagen es generada, se activa la etiqueta «Contenido de IA» de Instagram.
+4. **Nunca se publican precios** de productos: ni en la imagen ni en el texto del posteo. El llamado es «Pedilo por WhatsApp». Los únicos montos que aparecen son los de los textos fijos de envíos ($1.500 / $200) y del pedido programado (5%).
+5. **Un solo acento: el verde.** El resto es blanco y el verde casi negro `#253027`.
+6. **El texto nunca tapa la cara del animal.**
+7. **Contenido de IA:** cuando la imagen es generada, se activa la etiqueta «Contenido de IA» de Instagram.
 
 ---
 
@@ -22,7 +23,7 @@ Solo dos familias, las mismas del brand board:
 | Rol | Fuente | Uso |
 |---|---|---|
 | **Principal** | **Nunito 900** (800 para textos largos) | Todos los títulos, números, nombres de producto y líneas en mayúsculas. |
-| **Secundaria** | **DM Sans 500 / 700** | Bajadas, callouts, precios y textos chicos. |
+| **Secundaria** | **DM Sans 500 / 700** | Bajadas, callouts y textos chicos. |
 
 ![](estilos/tipografias.png)
 
@@ -125,13 +126,37 @@ Todos estos elementos están listos en **`marca/elementos/`** (SVG vectorial y P
 - **Textos:** DM Sans 500, 38–42 px. Máximo 3 callouts.
 - **Isotipo:** abajo a la derecha.
 
+### Estilo 7 · Producto sobre fondo claro
+![](estilos/7-producto-fondo-claro.jpg)
+
+- **Qué es:** la foto de catálogo del producto, grande, sobre el fondo claro de la marca. Limpio y directo, como hacen Petz y otras tiendas grandes. Varía la grilla entre tantas fotos.
+- **Fondo:** superficie `#F8FAF4` con un brillo blanco en el centro. La foto del producto tiene que tener fondo blanco (la de la web sirve): se «multiplica» con el fondo y el blanco desaparece.
+- **Texto:** arriba a la izquierda. Nombre del producto en Nunito 900 `#253027`, 80–86 px; bajada opcional en DM Sans 38 px gris oscuro (qué es o para quién es, sin inventar).
+- **Abajo:** pastilla «Pedilo por WhatsApp» a la izquierda e isotipo verde a la derecha (o el sticker «Deslizá» si es carrusel).
+- **Sin precio.** Nunca.
+- **Cuándo:** novedades, reposiciones y productos puntuales. Puede ser portada o slide interior de un carrusel de producto.
+
+### Estilo 8 · Aviso solo texto
+![](estilos/8-aviso-blanco.jpg) ![](estilos/8b-aviso-verde.jpg)
+
+- **Qué es:** un aviso de la tienda, solo con texto: envíos, pedido programado, horarios, feriados, cambios. Se lee de un vistazo.
+- **Fondo:** blanco (superficie) o verde Ser Animal, alternándolos.
+- **Arriba:** logo completo, centrado (verde sobre blanco; blanco sobre verde).
+- **Etiqueta:** pastilla «Aviso» (`marca/elementos/etiqueta-aviso`); para productos nuevos existe «Novedad».
+- **Título:** Nunito 900, 90–100 px, centrado. Las 1 a 3 palabras clave van destacadas: verde hoja `#4C7300` sobre blanco; `#253027` sobre verde.
+- **Texto:** DM Sans 42 px, centrado, con los textos fijos de la marca cuando corresponda.
+- **Abajo:** pastilla «Pedidos y envíos: 091 380 000» (o «Atención al cliente: 092 121 212» si el aviso es de atención).
+- **Cuándo:** un post suelto, sin carrusel. Como máximo uno cada 9 portadas.
+
 ---
 
 ## 5. Estructura de carrusel (por defecto)
 
-1. **Slide 1, imagen real:** estilos 1, 1b, 2, 3 o 5.
-2. **Slides siguientes, producto con colores de Ser Animal:** estilos 4 o 6, o más fotos de uso. Se alterna verde y blanco entre slides.
+1. **Slide 1, imagen real:** estilos 1, 1b, 2, 3 o 5 (o 7 si el post es de un producto puntual).
+2. **Slides siguientes, producto con colores de Ser Animal:** estilos 4, 6 o 7, o más fotos de uso. Se alterna verde y blanco entre slides.
 3. **Última slide (opcional), cierre:** «Pedilo por WhatsApp: 091 380 000» y la frase de envíos.
+
+Los avisos (estilo 8) van como post de una sola imagen.
 
 Largo: de 2 a 5 slides.
 
@@ -162,6 +187,7 @@ Lo que se ve en el perfil es la primera slide de cada post:
 
 - **Base del feed:** portadas con foto real (estilos 1, 1b, 2, 3 y 5).
 - **Producto héroe (estilo 4):** como máximo una por fila de 3 y nunca dos seguidas.
+- **Fondo claro (estilos 7 y 8):** suman variedad, pero nunca dos seguidas y como máximo 3 de cada 9 portadas. La foto real sigue siendo la base.
 - **Estilos de texto:** no repetir el mismo estilo de portada dos veces seguidas.
 - **Fotos de la misma fila:** que tengan una luz parecida (cálida y natural).
 
@@ -180,6 +206,7 @@ Lo que se ve en el perfil es la primera slide de cada post:
 
 - [ ] La portada es una imagen real o realista.
 - [ ] Los fondos son solo foto, verde o blanco.
+- [ ] No aparece ningún precio de producto, ni en la imagen ni en el posteo.
 - [ ] Las fuentes son solo Nunito y DM Sans.
 - [ ] El texto no tapa caras y respeta los márgenes de seguridad.
 - [ ] El sticker «DESLIZÁ» está en la primera slide del carrusel.

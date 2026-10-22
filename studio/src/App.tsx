@@ -208,12 +208,12 @@ export default function App() {
           <input
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            placeholder="¿De qué querés el carrusel? Ej.: 3 cosas que no sabías de los gatos"
+            placeholder="¿Qué querés publicar? Ej.: 3 cosas que no sabías de los gatos, o un aviso de envíos"
             disabled={generando}
           />
           <select value={cantidad} onChange={(e) => setCantidad(Number(e.target.value))} disabled={generando} title="Cantidad de slides">
-            {[3, 4, 5, 6, 7, 8].map((n) => (
-              <option key={n} value={n}>{n} slides</option>
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+              <option key={n} value={n}>{n === 1 ? "1 slide (post único)" : `${n} slides`}</option>
             ))}
           </select>
           <button type="submit" disabled={generando || !prompt.trim()}>{generando ? "Creando…" : "Crear carrusel"}</button>

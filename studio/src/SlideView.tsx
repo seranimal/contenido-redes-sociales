@@ -28,6 +28,17 @@ function Deslizar({ verde = false }: { verde?: boolean }) {
   return <img className={`deslizar${verde ? " verde" : ""}`} src={`/elementos/deslizar-${verde ? "verde" : "blanco"}.svg`} alt="" />;
 }
 
+// Las palabras entre *asteriscos* se destacan en otro color.
+function Destacado({ texto }: { texto: string }) {
+  return (
+    <>
+      {texto.split(/(\*[^*]+\*)/).map((parte, i) =>
+        parte.startsWith("*") && parte.endsWith("*") && parte.length > 2 ? <em key={i}>{parte.slice(1, -1)}</em> : parte,
+      )}
+    </>
+  );
+}
+
 interface Props {
   slide: Slide;
   /** Foto de la portada, para reutilizarla en el cierre si este no tiene una propia. */
@@ -134,6 +145,47 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
           )}
         </div>
         <img className="iso-esquina" src={slide.fondo === "verde" ? "/brand/isotipo-blanco.png" : "/brand/isotipo-verde.png"} alt="" />
+      </div>
+    );
+  }
+
+  if (tipo === "producto-claro") {
+    return (
+      <div ref={ref} className="slide producto-claro">
+        <div className="pc-texto">
+          <div className="h" style={{ fontSize: tam(slide.titulo, 84, 24) }}>{slide.titulo}</div>
+          {slide.texto && <div className="pc-bajada">{slide.texto}</div>}
+        </div>
+        <div className="pc-foto">
+          {slide.foto ? (
+            <img src={slide.foto.src} alt="" style={{ transform: `scale(${slide.fotoZoom})`, objectPosition: `${slide.fotoX}% ${slide.fotoY}%` }} />
+          ) : (
+            <div className="vacio-foto" style={{ borderRadius: 28 }}>Subí la foto del producto</div>
+          )}
+        </div>
+        {/* En redes nunca se publican precios: el llamado es a pedir por WhatsApp. */}
+        <img className="pc-pedilo" src="/elementos/pastilla-pedilo.svg" alt="Pedilo por WhatsApp" />
+        {conDeslizar ? (
+          <img className="deslizar" src="/elementos/deslizar-verde.svg" alt="" />
+        ) : (
+          <img className="iso-esquina" src="/brand/isotipo-verde.png" alt="" />
+        )}
+      </div>
+    );
+  }
+
+  if (tipo === "aviso") {
+    const verde = slide.fondo === "verde";
+    return (
+      <div ref={ref} className={`slide aviso ${fondo}`}>
+        <img className="aviso-logo" src={verde ? "/brand/logo-blanco.png" : "/brand/logo-verde.png"} alt="Ser Animal" />
+        <div className="aviso-cuerpo">
+          <img className="aviso-etiqueta" src="/elementos/etiqueta-aviso.svg" alt="Aviso" />
+          <div className="h aviso-t" style={{ fontSize: tam(slide.titulo, 100, 34) }}><Destacado texto={slide.titulo} /></div>
+          {slide.texto && <div className="aviso-x">{slide.texto}</div>}
+        </div>
+        <img className="aviso-pie" src="/elementos/pastilla-whatsapp.svg" alt="Pedidos y envíos: 091 380 000" />
+        {conDeslizar && <img className="deslizar" src={`/elementos/deslizar-${verde ? "blanco" : "verde"}.svg`} alt="" />}
       </div>
     );
   }

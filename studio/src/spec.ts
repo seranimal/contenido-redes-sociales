@@ -10,6 +10,8 @@ export const TIPOS_SLIDE = [
   "dato",
   "texto",
   "producto",
+  "producto-claro",
+  "aviso",
   "cierre",
 ] as const;
 
@@ -24,6 +26,8 @@ export const NOMBRE_TIPO: Record<TipoSlide, string> = {
   dato: "Dato con foto",
   texto: "Solo texto",
   producto: "Producto",
+  "producto-claro": "Producto · fondo claro",
+  aviso: "Aviso · solo texto",
   cierre: "Cierre",
 };
 

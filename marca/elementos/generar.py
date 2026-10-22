@@ -241,6 +241,10 @@ def pastillas() -> None:
     pastilla("pastilla-seranimal", "@seranimal", NUNITO, 44, TEXTO, BLANCO, pad=52, alto=96)
     pastilla("pastilla-whatsapp", "Pedidos y envíos: 091 380 000", DMSANS_B, 32, TEXTO, BLANCO, pad=40, alto=80)
     pastilla("pastilla-pedilo", "Pedilo por WhatsApp", NUNITO, 38, VERDE, TEXTO, pad=44, alto=84)
+    pastilla("pastilla-atencion", "Atención al cliente: 092 121 212", DMSANS_B, 32, TEXTO, BLANCO, pad=40, alto=80)
+    # Etiquetas para el estilo «aviso» (solo texto sobre fondo claro o verde).
+    pastilla("etiqueta-aviso", "Aviso", NUNITO, 36, TEXTO, VERDE, pad=40, alto=72)
+    pastilla("etiqueta-novedad", "Novedad", NUNITO, 36, TEXTO, VERDE, pad=40, alto=72)
 
 
 def asistente() -> None:
