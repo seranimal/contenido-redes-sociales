@@ -26,6 +26,7 @@ Seguir siempre `lineamientos/estilos-de-post.md`. Resumen:
 - **Fondos:** solo foto real, verde Ser Animal o blanco, alternándolos.
 - **Tipografías en redes:** solo dos. Nunito 900 como principal (todos los títulos, números y productos) y DM Sans como secundaria (textos chicos). No usar Lobster ni Montserrat.
 - **Carrusel por defecto:** slide 1 con imagen real; después el producto sobre verde o blanco.
+- **Carrusel de producto (el preferido):** portada linda con el producto en uso (mejor con título con profundidad) y segunda slide con la ficha (foto sobre blanco, colores, nombre y descripción). Elegir siempre productos lindos de seranimal.com.uy, sacar los datos de su ficha y pensar portadas creativas. Ejemplo: `posts/2026-11-pechera-y-correa/`.
 - **Estilos de portada:** título con profundidad, título verde, número grande, pregunta enmarcada, producto héroe (cada tanto), foto limpia, ficha con callouts, producto sobre fondo claro, aviso solo texto, y los editoriales al estilo de Petz: título editorial sobre foto (arriba o abajo), pregunta en globos, foto con panel, texto editorial, foto enmarcada, retrato con nombre, cita sobre foto y mosaico de palabras. Más personas con sus mascotas en las fotos. Análisis completo en `lineamientos/referencias/petz-analisis.md`. Cada pilar tiene su etiqueta de serie.
 - **Animaciones:** a la marca le gustan mucho; se ofrecen versiones animadas de los mismos estilos.
 

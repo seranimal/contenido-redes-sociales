@@ -4,6 +4,7 @@ import { z } from "zod";
 export const TIPOS_SLIDE = [
   "portada-numero",
   "portada-titulo",
+  "portada-profundidad",
   "portada-titulo-verde",
   "portada-pregunta",
   "portada-foto",
@@ -20,6 +21,7 @@ export const TIPOS_SLIDE = [
   "texto",
   "producto",
   "producto-claro",
+  "producto-ficha",
   "aviso",
   "cierre",
 ] as const;
@@ -29,6 +31,7 @@ export type TipoSlide = (typeof TIPOS_SLIDE)[number];
 export const NOMBRE_TIPO: Record<TipoSlide, string> = {
   "portada-numero": "Portada · número grande",
   "portada-titulo": "Portada · título blanco",
+  "portada-profundidad": "Portada · título con profundidad",
   "portada-titulo-verde": "Portada · título verde",
   "portada-pregunta": "Portada · pregunta enmarcada",
   "portada-foto": "Portada · foto limpia",
@@ -45,6 +48,7 @@ export const NOMBRE_TIPO: Record<TipoSlide, string> = {
   texto: "Solo texto",
   producto: "Producto",
   "producto-claro": "Producto · fondo claro",
+  "producto-ficha": "Producto · ficha con info",
   aviso: "Aviso · solo texto",
   cierre: "Cierre",
 };
@@ -79,6 +83,8 @@ export const SlideSpec = z.object({
   fondo: z.enum(["foto", "verde", "blanco"]),
   etiqueta: z.enum(ETIQUETAS),
   especie: z.enum(ESPECIES),
+  /** Colores del producto separados por coma (ej. «Negro, Turquesa»), solo en la ficha. */
+  colores: z.string(),
 });
 
 export const CarruselSpec = z.object({

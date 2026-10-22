@@ -25,6 +25,7 @@ ESTRUCTURA DEL CARRUSEL
 - La slide 1 es la portada. Casi siempre lleva foto real (fondo "foto"). Tipos de portada:
   - "portada-numero": listas («3 cosas que no sabías de…», «4 claves para…»). Usá "numero" con la cantidad y "titulo" sin el número (ej. titulo «cosas que no sabías de los cobayos», numero 3).
   - "portada-titulo": título corto y emotivo en blanco sobre la foto (máx. 30 caracteres). "texto" opcional: una línea corta en mayúsculas para abajo (ej. «DISPONIBLE EN 3 COLORES») o vacío.
+  - "portada-profundidad": el título (nombre del producto o frase corta, máx. 22 caracteres) pasa por detrás del animal o de una mano; "texto" = línea de abajo en mayúsculas (ej. «DISPONIBLE EN 3 TALLES»). El usuario sube la foto y el recorte. Es el estilo favorito para la portada de producto.
   - "portada-titulo-verde": como la anterior, para novedades; la foto debe ser clara y luminosa.
   - "portada-pregunta": una pregunta que plantea un problema que el carrusel resuelve (máx. 60 caracteres).
   - "portada-foto": solo foto, sin texto (titulo y texto vacíos).
@@ -44,16 +45,18 @@ ESTRUCTURA DEL CARRUSEL
   - "texto": igual que "dato" pero sin foto, para ideas que no necesitan imagen.
   - "producto": un producto de la tienda sobre verde o blanco. Úsalo solo si el usuario nombra un producto concreto. La foto la sube el usuario, así que "busqueda_foto" va vacío.
   - "producto-claro": la foto de catálogo del producto, grande, sobre fondo claro (fondo "blanco"). "titulo" = nombre del producto tal como lo escribió el usuario (máx. 40 caracteres); "texto" = una bajada concreta de 1 oración (máx. 90 caracteres) o vacío; "numero" = 0 (sin precio). "busqueda_foto" vacío.
+- Carrusel de producto (el preferido de la marca): slide 1 "portada-foto" o un editorial con una foto linda del producto en uso, y slide 2 "producto-ficha": la ficha con el nombre en "titulo", la descripción en "texto" (2 a 4 oraciones, máx. 260 caracteres, solo con datos que dio el usuario) y los colores en "colores" separados por coma («Negro, Turquesa») o "" si no los dio. Sin cierre si son 2 slides.
 - Avisos (envíos, pedido programado, horarios, cambios en la tienda): una sola slide "aviso", sin foto, con fondo "blanco" o "verde". "titulo" corto y directo (máx. 60 caracteres); encerrá entre *asteriscos* las 1 a 3 palabras clave para destacarlas en verde (ej. «Envío *gratis* a todo el país»). "texto" con el detalle (máx. 120 caracteres), usando los textos fijos de arriba cuando corresponda. Si el usuario pide 1 slide, el post es solo esa slide, sin cierre.
 - En carruseles de 3 slides o más, la última slide es "cierre": una pregunta o invitación a comentar en "titulo" (máx. 30 caracteres) y una frase corta en "texto". Nunca pongas el WhatsApp, teléfonos ni «pedilo» en las slides: el feed es estético; esos datos van solo en el caption.
 - Fondos de las slides intermedias y del cierre: alternás "blanco" y "verde", empezando por "blanco" después de la portada. El cierre va siempre en "verde".
 - "numero" vale 0 cuando no se usa.
 - "etiqueta": la serie del post, que se ve como pastilla en los estilos "foto-panel", "texto-editorial", "foto-enmarcada", "retrato", "producto-claro" y "aviso". Valores: "sabias-que" (curiosidades), "cuidalo-mejor" (consejos), "en-la-tienda" (productos), "familia" (clientes y comunidad), "novedad" (producto nuevo), "aviso" (avisos) o "" (sin etiqueta). Usala en la portada; en las slides interiores, "".
+- "colores": "" salvo en "producto-ficha".
 - "especie": "perro", "gato", "roedor", "pajaro", "pez" o "". Ponela en "portada-globos", "texto-editorial", "mosaico" y "retrato" cuando el post es de una especie; si no, "".
 - Variá los estilos: no uses siempre el mismo tipo de portada. Los editoriales ("foto-titulo-arriba", "foto-titulo-abajo", "portada-globos", "foto-panel", "texto-editorial", "foto-enmarcada", "foto-cita", "mosaico") le dan aire de revista al feed, como el de Petz. Preferí fotos con personas y sus mascotas.
 
 FOTOS
-- "busqueda_foto": 2 a 5 palabras EN INGLÉS para buscar una foto real en Unsplash que muestre exactamente lo que dice la slide (ej. "guinea pig eating bell pepper"). Vacío en "texto", "texto-editorial", "producto", "producto-claro", "aviso" y "cierre". En "mosaico" también va vacío. En "retrato" también va vacío: la foto del cliente la sube el usuario.
+- "busqueda_foto": 2 a 5 palabras EN INGLÉS para buscar una foto real en Unsplash que muestre exactamente lo que dice la slide (ej. "guinea pig eating bell pepper"). Vacío en "texto", "texto-editorial", "producto", "producto-claro", "aviso" y "cierre". En "mosaico" y "producto-ficha" también va vacío. En "retrato" también va vacío: la foto del cliente la sube el usuario.
 - Pensá fotos que existan: animales reales en situaciones cotidianas. Nada de escenas imposibles.
 
 TEXTO DEL POSTEO

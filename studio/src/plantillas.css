@@ -49,6 +49,7 @@
 
 /* Portada · título (estilos 1 y 1b) */
 .slide .titulo-arriba { position: absolute; left: 70px; right: 70px; top: 130px; text-align: center; color: #fff; }
+.slide .titulo-arriba.profundo { top: 170px; left: 50px; right: 50px; white-space: nowrap; }
 .slide .titulo-arriba.verde { color: var(--verde); text-shadow: 0 2px 22px rgba(255, 255, 255, 0.55); }
 .slide .linea-abajo {
   position: absolute; left: 70px; right: 70px; bottom: 90px; text-align: center; color: #fff;
@@ -229,3 +230,17 @@
   background-image: linear-gradient(var(--borde) 1.5px, transparent 1.5px), linear-gradient(90deg, var(--borde) 1.5px, transparent 1.5px);
   background-size: 54px 54px; background-position: -1px -1px;
 }
+
+/* Producto · ficha con info (estilo 18): segunda slide del carrusel de producto.
+   Tarjeta blanca sobre verde con la foto del producto, colores, nombre y descripción. */
+.slide .fi-tarjeta {
+  position: absolute; left: 90px; right: 90px; top: 100px; bottom: 100px; border-radius: 44px; background: #fff;
+  display: flex; flex-direction: column; align-items: center; padding: 60px 70px 64px; box-shadow: 0 18px 40px rgba(37, 48, 39, 0.12);
+}
+.slide .fi-foto { flex: 1; width: 100%; min-height: 0; }
+.slide .fi-foto img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+.slide .fi-colores { display: flex; gap: 34px; margin-top: 18px; font-size: 28px; font-weight: 700; color: var(--texto); }
+.slide .fi-color { display: flex; align-items: center; gap: 12px; }
+.slide .fi-punto { width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--borde); }
+.slide .fi-t { margin-top: 34px; color: var(--verde); text-align: center; line-height: 1.05; }
+.slide .fi-x { margin-top: 22px; font-size: 34px; line-height: 1.32; font-weight: 700; color: #4c7300; text-align: center; white-space: pre-line; }

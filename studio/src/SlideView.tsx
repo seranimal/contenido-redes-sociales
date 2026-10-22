@@ -46,6 +46,17 @@ function Etiqueta({ slide, clase, porDefecto = "" }: { slide: Slide; clase: stri
   return <img className={clase} src={`/elementos/etiqueta-${etiqueta}.svg`} alt="" />;
 }
 
+// Muestra de color para la ficha de producto. Nombres en minúscula, sin tildes.
+const MUESTRAS: Record<string, string> = {
+  negro: "#1f1f1f", blanco: "#ffffff", gris: "#9a9a9a", azul: "#2f6fd0", celeste: "#6ec6e6", turquesa: "#3cc4bf",
+  verde: "#4caf50", rojo: "#d5202e", naranja: "#f26b21", rosa: "#f28ab2", fucsia: "#e0218a", violeta: "#8a63b8",
+  lila: "#b39ddb", amarillo: "#f6c945", marron: "#8b5a3c", beige: "#d9c4a3", bordo: "#7b1e2b",
+};
+function muestra(nombre: string) {
+  const clave = nombre.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").split(" ")[0];
+  return MUESTRAS[clave] ?? "#cccccc";
+}
+
 // Cada renglón del título va en su propio globo. Se corta con Enter; si no, cada ~16 letras.
 function renglones(titulo: string) {
   if (titulo.includes("\n")) return titulo.split("\n").map((r) => r.trim()).filter(Boolean);
@@ -93,6 +104,23 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
         <div className={`h titulo-arriba${verde ? " verde" : " sombra"}`} style={{ fontSize: tam(slide.titulo, verde ? 108 : 94, 18) }}>
           {slide.titulo}
         </div>
+        {slide.texto && <div className="h linea-abajo sombra">{slide.texto}</div>}
+        {conDeslizar && (slide.texto ? <div style={{ position: "absolute", right: 0, bottom: 130 }}><Deslizar /></div> : <Deslizar />)}
+      </div>
+    );
+  }
+
+  if (tipo === "portada-profundidad") {
+    // Estilo 1: el título pasa por detrás del sujeto. El recorte se dibuja encima con el mismo encuadre que la foto.
+    return (
+      <div ref={ref} className="slide">
+        <div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div>
+        <div className="h titulo-arriba profundo sombra" style={{ fontSize: tam(slide.titulo, 100, 16), top: slide.numero > 0 ? slide.numero : undefined }}>{slide.titulo}</div>
+        {slide.recorte && (
+          <div className="marco-foto">
+            <img src={slide.recorte} alt="" style={{ objectPosition: `${slide.fotoX}% ${slide.fotoY}%`, transform: `scale(${slide.fotoZoom})` }} />
+          </div>
+        )}
         {slide.texto && <div className="h linea-abajo sombra">{slide.texto}</div>}
         {conDeslizar && (slide.texto ? <div style={{ position: "absolute", right: 0, bottom: 130 }}><Deslizar /></div> : <Deslizar />)}
       </div>
@@ -351,6 +379,36 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
         ) : (
           <img className="iso-esquina" src="/brand/isotipo-verde.png" alt="" />
         )}
+      </div>
+    );
+  }
+
+  if (tipo === "producto-ficha") {
+    const colores = (slide.colores ?? "").split(",").map((c) => c.trim()).filter(Boolean);
+    return (
+      <div ref={ref} className="slide ficha bg-verde">
+        <div className="fi-tarjeta">
+          <div className="fi-foto">
+            {slide.foto ? (
+              <img src={slide.foto.src} alt="" style={{ transform: `scale(${slide.fotoZoom})`, objectPosition: `${slide.fotoX}% ${slide.fotoY}%` }} />
+            ) : (
+              <div className="vacio-foto" style={{ borderRadius: 28 }}>Subí la foto del producto</div>
+            )}
+          </div>
+          {colores.length > 0 && (
+            <div className="fi-colores">
+              {colores.map((c) => (
+                <div key={c} className="fi-color">
+                  <div className="fi-punto" style={{ background: muestra(c) }} />
+                  <div>{c}</div>
+                </div>
+              ))}
+            </div>
+          )}
+          <div className="h fi-t" style={{ fontSize: tam(slide.titulo, 76, 24) }}>{slide.titulo}</div>
+          {slide.texto && <div className="fi-x">{slide.texto}</div>}
+        </div>
+        {conDeslizar && <img className="deslizar" src="/elementos/deslizar-blanco.svg" alt="" />}
       </div>
     );
   }

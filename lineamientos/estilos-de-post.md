@@ -67,7 +67,10 @@ Todos estos elementos están listos en **`marca/elementos/`** (SVG vectorial y P
 - **Qué es:** foto real de uso con el título en Nunito 900 blanco que **pasa por detrás** de un elemento de la foto (una mano, una oreja, la cabeza del perro). Es el efecto que más se destaca.
 - **Título:** Nunito 900 blanco, 88–96 px, una línea, centrado entre y 140 y 240.
 - **Línea inferior (opcional):** Nunito 900 en mayúsculas, blanco, 42–46 px, a lo ancho, cerca de y 1250. Ejemplo: «DISPONIBLE EN 3 COLORES».
-- **Cómo se hace:** se recorta el elemento que va adelante (mano, cabeza) y se coloca encima del texto. Necesita una foto con algo que cruce la zona del título.
+- **Cómo se hace:** se recorta el elemento que va adelante (mano, cabeza, correa) y se coloca encima del texto. Necesita una foto con algo que cruce la zona del título. En el Studio: plantilla «Portada · título con profundidad», con la foto y el recorte (PNG sin fondo del mismo tamaño; se saca con rembg, modelo `isnet-general-use`). La altura del título se ajusta hasta que solo una parte del sujeto (las orejas, la mano) pase por delante y el texto se siga leyendo.
+- **Ejemplo:** `posts/2026-11-pechera-y-correa/`.
+
+![](estilos/1-titulo-con-profundidad-studio.jpg)
 - **Cuándo:** lanzamiento o destaque de un producto con foto de uso.
 
 ### Estilo 1b · Título verde
@@ -224,6 +227,15 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 
 **Una sola indicación para deslizar.** Si la slide lleva el sticker «Deslizá», no se suma ninguna flecha. La flecha en círculo solo va en «foto con panel», en lugar del sticker.
 
+### Estilo 18 · Ficha de producto (segunda slide)
+![](estilos/18-ficha-de-producto.jpg)
+
+- **Qué es:** la slide con la información, después de una portada linda. Fondo verde, tarjeta blanca redondeada (radio 44) y adentro: la foto del producto sobre blanco, los colores disponibles con su muestra, el nombre y la descripción.
+- **Nombre:** Nunito 900 verde Ser Animal, centrado.
+- **Descripción:** DM Sans 700 verde hoja `#4C7300`, centrada, de 2 a 4 oraciones. Solo datos de la ficha de la tienda online: material, talles, para quién es. Nunca precio.
+- **Colores:** muestras redondas con el nombre. Si en la web dice «colores surtidos según stock», se aclara en la descripción.
+- **Foto:** la de la web, recortada y puesta sobre blanco para que no se vea un fondo gris.
+
 ---
 
 ## 5. Estructura de carrusel (por defecto)
@@ -233,6 +245,12 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 3. **Última slide (opcional), cierre:** logo, una pregunta para comentar y una frase corta. Sin teléfono ni «pedilo»: eso va en el texto del posteo.
 
 Los avisos (estilo 8) van como post de una sola imagen.
+
+**Carrusel de producto (el preferido de la marca):** 2 slides.
+1. **Portada linda:** foto real del producto en uso (un perro con la pechera puesta, una mano con el juguete), sola o con título con profundidad (estilo 1) y una línea abajo («DISPONIBLE EN 3 TALLES»).
+2. **Ficha de producto (estilo 18):** foto sobre blanco, colores, nombre y descripción.
+
+**Qué productos mostrar:** siempre productos lindos de la tienda online, que se vean bien en foto (pecheras, correas, camas, juguetes, comederos de diseño). Nada de productos feos o poco vistosos. Los datos se sacan de la ficha de seranimal.com.uy. Pensar ideas creativas para la portada: la foto tiene que dar ganas de tenerlo.
 
 Largo: de 2 a 5 slides.
 

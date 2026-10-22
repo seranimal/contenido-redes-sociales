@@ -3,13 +3,13 @@ import { buscarFotos } from "./api";
 import { ESPECIES, ETIQUETAS, NOMBRE_ESPECIE, NOMBRE_ETIQUETA, NOMBRE_TIPO, TIPOS_SLIDE, type TipoSlide } from "./spec";
 import type { Foto, Slide } from "./tipos";
 
-const CON_NUMERO: TipoSlide[] = ["portada-numero", "dato", "texto"];
+const CON_NUMERO: TipoSlide[] = ["portada-numero", "dato", "texto", "portada-profundidad"];
 const CON_FONDO: TipoSlide[] = ["dato", "texto", "producto", "aviso", "foto-panel", "texto-editorial", "foto-enmarcada"];
 const CON_ETIQUETA: TipoSlide[] = ["foto-titulo-arriba", "foto-titulo-abajo", "foto-panel", "texto-editorial", "foto-enmarcada", "retrato", "producto-claro", "aviso"];
 const CON_ESPECIE: TipoSlide[] = ["portada-globos", "texto-editorial", "mosaico", "retrato"];
 const SIN_BAJADA: TipoSlide[] = ["portada-numero", "portada-pregunta", "portada-globos", "foto-enmarcada"];
 // Fotos de producto: las sube el usuario, no se buscan en Unsplash.
-const DE_PRODUCTO: TipoSlide[] = ["producto", "producto-claro"];
+const DE_PRODUCTO: TipoSlide[] = ["producto", "producto-claro", "producto-ficha"];
 const SIN_TEXTO: TipoSlide[] = ["portada-foto"];
 
 const ETIQUETA_TEXTO: Partial<Record<TipoSlide, string>> = {
@@ -17,6 +17,7 @@ const ETIQUETA_TEXTO: Partial<Record<TipoSlide, string>> = {
   "portada-titulo-verde": "Línea de abajo (opcional)",
   producto: "Bajada",
   "producto-claro": "Bajada (opcional)",
+  "producto-ficha": "Descripción (datos reales del producto, sin precio)",
   aviso: "Texto (opcional)",
   "foto-panel": "Bajada (se ve subrayada, como un enlace)",
   "texto-editorial": "Línea de abajo (opcional)",
@@ -29,6 +30,7 @@ const ETIQUETA_TEXTO: Partial<Record<TipoSlide, string>> = {
 
 const ETIQUETA_TITULO: Partial<Record<TipoSlide, string>> = {
   "producto-claro": "Nombre del producto",
+  "producto-ficha": "Nombre del producto",
   aviso: "Título (lo que va entre *asteriscos* se destaca en verde)",
   "portada-globos": "Título (cada renglón es un globo: cortalos con Enter)",
   "texto-editorial": "Título (lo que va entre *asteriscos* se subraya en verde)",
@@ -142,10 +144,17 @@ export function Inspector({ slide, posicion, total, resultados, onCambiar, onRes
         </label>
       )}
 
+      {slide.tipo === "producto-ficha" && (
+        <label className="campo">
+          <span>Colores (separados por coma: Negro, Turquesa…)</span>
+          <input value={slide.colores ?? ""} onChange={(e) => onCambiar({ colores: e.target.value })} />
+        </label>
+      )}
+
       {CON_NUMERO.includes(slide.tipo) && (
         <label className="campo">
-          <span>Número (0 = sin número)</span>
-          <input type="number" min={0} max={99} value={slide.numero} onChange={(e) => onCambiar({ numero: Number(e.target.value) || 0 })} />
+          <span>{slide.tipo === "portada-profundidad" ? "Altura del título en px (0 = automática; subila hasta que pase por detrás del sujeto)" : "Número (0 = sin número)"}</span>
+          <input type="number" min={0} max={slide.tipo === "portada-profundidad" ? 1200 : 99} value={slide.numero} onChange={(e) => onCambiar({ numero: Number(e.target.value) || 0 })} />
         </label>
       )}
 
@@ -210,6 +219,20 @@ export function Inspector({ slide, posicion, total, resultados, onCambiar, onRes
             <input type="file" accept="image/*" onChange={subir} />
             Subir foto propia
           </label>
+
+          {slide.tipo === "portada-profundidad" && (
+            <label className="subir">
+              <input type="file" accept="image/png" onChange={(e) => {
+                const archivo = e.target.files?.[0];
+                if (!archivo) return;
+                const lector = new FileReader();
+                lector.onload = () => onCambiar({ recorte: String(lector.result) });
+                lector.readAsDataURL(archivo);
+                e.target.value = "";
+              }} />
+              {slide.recorte ? "Cambiar recorte del sujeto (PNG sin fondo)" : "Subir recorte del sujeto (PNG sin fondo, mismo tamaño que la foto)"}
+            </label>
+          )}
 
           {slide.foto && (
             <div className="encuadre">

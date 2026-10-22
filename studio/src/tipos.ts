@@ -17,6 +17,8 @@ export interface Slide extends SlideSpec {
   fotoX: number;
   fotoY: number;
   fotoZoom: number;
+  /** Recorte del sujeto (PNG sin fondo, mismo tamaño que la foto) para el título con profundidad. */
+  recorte?: string | null;
 }
 
 export interface Proyecto {
@@ -39,6 +41,7 @@ export function slideVacio(parcial: Partial<Slide> = {}): Slide {
     fondo: "blanco",
     etiqueta: "",
     especie: "",
+    colores: "",
     foto: null,
     fotoX: 50,
     fotoY: 50,
