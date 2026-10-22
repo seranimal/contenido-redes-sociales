@@ -7,7 +7,7 @@ Guía visual para que cada post y cada portada se vean parte del mismo feed. Las
 ## 1. Principios
 
 1. **Imágenes reales o que luzcan reales.** Fotos propias, de proveedor o generadas con IA (Higgsfield u otra) con aspecto fotográfico. Nada de ilustración ni 3D caricaturesco en las portadas.
-2. **El producto no se inventa.** Si la imagen es de IA, el producto tiene que ser idéntico al real: forma, color, logo y detalles. Siempre se parte de una foto real del producto como referencia.
+2. **El producto no se inventa.** Si la imagen es de IA, el producto tiene que ser idéntico al real en forma, color y detalles (sin los logos: ver punto 10). Siempre se parte de una foto real del producto como referencia.
 3. **Tres fondos posibles:** foto real, verde Ser Animal `#9ECA1B` o blanco (`#FFFFFF` / superficie `#F8FAF4`). Se van mezclando. No se usan otros colores de fondo, como naranja o amarillo.
 4. **Nunca se publican precios** de productos: ni en la imagen ni en el texto del posteo. Los únicos montos que aparecen son los de los textos fijos de envíos ($1.500 / $200) y del pedido programado (5%).
 5. **El feed es estético.** Las imágenes no llevan llamados a la venta: nada de «Pedilo por WhatsApp», teléfonos ni botones. Lo que se ve tiene que ser lindo; el WhatsApp va, si hace falta, en el texto del posteo.
@@ -15,6 +15,7 @@ Guía visual para que cada post y cada portada se vean parte del mismo feed. Las
 7. **El texto nunca tapa la cara del animal.**
 8. **Todo en HD y nítido.** Fotos de al menos 1080 px de lado (ideal 2000 o más), nunca agrandadas. Exportación a 1080×1350 desde el doble de tamaño (supermuestreo), JPG de alta calidad. Si una foto de la tienda viene chica o comprimida: enfoque suave (máscara de enfoque) o escalado con IA; si sigue borrosa, se busca otra.
 9. **Contenido de IA:** cuando la imagen es generada, se activa la etiqueta «Contenido de IA» de Instagram.
+10. **Sin marcas a la vista.** En las fotos no se ven logos ni textos de otras marcas (grabados, etiquetas, estampados): se borran con IA antes de usar la imagen. En los títulos y fichas el producto se nombra por lo que es («Juguete clásico de caucho»), no por la marca. Los productos que son pura marca, como las bolsas de alimento, no se usan en el feed.
 
 ---
 
