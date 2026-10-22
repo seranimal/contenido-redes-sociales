@@ -164,15 +164,20 @@ def logos() -> None:
 # --- Elementos ------------------------------------------------------------------
 
 def deslizar() -> None:
-    """Sticker «Deslizá»: va en la primera slide de todo carrusel, abajo a la derecha (170 px)."""
+    """Sticker «Deslizá»: texto en arco a la izquierda y la mano con la flecha de deslizar.
+    Va en la primera slide de todo carrusel, abajo a la derecha (170 px)."""
     for nombre, color in (("blanco", BLANCO), ("verde", VERDE), ("oscuro", TEXTO)):
-        texto = NUNITO.arco("DESLIZÁ", 26, 85, 88, 56, -90, espaciado=4)
-        flecha = (
-            f'<g fill="none" stroke="{color}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">'
-            '<path d="M54 108 H114"/><path d="M98 92 L114 108 L98 124"/></g>'
+        texto = NUNITO.arco("DESLIZÁ", 25, 85, 85, 64, -150, espaciado=5)
+        mano = (
+            f'<g fill="none" stroke="{color}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">'
+            # Mano con el índice levantado
+            '<path d="M97 118 V80 A8 8 0 0 1 113 80 V104 A7 7 0 0 1 126 106 A7 7 0 0 1 139 112 V127 '
+            'C139 141 130 149 117 149 H108 C100 149 95 145 91 139 L82 125 A7 7 0 0 1 93 117 L97 121"/>'
+            # Flecha curva de deslizar, sobre el dedo
+            '<path d="M126 60 A22 22 0 0 0 86 58"/><path d="M80 47 L85 59 L97 56"/></g>'
         )
         filtro = ' filter="url(#sombra)"' if nombre == "blanco" else ""
-        svg(f"deslizar-{nombre}", 170, 170, f'<g{filtro}><path fill="{color}" d="{texto}"/>{flecha}</g>', defs=SOMBRA if filtro else "")
+        svg(f"deslizar-{nombre}", 170, 170, f'<g{filtro}><path fill="{color}" d="{texto}"/>{mano}</g>', defs=SOMBRA if filtro else "")
 
 
 def lineas() -> None:

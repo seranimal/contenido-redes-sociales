@@ -44,6 +44,7 @@ Todos estos elementos están listos en **`marca/elementos/`** (SVG vectorial y P
 - Posición según estilo: abajo a la derecha (producto héroe, ficha), arriba al centro (pregunta enmarcada) o en pestaña verde arriba a la izquierda (estilo 2b).
 
 **Sticker «Deslizá»**
+- Diseño: el texto en arco a la izquierda y la mano con la flecha de deslizar (el de los posts anteriores de la marca, redibujado en vector).
 - Va en la primera slide de **todo** carrusel, abajo a la derecha, de 150 a 170 px.
 - Blanco sobre foto; verde sobre blanco; blanco sobre verde.
 - Se escribe **DESLIZÁ**, con tilde (voseo, como el resto de la marca). Los posts anteriores dicen «DESLIZA».
