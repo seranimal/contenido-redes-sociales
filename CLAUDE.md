@@ -29,6 +29,12 @@ Seguir siempre `lineamientos/estilos-de-post.md`. Resumen:
 - **Estilos de portada:** título con profundidad, título verde, número grande, pregunta enmarcada, producto héroe (cada tanto), foto limpia y ficha con callouts.
 - **Animaciones:** a la marca le gustan mucho; se ofrecen versiones animadas de los mismos estilos.
 
+## Elementos gráficos (regla fija)
+
+- Usar siempre los elementos de `marca/elementos/` (deslizá, líneas, pestaña, marco, insignias, sellos, callouts, chips, pastillas) y los logos vectoriales de `marca/logo/`. No redibujarlos a mano en cada post. Catálogo: `marca/elementos/catalogo.png`.
+- Si un post necesita un elemento nuevo, sumarlo a `marca/elementos/generar.py`, regenerar SVG/PNG/catálogo y documentarlo en `marca/elementos/README.md`, para que quede disponible para siempre.
+- Todo recurso gráfico que mande el usuario (ilustraciones, animaciones, fotos de marca) se guarda en `marca/` y se sube al repo.
+
 ## Tono de voz
 
 - Cercano, claro y concreto, como hablaría alguien del local.

@@ -35,6 +35,8 @@ Solo dos familias, las mismas del brand board:
 
 ## 3. Elementos fijos
 
+Todos estos elementos están listos en **`marca/elementos/`** (SVG vectorial y PNG), con un catálogo visual en `marca/elementos/catalogo.png`. Se usan siempre esos archivos; no se redibujan a mano.
+
 **Isotipo (la «S»)**
 - Blanco sobre foto o sobre verde; verde sobre blanco.
 - Ancho de 90 a 110 px. Siempre con aire alrededor; no se deforma ni se le agregan sombras.

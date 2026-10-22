@@ -23,23 +23,9 @@ function FotoEncuadrada({ foto, slide, estilo }: { foto: Foto | null; slide: Sli
   );
 }
 
+// Sticker de la biblioteca de marca (marca/elementos/), copiado a /elementos al compilar.
 function Deslizar({ verde = false }: { verde?: boolean }) {
-  const color = verde ? "#9ECA1B" : "#fff";
-  const sombra = verde ? undefined : { filter: "drop-shadow(0 2px 6px rgba(0,0,0,.35))" };
-  return (
-    <svg className={`deslizar${verde ? " verde" : ""}`} viewBox="0 0 170 170" aria-hidden="true">
-      <defs>
-        <path id="arco-deslizar" d="M 30 120 A 62 62 0 0 1 140 52" />
-      </defs>
-      <text fontFamily="Nunito" fontWeight={900} fontSize={25} letterSpacing={4} fill={color} style={sombra}>
-        <textPath href="#arco-deslizar">DESLIZÁ</textPath>
-      </text>
-      <g fill="none" stroke={color} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" style={sombra}>
-        <path d="M 62 112 L 108 112" />
-        <path d="M 92 96 L 108 112 L 92 128" />
-      </g>
-    </svg>
-  );
+  return <img className={`deslizar${verde ? " verde" : ""}`} src={`/elementos/deslizar-${verde ? "verde" : "blanco"}.svg`} alt="" />;
 }
 
 interface Props {
@@ -58,7 +44,7 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
     return (
       <div ref={ref} className="slide">
         <div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div>
-        <div className="pestana"><img src="/brand/isotipo-blanco.png" alt="" /></div>
+        <img className="pestana" src="/elementos/pestana-isotipo.svg" alt="" />
         {conDeslizar && <div style={{ position: "absolute", right: 0, bottom: 280 }}><Deslizar /></div>}
         <div className="banda" />
         <div className="portada-num">
