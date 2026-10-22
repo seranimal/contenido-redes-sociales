@@ -9,10 +9,11 @@ Guía visual para que cada post y cada portada se vean parte del mismo feed. Las
 1. **Imágenes reales o que luzcan reales.** Fotos propias, de proveedor o generadas con IA (Higgsfield u otra) con aspecto fotográfico. Nada de ilustración ni 3D caricaturesco en las portadas.
 2. **El producto no se inventa.** Si la imagen es de IA, el producto tiene que ser idéntico al real: forma, color, logo y detalles. Siempre se parte de una foto real del producto como referencia.
 3. **Tres fondos posibles:** foto real, verde Ser Animal `#9ECA1B` o blanco (`#FFFFFF` / superficie `#F8FAF4`). Se van mezclando. No se usan otros colores de fondo, como naranja o amarillo.
-4. **Nunca se publican precios** de productos: ni en la imagen ni en el texto del posteo. El llamado es «Pedilo por WhatsApp». Los únicos montos que aparecen son los de los textos fijos de envíos ($1.500 / $200) y del pedido programado (5%).
-5. **Un solo acento: el verde.** El resto es blanco y el verde casi negro `#253027`.
-6. **El texto nunca tapa la cara del animal.**
-7. **Contenido de IA:** cuando la imagen es generada, se activa la etiqueta «Contenido de IA» de Instagram.
+4. **Nunca se publican precios** de productos: ni en la imagen ni en el texto del posteo. Los únicos montos que aparecen son los de los textos fijos de envíos ($1.500 / $200) y del pedido programado (5%).
+5. **El feed es estético.** Las imágenes no llevan llamados a la venta: nada de «Pedilo por WhatsApp», teléfonos ni botones. Lo que se ve tiene que ser lindo; el WhatsApp va, si hace falta, en el texto del posteo.
+6. **Un solo acento: el verde.** El resto es blanco y el verde casi negro `#253027`.
+7. **El texto nunca tapa la cara del animal.**
+8. **Contenido de IA:** cuando la imagen es generada, se activa la etiqueta «Contenido de IA» de Instagram.
 
 ---
 
@@ -133,7 +134,7 @@ Todos estos elementos están listos en **`marca/elementos/`** (SVG vectorial y P
 - **Qué es:** la foto de catálogo del producto, grande, sobre el fondo claro de la marca. Limpio y directo, como hacen Petz y otras tiendas grandes. Varía la grilla entre tantas fotos.
 - **Fondo:** superficie `#F8FAF4` con un brillo blanco en el centro. La foto del producto tiene que tener fondo blanco (la de la web sirve): se «multiplica» con el fondo y el blanco desaparece.
 - **Texto:** arriba a la izquierda. Nombre del producto en Nunito 900 `#253027`, 80–86 px; bajada opcional en DM Sans 38 px gris oscuro (qué es o para quién es, sin inventar).
-- **Abajo:** pastilla «Pedilo por WhatsApp» a la izquierda e isotipo verde a la derecha (o el sticker «Deslizá» si es carrusel).
+- **Abajo:** isotipo verde a la derecha (o el sticker «Deslizá» si es carrusel). Nada más: sin llamados a la venta.
 - **Sin precio.** Nunca.
 - **Cuándo:** novedades, reposiciones y productos puntuales. Puede ser portada o slide interior de un carrusel de producto.
 
@@ -146,7 +147,7 @@ Todos estos elementos están listos en **`marca/elementos/`** (SVG vectorial y P
 - **Etiqueta:** pastilla «Aviso» (`marca/elementos/etiqueta-aviso`); para productos nuevos existe «Novedad».
 - **Título:** Nunito 900, 90–100 px, centrado. Las 1 a 3 palabras clave van destacadas: verde hoja `#4C7300` sobre blanco; `#253027` sobre verde.
 - **Texto:** DM Sans 42 px, centrado, con los textos fijos de la marca cuando corresponda.
-- **Abajo:** pastilla «Pedidos y envíos: 091 380 000» (o «Atención al cliente: 092 121 212» si el aviso es de atención).
+- **Abajo:** nada. El dato de contacto, si hace falta, va en el texto del posteo.
 - **Cuándo:** un post suelto, sin carrusel. Como máximo uno cada 9 portadas.
 
 ---
@@ -229,7 +230,7 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 
 1. **Slide 1, imagen real:** estilos 1, 1b, 2, 3, 5, 9, 10, 12, 13, 14, 15 o 16 (o 7 si el post es de un producto puntual; u 11 para una idea fuerte).
 2. **Slides siguientes, producto con colores de Ser Animal:** estilos 4, 6 o 7, o más fotos de uso. Se alterna verde y blanco entre slides.
-3. **Última slide (opcional), cierre:** «Pedilo por WhatsApp: 091 380 000» y la frase de envíos.
+3. **Última slide (opcional), cierre:** logo, una pregunta para comentar y una frase corta. Sin teléfono ni «pedilo»: eso va en el texto del posteo.
 
 Los avisos (estilo 8) van como post de una sola imagen.
 

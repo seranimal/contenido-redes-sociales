@@ -41,7 +41,8 @@ Seguir siempre `lineamientos/estilos-de-post.md`. Resumen:
 - Español rioplatense con voseo: «elegí», «buscá», «sumate».
 - Mayúscula solo al principio de títulos y botones.
 - Decir qué es, para quién es y cómo llega.
-- **Nunca se publican precios** de productos en redes (ni en la imagen ni en el posteo). El llamado es a pedir por WhatsApp. Los únicos montos permitidos son los de los textos fijos de envíos y pedido programado.
+- **Nunca se publican precios** de productos en redes (ni en la imagen ni en el posteo). Los únicos montos permitidos son los de los textos fijos de envíos y pedido programado.
+- **El feed es estético:** las imágenes no llevan «Pedilo por WhatsApp», teléfonos ni llamados a la venta. El WhatsApp va, si hace falta, solo en el texto del posteo.
 - No inventar descuentos, plazos ni datos. Sin exclamaciones de más ni frases vacías.
 
 ## Textos que siempre se escriben igual

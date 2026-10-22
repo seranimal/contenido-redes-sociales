@@ -346,8 +346,6 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
             <div className="vacio-foto" style={{ borderRadius: 28 }}>Subí la foto del producto</div>
           )}
         </div>
-        {/* En redes nunca se publican precios: el llamado es a pedir por WhatsApp. */}
-        <img className="pc-pedilo" src="/elementos/pastilla-pedilo.svg" alt="Pedilo por WhatsApp" />
         {conDeslizar ? (
           <img className="deslizar" src="/elementos/deslizar-verde.svg" alt="" />
         ) : (
@@ -367,7 +365,6 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
           <div className="h aviso-t" style={{ fontSize: tam(slide.titulo, 100, 34) }}><Destacado texto={slide.titulo} /></div>
           {slide.texto && <div className="aviso-x">{slide.texto}</div>}
         </div>
-        <img className="aviso-pie" src="/elementos/pastilla-whatsapp.svg" alt="Pedidos y envíos: 091 380 000" />
         {conDeslizar && <img className="deslizar" src={`/elementos/deslizar-${verde ? "blanco" : "verde"}.svg`} alt="" />}
       </div>
     );
@@ -385,7 +382,6 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
           <div className="marco-foto"><FotoEncuadrada foto={fotoCierre} slide={slide.foto ? slide : { ...slide, fotoX: 50, fotoY: 50, fotoZoom: 1 }} /></div>
         </div>
       )}
-      <div className="cierre-wa">Pedidos y envíos por WhatsApp: <b>091 380 000</b></div>
     </div>
   );
 });

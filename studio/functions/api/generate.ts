@@ -18,7 +18,7 @@ TONO
 
 TEXTOS QUE SIEMPRE SE ESCRIBEN IGUAL
 - Envíos: «Envío gratis a todo el país desde $1.500. En compras menores, $200.»
-- WhatsApp: «Pedidos y envíos: 091 380 000.» y «Atención al cliente: 092 121 212.»
+- WhatsApp: «Pedidos y envíos: 091 380 000.» y «Atención al cliente: 092 121 212.» Solo en el caption, nunca en las imágenes.
 - Pedido programado: «Te avisamos cuando toque reponer. 5% de descuento desde el 2.º pedido.»
 
 ESTRUCTURA DEL CARRUSEL
@@ -43,9 +43,9 @@ ESTRUCTURA DEL CARRUSEL
   - "dato": una idea por slide, con foto. "numero" = número de la idea en la lista (o 0 si no es una lista), "titulo" corto (máx. 40 caracteres) y "texto" de 1 o 2 oraciones (máx. 140 caracteres).
   - "texto": igual que "dato" pero sin foto, para ideas que no necesitan imagen.
   - "producto": un producto de la tienda sobre verde o blanco. Úsalo solo si el usuario nombra un producto concreto. La foto la sube el usuario, así que "busqueda_foto" va vacío.
-  - "producto-claro": la foto de catálogo del producto, grande, sobre fondo claro (fondo "blanco"). "titulo" = nombre del producto tal como lo escribió el usuario (máx. 40 caracteres); "texto" = una bajada concreta de 1 oración (máx. 90 caracteres) o vacío; "numero" = 0 (sin precio: la plantilla ya invita a pedir por WhatsApp). "busqueda_foto" vacío.
+  - "producto-claro": la foto de catálogo del producto, grande, sobre fondo claro (fondo "blanco"). "titulo" = nombre del producto tal como lo escribió el usuario (máx. 40 caracteres); "texto" = una bajada concreta de 1 oración (máx. 90 caracteres) o vacío; "numero" = 0 (sin precio). "busqueda_foto" vacío.
 - Avisos (envíos, pedido programado, horarios, cambios en la tienda): una sola slide "aviso", sin foto, con fondo "blanco" o "verde". "titulo" corto y directo (máx. 60 caracteres); encerrá entre *asteriscos* las 1 a 3 palabras clave para destacarlas en verde (ej. «Envío *gratis* a todo el país»). "texto" con el detalle (máx. 120 caracteres), usando los textos fijos de arriba cuando corresponda. Si el usuario pide 1 slide, el post es solo esa slide, sin cierre.
-- En carruseles de 3 slides o más, la última slide es "cierre": una pregunta o invitación a comentar en "titulo" (máx. 30 caracteres) y una frase corta en "texto". No pongas el WhatsApp en el texto: la plantilla ya lo incluye.
+- En carruseles de 3 slides o más, la última slide es "cierre": una pregunta o invitación a comentar en "titulo" (máx. 30 caracteres) y una frase corta en "texto". Nunca pongas el WhatsApp, teléfonos ni «pedilo» en las slides: el feed es estético; esos datos van solo en el caption.
 - Fondos de las slides intermedias y del cierre: alternás "blanco" y "verde", empezando por "blanco" después de la portada. El cierre va siempre en "verde".
 - "numero" vale 0 cuando no se usa.
 - "etiqueta": la serie del post, que se ve como pastilla en los estilos "foto-panel", "texto-editorial", "foto-enmarcada", "retrato", "producto-claro" y "aviso". Valores: "sabias-que" (curiosidades), "cuidalo-mejor" (consejos), "en-la-tienda" (productos), "familia" (clientes y comunidad), "novedad" (producto nuevo), "aviso" (avisos) o "" (sin etiqueta). Usala en la portada; en las slides interiores, "".
