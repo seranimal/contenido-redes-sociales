@@ -67,7 +67,8 @@ Todos estos elementos están listos en **`marca/elementos/`** (SVG vectorial y P
 - **Qué es:** foto real de uso con el título en Nunito 900 blanco que **pasa por detrás** de un elemento de la foto (una mano, una oreja, la cabeza del perro). Es el efecto que más se destaca.
 - **Título:** Nunito 900 blanco, 88–96 px, una línea, centrado entre y 140 y 240.
 - **Línea inferior (opcional):** Nunito 900 en mayúsculas, blanco, 42–46 px, a lo ancho, cerca de y 1250. Ejemplo: «DISPONIBLE EN 3 COLORES».
-- **Cómo se hace:** se recorta el elemento que va adelante (mano, cabeza, correa) y se coloca encima del texto. Necesita una foto con algo que cruce la zona del título. En el Studio: plantilla «Portada · título con profundidad», con la foto y el recorte (PNG sin fondo del mismo tamaño; se saca con rembg, modelo `isnet-general-use`). La altura del título se ajusta hasta que solo una parte del sujeto (las orejas, la mano) pase por delante y el texto se siga leyendo.
+- **Cómo se hace:** se recorta el elemento que va adelante (mano, cabeza, correa) y se coloca encima del texto. Necesita una foto con algo que cruce la zona del título. En el Studio: plantilla «Portada · título con profundidad», con la foto y el recorte (PNG sin fondo del mismo tamaño; se saca con rembg, modelo `isnet-general-use`). La altura del título se ajusta hasta que solo algo fino pase por delante.
+- **Regla de oro: el título siempre se lee entero.** Por delante pasa algo fino (una correa, un dedo, la punta de una oreja), nunca la cabeza ni algo que tape una palabra. Si tapa, se sube o se baja el título.
 - **Ejemplo:** `posts/2026-11-pechera-y-correa/`.
 
 ![](estilos/1-titulo-con-profundidad-studio.jpg)
