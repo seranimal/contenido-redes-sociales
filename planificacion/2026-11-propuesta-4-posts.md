@@ -1,5 +1,7 @@
 # Propuesta · 4 posts (noviembre 2026)
 
+> **Hecho (octubre):** el 1 (calor) está en `posts/2026-11-calor-y-paseos/`, el 3 (nariz) en `posts/2026-11-nariz-de-tu-perro/` y el primer producto nuevo es la Cama Cuddlar (`posts/2026-11-cama-cuddlar/`). Para el otro producto hay portadas listas en `marca/fotos/ia/` (KONG Classic, rascador torre, juguete palta, Brit Premium, cama túnel).
+>
 > **Actualización:** los carruseles de producto (2 y 4) se cambian por **productos nuevos** que todavía no salieron en el feed. Los de collar WAUDOG y DUCK quedan descartados hasta definir los nuevos. Los consejos (1 y 3) siguen en pie.
 
 Dos carruseles de producto y dos de consejos. Todos siguen `lineamientos/estilos-de-post.md`: la slide 1 es imagen real o realista, después se pasa a verde o blanco, con Nunito + DM Sans. Los cuatro pueden tener versión animada.
