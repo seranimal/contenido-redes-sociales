@@ -1,8 +1,8 @@
 # Pechera y correa
 
 **Formato:** carrusel de 2 slides, 1080×1350.
-- Slide 1: portada con título con profundidad (la correa del husky cruza «Pechera y correa») y «DISPONIBLE EN 3 TALLES».
-- Slide 2: ficha del producto con colores, nombre y descripción.
+- Slide 1: portada con título editorial arriba (estilo 14): «Pechera y correa», sin nada que lo tape, y «Disponible en 3 talles».
+- Slide 2: ficha del producto (estilo 18): los tres colores juntos, nombre, una línea y los datos en pastillas.
 
 **Producto:** Conjunto Correa + Pechera para Perro (seranimal.com.uy). Datos tomados de la web: pechera + correa de seda, talles N1 Mini, N3 Medio y N4 Grande, colores surtidos según stock. Sin precio.
 

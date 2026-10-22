@@ -17,7 +17,7 @@ const ETIQUETA_TEXTO: Partial<Record<TipoSlide, string>> = {
   "portada-titulo-verde": "Línea de abajo (opcional)",
   producto: "Bajada",
   "producto-claro": "Bajada (opcional)",
-  "producto-ficha": "Descripción (datos reales del producto, sin precio)",
+  "producto-ficha": "1.er renglón: descripción corta. Cada renglón siguiente es un dato en pastilla (talles, material…). Sin precio.",
   aviso: "Texto (opcional)",
   "foto-panel": "Bajada (se ve subrayada, como un enlace)",
   "texto-editorial": "Línea de abajo (opcional)",

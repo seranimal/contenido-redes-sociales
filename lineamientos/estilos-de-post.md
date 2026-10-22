@@ -231,11 +231,15 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 ### Estilo 18 · Ficha de producto (segunda slide)
 ![](estilos/18-ficha-de-producto.jpg)
 
-- **Qué es:** la slide con la información, después de una portada linda. Fondo verde, tarjeta blanca redondeada (radio 44) y adentro: la foto del producto sobre blanco, los colores disponibles con su muestra, el nombre y la descripción.
-- **Nombre:** Nunito 900 verde Ser Animal, centrado.
-- **Descripción:** DM Sans 700 verde hoja `#4C7300`, centrada, de 2 a 4 oraciones. Solo datos de la ficha de la tienda online: material, talles, para quién es. Nunca precio.
-- **Colores:** muestras redondas con el nombre. Si en la web dice «colores surtidos según stock», se aclara en la descripción.
-- **Foto:** la de la web, recortada y puesta sobre blanco para que no se vea un fondo gris.
+- **Qué es:** la slide con la información, después de una portada linda. Tiene que verse como un catálogo lindo, no como un folleto: mucho aire y poco texto.
+- **Fondo:** degradé suave de verde claro `#CADC8A` en el centro a verde `#9ECA1B` en los bordes. Tarjeta blanca amplia (a 80 px de los bordes, radio 56) con sombra suave.
+- **Producto:** solo, sin perro, grande y recortado sobre blanco. Si viene en varios colores, los colores juntos y superpuestos, como una familia.
+- **Arriba:** la etiqueta de serie («En la tienda» o «Novedad»).
+- **Colores:** muestras chicas con el nombre, en DM Sans 500.
+- **Nombre:** Nunito 900 `#253027`, centrado.
+- **Descripción:** una sola línea corta en DM Sans 500 gris oscuro.
+- **Datos clave:** de 2 a 4 pastillas chicas (talles, material, «colores según stock»), en verde hoja sobre superficie con borde verde claro.
+- **Siempre:** datos de la ficha de la tienda online, nunca precio.
 
 ---
 
@@ -248,7 +252,7 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 Los avisos (estilo 8) van como post de una sola imagen.
 
 **Carrusel de producto (el preferido de la marca):** 2 slides.
-1. **Portada linda:** foto real del producto en uso (un perro con la pechera puesta, una mano con el juguete), sola o con título con profundidad (estilo 1) y una línea abajo («DISPONIBLE EN 3 TALLES»).
+1. **Portada linda:** foto real del producto en uso (un perro con la pechera puesta, una mano con el juguete), sola, con título editorial (estilo 14) o con título con profundidad (estilo 1) si el sujeto lo permite sin tapar letras, y una línea abajo («Disponible en 3 talles»).
 2. **Ficha de producto (estilo 18):** foto sobre blanco, colores, nombre y descripción.
 
 **Qué productos mostrar:** siempre productos lindos de la tienda online, que se vean bien en foto (pecheras, correas, camas, juguetes, comederos de diseño). Nada de productos feos o poco vistosos. Los datos se sacan de la ficha de seranimal.com.uy. Pensar ideas creativas para la portada: la foto tiene que dar ganas de tenerlo.

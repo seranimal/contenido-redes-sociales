@@ -385,9 +385,12 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
 
   if (tipo === "producto-ficha") {
     const colores = (slide.colores ?? "").split(",").map((c) => c.trim()).filter(Boolean);
+    // Primer renglón del texto: descripción corta. Los demás: datos clave en pastillas.
+    const [descripcion, ...datos] = slide.texto.split("\n").map((r) => r.trim()).filter(Boolean);
     return (
-      <div ref={ref} className="slide ficha bg-verde">
+      <div ref={ref} className="slide ficha">
         <div className="fi-tarjeta">
+          <Etiqueta slide={slide} clase="fi-etiqueta" />
           <div className="fi-foto">
             {slide.foto ? (
               <img src={slide.foto.src} alt="" style={{ transform: `scale(${slide.fotoZoom})`, objectPosition: `${slide.fotoX}% ${slide.fotoY}%` }} />
@@ -405,8 +408,13 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
               ))}
             </div>
           )}
-          <div className="h fi-t" style={{ fontSize: tam(slide.titulo, 76, 24) }}>{slide.titulo}</div>
-          {slide.texto && <div className="fi-x">{slide.texto}</div>}
+          <div className="h fi-t" style={{ fontSize: tam(slide.titulo, 72, 22) }}>{slide.titulo}</div>
+          {descripcion && <div className="fi-x">{descripcion}</div>}
+          {datos.length > 0 && (
+            <div className="fi-datos">
+              {datos.map((d) => <div key={d} className="fi-dato">{d}</div>)}
+            </div>
+          )}
         </div>
         {conDeslizar && <img className="deslizar" src="/elementos/deslizar-blanco.svg" alt="" />}
       </div>
