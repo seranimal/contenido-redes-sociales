@@ -2,7 +2,7 @@
 
 - **Formato:** carrusel de 5 slides, 1080×1350.
 - **Estilos:** portada con número grande abajo (2b); datos sobre blanco, verde y blanco; cierre sobre verde.
-- **Estado:** diseño listo en `fuente/`. Faltan las fotos (Unsplash bloqueado por la red de la sesión).
+- **Estado:** listo para publicar (`slide-01.jpg` … `slide-05.jpg`).
 
 ## Slides
 
@@ -32,13 +32,11 @@ Pedidos y envíos por WhatsApp: 091 380 000.
 
 ## Fotos (Unsplash, licencia libre para uso comercial)
 
-Guardar en `fuente/assets/` con estos nombres y correr `node fuente/render.js .`:
-
-| Archivo | Candidatas (id de Unsplash) |
+| Slide | Foto |
 |---|---|
-| `foto-portada.jpg` | `-W5Si167uvM` (primer plano de la cara), `VJGBwaB57Fg` |
-| `foto-vitamina-c.jpg` | `wil4P_k849I` (comiendo verduras), `-RxeyDHezZQ` |
-| `foto-dientes.jpg` | `pq6BpDFN-5I` (comiendo pasto), `AVpl8_fkdGk` |
-| `foto-salto.jpg` | `5SxtORD_eZ8`, `gfWOXEJo8ak` (pareja de cobayos) |
+| 1 y 5 · portada y cierre | Amjith S · https://unsplash.com/photos/VJGBwaB57Fg |
+| 2 · vitamina C | Anna Khromova · https://unsplash.com/photos/wil4P_k849I |
+| 3 · dientes | Pete F · https://unsplash.com/photos/pq6BpDFN-5I |
+| 4 · felicidad | Pete F · https://unsplash.com/photos/gfWOXEJo8ak |
 
-Las candidatas todavía no se vieron en grande: elegir la final al descargarlas.
+Para volver a generar las slides: `node fuente/render.js .` desde esta carpeta.
