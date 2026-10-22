@@ -1,8 +1,8 @@
 # ¿Hace demasiado calor para pasear?
 
-**Pilar:** Cuidalo mejor (viernes). **Formato:** carrusel de 5 slides, 1080×1350.
+**Pilar:** Consejos (viernes). **Formato:** carrusel de 5 slides, 1080×1350.
 1. Pregunta enmarcada (estilo 3) sobre foto.
-2. Texto editorial (estilo 11) con etiqueta «Cuidalo mejor»: la prueba de los 7 segundos.
+2. Texto editorial (estilo 11) con etiqueta «Consejos»: la prueba de los 7 segundos.
 3. Dato con foto, verde: el horario.
 4. Dato con foto, blanco: las señales.
 5. Cierre verde: «Guardalo para el verano».

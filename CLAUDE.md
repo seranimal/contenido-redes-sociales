@@ -46,6 +46,7 @@ Seguir siempre `lineamientos/estilos-de-post.md`. Resumen:
 - **Nunca se publican precios** de productos en redes (ni en la imagen ni en el posteo). Los únicos montos permitidos son los de los textos fijos de envíos y pedido programado.
 - **Sin marcas a la vista:** ni logos ni textos de otras marcas en las fotos (se borran con IA) y, en títulos y fichas, el producto se nombra por lo que es, no por la marca. Bolsas de alimento y productos que son pura marca no van al feed.
 - **El feed es estético:** las imágenes no llevan «Pedilo por WhatsApp», teléfonos ni llamados a la venta. El WhatsApp va, si hace falta, solo en el texto del posteo.
+- Nunca retar ni juzgar al dueño: nada de «Cuidalo mejor», «¿Lo estás haciendo bien?» ni frases que den a entender que no cuida a su mascota. Los consejos se dan en positivo.
 - No inventar descuentos, plazos ni datos. Sin exclamaciones de más ni frases vacías.
 
 ## Textos que siempre se escriben igual

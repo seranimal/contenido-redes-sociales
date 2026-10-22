@@ -39,8 +39,7 @@ ESPECIES = {
 }
 PILARES = {
     "sabias-que": "¿Sabías que…?",
-    "cuidalo-mejor": "Cuidalo mejor",
-    "en-la-tienda": "En la tienda",
+    "consejos": "Consejos",
     "familia": "La familia Ser Animal",
 }
 SOMBRA = '<filter id="sombra" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity=".35"/></filter>'

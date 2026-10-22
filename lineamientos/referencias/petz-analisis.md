@@ -99,7 +99,7 @@ En la columna «Ser Animal» va el estilo nuestro que lo resuelve (número de `e
 2. Pregunta en globos.
 3. Texto editorial (¿Sabías que…?).
 4. Retrato con nombre (La familia Ser Animal).
-5. Foto con panel (Cuidalo mejor).
+5. Foto con panel (Consejos).
 6. Producto en uso, sin texto (foto de Higgsfield).
 7. Foto enmarcada.
 8. Producto sobre fondo claro.

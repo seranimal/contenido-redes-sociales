@@ -1,6 +1,6 @@
 # Juguete palta con catnip
 
-**Pilar:** En la tienda. **Formato:** carrusel de 3 slides, 1080×1350.
+**Pilar:** Productos. **Formato:** carrusel de 3 slides, 1080×1350.
 1. Portada con título editorial abajo (estilo 15): «Una palta *para tu gato*» + «Con bola de catnip natural». Imagen de Higgsfield (Nano Banana Pro) con la foto real como referencia; se borró el texto impreso del juguete.
 2. Ficha de producto (estilo 18), sin texto de marca en la foto.
 3. Título editorial arriba sobre foto real (estilo 14), etiqueta «¿Sabías que…?»: «El catnip *no le hace efecto* a todos los gatos». Foto: Mikhail Volkov (Unsplash).

@@ -1,6 +1,6 @@
 # Cama Cuddlar
 
-**Pilar:** En la tienda (miércoles). Reemplaza a uno de los productos del plan de noviembre. **Formato:** carrusel de 2 slides, 1080×1350.
+**Pilar:** Productos (miércoles). Reemplaza a uno de los productos del plan de noviembre. **Formato:** carrusel de 2 slides, 1080×1350.
 1. Portada con título verde (estilo 1b): «Su lugar favorito» y «DISPONIBLE EN 3 TAMAÑOS». Imagen generada con Higgsfield (Nano Banana Pro) usando la foto real de la cama como referencia.
 2. Ficha de producto (estilo 18).
 

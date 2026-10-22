@@ -162,7 +162,7 @@ Todos estos elementos están listos en **`marca/elementos/`** (SVG vectorial y P
 
 Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca de Ser Animal: verde, Nunito 900, DM Sans y los personajes de especie. Le dan al feed un aire de revista: mucho aire, globos y tarjetas blancas, palabras subrayadas y etiquetas de serie. Elementos nuevos: `etiqueta-<pilar>`, `flecha-circulo-*`, `flecha-linea-*` y `personaje-<especie>`.
 
-**Etiquetas de serie.** Cada pilar tiene su pastilla (`etiqueta-sabias-que`, `etiqueta-cuidalo-mejor`, `etiqueta-familia`), como «Guia de Raças» o «Assinatura Petz». Va arriba a la izquierda o arriba del título. Así el seguidor reconoce la serie de un vistazo. **Los posts de producto no llevan etiqueta:** nunca se pone «En la tienda» en las imágenes (solo «Novedad» si el producto es nuevo).
+**Etiquetas de serie.** Cada pilar tiene su pastilla (`etiqueta-sabias-que`, `etiqueta-consejos`, `etiqueta-familia`), como «Guia de Raças» o «Assinatura Petz». Va arriba a la izquierda o arriba del título. Así el seguidor reconoce la serie de un vistazo. **Nunca «Cuidalo mejor»** ni nada que suene a reto al dueño: la serie de consejos se llama «Consejos». **Los posts de producto no llevan etiqueta:** nunca se pone «En la tienda» en las imágenes (solo «Novedad» si el producto es nuevo).
 
 ### Estilo 9 · Pregunta en globos
 ![](estilos/9-pregunta-en-globos.jpg)
