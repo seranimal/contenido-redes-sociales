@@ -1,0 +1,4 @@
+# Copiar como .dev.vars para desarrollo local (no se sube al repo).
+ANTHROPIC_API_KEY=
+UNSPLASH_ACCESS_KEY=
+APP_PASSWORD=

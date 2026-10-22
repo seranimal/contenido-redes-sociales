@@ -49,3 +49,7 @@ Seguir siempre `lineamientos/estilos-de-post.md`. Resumen:
 - Feed de Instagram: 1080×1350 (4:5). Reels e historias: 1080×1920 (9:16).
 - Cada post nuevo va en `posts/AAAA-MM-nombre-del-post/` con archivo final, `portada.jpg`, `texto.md` y `fuente/`.
 - Las animaciones se arman en HTML y se renderizan a MP4 con Playwright + ffmpeg; ver `posts/2026-10-post-animado-marca/fuente/` como ejemplo.
+
+## Ser Animal Studio (`studio/`)
+
+Web propia para crear carruseles con IA (React + Vite en Cloudflare Pages; funciones en `studio/functions/`). Las plantillas de slide están en `studio/src/SlideView.tsx` y `studio/src/plantillas.css`, y las reglas que recibe Claude en `studio/functions/api/generate.ts`: si cambian los lineamientos de marca, actualizar también esos archivos. Antes de subir cambios, correr `npm run build && npm run typecheck` dentro de `studio/`.

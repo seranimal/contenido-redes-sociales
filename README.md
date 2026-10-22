@@ -12,6 +12,7 @@ Planificación y creación de contenido para las redes de Ser Animal (@seranimal
 | `plantillas/` | Plantillas reutilizables para cada tipo de post. |
 | `posts/` | Un subdirectorio por post: `AAAA-MM-nombre-del-post/`, con el archivo final, la portada y la fuente editable. |
 | `referencias/` | Capturas del feed actual y otras referencias visuales. |
+| `studio/` | Ser Animal Studio: web para crear carruseles con IA (ver `studio/README.md`). |
 
 ## Cada post lleva
 
