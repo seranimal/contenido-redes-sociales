@@ -1,0 +1,415 @@
+<title>Ser Animal en Instagram</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Nunito:wght@800;900&display=swap">
+<style>
+  /* Guía de marca: bandas a lo ancho (verde, superficie, oscuro) con contenido centrado a 1120 px. */
+  :root {
+    --verde: #9ECA1B;
+    --verde-claro: #CADC8A;
+    --verde-hoja: #4C7300;
+    --tinta: #253027;
+    --gris: #444D45;
+    --fondo: #F8FAF4;
+    --papel: #FFFFFF;
+    --borde: #E5E9DE;
+    --suave: #EEF2E6;
+    --sobre-verde: #253027;
+    --display: "Nunito", "Arial Rounded MT Bold", system-ui, sans-serif;
+    --texto: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    /* Maqueta del teléfono: siempre en claro, como la app de Instagram por defecto. */
+    --ig-bg: #FFFFFF;
+    --ig-tinta: #0C1014;
+    --ig-gris: #737373;
+    --ig-borde: #DBDBDB;
+    --ig-boton: #EFEFEF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --tinta: #E9F0DC; --gris: #B5C0AE; --fondo: #161D17; --papel: #1F2820; --borde: #33402F;
+      --suave: #243024; --verde-hoja: #B6DA55; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --tinta: #E9F0DC; --gris: #B5C0AE; --fondo: #161D17; --papel: #1F2820; --borde: #33402F;
+    --suave: #243024; --verde-hoja: #B6DA55; color-scheme: dark;
+  }
+  body { background: var(--fondo); color: var(--tinta); font: 400 16px/1.55 var(--texto); }
+  * { box-sizing: border-box; }
+  img, video { max-width: 100%; display: block; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 900; line-height: 1.05; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  a { color: var(--verde-hoja); }
+  .banda { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .ancho { max-width: 1120px; margin: 0 auto; }
+  .seccion { padding-block: 72px; }
+  .etiqueta { font: 700 12px/1 var(--texto); letter-spacing: 0.14em; text-transform: uppercase; color: var(--verde-hoja); }
+  .titulo-seccion { display: grid; gap: 10px; margin-bottom: 36px; max-width: 64ch; }
+  .titulo-seccion h2 { font-size: clamp(32px, 5vw, 52px); }
+  .titulo-seccion p { color: var(--gris); font-size: 17px; }
+
+  /* Portada */
+  .portada { background: var(--verde); color: var(--sobre-verde); }
+  .portada .ancho { padding-block: 56px 64px; display: grid; gap: 28px; }
+  .portada img.logo { width: min(320px, 70%); }
+  .portada h1 { font-size: clamp(44px, 8vw, 96px); max-width: 12ch; }
+  .portada p { font-size: 19px; max-width: 52ch; }
+  .indice { display: flex; flex-wrap: wrap; gap: 8px; }
+  .indice a { color: var(--sobre-verde); background: rgba(255, 255, 255, 0.55); text-decoration: none; font-weight: 700; font-size: 14px; padding: 9px 16px; border-radius: 999px; }
+  .indice a:hover, .indice a:focus-visible { background: #fff; outline: none; }
+
+  /* Perfil */
+  .perfil { display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr); gap: 56px; align-items: start; }
+  .telefono { background: var(--ig-bg); color: var(--ig-tinta); border-radius: 44px; border: 10px solid #1B1F1C; box-shadow: 0 30px 60px rgba(20, 30, 20, 0.22); overflow: hidden; font-family: -apple-system, "Segoe UI", system-ui, sans-serif; font-size: 13px; }
+  .tel-barra { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px 6px; font-weight: 700; font-size: 17px; }
+  .tel-barra .verif { display: inline-grid; place-items: center; width: 15px; height: 15px; border-radius: 50%; background: #0095F6; color: #fff; font-size: 10px; margin-left: 4px; vertical-align: 1px; }
+  .tel-cabecera { display: grid; grid-template-columns: 82px 1fr; gap: 18px; align-items: center; padding: 8px 16px; }
+  .avatar { width: 82px; height: 82px; border-radius: 50%; background: var(--verde); display: grid; place-items: center; }
+  .avatar img { width: 52px; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; line-height: 1.2; }
+  .stats b { display: block; font-size: 15px; }
+  .stats span { color: var(--ig-tinta); font-size: 12px; }
+  .bio { padding: 4px 16px 10px; display: grid; gap: 1px; line-height: 1.35; }
+  .bio .nombre { font-weight: 700; }
+  .bio .categoria { color: var(--ig-gris); }
+  .bio .enlace { color: #00376B; font-weight: 600; }
+  .tel-botones { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; padding: 0 16px 12px; }
+  .tel-botones span { background: var(--ig-boton); border-radius: 8px; text-align: center; padding: 7px 0; font-weight: 600; }
+  .destacadas { display: flex; gap: 12px; padding: 4px 16px 14px; overflow-x: auto; }
+  .destacada { flex: none; width: 62px; text-align: center; font-size: 11px; }
+  .destacada .circulo { width: 62px; height: 62px; border-radius: 50%; border: 1px solid var(--ig-borde); padding: 3px; margin-bottom: 4px; }
+  .destacada .circulo div { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; display: grid; place-items: center; background: #F8FAF4; border: 2px solid var(--verde); }
+  .destacada .circulo div.relleno { background: var(--verde); border-color: var(--verde); }
+  .destacada img { width: 120%; max-width: none; }
+  .destacada .circulo div.relleno svg { width: 26px; height: 26px; }
+  .tel-pestanas { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ig-borde); }
+  .tel-pestanas span { text-align: center; padding: 9px 0; color: var(--ig-gris); }
+  .tel-pestanas span.activa { color: var(--ig-tinta); border-bottom: 1.5px solid var(--ig-tinta); }
+  .grilla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .grilla img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+
+  .reglas { display: grid; gap: 28px; min-width: 0; }
+  .regla { display: grid; gap: 8px; }
+  .regla h3 { font-size: 24px; }
+  .regla p, .regla li { color: var(--gris); }
+  .regla ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+  .copia { background: var(--papel); border: 1px solid var(--borde); border-radius: 16px; padding: 16px 18px; display: grid; gap: 10px; }
+  .copia pre { margin: 0; white-space: pre-wrap; font: 500 15px/1.5 var(--texto); color: var(--tinta); }
+  .copia button { justify-self: start; font: 700 14px var(--texto); background: var(--tinta); color: var(--fondo); border: 0; border-radius: 999px; padding: 9px 18px; cursor: pointer; }
+  .copia button:focus-visible { outline: 3px solid var(--verde); outline-offset: 2px; }
+  .ritmo { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; max-width: 360px; }
+  .ritmo span { font: 700 12px var(--texto); text-align: center; padding: 10px 4px; border-radius: 10px; background: var(--suave); color: var(--tinta); }
+  .ritmo span.v { background: var(--verde); color: var(--sobre-verde); }
+
+  /* Pilares */
+  .pilares { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .pilar { background: var(--papel); border: 1px solid var(--borde); border-radius: 28px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+  .pilar img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .pilar div { padding: 18px 20px 22px; display: grid; gap: 8px; align-content: start; }
+  .pilar h3 { font-size: 24px; }
+  .pilar .frec { font: 700 13px var(--texto); color: var(--verde-hoja); }
+  .pilar p { color: var(--gris); font-size: 15px; }
+  .ejemplo { margin-top: 56px; display: grid; gap: 14px; }
+  .ejemplo h3 { font-size: 26px; }
+  .ejemplo p.nota { color: var(--gris); }
+  .tira { display: grid; grid-template-columns: repeat(5, minmax(150px, 1fr)); gap: 10px; overflow-x: auto; padding-bottom: 6px; }
+  .tira img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; }
+
+  /* Calendario */
+  .semana { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
+  .dia { border-radius: 16px; padding: 14px 12px; min-height: 132px; display: grid; align-content: start; gap: 6px; background: var(--papel); border: 1px solid var(--borde); }
+  .dia b { font: 900 15px var(--display); }
+  .dia span { font-size: 13px; color: var(--gris); line-height: 1.35; }
+  .dia.post { background: var(--verde); border-color: var(--verde); }
+  .dia.post b, .dia.post span { color: var(--sobre-verde); }
+
+  /* Brand assets */
+  .oscura { background: #253027; color: #F8FAF4; }
+  .oscura .etiqueta { color: var(--verde); }
+  .oscura .titulo-seccion p { color: #C9D3C2; }
+  .carpetas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+  .carpeta { display: grid; gap: 10px; min-width: 0; }
+  .carpeta .vista { aspect-ratio: 1; border-radius: 16px; overflow: hidden; display: grid; place-items: center; position: relative; }
+  .carpeta .nombre { font: 700 15px var(--texto); display: flex; align-items: center; gap: 8px; color: #F8FAF4; }
+  .carpeta .ruta { font: 400 12px/1.3 ui-monospace, "SF Mono", Menlo, monospace; color: #9FAE98; overflow-wrap: anywhere; }
+  .v-logo { background: #9ECA1B; } .v-logo img { width: 78%; }
+  .v-colores { display: grid !important; grid-template-columns: 2fr 1fr 1fr; place-items: stretch !important; }
+  .v-colores div { display: flex; align-items: flex-end; padding: 10px; font: 700 10px var(--texto); letter-spacing: 0.08em; }
+  .v-tipo { background: #F8FAF4; color: #253027; display: grid !important; place-content: center; gap: 2px; text-align: center; }
+  .v-tipo b { font: 900 76px/0.9 "Nunito", sans-serif; letter-spacing: -0.03em; }
+  .v-tipo span { font: 500 14px "DM Sans", sans-serif; }
+  .v-ilus { background: #F8FAF4; grid-template-columns: repeat(3, 1fr); padding: 10px; gap: 4px; }
+  .v-ilus img { width: 100%; }
+  .v-elem { background: #F8FAF4; display: grid !important; grid-template-columns: 1fr 1fr; place-items: center; padding: 14px; gap: 6px; }
+  .v-elem img { max-height: 70px; width: auto; }
+  .v-anim { background: #FAF8F6; } .v-anim video { width: 100%; height: 100%; object-fit: cover; }
+  .v-foto img { width: 100%; height: 100%; object-fit: cover; }
+  .v-apli { background: #CADC8A; } .v-apli img { width: 58%; border-radius: 8px; box-shadow: 0 14px 30px rgba(37, 48, 39, 0.25); }
+
+  /* Checklist */
+  .checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 28px; margin: 0; padding: 0; list-style: none; }
+  .checks li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; padding: 12px 0; border-bottom: 1px solid var(--borde); }
+  .checks li::before { content: ""; width: 22px; height: 22px; border-radius: 7px; border: 2px solid var(--verde); margin-top: 1px; }
+  .pie { padding-block: 40px; color: var(--gris); font-size: 14px; border-top: 1px solid var(--borde); }
+
+  @media (max-width: 900px) {
+    .perfil { grid-template-columns: minmax(0, 1fr); }
+    .telefono { max-width: 400px; width: 100%; margin: 0 auto; }
+    .pilares, .carpetas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .semana { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .checks { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .seccion { padding-block: 52px; }
+    .pilares { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) { video { animation: none; } }
+</style>
+
+<header class="portada banda">
+  <div class="ancho">
+    <img class="logo" src="img/logo-blanco.svg" alt="Ser Animal">
+    <h1>Así se ve Ser Animal en Instagram</h1>
+    <p>Cómo tiene que verse el perfil, de qué hablamos, con qué ritmo publicamos y dónde están todos los recursos de marca. Todo lo de esta guía ya está en el repositorio <b>contenido-redes-sociales</b>.</p>
+    <nav class="indice" aria-label="Secciones">
+      <a href="#perfil">El perfil</a>
+      <a href="#pilares">Pilares de contenido</a>
+      <a href="#semana">La semana</a>
+      <a href="#assets">Brand assets</a>
+      <a href="#antes">Antes de publicar</a>
+    </nav>
+  </div>
+</header>
+
+<section class="banda seccion" id="perfil">
+  <div class="ancho">
+    <div class="titulo-seccion">
+      <span class="etiqueta">01 · El perfil</span>
+      <h2>La cuenta, de un vistazo</h2>
+      <p>Así tiene que verse el perfil de @seranimal: foto de perfil verde, bio clara, destacadas por especie y una grilla donde mandan las fotos reales.</p>
+    </div>
+
+    <div class="perfil">
+      <div class="telefono" aria-label="Maqueta del perfil de Instagram de Ser Animal">
+        <div class="tel-barra"><span>seranimal<span class="verif" aria-hidden="true">✓</span></span><span aria-hidden="true">≡</span></div>
+        <div class="tel-cabecera">
+          <div class="avatar"><img src="img/isotipo-blanco.svg" alt=""></div>
+          <div class="stats"><div><b>—</b><span>publicaciones</span></div><div><b>—</b><span>seguidores</span></div><div><b>—</b><span>seguidos</span></div></div>
+        </div>
+        <div class="bio">
+          <span class="nombre">Ser Animal · Tienda de mascotas</span>
+          <span class="categoria">Tienda de mascotas</span>
+          <span>Todo para perros, gatos, roedores, pájaros y peces 🐾</span>
+          <span>Envío gratis a todo el país desde $1.500</span>
+          <span>Pedidos por WhatsApp: 091 380 000</span>
+          <span class="enlace">seranimal.com.uy</span>
+        </div>
+        <div class="tel-botones"><span>Seguir</span><span>Mensaje</span><span>WhatsApp</span></div>
+        <div class="destacadas">
+          <div class="destacada"><div class="circulo"><div><img src="img/esp-perro.png" alt=""></div></div>Perros</div>
+          <div class="destacada"><div class="circulo"><div><img src="img/esp-gato.png" alt=""></div></div>Gatos</div>
+          <div class="destacada"><div class="circulo"><div><img src="img/esp-roedor.png" alt=""></div></div>Roedores</div>
+          <div class="destacada"><div class="circulo"><div><img src="img/esp-pajaro.png" alt=""></div></div>Pájaros</div>
+          <div class="destacada"><div class="circulo"><div><img src="img/esp-pez.png" alt=""></div></div>Peces</div>
+          <div class="destacada"><div class="circulo"><div class="relleno"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg></div></div>Envíos</div>
+          <div class="destacada"><div class="circulo"><div><img src="img/asistente.png" alt="" style="width:100%"></div></div>Pedidos</div>
+        </div>
+        <div class="tel-pestanas"><span class="activa">▦</span><span>▷</span><span>◫</span></div>
+        <div class="grilla">
+          <img src="img/p1-calor.jpg" alt="Portada: ¿Hace demasiado calor para pasear?">
+          <img src="img/p2-cobayos.jpg" alt="Portada: 3 cosas que no sabías de los cobayos">
+          <img src="img/p3-comunidad.jpg" alt="Portada: Mascota de la semana">
+          <img src="img/p4-producto.jpg" alt="Portada: foto limpia de un perro jugando con una soga">
+          <img src="img/p5-gatos.jpg" alt="Portada: 5 señales de que tu gato confía en vos">
+          <img src="img/p6-envios.jpg" alt="Portada: Te lo llevamos a casa">
+          <img src="img/p7-peces.jpg" alt="Portada: ¿Vas a armar tu primera pecera?">
+          <img src="img/p8-pajaros.jpg" alt="Portada: 3 claves para la jaula de tu periquito">
+          <img src="img/p9-juegos.jpg" alt="Portada: Juegos para días de lluvia">
+        </div>
+      </div>
+
+      <div class="reglas">
+        <div class="regla">
+          <h3>Bio</h3>
+          <p>Qué es, para quién y cómo llega. Sin frases vacías. Máximo 150 caracteres.</p>
+          <div class="copia">
+            <pre id="bio-texto">Todo para perros, gatos, roedores, pájaros y peces 🐾
+Envío gratis a todo el país desde $1.500
+Pedidos por WhatsApp: 091 380 000</pre>
+            <button type="button" id="copiar-bio">Copiar bio</button>
+          </div>
+          <ul>
+            <li><b>Nombre:</b> «Ser Animal · Tienda de mascotas». Así también aparece al buscar «tienda de mascotas».</li>
+            <li><b>Categoría:</b> Tienda de mascotas.</li>
+            <li><b>Enlace:</b> seranimal.com.uy.</li>
+            <li><b>Foto de perfil:</b> isotipo blanco sobre círculo verde. Nunca el logo completo: en chico no se lee.</li>
+          </ul>
+        </div>
+        <div class="regla">
+          <h3>Destacadas</h3>
+          <p>Una por especie, con su ilustración de marca sobre fondo claro y borde verde, más dos de servicio en verde lleno: <b>Envíos</b> y <b>Pedidos</b>, con el perrito asistente. Siempre en este orden.</p>
+        </div>
+        <div class="regla">
+          <h3>La grilla</h3>
+          <ul>
+            <li>La base son las portadas con foto real.</li>
+            <li>Nunca dos portadas seguidas con el mismo estilo.</li>
+            <li>Como máximo un producto héroe sobre verde por fila.</li>
+            <li>El perfil recorta las portadas a 3:4: el título y el sticker «Deslizá» van dentro del margen de seguridad.</li>
+          </ul>
+          <div class="ritmo" aria-label="Ejemplo de ritmo de estilos en la grilla">
+            <span class="v">Pregunta</span><span>Número</span><span class="v">Título verde</span>
+            <span>Foto limpia</span><span class="v">Número</span><span>Título</span>
+            <span class="v">Pregunta</span><span>Número</span><span class="v">Título</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="banda seccion" id="pilares" style="background: var(--papel); border-block: 1px solid var(--borde);">
+  <div class="ancho">
+    <div class="titulo-seccion">
+      <span class="etiqueta">02 · Pilares de contenido</span>
+      <h2>De qué hablamos</h2>
+      <p>Cuatro temas fijos. Cada post entra en uno; si no entra en ninguno, no va.</p>
+    </div>
+    <div class="pilares">
+      <article class="pilar">
+        <img src="img/p2-cobayos.jpg" alt="">
+        <div><h3>¿Sabías que…?</h3><span class="frec">1 por semana · carrusel</span>
+          <p>Curiosidades de cada especie, verificadas. Es lo que más se guarda y se comparte, y suma a los roedores, los pájaros y los peces.</p>
+          <p><b>Portada:</b> número grande.</p></div>
+      </article>
+      <article class="pilar">
+        <img src="img/p1-calor.jpg" alt="">
+        <div><h3>Cuidalo mejor</h3><span class="frec">1 por semana · carrusel</span>
+          <p>Consejos prácticos y de temporada: calor, lluvia, higiene, alimentación. Ante síntomas, siempre «consultá a tu veterinario».</p>
+          <p><b>Portada:</b> pregunta enmarcada o título.</p></div>
+      </article>
+      <article class="pilar">
+        <img src="img/p4-producto.jpg" alt="">
+        <div><h3>En la tienda</h3><span class="frec">1 o 2 por semana</span>
+          <p>Productos reales de Ser Animal: novedades, fichas con callouts y producto héroe. Solo datos confirmados.</p>
+          <p><b>Portada:</b> foto de uso, foto limpia o producto héroe.</p></div>
+      </article>
+      <article class="pilar">
+        <img src="img/p3-comunidad.jpg" alt="">
+        <div><h3>La familia Ser Animal</h3><span class="frec">1 por semana</span>
+          <p>Mascotas de clientes, preguntas para comentar y el servicio: envíos, pedido programado, WhatsApp.</p>
+          <p><b>Portada:</b> título verde o título blanco.</p></div>
+      </article>
+    </div>
+
+    <div class="ejemplo">
+      <h3>Ejemplo · Cuidalo mejor</h3>
+      <p class="nota">Portada con foto real; después, una idea por slide alternando blanco y verde; cierre verde con el WhatsApp.</p>
+      <div class="tira">
+        <img src="img/calor-1.jpg" alt="Slide 1: ¿Hace demasiado calor para pasear?">
+        <img src="img/calor-2.jpg" alt="Slide 2: La prueba de los 7 segundos">
+        <img src="img/calor-3.jpg" alt="Slide 3: Elegí bien el horario">
+        <img src="img/calor-4.jpg" alt="Slide 4: Atento a las señales">
+        <img src="img/calor-5.jpg" alt="Slide 5: Guardalo para el verano">
+      </div>
+    </div>
+    <div class="ejemplo">
+      <h3>Ejemplo · ¿Sabías que…?</h3>
+      <p class="nota">Cada dato con su foto en tarjeta y su número; los datos salen de fuentes veterinarias.</p>
+      <div class="tira">
+        <img src="img/cobayos-1.jpg" alt="Slide 1: 3 cosas que no sabías de los cobayos">
+        <img src="img/cobayos-2.jpg" alt="Slide 2: No producen vitamina C">
+        <img src="img/cobayos-3.jpg" alt="Slide 3: Sus dientes nunca dejan de crecer">
+        <img src="img/cobayos-4.jpg" alt="Slide 4: Saltan de felicidad">
+        <img src="img/cobayos-5.jpg" alt="Slide 5: ¿Tenés un cobayo?">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="banda seccion" id="semana">
+  <div class="ancho">
+    <div class="titulo-seccion">
+      <span class="etiqueta">03 · La semana</span>
+      <h2>Ritmo de publicación</h2>
+      <p>Cuatro posts por semana y una historia por día. Mejor menos y bien hechos que todos los días a las apuradas.</p>
+    </div>
+    <div class="semana">
+      <div class="dia post"><b>Lunes</b><span>¿Sabías que…?</span></div>
+      <div class="dia"><b>Martes</b><span>Historias: encuesta o pregunta</span></div>
+      <div class="dia post"><b>Miércoles</b><span>En la tienda</span></div>
+      <div class="dia"><b>Jueves</b><span>Historias: producto en uso</span></div>
+      <div class="dia post"><b>Viernes</b><span>Cuidalo mejor</span></div>
+      <div class="dia"><b>Sábado</b><span>Historias: compartir menciones</span></div>
+      <div class="dia post"><b>Domingo</b><span>La familia Ser Animal</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="banda seccion oscura" id="assets">
+  <div class="ancho">
+    <div class="titulo-seccion">
+      <span class="etiqueta">04 · Brand assets</span>
+      <h2>Todo en un solo lugar</h2>
+      <p>Cada carpeta está en el repositorio. Se usan siempre estos archivos; si hace falta uno nuevo, se suma a la carpeta.</p>
+    </div>
+    <div class="carpetas">
+      <div class="carpeta"><div class="vista v-logo"><img src="img/logo-blanco.svg" alt="Logo de Ser Animal en blanco"></div><span class="nombre">Logo</span><span class="ruta">marca/logo/</span></div>
+      <div class="carpeta"><div class="vista v-colores" aria-label="Paleta: verde Ser Animal, verde claro y texto">
+        <div style="background:#9ECA1B;color:#253027">9ECA1B</div><div style="background:#CADC8A;color:#253027">CADC8A</div><div style="background:#F8FAF4;color:#253027">F8FAF4</div></div>
+        <span class="nombre">Colores</span><span class="ruta">CLAUDE.md · brand board</span></div>
+      <div class="carpeta"><div class="vista v-tipo"><b>Aa</b><span>Nunito 900 · DM Sans</span></div><span class="nombre">Tipografía</span><span class="ruta">marca/fuentes/</span></div>
+      <div class="carpeta"><div class="vista v-ilus" style="display:grid">
+        <img src="img/esp-perro.png" alt="Perro"><img src="img/esp-gato.png" alt="Gato"><img src="img/esp-roedor.png" alt="Roedor">
+        <img src="img/esp-pajaro.png" alt="Pájaro"><img src="img/esp-pez.png" alt="Pez"><img src="img/asistente.png" alt="Asistente"></div>
+        <span class="nombre">Ilustraciones</span><span class="ruta">marca/ilustraciones/</span></div>
+      <div class="carpeta"><div class="vista v-elem">
+        <img src="img/deslizar-verde.svg" alt="Deslizá"><img src="img/sello-nuevo.svg" alt="Sello Nuevo">
+        <img src="img/insignia-verde-1.svg" alt="Insignia 1"><img src="img/chip-roedores.svg" alt="Chip Roedores"></div>
+        <span class="nombre">Elementos gráficos</span><span class="ruta">marca/elementos/</span></div>
+      <div class="carpeta"><div class="vista v-anim"><video src="img/anim-roedor.mp4" autoplay muted loop playsinline aria-label="Animación del conejo de marca"></video></div><span class="nombre">Animación</span><span class="ruta">marca/animaciones/</span></div>
+      <div class="carpeta"><div class="vista v-foto"><img src="img/estudio.jpg" alt="Perro y gato en estudio sobre fondo verde claro"></div><span class="nombre">Fotografía</span><span class="ruta">marca/fotos/ · Unsplash</span></div>
+      <div class="carpeta"><div class="vista v-apli"><img src="img/cobayos-1.jpg" alt="Post de ejemplo"></div><span class="nombre">Aplicaciones</span><span class="ruta">posts/ · studio/</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="banda seccion" id="antes">
+  <div class="ancho">
+    <div class="titulo-seccion">
+      <span class="etiqueta">05 · Antes de publicar</span>
+      <h2>La última mirada</h2>
+    </div>
+    <ul class="checks">
+      <li>La portada es una foto real o realista, con la cara del animal a la vista.</li>
+      <li>El texto no tapa al animal y respeta el margen de seguridad 3:4.</li>
+      <li>Fondos: solo foto, verde o blanco. Tipografías: solo Nunito y DM Sans.</li>
+      <li>Los elementos salen de marca/elementos, sin redibujar.</li>
+      <li>El estilo de portada no repite el del post anterior.</li>
+      <li>El texto tiene voseo y no inventa precios, plazos ni datos.</li>
+      <li>Los datos de salud están verificados con una fuente veterinaria.</li>
+      <li>Si la imagen es de IA, lleva la etiqueta «Contenido de IA».</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="banda pie">
+  <div class="ancho">Ser Animal · Guía de Instagram. Fotos de ejemplo de Unsplash (licencia libre). Los posts de ejemplo se generaron con las plantillas de Ser Animal Studio.</div>
+</footer>
+
+<script>
+  document.getElementById("copiar-bio").addEventListener("click", async (e) => {
+    const texto = document.getElementById("bio-texto").textContent;
+    try {
+      await navigator.clipboard.writeText(texto);
+      e.target.textContent = "Copiada";
+    } catch {
+      const r = document.createRange();
+      r.selectNodeContents(document.getElementById("bio-texto"));
+      const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      e.target.textContent = "Seleccionada: copiala con Ctrl+C";
+    }
+    setTimeout(() => (e.target.textContent = "Copiar bio"), 2000);
+  });
+</script>
