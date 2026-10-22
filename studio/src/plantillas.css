@@ -165,19 +165,26 @@
 .slide .fe-esquina.d { right: 92px; bottom: 222px; border-right-width: 6px; border-bottom-width: 6px; border-bottom-right-radius: 22px; }
 .slide .fe-logo { position: absolute; left: 50%; bottom: 96px; width: 280px; transform: translateX(-50%); }
 
-/* Retrato con nombre (estilo 13): La familia Ser Animal */
-.slide .rt-foto { position: absolute; inset: 36px; border-radius: 40px; overflow: hidden; }
-.slide .rt-etiqueta { position: absolute; left: 80px; top: 80px; height: 64px; }
+/* Retrato con nombre (estilo 13): La familia Ser Animal. Foto a sangre con un marco fino blanco por dentro,
+   etiqueta sobre la línea de arriba y pastilla de nombres en dos tonos sobre la línea de abajo (como Petz). */
+.slide.retrato .rt-velo { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(37, 48, 39, 0) 55%, rgba(37, 48, 39, 0.35) 100%); }
+.slide .rt-linea { position: absolute; inset: 44px; border: 5px solid #fff; border-radius: 40px; }
+.slide .rt-etiqueta { position: absolute; left: 92px; top: 14px; height: 64px; }
+.slide .rt-cita-caja { position: absolute; left: 92px; bottom: 170px; max-width: 560px; }
 .slide .rt-cita {
-  position: absolute; left: 80px; bottom: 210px; max-width: 600px; padding: 26px 32px 28px 84px; border-radius: 28px;
-  background: #fff; font-size: 36px; line-height: 1.3; font-weight: 700; box-shadow: 0 12px 30px rgba(37, 48, 39, 0.2);
+  position: relative; padding: 26px 34px 30px 92px; border-radius: 30px;
+  background: #fff; font-size: 38px; line-height: 1.28; font-weight: 700; box-shadow: 0 14px 34px rgba(37, 48, 39, 0.22);
 }
-.slide .rt-cita::before { content: "“"; position: absolute; left: 26px; top: 6px; font: 900 96px/1 "Nunito", sans-serif; color: var(--verde); }
+.slide .rt-cita::before { content: "“"; position: absolute; left: 28px; top: 8px; font: 900 100px/1 "Nunito", sans-serif; color: var(--verde); }
+.slide .rt-cita-caja .asoma { position: absolute; right: -36px; top: -92px; width: 130px; transform: rotate(8deg); }
 .slide .rt-nombre {
-  position: absolute; left: 80px; bottom: 90px; height: 92px; line-height: 92px; padding: 0 36px; border-radius: 46px;
-  background: var(--texto); color: #fff; font-size: 46px; white-space: nowrap;
+  position: absolute; right: 92px; bottom: 12px; display: flex; height: 64px; border-radius: 14px; overflow: hidden;
+  font-size: 40px; box-shadow: 0 10px 26px rgba(37, 48, 39, 0.25);
 }
-.slide .rt-nombre em { font-style: normal; color: var(--verde); }
+.slide .rt-nombre > div { display: flex; align-items: center; padding: 0 22px; white-space: nowrap; line-height: 1; }
+.slide .rt-nombre .a { background: #fff; color: var(--texto); }
+.slide .rt-nombre .b { background: var(--verde); color: var(--texto); }
+.slide .rt-deslizar { top: 70px; right: 70px; bottom: auto; }
 
 /* Etiquetas en estilos existentes */
 .slide .pc-etiqueta { height: 60px; margin-bottom: 26px; display: block; }

@@ -155,7 +155,6 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
         {!abajo && slide.texto && (
           <div className="tf-pie">
             <div>{slide.texto}</div>
-            <img src="/elementos/flecha-linea-blanca.svg" alt="" />
           </div>
         )}
         {conDeslizar && <Deslizar />}
@@ -175,7 +174,6 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
         {slide.texto && (
           <div className="tf-pie">
             <div>{slide.texto}</div>
-            <img src="/elementos/flecha-linea-blanca.svg" alt="" />
           </div>
         )}
         {conDeslizar && <Deslizar />}
@@ -220,7 +218,8 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
   }
 
   if (tipo === "texto-editorial") {
-    const pie = slide.texto || (conDeslizar ? "Deslizá para ver más" : "");
+    // Sin flecha: el «Deslizá» ya indica que hay más (no se repite la indicación).
+    const pie = slide.texto;
     return (
       <div ref={ref} className={`slide editorial ${fondo}`}>
         {slide.especie ? (
@@ -235,9 +234,9 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
         {pie && (
           <div className="ed-pie">
             <div>{pie}</div>
-            <img src="/elementos/flecha-linea-oscura.svg" alt="" />
           </div>
         )}
+        {conDeslizar && <img className="deslizar" src={`/elementos/deslizar-${slide.fondo === "verde" ? "blanco" : "verde"}.svg`} alt="" />}
       </div>
     );
   }
@@ -259,13 +258,29 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
   }
 
   if (tipo === "retrato") {
+    // Pastilla de nombres en dos tonos: «Sofía *y Tango*» → [Sofía][y Tango]
+    const nombres = slide.titulo.split(/(\*[^*]+\*)/).map((p) => p.trim()).filter(Boolean);
     return (
-      <div ref={ref} className="slide bg-verde">
-        <div className="rt-foto"><div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div></div>
+      <div ref={ref} className="slide retrato">
+        <div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div>
+        <div className="rt-velo" />
+        <div className="rt-linea" />
         <Etiqueta slide={slide} clase="rt-etiqueta" />
-        {slide.texto && <div className="rt-cita">{slide.texto}</div>}
-        {slide.titulo && <div className="h rt-nombre"><Destacado texto={slide.titulo} /></div>}
-        {conDeslizar && <Deslizar />}
+        {slide.texto && (
+          <div className="rt-cita-caja">
+            {/* El personaje va antes que el globo para quedar detrás de él */}
+            {slide.especie && <img className="asoma" src={`/elementos/personaje-${slide.especie}.png`} alt="" />}
+            <div className="rt-cita">{slide.texto}</div>
+          </div>
+        )}
+        {nombres.length > 0 && (
+          <div className="h rt-nombre">
+            {nombres.map((p, i) => (
+              <div key={i} className={p.startsWith("*") ? "b" : "a"}>{p.replace(/\*/g, "")}</div>
+            ))}
+          </div>
+        )}
+        {conDeslizar && <img className="deslizar rt-deslizar" src="/elementos/deslizar-blanco.svg" alt="" />}
       </div>
     );
   }

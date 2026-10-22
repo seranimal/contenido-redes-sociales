@@ -6,7 +6,7 @@ import type { Foto, Slide } from "./tipos";
 const CON_NUMERO: TipoSlide[] = ["portada-numero", "dato", "texto"];
 const CON_FONDO: TipoSlide[] = ["dato", "texto", "producto", "aviso", "foto-panel", "texto-editorial", "foto-enmarcada"];
 const CON_ETIQUETA: TipoSlide[] = ["foto-titulo-arriba", "foto-titulo-abajo", "foto-panel", "texto-editorial", "foto-enmarcada", "retrato", "producto-claro", "aviso"];
-const CON_ESPECIE: TipoSlide[] = ["portada-globos", "texto-editorial", "mosaico"];
+const CON_ESPECIE: TipoSlide[] = ["portada-globos", "texto-editorial", "mosaico", "retrato"];
 const SIN_BAJADA: TipoSlide[] = ["portada-numero", "portada-pregunta", "portada-globos", "foto-enmarcada"];
 // Fotos de producto: las sube el usuario, no se buscan en Unsplash.
 const DE_PRODUCTO: TipoSlide[] = ["producto", "producto-claro"];
@@ -19,11 +19,11 @@ const ETIQUETA_TEXTO: Partial<Record<TipoSlide, string>> = {
   "producto-claro": "Bajada (opcional)",
   aviso: "Texto (opcional)",
   "foto-panel": "Bajada (se ve subrayada, como un enlace)",
-  "texto-editorial": "Línea de abajo (opcional; en carruseles, «Deslizá para ver más»)",
+  "texto-editorial": "Línea de abajo (opcional)",
   retrato: "Cita en globo (opcional, palabras reales del cliente)",
-  "foto-titulo-arriba": "Línea de abajo (opcional, con flecha)",
+  "foto-titulo-arriba": "Línea de abajo (opcional)",
   "foto-titulo-abajo": "Bajada subrayada (opcional)",
-  "foto-cita": "Línea de abajo (opcional, con flecha)",
+  "foto-cita": "Línea de abajo (opcional)",
   mosaico: "Texto de abajo (opcional, en mayúsculas)",
 };
 

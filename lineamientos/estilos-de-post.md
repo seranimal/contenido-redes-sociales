@@ -179,7 +179,7 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 - **Qué es:** solo texto, grande y alineado a la izquierda, sobre blanco o verde. Una idea fuerte o la pregunta que el carrusel responde.
 - **Título:** Nunito 900, 80–92 px. Las 2 a 5 palabras clave van **subrayadas**: línea verde de 8 px sobre blanco; blanca sobre verde.
 - **Arriba a la izquierda:** el personaje de la especie (o el isotipo) y, debajo, la etiqueta de serie.
-- **Abajo:** una línea corta en DM Sans («Te contamos por qué») con `flecha-linea-oscura`.
+- **Abajo:** una línea corta en DM Sans («Te contamos por qué») y el «Deslizá» si es carrusel.
 
 ### Estilo 12 · Foto enmarcada
 ![](estilos/12-foto-enmarcada.jpg)
@@ -191,9 +191,11 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 ### Estilo 13 · Retrato con nombre
 ![](estilos/13-retrato-con-nombre.jpg)
 
-- **Qué es:** la foto de un cliente con su mascota, con un marco verde grueso, la pastilla con los nombres y, si hay, una cita en globo. Es la cara del pilar «La familia Ser Animal».
-- **Nombres:** pastilla oscura, Nunito 900 blanco y el nombre de la mascota en verde («Sofía *y Tango*»).
-- **Cita:** tarjeta blanca con comillas verdes, DM Sans 700, máximo 2 renglones.
+- **Qué es:** la foto de un cliente con su mascota, a sangre, con una línea blanca fina por dentro (a 44 px del borde, radio 40). Es la cara del pilar «La familia Ser Animal».
+- **Etiqueta:** «La familia Ser Animal», apoyada sobre la línea de arriba, a la izquierda.
+- **Nombres:** pastilla en dos tonos apoyada sobre la línea de abajo, a la derecha: el nombre de la persona en blanco y el de la mascota en verde («Sofía *y Oakley*»).
+- **Cita:** globo blanco con comillas verdes, DM Sans 700, máximo 3 renglones, con el personaje de la especie asomándose detrás.
+- **Ya no se usa** el marco verde grueso de la primera versión.
 - **Siempre real:** foto, nombres y cita del cliente, con su permiso. Nunca se inventan.
 
 ### Estilos 14 y 15 · Título editorial sobre foto (arriba o abajo)
@@ -201,14 +203,14 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 
 - **Qué es:** el recurso que más usa Petz (ver `referencias/petz-analisis.md`). Foto real, mejor con una persona y su mascota, y el título en blanco a la izquierda, sin sombra fuerte: un velo oscuro suave detrás lo hace legible.
 - **Título:** Nunito 800 blanco, 64–76 px. Las palabras clave entre asteriscos se subrayan en verde.
-- **Arriba (14):** título arriba; abajo, una línea corta con `flecha-linea-blanca` («Mirá por qué»).
+- **Arriba (14):** título arriba; abajo, una línea corta («Mirá por qué»).
 - **Abajo (15):** título abajo con la bajada subrayada; la etiqueta de serie arriba a la izquierda. Ideal para la serie «Guía de razas».
 - **Sticker «Deslizá»:** blanco, abajo a la derecha.
 
 ### Estilo 16 · Cita sobre foto
 ![](estilos/16-cita-sobre-foto.jpg)
 
-- **Qué es:** una frase emotiva arriba, con comillas verdes grandes, sobre una foto con cielo o fondo despejado; una línea chica abajo con flecha.
+- **Qué es:** una frase emotiva arriba, con comillas verdes grandes, sobre una foto con cielo o fondo despejado; una línea chica abajo.
 - **Regla:** si la cita es de un cliente, real y con permiso. Si no, es una frase de la marca y no se le atribuye a nadie.
 
 ### Estilo 17 · Mosaico de palabras
@@ -217,7 +219,9 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 - **Qué es:** cada palabra de la frase en un bloque verde con borde oscuro, en grilla; en un bloque blanco, el personaje de la especie. Logo arriba y un remate en mayúsculas abajo.
 - **Frase:** de 6 a 12 palabras. Uno cada tanto: llama mucho la atención.
 
-**Toques Petz en todos los editoriales:** títulos en Nunito 800 (más livianos que el 900), papel cuadriculado suave en el texto editorial sobre blanco, flechas en línea al lado de las bajadas.
+**Toques Petz en todos los editoriales:** títulos en Nunito 800 (más livianos que el 900) y papel cuadriculado suave en el texto editorial sobre blanco.
+
+**Una sola indicación para deslizar.** Si la slide lleva el sticker «Deslizá», no se suma ninguna flecha. La flecha en círculo solo va en «foto con panel», en lugar del sticker.
 
 ---
 

@@ -18,7 +18,7 @@ Piezas fijas para que todos los posts usen exactamente los mismos recursos. Ver 
 | Chips de especie | `chip-perros`, `chip-gatos`, `chip-roedores`, `chip-pajaros`, `chip-peces` | Para indicar la especie del post. Es el único lugar donde van los colores de especie. |
 | Pastillas | `pastilla-seranimal`, `pastilla-whatsapp`, `pastilla-pedilo`, `pastilla-atencion` | Cierres y llamados a la acción. «Pedilo por WhatsApp» va en el producto sobre fondo claro (en redes nunca hay precios). |
 | Etiquetas | `etiqueta-aviso`, `etiqueta-novedad`, `etiqueta-sabias-que`, `etiqueta-cuidalo-mejor`, `etiqueta-en-la-tienda`, `etiqueta-familia` | Etiqueta de serie (una por pilar), arriba del título o arriba a la izquierda. Sirven sobre blanco, verde y foto. |
-| Flechas | `flecha-circulo-blanco`, `-verde`, `-oscuro`, `-contorno`; `flecha-linea-oscura`, `-blanca` | Círculo: avanzar (estilo «foto con panel», en el borde entre foto y panel). Línea: al lado de «Te contamos por qué» o «Deslizá para ver más». |
+| Flechas | `flecha-circulo-blanco`, `-verde`, `-oscuro`, `-contorno`; `flecha-linea-oscura`, `-blanca` | Círculo: avanzar (estilo «foto con panel», en el borde entre foto y panel). Línea: solo en piezas sueltas sin «Deslizá» (nunca las dos indicaciones juntas). |
 | Personajes | `png/personaje-perro`, `-gato`, `-roedor`, `-pajaro`, `-pez` | Cabezas de las ilustraciones de especie, recortadas. Se asoman detrás de los globos de texto o van arriba en el texto editorial. Son PNG (ilustración a color). |
 | Asistente | `png/asistente-circulo.png` | Atención al cliente: siempre en círculo con borde verde. |
 
