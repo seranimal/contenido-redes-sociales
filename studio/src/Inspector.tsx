@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { buscarFotos } from "./api";
-import { NOMBRE_TIPO, TIPOS_SLIDE, type TipoSlide } from "./spec";
+import { ESPECIES, ETIQUETAS, NOMBRE_ESPECIE, NOMBRE_ETIQUETA, NOMBRE_TIPO, TIPOS_SLIDE, type TipoSlide } from "./spec";
 import type { Foto, Slide } from "./tipos";
 
 const CON_NUMERO: TipoSlide[] = ["portada-numero", "dato", "texto"];
-const CON_FONDO: TipoSlide[] = ["dato", "texto", "producto", "aviso"];
+const CON_FONDO: TipoSlide[] = ["dato", "texto", "producto", "aviso", "foto-panel", "texto-editorial", "foto-enmarcada"];
+const CON_ETIQUETA: TipoSlide[] = ["foto-panel", "texto-editorial", "foto-enmarcada", "retrato", "producto-claro", "aviso"];
+const CON_ESPECIE: TipoSlide[] = ["portada-globos", "texto-editorial"];
+const SIN_BAJADA: TipoSlide[] = ["portada-numero", "portada-pregunta", "portada-globos", "foto-enmarcada"];
 // Fotos de producto: las sube el usuario, no se buscan en Unsplash.
 const DE_PRODUCTO: TipoSlide[] = ["producto", "producto-claro"];
 const SIN_TEXTO: TipoSlide[] = ["portada-foto"];
@@ -15,11 +18,17 @@ const ETIQUETA_TEXTO: Partial<Record<TipoSlide, string>> = {
   producto: "Bajada",
   "producto-claro": "Bajada (opcional)",
   aviso: "Texto (opcional)",
+  "foto-panel": "Bajada (se ve subrayada, como un enlace)",
+  "texto-editorial": "Línea de abajo (opcional; en carruseles, «Deslizá para ver más»)",
+  retrato: "Cita en globo (opcional, palabras reales del cliente)",
 };
 
 const ETIQUETA_TITULO: Partial<Record<TipoSlide, string>> = {
   "producto-claro": "Nombre del producto",
   aviso: "Título (lo que va entre *asteriscos* se destaca en verde)",
+  "portada-globos": "Título (cada renglón es un globo: cortalos con Enter)",
+  "texto-editorial": "Título (lo que va entre *asteriscos* se subraya en verde)",
+  retrato: "Nombres (ej.: Clara *y Milo*; lo que va entre asteriscos va en verde)",
 };
 
 interface Props {
@@ -39,7 +48,7 @@ export function Inspector({ slide, posicion, total, resultados, onCambiar, onRes
   const [busqueda, setBusqueda] = useState(slide.busqueda_foto);
   const [buscando, setBuscando] = useState(false);
   const [error, setError] = useState("");
-  const usaFoto = slide.tipo !== "texto" && slide.tipo !== "aviso";
+  const usaFoto = slide.tipo !== "texto" && slide.tipo !== "aviso" && slide.tipo !== "texto-editorial";
   const deProducto = DE_PRODUCTO.includes(slide.tipo);
 
   async function buscar(e?: React.FormEvent) {
@@ -103,6 +112,28 @@ export function Inspector({ slide, posicion, total, resultados, onCambiar, onRes
         </div>
       )}
 
+      {CON_ETIQUETA.includes(slide.tipo) && (
+        <label className="campo">
+          <span>Etiqueta de serie</span>
+          <select value={slide.etiqueta ?? ""} onChange={(e) => onCambiar({ etiqueta: e.target.value as Slide["etiqueta"] })}>
+            {ETIQUETAS.map((t) => (
+              <option key={t} value={t}>{t === "" && slide.tipo === "aviso" ? "Aviso (por defecto)" : NOMBRE_ETIQUETA[t]}</option>
+            ))}
+          </select>
+        </label>
+      )}
+
+      {CON_ESPECIE.includes(slide.tipo) && (
+        <label className="campo">
+          <span>Personaje que se asoma</span>
+          <select value={slide.especie ?? ""} onChange={(e) => onCambiar({ especie: e.target.value as Slide["especie"] })}>
+            {ESPECIES.map((t) => (
+              <option key={t} value={t}>{NOMBRE_ESPECIE[t]}</option>
+            ))}
+          </select>
+        </label>
+      )}
+
       {CON_NUMERO.includes(slide.tipo) && (
         <label className="campo">
           <span>Número (0 = sin número)</span>
@@ -116,7 +147,7 @@ export function Inspector({ slide, posicion, total, resultados, onCambiar, onRes
             <span>{ETIQUETA_TITULO[slide.tipo] ?? "Título"}</span>
             <textarea rows={2} value={slide.titulo} onChange={(e) => onCambiar({ titulo: e.target.value })} />
           </label>
-          {slide.tipo !== "portada-numero" && slide.tipo !== "portada-pregunta" && (
+          {!SIN_BAJADA.includes(slide.tipo) && (
             <label className="campo">
               <span>{ETIQUETA_TEXTO[slide.tipo] ?? "Texto"}</span>
               <textarea rows={3} value={slide.texto} onChange={(e) => onCambiar({ texto: e.target.value })} />

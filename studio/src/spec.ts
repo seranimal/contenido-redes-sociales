@@ -7,6 +7,11 @@ export const TIPOS_SLIDE = [
   "portada-titulo-verde",
   "portada-pregunta",
   "portada-foto",
+  "portada-globos",
+  "foto-panel",
+  "texto-editorial",
+  "foto-enmarcada",
+  "retrato",
   "dato",
   "texto",
   "producto",
@@ -23,12 +28,38 @@ export const NOMBRE_TIPO: Record<TipoSlide, string> = {
   "portada-titulo-verde": "Portada · título verde",
   "portada-pregunta": "Portada · pregunta enmarcada",
   "portada-foto": "Portada · foto limpia",
+  "portada-globos": "Portada · pregunta en globos",
+  "foto-panel": "Foto con panel",
+  "texto-editorial": "Texto editorial",
+  "foto-enmarcada": "Foto enmarcada",
+  retrato: "Retrato con nombre",
   dato: "Dato con foto",
   texto: "Solo texto",
   producto: "Producto",
   "producto-claro": "Producto · fondo claro",
   aviso: "Aviso · solo texto",
   cierre: "Cierre",
+};
+
+// Etiqueta de serie (pilar de contenido) y personaje de especie: los dos son opcionales ("").
+export const ETIQUETAS = ["", "aviso", "novedad", "sabias-que", "cuidalo-mejor", "en-la-tienda", "familia"] as const;
+export const NOMBRE_ETIQUETA: Record<(typeof ETIQUETAS)[number], string> = {
+  "": "Sin etiqueta",
+  aviso: "Aviso",
+  novedad: "Novedad",
+  "sabias-que": "¿Sabías que…?",
+  "cuidalo-mejor": "Cuidalo mejor",
+  "en-la-tienda": "En la tienda",
+  familia: "La familia Ser Animal",
+};
+export const ESPECIES = ["", "perro", "gato", "roedor", "pajaro", "pez"] as const;
+export const NOMBRE_ESPECIE: Record<(typeof ESPECIES)[number], string> = {
+  "": "Sin personaje",
+  perro: "Perro",
+  gato: "Gato",
+  roedor: "Roedor",
+  pajaro: "Pájaro",
+  pez: "Pez",
 };
 
 export const SlideSpec = z.object({
@@ -38,6 +69,8 @@ export const SlideSpec = z.object({
   texto: z.string(),
   busqueda_foto: z.string(),
   fondo: z.enum(["foto", "verde", "blanco"]),
+  etiqueta: z.enum(ETIQUETAS),
+  especie: z.enum(ESPECIES),
 });
 
 export const CarruselSpec = z.object({

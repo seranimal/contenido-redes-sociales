@@ -111,6 +111,77 @@
 .slide .aviso-x { margin-top: 36px; font-size: 42px; line-height: 1.38; white-space: pre-line; }
 .slide .aviso-pie { position: absolute; left: 50%; bottom: 96px; height: 80px; transform: translateX(-50%); }
 
+/* Estilos editoriales (referencia: el feed de Petz, en colores de Ser Animal) */
+
+/* Portada · pregunta en globos (estilo 9) */
+.slide .globos { position: absolute; left: 70px; right: 70px; top: 110px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; z-index: 1; }
+.slide .globo {
+  position: relative; display: inline-block; padding: 10px 30px 16px; border-radius: 26px; background: #fff; color: var(--texto);
+  font-size: inherit; line-height: 1.1; box-shadow: 0 10px 26px rgba(37, 48, 39, 0.18);
+}
+.slide .globo .asoma { position: absolute; right: -112px; top: -64px; width: 140px; z-index: -1; transform: rotate(8deg); }
+
+/* Foto con panel (estilo 10) */
+.slide .fp-foto { position: absolute; left: 0; right: 0; top: 0; height: 800px; overflow: hidden; }
+.slide .fp-panel {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 550px; padding: 0 180px 0 70px;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+}
+.slide.bg-verde .fp-panel { background: var(--verde); }
+.slide.bg-blanco .fp-panel { background: var(--superficie); }
+.slide .fp-etiqueta { height: 60px; margin-bottom: 30px; }
+.slide .fp-t { line-height: 1.08; }
+.slide .fp-x { margin-top: 26px; font-size: 36px; line-height: 1.35; font-weight: 500; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 8px; }
+.slide .fp-flecha { position: absolute; right: 70px; top: 752px; width: 96px; height: 96px; }
+
+/* Texto editorial (estilo 11) */
+.slide .ed-icono { position: absolute; left: 80px; top: 90px; width: 84px; }
+.slide .ed-icono.personaje { width: auto; height: 150px; }
+.slide .ed-cuerpo {
+  position: absolute; left: 80px; right: 110px; top: 250px; bottom: 250px;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+}
+.slide .ed-etiqueta { height: 64px; margin-bottom: 40px; }
+.slide .ed-t { line-height: 1.14; letter-spacing: -1px; }
+.slide .ed-t em {
+  font-style: normal; text-decoration: underline; text-decoration-color: var(--verde);
+  text-decoration-thickness: 8px; text-underline-offset: 12px; text-decoration-skip-ink: none;
+}
+.slide.bg-verde .ed-t em { text-decoration-color: #fff; }
+.slide .ed-pie { position: absolute; left: 80px; right: 80px; bottom: 100px; display: flex; align-items: center; gap: 26px; font-size: 32px; font-weight: 500; color: #444d45; }
+.slide.bg-verde .ed-pie { color: var(--texto); }
+.slide .ed-pie img { width: 180px; height: 32px; }
+
+/* Foto enmarcada (estilo 12) */
+.slide .fe-arriba { position: absolute; left: 90px; right: 90px; top: 100px; height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.slide .fe-etiqueta { height: 60px; margin-bottom: 26px; }
+.slide.bg-verde .fe-t { color: #fff; }
+.slide .fe-foto { position: absolute; left: 120px; right: 120px; top: 390px; bottom: 250px; border-radius: 28px; overflow: hidden; box-shadow: 0 18px 40px rgba(37, 48, 39, 0.18); }
+.slide .fe-esquina { position: absolute; width: 64px; height: 64px; border: 0 solid var(--verde); }
+.slide.bg-verde .fe-esquina { border-color: #fff; }
+.slide .fe-esquina.a { left: 92px; top: 362px; border-left-width: 6px; border-top-width: 6px; border-top-left-radius: 22px; }
+.slide .fe-esquina.b { right: 92px; top: 362px; border-right-width: 6px; border-top-width: 6px; border-top-right-radius: 22px; }
+.slide .fe-esquina.c { left: 92px; bottom: 222px; border-left-width: 6px; border-bottom-width: 6px; border-bottom-left-radius: 22px; }
+.slide .fe-esquina.d { right: 92px; bottom: 222px; border-right-width: 6px; border-bottom-width: 6px; border-bottom-right-radius: 22px; }
+.slide .fe-logo { position: absolute; left: 50%; bottom: 96px; width: 280px; transform: translateX(-50%); }
+
+/* Retrato con nombre (estilo 13): La familia Ser Animal */
+.slide .rt-foto { position: absolute; inset: 36px; border-radius: 40px; overflow: hidden; }
+.slide .rt-etiqueta { position: absolute; left: 80px; top: 80px; height: 64px; }
+.slide .rt-cita {
+  position: absolute; left: 80px; bottom: 210px; max-width: 600px; padding: 26px 32px 28px 84px; border-radius: 28px;
+  background: #fff; font-size: 36px; line-height: 1.3; font-weight: 700; box-shadow: 0 12px 30px rgba(37, 48, 39, 0.2);
+}
+.slide .rt-cita::before { content: "“"; position: absolute; left: 26px; top: 6px; font: 900 96px/1 "Nunito", sans-serif; color: var(--verde); }
+.slide .rt-nombre {
+  position: absolute; left: 80px; bottom: 90px; height: 92px; line-height: 92px; padding: 0 36px; border-radius: 46px;
+  background: var(--texto); color: #fff; font-size: 46px; white-space: nowrap;
+}
+.slide .rt-nombre em { font-style: normal; color: var(--verde); }
+
+/* Etiquetas en estilos existentes */
+.slide .pc-etiqueta { height: 60px; margin-bottom: 26px; display: block; }
+
 /* Cierre */
 .slide .cierre-logo { position: absolute; left: 50%; top: 170px; width: 600px; transform: translateX(-50%); }
 .slide .cierre-t { position: absolute; left: 70px; right: 70px; top: 470px; text-align: center; color: #fff; }

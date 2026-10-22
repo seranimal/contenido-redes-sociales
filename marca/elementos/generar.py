@@ -18,7 +18,7 @@ from fontTools.pens.boundsPen import BoundsPen
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter
 
 RAIZ = Path(__file__).resolve().parents[2]
 SALIDA = RAIZ / "marca" / "elementos" / "svg"
@@ -36,6 +36,12 @@ ESPECIES = {
     "roedores": ("Roedores", "#8A63B8"),
     "pajaros": ("Pájaros", "#D5202E"),
     "peces": ("Peces", "#2F7FD0"),
+}
+PILARES = {
+    "sabias-que": "¿Sabías que…?",
+    "cuidalo-mejor": "Cuidalo mejor",
+    "en-la-tienda": "En la tienda",
+    "familia": "La familia Ser Animal",
 }
 SOMBRA = '<filter id="sombra" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity=".35"/></filter>'
 
@@ -245,6 +251,51 @@ def pastillas() -> None:
     # Etiquetas para el estilo «aviso» (solo texto sobre fondo claro o verde).
     pastilla("etiqueta-aviso", "Aviso", NUNITO, 36, TEXTO, VERDE, pad=40, alto=72)
     pastilla("etiqueta-novedad", "Novedad", NUNITO, 36, TEXTO, VERDE, pad=40, alto=72)
+    # Una etiqueta por pilar de contenido, arriba a la izquierda (como las series de Petz).
+    for clave, texto in PILARES.items():
+        pastilla(f"etiqueta-{clave}", texto, NUNITO, 36, TEXTO, VERDE, pad=40, alto=72)
+
+
+def flechas() -> None:
+    """Flecha en círculo (avanzar, abajo a la derecha) y flecha con línea (al lado de «Deslizá para ver…»)."""
+    for nombre, fondo, color, trazo in (
+        ("blanco", BLANCO, TEXTO, ""),
+        ("verde", VERDE, TEXTO, ""),
+        ("oscuro", TEXTO, BLANCO, ""),
+        ("contorno", "none", BLANCO, f' stroke="{BLANCO}" stroke-width="3"'),
+    ):
+        cuerpo = (
+            f'<circle cx="48" cy="48" r="{44.5 if trazo else 46}" fill="{fondo}"{trazo}/>'
+            f'<g fill="none" stroke="{color}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">'
+            '<path d="M28 48 H66"/><path d="M52 34 L66 48 L52 62"/></g>'
+        )
+        svg(f"flecha-circulo-{nombre}", 96, 96, cuerpo)
+    for nombre, color in (("oscura", TEXTO), ("blanca", BLANCO)):
+        cuerpo = (
+            f'<g fill="none" stroke="{color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">'
+            '<path d="M2 16 H178"/><path d="M166 6 L178 16 L166 26"/></g>'
+        )
+        svg(f"flecha-linea-{nombre}", 180, 32, cuerpo)
+
+
+def personajes() -> None:
+    """Cabezas de las ilustraciones de especie, recortadas, para «asomarse» junto a los globos de texto."""
+    destino = RAIZ / "marca" / "elementos" / "png"
+    destino.mkdir(parents=True, exist_ok=True)
+    for especie in ("perro", "gato", "roedor", "pajaro", "pez"):
+        im = Image.open(RAIZ / "marca" / "ilustraciones" / f"{especie}.png").convert("RGB")
+        marca = (255, 0, 255)
+        relleno = im.copy()
+        for esquina in ((0, 0), (im.width - 1, 0), (0, im.height - 1), (im.width - 1, im.height - 1)):
+            ImageDraw.floodfill(relleno, esquina, marca, thresh=24)
+        fondo = np.all(np.asarray(relleno) == marca, axis=-1)
+        alfa = Image.fromarray(np.where(fondo, 0, 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1.2))
+        alfa = Image.fromarray(np.minimum(np.asarray(alfa), np.where(fondo, 0, 255)).astype(np.uint8))
+        recorte = im.convert("RGBA")
+        recorte.putalpha(alfa)
+        recorte = recorte.crop(alfa.getbbox())
+        recorte.thumbnail((600, 600), Image.LANCZOS)
+        recorte.save(destino / f"personaje-{especie}.png")
 
 
 def asistente() -> None:
@@ -272,5 +323,7 @@ if __name__ == "__main__":
     callouts()
     sellos()
     pastillas()
+    flechas()
+    personajes()
     asistente()
     print("Listo:", len(list(SALIDA.glob("*.svg"))), "elementos en", SALIDA)

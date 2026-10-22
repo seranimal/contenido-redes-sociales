@@ -37,6 +37,8 @@ export function slideVacio(parcial: Partial<Slide> = {}): Slide {
     texto: "",
     busqueda_foto: "",
     fondo: "blanco",
+    etiqueta: "",
+    especie: "",
     foto: null,
     fotoX: 50,
     fotoY: 50,

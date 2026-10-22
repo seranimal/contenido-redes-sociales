@@ -150,9 +150,56 @@ Todos estos elementos están listos en **`marca/elementos/`** (SVG vectorial y P
 
 ---
 
+## 4b. Estilos editoriales (referencia: Petz)
+
+Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca de Ser Animal: verde, Nunito 900, DM Sans y los personajes de especie. Le dan al feed un aire de revista: mucho aire, globos y tarjetas blancas, palabras subrayadas y etiquetas de serie. Elementos nuevos: `etiqueta-<pilar>`, `flecha-circulo-*`, `flecha-linea-*` y `personaje-<especie>`.
+
+**Etiquetas de serie.** Cada pilar tiene su pastilla (`etiqueta-sabias-que`, `etiqueta-cuidalo-mejor`, `etiqueta-en-la-tienda`, `etiqueta-familia`), como «Guia de Raças» o «Assinatura Petz». Va arriba a la izquierda o arriba del título. Así el seguidor reconoce la serie de un vistazo.
+
+### Estilo 9 · Pregunta en globos
+![](estilos/9-pregunta-en-globos.jpg)
+
+- **Qué es:** foto real con la pregunta en globos blancos, un renglón por globo, escalonados. El personaje de la especie se asoma detrás del último globo.
+- **Globos:** fondo blanco, radio 26 px, sombra suave; Nunito 900 `#253027`, 50–58 px. De 2 a 4 renglones de hasta 16 letras.
+- **Dónde:** arriba a la izquierda, sobre una zona tranquila de la foto. Nunca sobre la cara del animal.
+- **Sticker «Deslizá»:** blanco, abajo a la derecha.
+
+### Estilo 10 · Foto con panel
+![](estilos/10-foto-con-panel.jpg)
+
+- **Qué es:** foto arriba (800 px) y un panel verde o blanco abajo con etiqueta, título y una bajada subrayada que invita a seguir («Mirá cómo darte cuenta»).
+- **Título:** Nunito 900 `#253027`, 60–66 px, a la izquierda.
+- **Flecha:** `flecha-circulo-oscuro` (panel verde) o `-verde` (panel blanco), sobre el borde entre foto y panel, a la derecha. En este estilo la flecha cumple la función del «Deslizá».
+- **Pestaña con isotipo** arriba a la izquierda, sobre la foto.
+
+### Estilo 11 · Texto editorial
+![](estilos/11-texto-editorial.jpg)
+
+- **Qué es:** solo texto, grande y alineado a la izquierda, sobre blanco o verde. Una idea fuerte o la pregunta que el carrusel responde.
+- **Título:** Nunito 900, 80–92 px. Las 2 a 5 palabras clave van **subrayadas**: línea verde de 8 px sobre blanco; blanca sobre verde.
+- **Arriba a la izquierda:** el personaje de la especie (o el isotipo) y, debajo, la etiqueta de serie.
+- **Abajo:** una línea corta en DM Sans («Te contamos por qué») con `flecha-linea-oscura`.
+
+### Estilo 12 · Foto enmarcada
+![](estilos/12-foto-enmarcada.jpg)
+
+- **Qué es:** fondo blanco o verde, título centrado arriba, la foto en una tarjeta redondeada con cuatro esquinas verdes alrededor, y el logo abajo.
+- **Título:** Nunito 900, 60–68 px, 1 o 2 renglones, con la etiqueta de serie encima.
+- **Cuándo:** consejos y temas tranquilos. Funciona muy bien con fotos de interiores.
+
+### Estilo 13 · Retrato con nombre
+![](estilos/13-retrato-con-nombre.jpg)
+
+- **Qué es:** la foto de un cliente con su mascota, con un marco verde grueso, la pastilla con los nombres y, si hay, una cita en globo. Es la cara del pilar «La familia Ser Animal».
+- **Nombres:** pastilla oscura, Nunito 900 blanco y el nombre de la mascota en verde («Sofía *y Tango*»).
+- **Cita:** tarjeta blanca con comillas verdes, DM Sans 700, máximo 2 renglones.
+- **Siempre real:** foto, nombres y cita del cliente, con su permiso. Nunca se inventan.
+
+---
+
 ## 5. Estructura de carrusel (por defecto)
 
-1. **Slide 1, imagen real:** estilos 1, 1b, 2, 3 o 5 (o 7 si el post es de un producto puntual).
+1. **Slide 1, imagen real:** estilos 1, 1b, 2, 3, 5, 9, 10, 12 o 13 (o 7 si el post es de un producto puntual; u 11 para una idea fuerte).
 2. **Slides siguientes, producto con colores de Ser Animal:** estilos 4, 6 o 7, o más fotos de uso. Se alterna verde y blanco entre slides.
 3. **Última slide (opcional), cierre:** «Pedilo por WhatsApp: 091 380 000» y la frase de envíos.
 
@@ -187,7 +234,8 @@ Lo que se ve en el perfil es la primera slide de cada post:
 
 - **Base del feed:** portadas con foto real (estilos 1, 1b, 2, 3 y 5).
 - **Producto héroe (estilo 4):** como máximo una por fila de 3 y nunca dos seguidas.
-- **Fondo claro (estilos 7 y 8):** suman variedad, pero nunca dos seguidas y como máximo 3 de cada 9 portadas. La foto real sigue siendo la base.
+- **Editoriales (estilos 9 a 13):** son la base nueva del feed junto con las fotos. Mezclalos: en una fila de 3, que no se repita el estilo.
+- **Fondo claro (estilos 7, 8 y 11):** suman variedad, pero nunca dos seguidas y como máximo 3 de cada 9 portadas. La foto real sigue siendo la base.
 - **Estilos de texto:** no repetir el mismo estilo de portada dos veces seguidas.
 - **Fotos de la misma fila:** que tengan una luz parecida (cálida y natural).
 

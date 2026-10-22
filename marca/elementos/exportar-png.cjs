@@ -41,6 +41,8 @@ function fondo(nombre) {
     ["Callouts", /^callout/],
     ["Chips de especie", /^chip/],
     ["Pastillas", /^pastilla/],
+    ["Etiquetas", /^etiqueta/],
+    ["Flechas", /^flecha/],
   ];
   let html = `<html><head><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Nunito:wght@900&display=block" rel="stylesheet"><style>
     body{margin:0;padding:48px;background:#F8FAF4;font-family:'DM Sans';color:#253027;width:1600px}
@@ -62,12 +64,18 @@ function fondo(nombre) {
       const [, w, h] = contenido.match(/width="([\d.]+)" height="([\d.]+)"/);
       const escala = Math.min(1, 300 / Number(w), 260 / Number(h));
       const src = "data:image/svg+xml;base64," + Buffer.from(contenido).toString("base64");
-      const bg = /^marco/.test(nombre) || /blanc/.test(nombre) || /^pestana|^sello/.test(nombre) ? "foto" : /oscur/.test(nombre) ? "claro" : "claro";
+      const bg = /^marco/.test(nombre) || /blanc|contorno/.test(nombre) || /^pestana|^sello/.test(nombre) ? "foto" : /oscur/.test(nombre) ? "claro" : "claro";
       html += `<div class="t"><div class="c ${bg}"><img src="${src}" style="width:${Number(w) * escala}px;height:${Number(h) * escala}px"></div><div class="n">${nombre}</div></div>`;
     }
     html += `</div>`;
   }
-  html += `</body></html>`;
+  // Personajes (PNG recortados de las ilustraciones de especie)
+  html += `<h2>Personajes</h2><div class="fila">`;
+  for (const f of fs.readdirSync(PNG).filter((a) => a.startsWith("personaje-")).sort()) {
+    const src = "data:image/png;base64," + fs.readFileSync(path.join(PNG, f)).toString("base64");
+    html += `<div class="t"><div class="c foto"><img src="${src}" style="height:150px"></div><div class="n">${f.replace(".png", "")}</div></div>`;
+  }
+  html += `</div></body></html>`;
   await pg.setViewportSize({ width: 1696, height: 900 });
   await pg.setContent(html);
   await pg.evaluate(() => document.fonts.ready);

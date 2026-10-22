@@ -39,6 +39,25 @@ function Destacado({ texto }: { texto: string }) {
   );
 }
 
+// Etiqueta de serie (pilar) de la biblioteca de elementos. Puede faltar en proyectos viejos.
+function Etiqueta({ slide, clase, porDefecto = "" }: { slide: Slide; clase: string; porDefecto?: string }) {
+  const etiqueta = slide.etiqueta || porDefecto;
+  if (!etiqueta) return null;
+  return <img className={clase} src={`/elementos/etiqueta-${etiqueta}.svg`} alt="" />;
+}
+
+// Cada renglón del título va en su propio globo. Se corta con Enter; si no, cada ~16 letras.
+function renglones(titulo: string) {
+  if (titulo.includes("\n")) return titulo.split("\n").map((r) => r.trim()).filter(Boolean);
+  const salida: string[] = [];
+  for (const palabra of titulo.split(/\s+/).filter(Boolean)) {
+    const ultimo = salida[salida.length - 1];
+    if (ultimo && (ultimo + " " + palabra).length <= 16) salida[salida.length - 1] = ultimo + " " + palabra;
+    else salida.push(palabra);
+  }
+  return salida;
+}
+
 interface Props {
   slide: Slide;
   /** Foto de la portada, para reutilizarla en el cierre si este no tiene una propia. */
@@ -103,6 +122,92 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
     );
   }
 
+  if (tipo === "portada-globos") {
+    const lineas = renglones(slide.titulo);
+    return (
+      <div ref={ref} className="slide">
+        <div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div>
+        <div className="globos" style={{ fontSize: lineas.length > 4 ? 50 : 58 }}>
+          {lineas.map((linea, i) => (
+            <div key={i} className="h globo" style={{ marginLeft: i % 2 ? 56 : 0 }}>
+              {linea}
+              {i === lineas.length - 1 && slide.especie && <img className="asoma" src={`/elementos/personaje-${slide.especie}.png`} alt="" />}
+            </div>
+          ))}
+        </div>
+        {conDeslizar && <Deslizar />}
+      </div>
+    );
+  }
+
+  if (tipo === "foto-panel") {
+    const verde = slide.fondo === "verde";
+    return (
+      <div ref={ref} className={`slide ${fondo}`}>
+        <div className="fp-foto"><div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div></div>
+        <img className="pestana" src="/elementos/pestana-isotipo.svg" alt="" />
+        <div className="fp-panel">
+          <Etiqueta slide={slide} clase="fp-etiqueta" />
+          <div className="h fp-t" style={{ fontSize: tam(slide.titulo, 66, 44) }}>{slide.titulo}</div>
+          {slide.texto && <div className="fp-x">{slide.texto}</div>}
+        </div>
+        {/* En este estilo la flecha cumple la función del «Deslizá». */}
+        <img className="fp-flecha" src={`/elementos/flecha-circulo-${verde ? "oscuro" : "verde"}.svg`} alt="" />
+      </div>
+    );
+  }
+
+  if (tipo === "texto-editorial") {
+    const pie = slide.texto || (conDeslizar ? "Deslizá para ver más" : "");
+    return (
+      <div ref={ref} className={`slide editorial ${fondo}`}>
+        {slide.especie ? (
+          <img className="ed-icono personaje" src={`/elementos/personaje-${slide.especie}.png`} alt="" />
+        ) : (
+          <img className="ed-icono" src={slide.fondo === "verde" ? "/brand/isotipo-blanco.png" : "/brand/isotipo-verde.png"} alt="" />
+        )}
+        <div className="ed-cuerpo">
+          <Etiqueta slide={slide} clase="ed-etiqueta" />
+          <div className="h ed-t" style={{ fontSize: tam(slide.titulo, 92, 60) }}><Destacado texto={slide.titulo} /></div>
+        </div>
+        {pie && (
+          <div className="ed-pie">
+            <div>{pie}</div>
+            <img src="/elementos/flecha-linea-oscura.svg" alt="" />
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  if (tipo === "foto-enmarcada") {
+    const verde = slide.fondo === "verde";
+    return (
+      <div ref={ref} className={`slide enmarcada ${fondo}`}>
+        <div className="fe-arriba">
+          <Etiqueta slide={slide} clase="fe-etiqueta" />
+          <div className="h fe-t" style={{ fontSize: tam(slide.titulo, 68, 44) }}>{slide.titulo}</div>
+        </div>
+        <div className="fe-foto"><div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div></div>
+        <div className="fe-esquina a" /><div className="fe-esquina b" /><div className="fe-esquina c" /><div className="fe-esquina d" />
+        <img className="fe-logo" src={verde ? "/brand/logo-blanco.png" : "/brand/logo-verde.png"} alt="Ser Animal" />
+        {conDeslizar && <img className="deslizar" src={`/elementos/deslizar-${verde ? "blanco" : "verde"}.svg`} alt="" />}
+      </div>
+    );
+  }
+
+  if (tipo === "retrato") {
+    return (
+      <div ref={ref} className="slide bg-verde">
+        <div className="rt-foto"><div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div></div>
+        <Etiqueta slide={slide} clase="rt-etiqueta" />
+        {slide.texto && <div className="rt-cita">{slide.texto}</div>}
+        {slide.titulo && <div className="h rt-nombre"><Destacado texto={slide.titulo} /></div>}
+        {conDeslizar && <Deslizar />}
+      </div>
+    );
+  }
+
   if (tipo === "dato") {
     return (
       <div ref={ref} className={`slide ${fondo}`}>
@@ -153,6 +258,7 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
     return (
       <div ref={ref} className="slide producto-claro">
         <div className="pc-texto">
+          <Etiqueta slide={slide} clase="pc-etiqueta" />
           <div className="h" style={{ fontSize: tam(slide.titulo, 84, 24) }}>{slide.titulo}</div>
           {slide.texto && <div className="pc-bajada">{slide.texto}</div>}
         </div>
@@ -180,7 +286,7 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
       <div ref={ref} className={`slide aviso ${fondo}`}>
         <img className="aviso-logo" src={verde ? "/brand/logo-blanco.png" : "/brand/logo-verde.png"} alt="Ser Animal" />
         <div className="aviso-cuerpo">
-          <img className="aviso-etiqueta" src="/elementos/etiqueta-aviso.svg" alt="Aviso" />
+          <Etiqueta slide={slide} clase="aviso-etiqueta" porDefecto="aviso" />
           <div className="h aviso-t" style={{ fontSize: tam(slide.titulo, 100, 34) }}><Destacado texto={slide.titulo} /></div>
           {slide.texto && <div className="aviso-x">{slide.texto}</div>}
         </div>
