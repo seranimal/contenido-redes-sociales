@@ -196,11 +196,34 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 - **Cita:** tarjeta blanca con comillas verdes, DM Sans 700, máximo 2 renglones.
 - **Siempre real:** foto, nombres y cita del cliente, con su permiso. Nunca se inventan.
 
+### Estilos 14 y 15 · Título editorial sobre foto (arriba o abajo)
+![](estilos/14-titulo-sobre-foto-arriba.jpg) ![](estilos/15-titulo-sobre-foto-abajo.jpg)
+
+- **Qué es:** el recurso que más usa Petz (ver `referencias/petz-analisis.md`). Foto real, mejor con una persona y su mascota, y el título en blanco a la izquierda, sin sombra fuerte: un velo oscuro suave detrás lo hace legible.
+- **Título:** Nunito 800 blanco, 64–76 px. Las palabras clave entre asteriscos se subrayan en verde.
+- **Arriba (14):** título arriba; abajo, una línea corta con `flecha-linea-blanca` («Mirá por qué»).
+- **Abajo (15):** título abajo con la bajada subrayada; la etiqueta de serie arriba a la izquierda. Ideal para la serie «Guía de razas».
+- **Sticker «Deslizá»:** blanco, abajo a la derecha.
+
+### Estilo 16 · Cita sobre foto
+![](estilos/16-cita-sobre-foto.jpg)
+
+- **Qué es:** una frase emotiva arriba, con comillas verdes grandes, sobre una foto con cielo o fondo despejado; una línea chica abajo con flecha.
+- **Regla:** si la cita es de un cliente, real y con permiso. Si no, es una frase de la marca y no se le atribuye a nadie.
+
+### Estilo 17 · Mosaico de palabras
+![](estilos/17-mosaico-de-palabras.jpg)
+
+- **Qué es:** cada palabra de la frase en un bloque verde con borde oscuro, en grilla; en un bloque blanco, el personaje de la especie. Logo arriba y un remate en mayúsculas abajo.
+- **Frase:** de 6 a 12 palabras. Uno cada tanto: llama mucho la atención.
+
+**Toques Petz en todos los editoriales:** títulos en Nunito 800 (más livianos que el 900), papel cuadriculado suave en el texto editorial sobre blanco, flechas en línea al lado de las bajadas.
+
 ---
 
 ## 5. Estructura de carrusel (por defecto)
 
-1. **Slide 1, imagen real:** estilos 1, 1b, 2, 3, 5, 9, 10, 12 o 13 (o 7 si el post es de un producto puntual; u 11 para una idea fuerte).
+1. **Slide 1, imagen real:** estilos 1, 1b, 2, 3, 5, 9, 10, 12, 13, 14, 15 o 16 (o 7 si el post es de un producto puntual; u 11 para una idea fuerte).
 2. **Slides siguientes, producto con colores de Ser Animal:** estilos 4, 6 o 7, o más fotos de uso. Se alterna verde y blanco entre slides.
 3. **Última slide (opcional), cierre:** «Pedilo por WhatsApp: 091 380 000» y la frase de envíos.
 
@@ -235,7 +258,7 @@ Lo que se ve en el perfil es la primera slide de cada post:
 
 - **Base del feed:** portadas con foto real (estilos 1, 1b, 2, 3 y 5).
 - **Producto héroe (estilo 4):** como máximo una por fila de 3 y nunca dos seguidas.
-- **Editoriales (estilos 9 a 13):** son la base nueva del feed junto con las fotos. Mezclalos: en una fila de 3, que no se repita el estilo.
+- **Editoriales (estilos 9 a 17):** son la base nueva del feed junto con las fotos. Mezclalos: en una fila de 3, que no se repita el estilo.
 - **Fondo claro (estilos 7, 8 y 11):** suman variedad, pero nunca dos seguidas y como máximo 3 de cada 9 portadas. La foto real sigue siendo la base.
 - **Estilos de texto:** no repetir el mismo estilo de portada dos veces seguidas.
 - **Fotos de la misma fila:** que tengan una luz parecida (cálida y natural).

@@ -29,6 +29,10 @@ ESTRUCTURA DEL CARRUSEL
   - "portada-pregunta": una pregunta que plantea un problema que el carrusel resuelve (máx. 60 caracteres).
   - "portada-foto": solo foto, sin texto (titulo y texto vacíos).
   - "portada-globos": una pregunta o frase corta sobre la foto, en globos blancos (un renglón por globo, cortados con \n, 2 a 4 renglones de máx. 16 caracteres). Con "especie", el personaje de esa especie se asoma detrás del último globo. Ej.: «¿Tu gato necesita\nespacios\nen altura?».
+  - "foto-titulo-arriba": el recurso más usado del feed. Foto real (ideal con una persona y su mascota) y "titulo" blanco arriba a la izquierda (máx. 70 caracteres), con 1 a 3 palabras clave entre *asteriscos* para subrayarlas. "texto" = línea corta de abajo con flecha (máx. 60 caracteres) o vacío.
+  - "foto-titulo-abajo": igual, con el título abajo y "texto" como bajada subrayada (máx. 70 caracteres). Ideal para la «Guía de razas».
+  - "foto-cita": una frase emotiva y verdadera sobre la vida con mascotas, entre comillas, sobre una foto con cielo o fondo despejado (máx. 110 caracteres). Nunca atribuyas una cita a una persona real si el usuario no la dio.
+  - "mosaico": una frase de 6 a 12 palabras, cada palabra en un bloque verde (ej. «Entender a tu perro es más fácil de lo que parece»). "texto" = remate corto en mayúsculas. Sin foto. Con "especie", un bloque lleva el personaje.
   - "foto-panel": foto arriba y un panel de color abajo con "titulo" (máx. 60 caracteres) y "texto" como bajada corta que invita a seguir (máx. 70 caracteres, ej. «Mirá qué tener en cuenta»). Fondo "verde" o "blanco" (el del panel).
   - "texto-editorial": solo texto grande sobre fondo "blanco" o "verde", para una idea fuerte o una pregunta que el carrusel responde (máx. 80 caracteres). Subrayá con *asteriscos* 2 a 5 palabras clave. "texto" = línea de abajo opcional (ej. «Te contamos por qué»).
   - "foto-enmarcada": "titulo" arriba (máx. 50 caracteres) y la foto en un marco sobre fondo "blanco" o "verde".
@@ -45,11 +49,11 @@ ESTRUCTURA DEL CARRUSEL
 - Fondos de las slides intermedias y del cierre: alternás "blanco" y "verde", empezando por "blanco" después de la portada. El cierre va siempre en "verde".
 - "numero" vale 0 cuando no se usa.
 - "etiqueta": la serie del post, que se ve como pastilla en los estilos "foto-panel", "texto-editorial", "foto-enmarcada", "retrato", "producto-claro" y "aviso". Valores: "sabias-que" (curiosidades), "cuidalo-mejor" (consejos), "en-la-tienda" (productos), "familia" (clientes y comunidad), "novedad" (producto nuevo), "aviso" (avisos) o "" (sin etiqueta). Usala en la portada; en las slides interiores, "".
-- "especie": "perro", "gato", "roedor", "pajaro", "pez" o "". Ponela en "portada-globos" y "texto-editorial" cuando el post es de una especie; si no, "".
-- Variá los estilos: no uses siempre el mismo tipo de portada. Los editoriales ("portada-globos", "foto-panel", "texto-editorial", "foto-enmarcada") le dan aire de revista al feed.
+- "especie": "perro", "gato", "roedor", "pajaro", "pez" o "". Ponela en "portada-globos", "texto-editorial" y "mosaico" cuando el post es de una especie; si no, "".
+- Variá los estilos: no uses siempre el mismo tipo de portada. Los editoriales ("foto-titulo-arriba", "foto-titulo-abajo", "portada-globos", "foto-panel", "texto-editorial", "foto-enmarcada", "foto-cita", "mosaico") le dan aire de revista al feed, como el de Petz. Preferí fotos con personas y sus mascotas.
 
 FOTOS
-- "busqueda_foto": 2 a 5 palabras EN INGLÉS para buscar una foto real en Unsplash que muestre exactamente lo que dice la slide (ej. "guinea pig eating bell pepper"). Vacío en "texto", "texto-editorial", "producto", "producto-claro", "aviso" y "cierre". En "retrato" también va vacío: la foto del cliente la sube el usuario.
+- "busqueda_foto": 2 a 5 palabras EN INGLÉS para buscar una foto real en Unsplash que muestre exactamente lo que dice la slide (ej. "guinea pig eating bell pepper"). Vacío en "texto", "texto-editorial", "producto", "producto-claro", "aviso" y "cierre". En "mosaico" también va vacío. En "retrato" también va vacío: la foto del cliente la sube el usuario.
 - Pensá fotos que existan: animales reales en situaciones cotidianas. Nada de escenas imposibles.
 
 TEXTO DEL POSTEO

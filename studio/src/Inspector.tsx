@@ -5,8 +5,8 @@ import type { Foto, Slide } from "./tipos";
 
 const CON_NUMERO: TipoSlide[] = ["portada-numero", "dato", "texto"];
 const CON_FONDO: TipoSlide[] = ["dato", "texto", "producto", "aviso", "foto-panel", "texto-editorial", "foto-enmarcada"];
-const CON_ETIQUETA: TipoSlide[] = ["foto-panel", "texto-editorial", "foto-enmarcada", "retrato", "producto-claro", "aviso"];
-const CON_ESPECIE: TipoSlide[] = ["portada-globos", "texto-editorial"];
+const CON_ETIQUETA: TipoSlide[] = ["foto-titulo-arriba", "foto-titulo-abajo", "foto-panel", "texto-editorial", "foto-enmarcada", "retrato", "producto-claro", "aviso"];
+const CON_ESPECIE: TipoSlide[] = ["portada-globos", "texto-editorial", "mosaico"];
 const SIN_BAJADA: TipoSlide[] = ["portada-numero", "portada-pregunta", "portada-globos", "foto-enmarcada"];
 // Fotos de producto: las sube el usuario, no se buscan en Unsplash.
 const DE_PRODUCTO: TipoSlide[] = ["producto", "producto-claro"];
@@ -21,6 +21,10 @@ const ETIQUETA_TEXTO: Partial<Record<TipoSlide, string>> = {
   "foto-panel": "Bajada (se ve subrayada, como un enlace)",
   "texto-editorial": "Línea de abajo (opcional; en carruseles, «Deslizá para ver más»)",
   retrato: "Cita en globo (opcional, palabras reales del cliente)",
+  "foto-titulo-arriba": "Línea de abajo (opcional, con flecha)",
+  "foto-titulo-abajo": "Bajada subrayada (opcional)",
+  "foto-cita": "Línea de abajo (opcional, con flecha)",
+  mosaico: "Texto de abajo (opcional, en mayúsculas)",
 };
 
 const ETIQUETA_TITULO: Partial<Record<TipoSlide, string>> = {
@@ -29,6 +33,10 @@ const ETIQUETA_TITULO: Partial<Record<TipoSlide, string>> = {
   "portada-globos": "Título (cada renglón es un globo: cortalos con Enter)",
   "texto-editorial": "Título (lo que va entre *asteriscos* se subraya en verde)",
   retrato: "Nombres (ej.: Clara *y Milo*; lo que va entre asteriscos va en verde)",
+  "foto-titulo-arriba": "Título (lo que va entre *asteriscos* se subraya en verde)",
+  "foto-titulo-abajo": "Título (lo que va entre *asteriscos* se subraya en verde)",
+  "foto-cita": "Cita (sin comillas: la plantilla las agrega)",
+  mosaico: "Frase (cada palabra va en un bloque; 6 a 12 palabras)",
 };
 
 interface Props {
@@ -48,7 +56,7 @@ export function Inspector({ slide, posicion, total, resultados, onCambiar, onRes
   const [busqueda, setBusqueda] = useState(slide.busqueda_foto);
   const [buscando, setBuscando] = useState(false);
   const [error, setError] = useState("");
-  const usaFoto = slide.tipo !== "texto" && slide.tipo !== "aviso" && slide.tipo !== "texto-editorial";
+  const usaFoto = !["texto", "aviso", "texto-editorial", "mosaico"].includes(slide.tipo);
   const deProducto = DE_PRODUCTO.includes(slide.tipo);
 
   async function buscar(e?: React.FormEvent) {

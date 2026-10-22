@@ -140,6 +140,68 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
     );
   }
 
+  if (tipo === "foto-titulo-arriba" || tipo === "foto-titulo-abajo") {
+    const abajo = tipo === "foto-titulo-abajo";
+    return (
+      <div ref={ref} className={`slide titulo-foto${abajo ? " abajo" : ""}`}>
+        <div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div>
+        <div className="tf-velo" />
+        {abajo && <Etiqueta slide={slide} clase="tf-etiqueta arriba" />}
+        <div className="tf-bloque">
+          {!abajo && <Etiqueta slide={slide} clase="tf-etiqueta" />}
+          <div className="h tf-t" style={{ fontSize: tam(slide.titulo, 76, 46) }}><Destacado texto={slide.titulo} /></div>
+          {abajo && slide.texto && <div className="tf-x">{slide.texto}</div>}
+        </div>
+        {!abajo && slide.texto && (
+          <div className="tf-pie">
+            <div>{slide.texto}</div>
+            <img src="/elementos/flecha-linea-blanca.svg" alt="" />
+          </div>
+        )}
+        {conDeslizar && <Deslizar />}
+      </div>
+    );
+  }
+
+  if (tipo === "foto-cita") {
+    return (
+      <div ref={ref} className="slide titulo-foto cita">
+        <div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div>
+        <div className="tf-velo" />
+        <div className="tf-bloque">
+          <div className="h cita-comillas">“</div>
+          <div className="h tf-t" style={{ fontSize: tam(slide.titulo, 74, 56) }}>{slide.titulo}</div>
+        </div>
+        {slide.texto && (
+          <div className="tf-pie">
+            <div>{slide.texto}</div>
+            <img src="/elementos/flecha-linea-blanca.svg" alt="" />
+          </div>
+        )}
+        {conDeslizar && <Deslizar />}
+      </div>
+    );
+  }
+
+  if (tipo === "mosaico") {
+    const palabras = slide.titulo.split(/\s+/).filter(Boolean);
+    return (
+      <div ref={ref} className="slide mosaico bg-blanco">
+        <img className="mo-logo" src="/brand/logo-verde.png" alt="Ser Animal" />
+        <div className="mo-grilla" style={{ fontSize: palabras.length > 9 ? 76 : 92 }}>
+          {palabras.map((p, i) => (
+            <div key={i} className="h mo-ficha">{p}</div>
+          ))}
+          {slide.especie && (
+            <div className="mo-ficha personaje"><img src={`/elementos/personaje-${slide.especie}.png`} alt="" /></div>
+          )}
+        </div>
+        {slide.texto && <div className="mo-x">{slide.texto}</div>}
+        {conDeslizar && <img className="deslizar" src="/elementos/deslizar-verde.svg" alt="" />}
+      </div>
+    );
+  }
+
   if (tipo === "foto-panel") {
     const verde = slide.fondo === "verde";
     return (
