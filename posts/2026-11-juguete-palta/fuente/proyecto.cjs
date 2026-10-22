@@ -6,10 +6,10 @@ const foto = (p, autor) => ({ src: U(p), thumb: U(p), autor, downloadLocation: "
 const local = (f) => { const src = 'data:image/jpeg;base64,' + fs.readFileSync(C + f).toString('base64'); return { src, thumb: src }; };
 let n = 0;
 const s = (o) => ({ id: "c" + n++, tipo: "dato", numero: 0, titulo: "", texto: "", busqueda_foto: "", fondo: "foto", etiqueta: "", especie: "", colores: "", foto: null, fotoX: 50, fotoY: 50, fotoZoom: 1, ...o });
-const ficha = (o) => s({ tipo: "producto-ficha", fondo: "verde", etiqueta: "en-la-tienda", ...o });
+const ficha = (o) => s({ tipo: "producto-ficha", fondo: "verde", ...o });
 module.exports = {
   palta: { tema: "juguete palta", slides: [
-    s({ tipo: "foto-titulo-abajo", etiqueta: "en-la-tienda", titulo: "Una palta *para tu gato*", texto: "Con bola de catnip natural", foto: local('palta-portada.jpg'), fotoY: 45 }),
+    s({ tipo: "foto-titulo-abajo", titulo: "Una palta *para tu gato*", texto: "Con bola de catnip natural", foto: local('palta-portada.jpg'), fotoY: 45 }),
     ficha({ titulo: "Juguete palta con catnip", foto: local('palta-ficha.jpg'),
       texto: "Bola de catnip natural que gira 360°.\nSe pega en superficies lisas\nBola reemplazable\nDesde los 3 meses" }),
     s({ tipo: "foto-titulo-arriba", etiqueta: "sabias-que", titulo: "El catnip *no le hace efecto* a todos los gatos", texto: "¿Al tuyo sí? Contanos", foto: foto("photo-1787043572457-3df0a6249c11", "Mikhail Volkov"), fotoY: 55 }),

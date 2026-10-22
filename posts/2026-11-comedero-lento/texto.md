@@ -1,7 +1,7 @@
 # Comedero lento
 
 **Pilar:** En la tienda. Reemplaza al alimento Brit Premium: la bolsa es toda marca y no se puede mostrar sin que se vea. **Formato:** carrusel de 3 slides, 1080×1350.
-1. Portada con foto y panel verde (estilo 10), etiqueta «En la tienda»: «¿Tu perro come muy rápido?». Imagen de Higgsfield (Nano Banana Pro) con las fotos reales del comedero como referencia.
+1. Portada con foto y panel verde (estilo 10): «¿Tu perro come muy rápido?». Imagen de Higgsfield (Nano Banana Pro) con las fotos reales del comedero como referencia.
 2. Ficha de producto (estilo 18). Foto de estudio generada a partir de la foto real del comedero.
 3. Título editorial arriba sobre foto real (estilo 14), etiqueta «Cuidalo mejor»: «Comer más despacio *también es cuidarlo*». Foto: Gayatri Malhotra (Unsplash).
 

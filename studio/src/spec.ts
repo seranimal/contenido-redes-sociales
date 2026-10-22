@@ -54,14 +54,13 @@ export const NOMBRE_TIPO: Record<TipoSlide, string> = {
 };
 
 // Etiqueta de serie (pilar de contenido) y personaje de especie: los dos son opcionales ("").
-export const ETIQUETAS = ["", "aviso", "novedad", "sabias-que", "cuidalo-mejor", "en-la-tienda", "familia"] as const;
+export const ETIQUETAS = ["", "aviso", "novedad", "sabias-que", "cuidalo-mejor", "familia"] as const;
 export const NOMBRE_ETIQUETA: Record<(typeof ETIQUETAS)[number], string> = {
   "": "Sin etiqueta",
   aviso: "Aviso",
   novedad: "Novedad",
   "sabias-que": "¿Sabías que…?",
   "cuidalo-mejor": "Cuidalo mejor",
-  "en-la-tienda": "En la tienda",
   familia: "La familia Ser Animal",
 };
 export const ESPECIES = ["", "perro", "gato", "roedor", "pajaro", "pez"] as const;

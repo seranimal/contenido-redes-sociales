@@ -6,7 +6,7 @@ const foto = (p, autor) => ({ src: U(p), thumb: U(p), autor, downloadLocation: "
 const local = (f) => { const src = 'data:image/jpeg;base64,' + fs.readFileSync(C + f).toString('base64'); return { src, thumb: src }; };
 let n = 0;
 const s = (o) => ({ id: "c" + n++, tipo: "dato", numero: 0, titulo: "", texto: "", busqueda_foto: "", fondo: "foto", etiqueta: "", especie: "", colores: "", foto: null, fotoX: 50, fotoY: 50, fotoZoom: 1, ...o });
-const ficha = (o) => s({ tipo: "producto-ficha", fondo: "verde", etiqueta: "en-la-tienda", ...o });
+const ficha = (o) => s({ tipo: "producto-ficha", fondo: "verde", ...o });
 module.exports = {
   rascador: { tema: "rascador torre", slides: [
     s({ tipo: "portada-globos", especie: "gato", titulo: "Para trepar,\njugar y\ndescansar\nen altura", foto: local('rascador-portada.jpg') }),

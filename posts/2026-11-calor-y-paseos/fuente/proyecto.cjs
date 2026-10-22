@@ -24,7 +24,7 @@ module.exports = {
   ], caption: "", hashtags: [] },
   cama: { tema: "cama cuddlar", slides: [
     s({ tipo: "portada-titulo-verde", fondo: "foto", titulo: "Su lugar favorito", texto: "DISPONIBLE EN 3 TAMAÑOS", foto: local('cama-portada.jpg') }),
-    s({ tipo: "producto-ficha", fondo: "verde", etiqueta: "en-la-tienda", titulo: "Cama Cuddlar", colores: "Gris, Negro, Marrón, Beige",
+    s({ tipo: "producto-ficha", fondo: "verde", titulo: "Cama Cuddlar", colores: "Gris, Negro, Marrón, Beige",
         texto: "Suave, acolchonada y con base antideslizante.\nFunda removible y lavable\nPara perros y gatos\nTamaños small, medium y large",
         foto: local('cama-ficha.jpg') }),
   ], caption: "", hashtags: [] },

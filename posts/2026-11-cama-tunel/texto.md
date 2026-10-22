@@ -1,7 +1,7 @@
 # Cama Tunnel Tube
 
 **Pilar:** En la tienda. **Formato:** carrusel de 3 slides, 1080×1350.
-1. Portada con foto enmarcada sobre verde (estilo 12), etiqueta «En la tienda»: «Para esconderse, jugar y dormir». Imagen de Higgsfield (Nano Banana Pro) con la foto real como referencia; se borró la etiqueta de la tela.
+1. Portada con foto enmarcada sobre verde (estilo 12): «Para esconderse, jugar y dormir». Imagen de Higgsfield (Nano Banana Pro) con la foto real como referencia; se borró la etiqueta de la tela.
 2. Ficha de producto (estilo 18) con los tres colores, sin etiquetas de marca.
 3. Título editorial abajo sobre foto real (estilo 15), etiqueta «¿Sabías que…?»: «Un rincón para esconderse *le da tranquilidad*». Foto: Elena Kloppenburg (Unsplash).
 

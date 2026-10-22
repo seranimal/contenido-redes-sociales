@@ -6,10 +6,10 @@ const foto = (p, autor) => ({ src: U(p), thumb: U(p), autor, downloadLocation: "
 const local = (f) => { const src = 'data:image/jpeg;base64,' + fs.readFileSync(C + f).toString('base64'); return { src, thumb: src }; };
 let n = 0;
 const s = (o) => ({ id: "c" + n++, tipo: "dato", numero: 0, titulo: "", texto: "", busqueda_foto: "", fondo: "foto", etiqueta: "", especie: "", colores: "", foto: null, fotoX: 50, fotoY: 50, fotoZoom: 1, ...o });
-const ficha = (o) => s({ tipo: "producto-ficha", fondo: "verde", etiqueta: "en-la-tienda", ...o });
+const ficha = (o) => s({ tipo: "producto-ficha", fondo: "verde", ...o });
 module.exports = {
   kong: { tema: "kong classic", slides: [
-    s({ tipo: "foto-titulo-arriba", etiqueta: "en-la-tienda", titulo: "El clásico que *nunca falla*", texto: "Hace más de 40 años", foto: local('kong-portada.jpg') }),
+    s({ tipo: "foto-titulo-arriba", titulo: "El clásico que *nunca falla*", texto: "Hace más de 40 años", foto: local('kong-portada.jpg') }),
     ficha({ titulo: "Juguete clásico de caucho", foto: local('kong-ficha.jpg'),
       texto: "Caucho natural que rebota y aguanta mordidas.\nPara perros que muerden\nReferente hace más de 40 años\nTalles S a XXL" }),
     s({ tipo: "foto-cita", titulo: "Morder es parte de ser perro. Mejor que sea algo suyo.", texto: "Guardalo y compartilo", foto: foto("photo-1715033749994-55f16a83c236", "Ben Griffiths"), fotoY: 60 }),

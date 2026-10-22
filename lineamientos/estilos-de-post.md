@@ -162,7 +162,7 @@ Todos estos elementos están listos en **`marca/elementos/`** (SVG vectorial y P
 
 Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca de Ser Animal: verde, Nunito 900, DM Sans y los personajes de especie. Le dan al feed un aire de revista: mucho aire, globos y tarjetas blancas, palabras subrayadas y etiquetas de serie. Elementos nuevos: `etiqueta-<pilar>`, `flecha-circulo-*`, `flecha-linea-*` y `personaje-<especie>`.
 
-**Etiquetas de serie.** Cada pilar tiene su pastilla (`etiqueta-sabias-que`, `etiqueta-cuidalo-mejor`, `etiqueta-en-la-tienda`, `etiqueta-familia`), como «Guia de Raças» o «Assinatura Petz». Va arriba a la izquierda o arriba del título. Así el seguidor reconoce la serie de un vistazo.
+**Etiquetas de serie.** Cada pilar tiene su pastilla (`etiqueta-sabias-que`, `etiqueta-cuidalo-mejor`, `etiqueta-familia`), como «Guia de Raças» o «Assinatura Petz». Va arriba a la izquierda o arriba del título. Así el seguidor reconoce la serie de un vistazo. **Los posts de producto no llevan etiqueta:** nunca se pone «En la tienda» en las imágenes (solo «Novedad» si el producto es nuevo).
 
 ### Estilo 9 · Pregunta en globos
 ![](estilos/9-pregunta-en-globos.jpg)
@@ -236,7 +236,7 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 - **Qué es:** la slide con la información, después de una portada linda. Tiene que verse como un catálogo lindo, no como un folleto: mucho aire y poco texto.
 - **Fondo:** degradé suave de verde claro `#CADC8A` en el centro a verde `#9ECA1B` en los bordes. Tarjeta blanca amplia (a 80 px de los bordes, radio 56) con sombra suave.
 - **Producto:** solo, sin perro, grande y recortado sobre blanco. Si viene en varios colores, los colores juntos y superpuestos, como una familia.
-- **Arriba:** la etiqueta de serie («En la tienda» o «Novedad»).
+- **Arriba:** nada, o «Novedad» si el producto es nuevo. Nunca «En la tienda».
 - **Colores:** muestras chicas con el nombre, en DM Sans 500.
 - **Nombre:** Nunito 900 `#253027`, centrado.
 - **Descripción:** una sola línea corta en DM Sans 500 gris oscuro.

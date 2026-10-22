@@ -1,7 +1,7 @@
 # Juguete clásico de caucho
 
 **Pilar:** En la tienda. **Formato:** carrusel de 3 slides, 1080×1350.
-1. Portada con título editorial arriba (estilo 14) y etiqueta «En la tienda»: «El clásico que *nunca falla*». Imagen de Higgsfield (Nano Banana Pro) con la foto real del juguete como referencia; se borró el logo grabado del juguete.
+1. Portada con título editorial arriba (estilo 14): «El clásico que *nunca falla*». Imagen de Higgsfield (Nano Banana Pro) con la foto real del juguete como referencia; se borró el logo grabado del juguete.
 2. Ficha de producto (estilo 18).
 3. Cita sobre foto real (estilo 16): «Morder es parte de ser perro. Mejor que sea algo suyo.» Foto: Ben Griffiths (Unsplash).
 

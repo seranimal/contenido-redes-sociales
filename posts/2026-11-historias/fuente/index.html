@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Historias de noviembre</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=DM+Sans:wght@400;500;700&display=block" rel="stylesheet">
+<style>
+  :root{
+    --verde:#9ECA1B; --verde-claro:#CADC8A; --verde-hoja:#4C7300;
+    --texto:#253027; --superficie:#F8FAF4; --borde:#E5E9DE;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#111;display:flex;flex-wrap:wrap;gap:40px;padding:40px}
+  body.render{display:block;padding:0;gap:0}
+  /* Historia 1080×1920. Zona segura: entre y=250 y y=1620 (arriba y abajo van los controles de Instagram). */
+  .story{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:"DM Sans",sans-serif;color:var(--texto);background:var(--verde)}
+  .h{font-family:"Nunito",sans-serif;font-weight:900;letter-spacing:-1px;line-height:1.08}
+  .h em{font-style:normal;text-decoration:underline;text-decoration-color:var(--verde);text-decoration-thickness:8px;text-underline-offset:12px;text-decoration-skip-ink:none}
+  .foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .velo-arriba{position:absolute;inset:0;background:linear-gradient(180deg,rgba(37,48,39,.62) 0%,rgba(37,48,39,.25) 34%,rgba(37,48,39,0) 52%)}
+  .velo-abajo{position:absolute;inset:0;background:linear-gradient(180deg,rgba(37,48,39,0) 50%,rgba(37,48,39,.3) 68%,rgba(37,48,39,.72) 100%)}
+  .etiqueta{height:80px;display:block}
+  .bloque{position:absolute;left:80px;right:80px;color:#fff}
+  .bloque .h{font-size:92px;text-shadow:0 2px 18px rgba(0,0,0,.18)}
+  .bloque .x{margin-top:30px;font-size:42px;line-height:1.35;font-weight:500}
+  .iso{position:absolute;right:80px;width:96px}
+  /* Lugar para el sticker de Instagram (encuesta, preguntas, quiz o enlace). Solo se ve en la guía. */
+  .zona{position:absolute;left:50%;transform:translateX(-50%);border:5px dashed transparent;border-radius:36px;display:flex;align-items:center;justify-content:center;
+    font:700 34px "DM Sans",sans-serif;color:transparent}
+  body.guia .zona{border-color:#fff;color:#fff;background:rgba(37,48,39,.25)}
+  body.guia .story::before,body.guia .story::after{content:"";position:absolute;left:0;right:0;height:250px;background:rgba(213,32,46,.18);z-index:5}
+  body.guia .story::before{top:0} body.guia .story::after{bottom:0;height:300px}
+
+  /* 1 · Encuesta */
+  #s1 .bloque{top:270px}
+  #s1 .zona{top:630px;width:760px;height:230px}
+
+  /* 2 · Producto en uso */
+  #s2 .bloque{bottom:330px}
+  #s2 .zona{top:280px;width:560px;height:130px}
+
+  /* 3 · Caja de preguntas: panel verde arriba y foto abajo */
+  #s3 .panel{position:absolute;left:0;right:0;top:0;height:1040px;background:var(--verde)}
+  #s3 .fotobox{position:absolute;left:0;right:0;top:1040px;bottom:0;overflow:hidden}
+  #s3 .fotobox img{width:100%;height:100%;object-fit:cover;object-position:50% 72%}
+  #s3 .asoma{position:absolute;right:70px;top:930px;width:190px;z-index:2;transform:rotate(-6deg)}
+  #s3 .bloque{top:270px;color:var(--texto)}
+  #s3 .bloque .h{font-size:88px;text-shadow:none}
+  #s3 .bloque .h em{text-decoration-color:#fff}
+  #s3 .zona{top:640px;width:800px;height:330px}
+  body.guia #s3 .zona{border-color:var(--texto);color:var(--texto);background:rgba(255,255,255,.25)}
+
+  /* 4 · Quiz */
+  #s4 .bloque{top:270px}
+  #s4 .zona{top:760px;width:760px;height:380px}
+
+  /* 5 · Envíos */
+  #s5 .claro{position:absolute;inset:0;background:linear-gradient(180deg,rgba(248,250,244,.92) 0%,rgba(248,250,244,.7) 30%,rgba(248,250,244,0) 48%)}
+  #s5 .bloque{top:280px;color:var(--texto);text-align:center}
+  #s5 .etiqueta{margin:0 auto}
+  #s5 .bloque .h{font-size:104px;text-shadow:none;margin-top:34px}
+  #s5 .monto{display:inline-block;margin-top:34px;background:var(--verde);color:#fff;border-radius:999px;padding:18px 54px;font:900 64px "Nunito",sans-serif;letter-spacing:-.5px}
+  #s5 .bloque .x{display:inline-block;margin-top:24px;font-size:38px;font-weight:700;color:var(--texto);background:rgba(255,255,255,.92);border-radius:999px;padding:12px 36px}
+  #s5 .pie{position:absolute;left:0;right:0;bottom:330px;display:flex;justify-content:center}
+  #s5 .pie span{background:#fff;border-radius:999px;padding:22px 46px;box-shadow:0 14px 34px rgba(37,48,39,.18);display:flex}
+  #s5 .pie img{height:62px}
+</style>
+</head>
+<body>
+
+<!-- 1 · Martes · Encuesta -->
+<div class="story" id="s1">
+  <img class="foto" src="assets/foto-lento.jpg" alt="">
+  <div class="velo-arriba"></div>
+  <div class="bloque">
+    <img class="etiqueta" src="assets/etiqueta-cuidalo-mejor.svg" alt="">
+    <div class="h" style="margin-top:34px">¿Tu perro come <em>muy rápido</em>?</div>
+  </div>
+  <div class="zona">Encuesta: Sí / No</div>
+</div>
+
+<!-- 2 · Jueves · Producto en uso -->
+<div class="story" id="s2">
+  <img class="foto" src="assets/foto-palta.jpg" alt="">
+  <div class="velo-abajo"></div>
+  <div class="zona">Enlace o mención al post</div>
+  <div class="bloque">
+    <div class="h">Una palta <em>para tu gato</em></div>
+    <div class="x">Bola de catnip natural que gira 360° y se pega en superficies lisas.</div>
+  </div>
+</div>
+
+<!-- 3 · Caja de preguntas -->
+<div class="story" id="s3">
+  <div class="panel"></div>
+  <div class="fotobox"><img src="assets/foto-kong.jpg" alt=""></div>
+  <img class="asoma" src="assets/personaje-perro.png" alt="">
+  <div class="bloque">
+    <div class="h">¿Cuál es el juguete <em>favorito</em> de tu perro?</div>
+  </div>
+  <div class="zona">Caja de preguntas</div>
+</div>
+
+<!-- 4 · Quiz -->
+<div class="story" id="s4">
+  <img class="foto" src="assets/foto-gato.jpg" alt="" style="object-position:55% 50%">
+  <div class="velo-arriba"></div>
+  <div class="bloque">
+    <img class="etiqueta" src="assets/etiqueta-sabias-que.svg" alt="">
+    <div class="h" style="margin-top:34px">¿El catnip le hace efecto a <em>todos los gatos</em>?</div>
+  </div>
+  <div class="zona">Quiz: Sí / No (correcta: No)</div>
+</div>
+
+<!-- 5 · Envíos -->
+<div class="story" id="s5">
+  <img class="foto" src="assets/foto-puerta.jpg" alt="" style="object-position:48% 50%">
+  <div class="claro"></div>
+  <div class="bloque">
+    <img class="etiqueta" src="assets/etiqueta-aviso.svg" alt="">
+    <div class="h">Envío gratis a todo el país</div>
+    <div class="monto">desde $1.500</div>
+    <br><div class="x">En compras menores, $200.</div>
+  </div>
+  <div class="pie"><span><img src="assets/logo-verde.svg" alt="Ser Animal"></span></div>
+</div>
+
+<script>
+  const q = location.search;
+  if (q.includes('render')) document.body.classList.add('render');
+  if (q.includes('guia')) document.body.classList.add('guia');
+</script>
+</body>
+</html>

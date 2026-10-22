@@ -7,7 +7,7 @@ const s = (o) => ({ id: "p" + n++, tipo: "dato", numero: 0, titulo: "", texto: "
 module.exports = {
   pechera: { tema: "pechera y correa", slides: [
     s({ tipo: "foto-titulo-arriba", titulo: "Pechera *y correa*", texto: "Disponible en 3 talles", foto: subida('husky.jpg') }),
-    s({ tipo: "producto-ficha", fondo: "verde", etiqueta: "en-la-tienda", titulo: "Pechera y correa", colores: "Turquesa, Negro, Naranja",
+    s({ tipo: "producto-ficha", fondo: "verde", titulo: "Pechera y correa", colores: "Turquesa, Negro, Naranja",
         texto: "Distribuye mejor la fuerza al caminar.\nTalles mini, medio y grande\nMaterial resistente\nFácil de ajustar\nColores según stock",
         foto: subida('conj-familia.jpg') }),
   ], caption: "", hashtags: [] },
