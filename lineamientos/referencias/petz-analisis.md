@@ -104,3 +104,39 @@ En la columna «Ser Animal» va el estilo nuestro que lo resuelve (número de `e
 7. Foto enmarcada.
 8. Producto sobre fondo claro.
 9. Título editorial sobre foto (Guía de razas).
+
+---
+
+## Cómo arman los carruseles por dentro (capturas de octubre 2026)
+
+En la grilla, Petz se ve variado. Pero la diferencia fuerte está **adentro** de los carruseles: casi nunca repiten el mismo armado de slide, ni dentro de un post ni entre posts seguidos.
+
+### La lógica que se repite
+
+1. **Un sistema visual, muchos armados.** Siempre la misma tipografía, tarjetas con borde fino oscuro y esquinas redondeadas, subrayados, flechas y personajes ilustrados. Lo que cambia es cómo se combinan esas piezas en cada slide.
+2. **Un color por post.** Cada carrusel elige un fondo (crema, terracota, rosa, celeste) y lo combina con crema y fotos. El color identifica al post.
+3. **Una idea por slide, con un módulo distinto en cada una.** Nunca tres slides seguidas iguales.
+4. **El arco:** gancho (foto o frase) → 1 a 3 slides de valor → el producto como solución (si hay) → pregunta al final, en el texto del posteo.
+5. **La indicación de deslizar** es una flecha fina («Vem entender o motivo ———→») o una flecha en círculo, integrada al diseño.
+
+### Los módulos que usan
+
+| Módulo | Ejemplo |
+|---|---|
+| Foto a sangre con título grande arriba o abajo, a veces con cada línea subrayada | «Por que olhar pro seu pet te faz tão bem?» (el que más likes tiene) |
+| Foto con tarjeta clara centrada abajo (título + bajada) | Portada de la protección contra pulgas |
+| Foto arriba y panel de color abajo con pregunta y flecha en círculo | Plan de salud |
+| Globos con personaje sobre foto | «Seu gato precisa de espaços verticais» |
+| Color sólido, título grande + bajada y foto enmarcada con bordes redondeados | Petisco para gatos, cachorros |
+| Solo texto en tarjeta con un ícono y flecha larga | «A proteína de inseto…» (el más compartido: 141 envíos) |
+| Panel crema arriba (título + párrafo) y foto a sangre abajo | «Instintos naturais» |
+| Fila de 4 íconos con etiqueta arriba y foto abajo | Beneficios del petisco |
+| Tarjetas apiladas con pastilla oscura («★ Alimentação»), título, bajada subrayada y párrafo | Cuidados del cachorro |
+| Producto al centro con banda de especie, sello circular y dos datos en círculos sobre una línea | Ficha de la protección |
+| Producto + pastillas de datos + lista con puntos unidos por una línea | Ficha del alimento |
+
+### Qué nos pasa a nosotros
+
+- Las portadas del lote varían bien, pero **por dentro casi todo es el mismo armado**: unas 35 slides con foto en tarjeta, número, título y texto, alternando verde y blanco.
+- Siempre los mismos dos fondos y el mismo sticker de «Deslizá» con la mano.
+- Falta el **módulo de valor** (íconos, tarjetas apiladas, lista con línea, panel + foto) y la **portada de solo texto**, que en Petz es la que más se comparte.
