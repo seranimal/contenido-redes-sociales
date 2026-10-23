@@ -297,9 +297,9 @@ Lo que se ve en el perfil es la primera slide de cada post:
 
 Nueve, siempre en este orden: Sucursales, Clientes, Eventos, Consejos, Brit, Kong, Benebone, Carnilove y Adopciones. Tapas listas en `posts/2026-10-destacadas/` (1080×1080 en `cuadradas/` y 1080×1920).
 
-- **Sistema «anillo»:** anillo verde Ser Animal de borde a borde y disco blanco adentro.
-- **Marcas:** el logo oficial de la marca, en sus colores, centrado. Es el único lugar del perfil donde van logos de otras marcas; se usan mientras Ser Animal venda esas marcas.
-- **Temas:** una foto real con la cara a la vista y una insignia verde abajo con el ícono de línea de `marca/elementos/` (personas, calendario, bombilla, adopción). **Sucursales** lleva el logo de Ser Animal: los locales son la marca.
+- **Sistema:** fondo verde Ser Animal y todo en blanco, centrado (como mucho el 67 % del ancho, porque Instagram recorta en círculo).
+- **Marcas:** el logo oficial pasado a blanco. Es el único lugar del perfil donde van logos de otras marcas; se usan mientras Ser Animal venda esas marcas.
+- **Temas:** el ícono de línea grueso de `marca/elementos/` (personas, calendario, bombilla, adopción). **Sucursales** lleva el logo de Ser Animal: los locales son la marca.
 - **Nunca más de nueve.** Lo que va adentro se renueva cada tres meses.
 
 ---

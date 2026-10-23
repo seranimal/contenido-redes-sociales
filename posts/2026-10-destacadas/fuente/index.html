@@ -4,49 +4,42 @@
 <meta charset="utf-8">
 <title>Destacadas · Ser Animal</title>
 <style>
-  @font-face { font-family: "Nunito"; font-weight: 900; src: url("../../../marca/fuentes/nunito-latin-900-normal.woff") format("woff"); }
-  @font-face { font-family: "DM Sans"; font-weight: 500; src: url("../../../marca/fuentes/dm-sans-latin-500-normal.woff") format("woff"); }
-  :root { --verde: #9ECA1B; --texto: #253027; --superficie: #F8FAF4; --borde: #E5E9DE; }
+  :root { --verde: #9ECA1B; }
   * { box-sizing: border-box; margin: 0; }
-  body { background: #ddd; display: flex; flex-wrap: wrap; gap: 40px; padding: 40px; font-family: "DM Sans", sans-serif; }
+  body { background: #ddd; display: flex; flex-wrap: wrap; gap: 40px; padding: 40px; }
   body.render { padding: 0; gap: 0; background: none; }
 
-  /* Sistema «anillo»: Instagram muestra la tapa como un círculo, así que la composición es un
-     anillo verde Ser Animal de borde a borde, un disco blanco adentro y, en el disco, el logo de
-     la marca o una foto real con una insignia verde con el ícono de línea. */
-  .historia { width: 1080px; height: 1920px; background: var(--superficie); display: grid; place-items: center; flex: none; }
-  .tapa { width: 1080px; height: 1080px; background: var(--superficie); position: relative; flex: none; }
-  .anillo { position: absolute; inset: 0; border-radius: 50%; background: var(--verde); display: grid; place-items: center; }
-  .disco { width: 960px; height: 960px; border-radius: 50%; background: #fff; overflow: hidden; display: grid; place-items: center; position: relative; }
-  .disco img.logo { max-width: 700px; max-height: 320px; }
-  .disco img.foto { width: 100%; height: 100%; object-fit: cover; }
-  .insignia { position: absolute; left: 50%; top: 870px; width: 470px; height: 470px; transform: translate(-50%, -50%); border-radius: 50%; background: var(--verde); border: 18px solid #fff; display: grid; place-items: center; box-shadow: 0 10px 30px rgba(37, 48, 39, 0.18); }
-  .insignia img { width: 300px; height: 300px; }
+  /* Sistema de las tapas: fondo verde Ser Animal y todo en blanco. En las de marcas, el logo
+     oficial en blanco; en Sucursales, el logo de Ser Animal; en las de temas, el ícono de línea
+     grueso de marca/elementos. Instagram muestra la tapa en un círculo, así que todo va centrado
+     y ocupa como mucho el 67 % del ancho. */
+  .historia { width: 1080px; height: 1920px; background: var(--verde); display: grid; place-items: center; flex: none; }
+  .tapa { width: 1080px; height: 1080px; background: var(--verde); display: grid; place-items: center; flex: none; }
+  .tapa img.logo { max-width: 720px; max-height: 340px; }
+  .tapa img.icono { width: 480px; height: 480px; }
 </style>
 </head>
 <body>
 <div id="raiz"></div>
 <script>
-  // [clave, nombre, {logo} o {foto, posicion, icono}]
+  // [clave, nombre, {logo, ancho} o {icono}]. Los logos blancos se generan con fuente/logos-blancos.py.
   const DESTACADAS = [
-    // Sucursales lleva el logo de Ser Animal: los locales son la marca. Cuando haya una foto linda del local, se cambia por { foto, icono: 'tienda' }.
-    ['sucursales', 'Sucursales', { logo: '../../../marca/logo/logo-verde.svg', ancho: 820 }],
-    ['clientes', 'Clientes', { foto: 'clientes.jpg', posicion: '50% 30%', icono: 'personas' }],
-    ['eventos', 'Eventos', { foto: 'eventos.jpg', posicion: '50% 60%', icono: 'calendario' }],
-    ['consejos', 'Consejos', { foto: 'consejos.jpg', posicion: '62% 30%', icono: 'bombilla' }],
-    ['brit', 'Brit', { logo: 'brit.svg', ancho: 600 }],
-    ['kong', 'Kong', { logo: 'kong.svg', ancho: 640 }],
-    ['benebone', 'Benebone', { logo: 'benebone.png', ancho: 700 }],
-    ['carnilove', 'Carnilove', { logo: 'carnilove.svg', ancho: 640 }],
-    ['adopciones', 'Adopciones', { foto: 'adopciones.jpg', posicion: '50% 25%', icono: 'adopcion' }],
+    ['sucursales', 'Sucursales', { logo: '../../../marca/logo/logo-blanco.svg', ancho: 720 }],
+    ['clientes', 'Clientes', { icono: 'personas' }],
+    ['eventos', 'Eventos', { icono: 'calendario' }],
+    ['consejos', 'Consejos', { icono: 'bombilla' }],
+    ['brit', 'Brit', { logo: 'logos/brit-blanco.svg', ancho: 600 }],
+    ['kong', 'Kong', { logo: 'logos/kong-blanco.svg', ancho: 640 }],
+    ['benebone', 'Benebone', { logo: 'logos/benebone-blanco.png', ancho: 720 }],
+    ['carnilove', 'Carnilove', { logo: 'logos/carnilove-blanco.svg', ancho: 640 }],
+    ['adopciones', 'Adopciones', { icono: 'adopcion' }],
   ];
   if (location.search.includes('render')) document.body.classList.add('render');
   const tapa = ([clave, , d]) => {
     const interior = d.logo
-      ? `<img class="logo" src="${d.logo.startsWith('../') ? d.logo : 'logos/' + d.logo}" style="width:${d.ancho}px" alt="">`
-      : `<img class="foto" src="fotos/${d.foto}" style="object-position:${d.posicion}" alt="">`;
-    const insignia = d.icono ? `<div class="insignia"><img src="../../../marca/elementos/svg/icono-${d.icono}-blanco-grueso.svg" alt=""></div>` : '';
-    return `<div class="historia" data-clave="${clave}"><div class="tapa"><div class="anillo"><div class="disco">${interior}</div></div>${insignia}</div></div>`;
+      ? `<img class="logo" src="${d.logo}" style="width:${d.ancho}px" alt="">`
+      : `<img class="icono" src="../../../marca/elementos/svg/icono-${d.icono}-blanco-grueso.svg" alt="">`;
+    return `<div class="historia" data-clave="${clave}"><div class="tapa">${interior}</div></div>`;
   };
   document.getElementById('raiz').outerHTML = DESTACADAS.map(tapa).join('');
 </script>
