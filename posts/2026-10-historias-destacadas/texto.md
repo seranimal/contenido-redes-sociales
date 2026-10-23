@@ -23,7 +23,7 @@ En `brit/` hay además dos historias en video (1080×1920, 30 fps, sin audio: la
 - `brit-premium-animado.mp4` (16 s): intro con el logo y «Para cada necesidad», y después caen seis bolsas de Premium by Nature, una por una, cada una con su dato de la ficha: Junior S 55 % pollo deshidratado, Adult S 50 %, Adult L 45 %, Sensitive 35 % cordero, Light 40 % pavo y pollo, Sport 50 %.
 - `brit-care-animado.mp4` (14 s): lo mismo con cinco de Care: Puppy 55 % salmón, Junior Large Breed 52 %, Adult 50 %, Senior & Light 48 % y Sustainable 38 % pollo + 14 % insecto.
 
-Las dos terminan en «Descubrí toda la línea…» con el botón «Tocá el link»: al subirlas se les pone el **sticker de link** a la página de esa línea en la web. Fondo verde suave (`#CADC8A`), verde Ser Animal en los acentos y el cierre.
+Las dos terminan en «Descubrí toda la línea…» con el botón «Tocá el link»: al subirlas se les pone el **sticker de link** a la página de esa línea en la web. Intro sobre verde suave (`#CADC8A`), las bolsas caen sobre blanco (la tarjeta del dato va en verde suave) y el cierre es en verde Ser Animal.
 
 Las fotos de las bolsas (`fuente/bolsas/`) son las de la tienda, recortadas con `fuente/bolsas/recortar.py`. Los datos salen de `fuente/animado.html`; para rehacerlas: `node fuente/animar.js brit premium` y `node fuente/animar.js brit care` (con `check` al final exporta cuadros de control en vez del video).
 

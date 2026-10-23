@@ -10,10 +10,12 @@
   :root { --verde: #9ECA1B; --verde-claro: #CADC8A; --verde-hoja: #4C7300; --texto: #253027; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: #111; }
-  /* Historia animada 1080×1920 sobre verde suave. Se dibuja cuadro a cuadro con window.render(t). */
+  /* Historia animada 1080×1920: intro sobre verde suave, bolsas sobre blanco y cierre en verde.
+     Se dibuja cuadro a cuadro con window.render(t). */
   #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--verde-claro); color: var(--texto); font-family: "DM Sans", sans-serif; }
   .h { font-family: "Nunito", sans-serif; font-weight: 900; letter-spacing: -1px; line-height: 1.05; }
   .capa { position: absolute; left: 0; right: 0; will-change: transform, opacity; }
+  #blanco { top: 0; bottom: 0; background: #fff; }
 
   /* Intro y cabecera */
   #logo { top: 300px; text-align: center; }
@@ -21,19 +23,20 @@
   #titulo { top: 480px; text-align: center; font-size: 78px; }
   #bajada { top: 680px; text-align: center; font-size: 40px; font-weight: 500; color: var(--verde-hoja); }
   #cab { top: 290px; left: 80px; right: 80px; display: flex; align-items: center; justify-content: space-between; }
+  #cab, #chip { z-index: 3; }
   #cab img { height: 92px; }
   #cab .linea { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 44px; }
   #cab .n { font-size: 34px; font-weight: 700; color: var(--verde-hoja); }
 
   /* Bolsa y su dato */
-  #suelo { top: 1395px; left: 50%; width: 560px; height: 70px; margin-left: -280px; border-radius: 50%; background: rgba(37, 48, 39, .18); filter: blur(10px); }
+  #suelo { top: 1395px; left: 50%; width: 560px; height: 70px; margin-left: -280px; border-radius: 50%; background: rgba(37, 48, 39, .14); filter: blur(12px); }
   #bolsa { top: 420px; display: grid; place-items: end center; height: 1000px; }
   #bolsa img { max-height: 960px; max-width: 700px; filter: drop-shadow(0 30px 40px rgba(37, 48, 39, .25)); transform-origin: 50% 100%; }
-  #dato { top: 1490px; left: 80px; right: 80px; display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; background: #fff; border-radius: 28px; padding: 26px 34px; box-shadow: 0 16px 40px rgba(37, 48, 39, .16); }
+  #dato { top: 1490px; left: 80px; right: 80px; display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; background: var(--verde-claro); border-radius: 28px; padding: 26px 34px; }
   #dato .num { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 92px; color: var(--verde-hoja); line-height: 1; white-space: nowrap; }
   #dato .txt { display: grid; gap: 4px; }
   #dato .txt b { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 42px; line-height: 1.1; }
-  #dato .txt span { font-size: 32px; line-height: 1.25; color: #444D45; }
+  #dato .txt span { font-size: 32px; line-height: 1.25; color: var(--texto); }
   #chip { top: 400px; left: 80px; display: inline-block; width: auto; right: auto; background: var(--verde); color: var(--texto); font-weight: 700; font-size: 36px; padding: 14px 30px; border-radius: 999px; }
 
   /* Cierre */
@@ -50,6 +53,7 @@
 </head>
 <body>
 <div id="stage">
+  <div class="capa" id="blanco"></div>
   <div class="capa" id="logo"><img src="logos/brit.svg" alt="Brit"></div>
   <div class="capa h" id="titulo"></div>
   <div class="capa" id="bajada"></div>
@@ -131,6 +135,10 @@
     set($('#bajada'), { y: 60 * (1 - inC) - 40 * outI, o: inC * (1 - outI) });
     const cabIn = easeOut(clamp((t - INTRO + 0.1) / 0.4));
     set($('#cab'), { y: -30 * (1 - cabIn), o: cabIn });
+
+    // Fondo blanco para las bolsas: sube como una cortina al terminar la intro.
+    const blancoIn = easeOut(clamp((t - INTRO + 0.35) / 0.4));
+    set($('#blanco'), { y: 1920 * (1 - blancoIn) });
 
     // Bolsas
     const tb = t - INTRO;
