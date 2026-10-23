@@ -41,9 +41,11 @@
   h1, h2, h3 { font-family: var(--display); font-weight: 900; line-height: 1.05; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
   p { margin: 0; }
   a { color: var(--verde-hoja); }
+  code { font: 500 0.88em ui-monospace, "SF Mono", Menlo, monospace; background: var(--suave); border-radius: 6px; padding: 1px 6px; overflow-wrap: anywhere; }
   .banda { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
   .ancho { max-width: 1120px; margin: 0 auto; }
   .seccion { padding-block: 72px; }
+  .seccion.papel { background: var(--papel); border-block: 1px solid var(--borde); }
   .etiqueta { font: 700 12px/1 var(--texto); letter-spacing: 0.14em; text-transform: uppercase; color: var(--verde-hoja); }
   .titulo-seccion { display: grid; gap: 10px; margin-bottom: 36px; max-width: 64ch; }
   .titulo-seccion h2 { font-size: clamp(32px, 5vw, 52px); }
@@ -54,7 +56,7 @@
   .portada .ancho { padding-block: 56px 64px; display: grid; gap: 28px; }
   .portada img.logo { width: min(320px, 70%); }
   .portada h1 { font-size: clamp(44px, 8vw, 96px); max-width: 12ch; }
-  .portada p { font-size: 19px; max-width: 52ch; }
+  .portada p { font-size: 19px; max-width: 56ch; }
   .indice { display: flex; flex-wrap: wrap; gap: 8px; }
   .indice a { color: var(--sobre-verde); background: rgba(255, 255, 255, 0.55); text-decoration: none; font-weight: 700; font-size: 14px; padding: 9px 16px; border-radius: 999px; }
   .indice a:hover, .indice a:focus-visible { background: #fff; outline: none; }
@@ -94,7 +96,7 @@
   .regla h3 { font-size: 24px; }
   .regla p, .regla li { color: var(--gris); }
   .regla ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
-  .copia { background: var(--papel); border: 1px solid var(--borde); border-radius: 16px; padding: 16px 18px; display: grid; gap: 10px; }
+  .copia { background: var(--papel); border: 1px solid var(--borde); border-radius: 16px; padding: 16px 18px; display: grid; gap: 10px; min-width: 0; }
   .copia pre { margin: 0; white-space: pre-wrap; font: 500 15px/1.5 var(--texto); color: var(--tinta); }
   .copia button { justify-self: start; font: 700 14px var(--texto); background: var(--tinta); color: var(--fondo); border: 0; border-radius: 999px; padding: 9px 18px; cursor: pointer; }
   .copia button:focus-visible { outline: 3px solid var(--verde); outline-offset: 2px; }
@@ -102,9 +104,16 @@
   .ritmo span { font: 700 12px var(--texto); text-align: center; padding: 10px 4px; border-radius: 10px; background: var(--suave); color: var(--tinta); }
   .ritmo span.v { background: var(--verde); color: var(--sobre-verde); }
 
+  /* Reglas de oro */
+  .oro { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .oro article { background: var(--papel); border: 1px solid var(--borde); border-radius: 16px; padding: 20px; display: grid; gap: 8px; align-content: start; }
+  .oro .num { width: 34px; height: 34px; border-radius: 50%; background: var(--verde); color: var(--sobre-verde); display: grid; place-items: center; font: 900 16px var(--display); }
+  .oro h3 { font-size: 21px; }
+  .oro p { color: var(--gris); font-size: 15px; }
+
   /* Pilares */
   .pilares { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-  .pilar { background: var(--papel); border: 1px solid var(--borde); border-radius: 28px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+  .pilar { background: var(--fondo); border: 1px solid var(--borde); border-radius: 28px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
   .pilar img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
   .pilar div { padding: 18px 20px 22px; display: grid; gap: 8px; align-content: start; }
   .pilar h3 { font-size: 24px; }
@@ -112,10 +121,25 @@
   .pilar p { color: var(--gris); font-size: 15px; }
   .ejemplo { margin-top: 56px; display: grid; gap: 14px; }
   .ejemplo h3 { font-size: 26px; }
-  .ejemplo p.nota { color: var(--gris); }
+  .ejemplo p.nota { color: var(--gris); max-width: 80ch; }
   .tira { display: grid; grid-template-columns: repeat(5, minmax(150px, 1fr)); gap: 10px; overflow-x: auto; padding-bottom: 6px; }
   .tira.cuatro { grid-template-columns: repeat(4, minmax(150px, 1fr)); }
+  .tira.tres { grid-template-columns: repeat(3, minmax(150px, 1fr)); max-width: 680px; }
   .tira img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; }
+
+  /* Animados */
+  .animados { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .animados figure { margin: 0; display: grid; gap: 10px; }
+  .animados video { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 16px; background: var(--suave); }
+  .animados figcaption { color: var(--gris); font-size: 15px; }
+  .animados figcaption b { color: var(--tinta); }
+  .lista-anim { margin: 28px 0 0; padding-left: 20px; display: grid; gap: 6px; color: var(--gris); max-width: 80ch; }
+
+  /* Historias */
+  .historias { display: grid; grid-template-columns: repeat(6, minmax(130px, 1fr)); gap: 10px; overflow-x: auto; padding-bottom: 6px; }
+  .historias img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 12px; }
+  .dos-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 32px; }
+  .dos-col .regla ul { gap: 6px; }
 
   /* Calendario */
   .semana { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
@@ -124,6 +148,15 @@
   .dia span { font-size: 13px; color: var(--gris); line-height: 1.35; }
   .dia.post { background: var(--verde); border-color: var(--verde); }
   .dia.post b, .dia.post span { color: var(--sobre-verde); }
+  .nota-semana { margin-top: 18px; color: var(--gris); max-width: 80ch; }
+
+  /* Pasos */
+  .pasos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; counter-reset: paso; margin: 0; padding: 0; list-style: none; }
+  .pasos li { background: var(--fondo); border: 1px solid var(--borde); border-radius: 16px; padding: 20px; display: grid; gap: 6px; align-content: start; counter-increment: paso; }
+  .pasos li::before { content: counter(paso); font: 900 34px/1 var(--display); color: var(--verde-hoja); }
+  .pasos b { font: 900 19px/1.2 var(--display); }
+  .pasos span { color: var(--gris); font-size: 15px; }
+  .plantilla { margin-top: 32px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
 
   /* Brand assets */
   .oscura { background: #253027; color: #F8FAF4; }
@@ -155,28 +188,34 @@
   .pie { padding-block: 40px; color: var(--gris); font-size: 14px; border-top: 1px solid var(--borde); }
 
   @media (max-width: 900px) {
-    .perfil { grid-template-columns: minmax(0, 1fr); }
+    .perfil, .plantilla, .dos-col { grid-template-columns: minmax(0, 1fr); }
     .telefono { max-width: 400px; width: 100%; margin: 0 auto; }
-    .pilares, .carpetas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pilares, .carpetas, .oro, .pasos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .semana { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .checks { grid-template-columns: minmax(0, 1fr); }
   }
+  @media (max-width: 620px) {
+    .animados { grid-template-columns: minmax(0, 1fr); max-width: 400px; }
+  }
   @media (max-width: 520px) {
     .seccion { padding-block: 52px; }
-    .pilares { grid-template-columns: minmax(0, 1fr); }
+    .pilares, .oro, .pasos { grid-template-columns: minmax(0, 1fr); }
   }
-  @media (prefers-reduced-motion: reduce) { video { animation: none; } }
 </style>
 
 <header class="portada banda">
   <div class="ancho">
     <img class="logo" src="img/logo-blanco.svg" alt="Ser Animal">
     <h1>Así se ve Ser Animal en Instagram</h1>
-    <p>Cómo tiene que verse el perfil, de qué hablamos, con qué ritmo publicamos y dónde están todos los recursos de marca. Todo lo de esta guía ya está en el repositorio <b>contenido-redes-sociales</b>.</p>
+    <p>Cómo tiene que verse el perfil, las reglas que no se rompen, de qué hablamos, cómo se arma cada post y dónde están los recursos de marca. Los ejemplos son posts reales del lote de noviembre y diciembre, y todo está en el repositorio <b>contenido-redes-sociales</b>.</p>
     <nav class="indice" aria-label="Secciones">
       <a href="#perfil">El perfil</a>
-      <a href="#pilares">Pilares de contenido</a>
+      <a href="#oro">Reglas de oro</a>
+      <a href="#pilares">Pilares y carruseles</a>
+      <a href="#animados">Animados</a>
+      <a href="#historias">Historias</a>
       <a href="#semana">La semana</a>
+      <a href="#como">Cómo se hace</a>
       <a href="#assets">Brand assets</a>
       <a href="#antes">Antes de publicar</a>
     </nav>
@@ -188,7 +227,7 @@
     <div class="titulo-seccion">
       <span class="etiqueta">01 · El perfil</span>
       <h2>La cuenta, de un vistazo</h2>
-      <p>Así tiene que verse el perfil de @seranimal: foto de perfil verde, bio clara, destacadas por especie y una grilla donde mandan las fotos reales.</p>
+      <p>Así tiene que verse @seranimal: foto de perfil verde, bio clara, destacadas por especie y una grilla donde mandan las fotos reales, con mascotas y personas.</p>
     </div>
 
     <div class="perfil">
@@ -218,27 +257,27 @@
         </div>
         <div class="tel-pestanas"><span class="activa">▦</span><span>▷</span><span>◫</span></div>
         <div class="grilla">
-          <img src="img/ed-arriba.jpg" alt="Portada: Tu perro ya te enseñó más de lo que imaginás (título editorial arriba)">
-          <img src="img/ed-globos.jpg" alt="Portada: ¿Por qué a los gatos les encantan las cajas? (pregunta en globos)">
-          <img src="img/ed-editorial.jpg" alt="Portada: El heno es la base de la dieta de tu conejo (texto editorial)">
-          <img src="img/ed-retrato.jpg" alt="Portada: retrato de una clienta con su perro (retrato con nombre)">
-          <img src="img/ed-panel.jpg" alt="Portada: ¿Tu perro toma suficiente agua? (foto con panel)">
-          <img src="img/claro-arenero.jpg" alt="Portada: arenero de acero inoxidable sobre fondo claro">
-          <img src="img/ed-abajo.jpg" alt="Portada: Cosas para evitar en una casa con perros (título editorial abajo)">
-          <img src="img/ed-mosaico.jpg" alt="Portada: Entender a tu perro es más fácil de lo que parece (mosaico de palabras)">
-          <img src="img/ed-cita.jpg" alt="Portada: Los mejores planes son los que hacemos juntos (cita sobre foto)">
+          <img src="img/grilla-1.jpg" alt="De viaje con tu perro (título abajo)">
+          <img src="img/grilla-2.jpg" alt="Si le asustan los fuegos artificiales (título arriba)">
+          <img src="img/grilla-3.jpg" alt="En verano, llevá agua al paseo (título abajo)">
+          <img src="img/grilla-4.jpg" alt="Lo que te dice su cola (título arriba)">
+          <img src="img/grilla-5.jpg" alt="Si se queda solo en casa (foto con panel)">
+          <img src="img/grilla-6.jpg" alt="Adoptar cambia dos vidas (cita sobre foto)">
+          <img src="img/grilla-7.jpg" alt="Platos de bambú para la hora de comer (foto enmarcada)">
+          <img src="img/grilla-8.jpg" alt="3 cosas que no sabías de sus bigotes (número grande)">
+          <img src="img/grilla-9.jpg" alt="Que tu gato de interior no se aburra (título arriba)">
         </div>
       </div>
 
       <div class="reglas">
         <div class="regla">
           <h3>Bio</h3>
-          <p>Qué es, para quién y cómo llega. Sin frases vacías. Máximo 150 caracteres.</p>
+          <p>Qué es, para quién y cómo llega. Sin frases vacías. Máximo 150 caracteres. La bio es el único lugar del perfil, junto con el texto de los posteos, donde va el WhatsApp.</p>
           <div class="copia">
             <pre id="bio-texto">Todo para perros, gatos, roedores, pájaros y peces 🐾
 Envío gratis a todo el país desde $1.500
 Pedidos por WhatsApp: 091 380 000</pre>
-            <button type="button" id="copiar-bio">Copiar bio</button>
+            <button type="button" data-copiar="bio-texto">Copiar bio</button>
           </div>
           <ul>
             <li><b>Nombre:</b> «Ser Animal · Tienda de mascotas». Así también aparece al buscar «tienda de mascotas».</li>
@@ -254,17 +293,16 @@ Pedidos por WhatsApp: 091 380 000</pre>
         <div class="regla">
           <h3>La grilla</h3>
           <ul>
-            <li>La base son las portadas con foto real, en estilos editoriales: título sobre foto, globos, panel, enmarcada, retrato y cita. Más personas con sus mascotas, como Petz.</li>
+            <li>La base son las portadas con foto real y un texto claro: título sobre foto, globos, panel, enmarcada, cita, número grande, mosaico.</li>
             <li>Nunca dos portadas seguidas con el mismo estilo.</li>
-            <li>Como máximo un producto héroe sobre verde por fila.</li>
-            <li>Fondo claro (producto o aviso) para variar: nunca dos seguidas y como máximo 3 de cada 9.</li>
-            <li>Nunca se publican precios.</li>
-            <li>El perfil recorta las portadas a 3:4: el título y el sticker «Deslizá» van dentro del margen de seguridad.</li>
+            <li>Se alternan fotos reales y productos: un producto cada dos o tres posts.</li>
+            <li>Más personas con sus mascotas, como Petz.</li>
+            <li>El perfil recorta las portadas a 3:4: el título y el «Deslizá» van dentro del margen de seguridad.</li>
           </ul>
-          <div class="ritmo" aria-label="Ejemplo de ritmo de estilos en la grilla">
-            <span class="v">Título arriba</span><span>Globos</span><span class="v">Editorial</span>
-            <span>Retrato</span><span class="v">Panel</span><span>Producto claro</span>
-            <span class="v">Título abajo</span><span>Mosaico</span><span class="v">Cita</span>
+          <div class="ritmo" aria-label="Estilos de portada de la grilla de ejemplo">
+            <span class="v">Título abajo</span><span>Título arriba</span><span class="v">Título abajo</span>
+            <span>Título arriba</span><span class="v">Panel</span><span>Cita</span>
+            <span class="v">Enmarcada</span><span>Número</span><span class="v">Título arriba</span>
           </div>
         </div>
       </div>
@@ -272,115 +310,258 @@ Pedidos por WhatsApp: 091 380 000</pre>
   </div>
 </section>
 
-<section class="banda seccion" id="pilares" style="background: var(--papel); border-block: 1px solid var(--borde);">
+<section class="banda seccion papel" id="oro">
   <div class="ancho">
     <div class="titulo-seccion">
-      <span class="etiqueta">02 · Pilares de contenido</span>
+      <span class="etiqueta">02 · Reglas de oro</span>
+      <h2>Lo que no se rompe nunca</h2>
+      <p>Valen para cada post, cada historia y cada animación. Si algo no las cumple, no se publica.</p>
+    </div>
+    <div class="oro">
+      <article><span class="num">1</span><h3>Sin etiquetas</h3><p>La portada es la foto y un texto claro, nada más. Nada de pastillas como «Consejos», «¿Sabías que…?», «En la tienda» o «Aviso».</p></article>
+      <article><span class="num">2</span><h3>Sin precios</h3><p>Ni en la imagen ni en el posteo. Los únicos montos son los textos fijos de envíos y pedido programado.</p></article>
+      <article><span class="num">3</span><h3>Sin marcas</h3><p>Ni logos ni textos de otras marcas en las fotos: se borran con IA. El producto se nombra por lo que es. Bolsas de alimento no van al feed.</p></article>
+      <article><span class="num">4</span><h3>Feed estético</h3><p>Nada de «Pedilo por WhatsApp», teléfonos ni llamados a la venta en las imágenes. El WhatsApp va solo en el texto del posteo.</p></article>
+      <article><span class="num">5</span><h3>Siempre en positivo</h3><p>Nunca retar ni juzgar al dueño. Nada de «Cuidalo mejor»: los consejos se dan como ideas, con calma.</p></article>
+      <article><span class="num">6</span><h3>HD y nítidas</h3><p>Fotos de 2000 px o más. Se exporta al doble y se reduce. Si una foto se ve borrosa, no se usa.</p></article>
+      <article><span class="num">7</span><h3>Caras a la vista</h3><p>Ni el título ni los elementos gráficos tapan la cara del animal ni la de las personas. Si tapan, se cambia el encuadre o la foto.</p></article>
+      <article><span class="num">8</span><h3>Una sola flecha</h3><p>Si va el «Deslizá», no se suma otra indicación para deslizar. Los elementos salen siempre de <code>marca/elementos/</code>.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="banda seccion" id="pilares">
+  <div class="ancho">
+    <div class="titulo-seccion">
+      <span class="etiqueta">03 · Pilares y carruseles</span>
       <h2>De qué hablamos</h2>
       <p>Cuatro temas fijos. Cada post entra en uno; si no entra en ninguno, no va.</p>
     </div>
     <div class="pilares">
       <article class="pilar">
-        <img src="img/p2-cobayos.jpg" alt="">
+        <img src="img/p-sabias.jpg" alt="Portada: ¿Por qué ronronean los gatos?">
         <div><h3>¿Sabías que…?</h3><span class="frec">1 por semana · carrusel</span>
-          <p>Curiosidades de cada especie, verificadas. Es lo que más se guarda y se comparte, y suma a los roedores, los pájaros y los peces.</p>
-          <p><b>Portada:</b> número grande o texto editorial.</p></div>
+          <p>Curiosidades de cada especie, verificadas. Es lo que más se guarda y se comparte.</p>
+          <p><b>Portada:</b> número grande, pregunta en globos o título sobre foto.</p></div>
       </article>
       <article class="pilar">
-        <img src="img/p1-calor.jpg" alt="">
+        <img src="img/p-consejos.jpg" alt="Portada: Cómo presentar un gato nuevo en casa">
         <div><h3>Consejos</h3><span class="frec">1 por semana · carrusel</span>
-          <p>Consejos prácticos y de temporada: calor, lluvia, higiene, alimentación. Ante síntomas, siempre «consultá a tu veterinario».</p>
-          <p><b>Portada:</b> pregunta enmarcada, pregunta en globos, foto con panel o foto enmarcada.</p></div>
+          <p>Consejos prácticos y de temporada. Cada dos semanas, uno que termina en el producto que ayuda. Ante síntomas, siempre «consultá a tu veterinario».</p>
+          <p><b>Portada:</b> pregunta enmarcada, foto con panel, foto enmarcada o título sobre foto.</p></div>
       </article>
       <article class="pilar">
-        <img src="img/p4-producto.jpg" alt="">
+        <img src="img/p-productos.jpg" alt="Portada: Tirale la pelota sin cansarte">
         <div><h3>Productos</h3><span class="frec">1 o 2 por semana</span>
-          <p>Productos reales de Ser Animal: novedades, fichas con callouts y producto héroe. Solo datos confirmados, nunca precios ni «pedilo»: se muestran lindos, para inspirar.</p>
-          <p><b>Portada:</b> foto de uso, foto limpia, producto héroe o producto sobre fondo claro.</p></div>
+          <p>Productos lindos de seranimal.com.uy, con los datos de su ficha. Se muestran en uso, para inspirar: nunca precios ni «pedilo».</p>
+          <p><b>Portada:</b> producto en uso con título sobre foto, panel o enmarcada.</p></div>
       </article>
       <article class="pilar">
-        <img src="img/p3-comunidad.jpg" alt="">
+        <img src="img/p-familia.jpg" alt="Portada: Señales de que tu perro te quiere">
         <div><h3>La familia Ser Animal</h3><span class="frec">1 por semana</span>
-          <p>Mascotas de clientes, preguntas para comentar y el servicio: envíos, pedido programado, WhatsApp.</p>
-          <p><b>Portada:</b> retrato con nombre, título verde o título blanco; los avisos, solo texto.</p></div>
+          <p>El vínculo con las mascotas, preguntas para comentar y mascotas de clientes, siempre con su permiso.</p>
+          <p><b>Portada:</b> cita sobre foto, mosaico de palabras, texto editorial o retrato con nombre.</p></div>
       </article>
     </div>
 
     <div class="ejemplo">
-      <h3>Ejemplo · Consejos</h3>
-      <p class="nota">Portada con foto real; después, una idea por slide alternando blanco y verde; cierre verde con una pregunta para comentar.</p>
+      <h3>Consejo que termina en producto</h3>
+      <p class="nota">Portada con una pregunta, tres consejos con foto real alternando verde y blanco, y al final la ficha del producto que ayuda. Enseña primero y vende sin decir «comprá».</p>
       <div class="tira">
-        <img src="img/calor-1.jpg" alt="Slide 1: ¿Hace demasiado calor para pasear?">
-        <img src="img/calor-2.jpg" alt="Slide 2: La prueba de los 7 segundos">
-        <img src="img/calor-3.jpg" alt="Slide 3: Elegí bien el horario">
-        <img src="img/calor-4.jpg" alt="Slide 4: Atento a las señales">
-        <img src="img/calor-5.jpg" alt="Slide 5: Guardalo para el verano">
+        <img src="img/cepillado-1.jpg" alt="Slide 1: ¿Cada cuánto cepillar a tu gato?">
+        <img src="img/cepillado-2.jpg" alt="Slide 2: Pelo corto, una vez por semana">
+        <img src="img/cepillado-3.jpg" alt="Slide 3: Pelo largo, casi todos los días">
+        <img src="img/cepillado-4.jpg" alt="Slide 4: Menos pelo en casa">
+        <img src="img/cepillado-5.jpg" alt="Slide 5: ficha del peine con botón de autolimpieza">
       </div>
     </div>
     <div class="ejemplo">
-      <h3>Ejemplo · ¿Sabías que…?</h3>
-      <p class="nota">Cada dato con su foto en tarjeta y su número; los datos salen de fuentes veterinarias.</p>
-      <div class="tira">
-        <img src="img/cobayos-1.jpg" alt="Slide 1: 3 cosas que no sabías de los cobayos">
-        <img src="img/cobayos-2.jpg" alt="Slide 2: No producen vitamina C">
-        <img src="img/cobayos-3.jpg" alt="Slide 3: Sus dientes nunca dejan de crecer">
-        <img src="img/cobayos-4.jpg" alt="Slide 4: Saltan de felicidad">
-        <img src="img/cobayos-5.jpg" alt="Slide 5: ¿Tenés un cobayo?">
+      <h3>Producto (el carrusel preferido)</h3>
+      <p class="nota">Portada con el producto en uso, hecha con Nano Banana Pro a partir de la foto real; después la ficha; y cierre con una foto real que acompaña la idea.</p>
+      <div class="tira tres">
+        <img src="img/rascador-1.jpg" alt="Slide 1: Para dormir, rascar y jugar">
+        <img src="img/rascador-2.jpg" alt="Slide 2: ficha de la cama y rascador de madera XL">
+        <img src="img/rascador-3.jpg" alt="Slide 3: Rascar es parte de ser gato">
       </div>
     </div>
     <div class="ejemplo">
-      <h3>Ejemplo · Productos (el carrusel preferido)</h3>
-      <p class="nota">Portada linda con el producto en uso y el título bien legible; después, la ficha: el producto solo con sus colores, el nombre, una línea y los datos en pastillas. Sin precio.</p>
+      <h3>La ficha de producto</h3>
+      <p class="nota">Foto de estudio sobre blanco, sin logos; el nombre por lo que es; una línea que explica para qué sirve; los datos de la web en pastillas; y los colores, si los hay. Sin precio.</p>
       <div class="tira cuatro">
-        <img src="img/pechera-1.jpg" alt="Slide 1: Pechera y correa, con el título por detrás de las orejas del husky">
-        <img src="img/pechera-2.jpg" alt="Slide 2: ficha de la pechera y correa con colores y descripción">
+        <img src="img/ficha-bebedero.jpg" alt="Ficha: bebedero portátil">
+        <img src="img/ficha-dispensador.jpg" alt="Ficha: juguete dispensador para gatos">
+        <img src="img/ficha-lanzador.jpg" alt="Ficha: lanzador de pelotas automático">
+        <img src="img/ficha-comedero.jpg" alt="Ficha: comedero doble con orejitas">
       </div>
     </div>
     <div class="ejemplo">
-      <h3>Editoriales · inspirados en Petz</h3>
-      <p class="nota">Globos blancos con el personaje que se asoma, foto con panel, texto con palabras subrayadas, foto enmarcada y retrato de clientes. Sin etiquetas: foto y texto claro. (Nombres y cita del retrato: de ejemplo; en los posts reales, siempre del cliente y con su permiso.) Una sola indicación para deslizar: si va el «Deslizá», no se suma ninguna flecha.</p>
+      <h3>¿Sabías que…?</h3>
+      <p class="nota">Cada dato con su foto en tarjeta y su número. Los datos salen de fuentes veterinarias.</p>
+      <div class="tira cuatro">
+        <img src="img/bigotes-1.jpg" alt="Slide 1: 3 cosas que no sabías de sus bigotes">
+        <img src="img/bigotes-2.jpg" alt="Slide 2: Miden espacios">
+        <img src="img/bigotes-3.jpg" alt="Slide 3: Sienten el aire">
+        <img src="img/bigotes-4.jpg" alt="Slide 4: No se cortan nunca">
+      </div>
+    </div>
+    <div class="ejemplo">
+      <h3>La familia Ser Animal</h3>
+      <p class="nota">Fotos con personas y sus mascotas, títulos cortos con una palabra subrayada y un cierre que invita a contar su historia.</p>
+      <div class="tira cuatro">
+        <img src="img/adoptar-1.jpg" alt="Slide 1: Adoptar cambia dos vidas">
+        <img src="img/adoptar-2.jpg" alt="Slide 2: Le das un hogar">
+        <img src="img/adoptar-3.jpg" alt="Slide 3: Y te da compañía de verdad">
+        <img src="img/adoptar-4.jpg" alt="Slide 4: ¿Tu compañero es adoptado?">
+      </div>
+    </div>
+    <div class="ejemplo">
+      <h3>Todos los estilos editoriales</h3>
+      <p class="nota">Inspirados en Petz: globos blancos con el personaje que se asoma, foto con panel, texto con palabras subrayadas, foto enmarcada, retrato, título sobre foto, cita y mosaico. En el retrato, los nombres y la cita son siempre del cliente y con su permiso.</p>
       <div class="tira">
         <img src="img/ed-globos.jpg" alt="Pregunta en globos: ¿Por qué a los gatos les encantan las cajas?">
         <img src="img/ed-panel.jpg" alt="Foto con panel: ¿Tu perro toma suficiente agua?">
         <img src="img/ed-editorial.jpg" alt="Texto editorial: El heno es la base de la dieta de tu conejo">
         <img src="img/ed-enmarcada.jpg" alt="Foto enmarcada: Un perro mayor también necesita moverse">
-        <img src="img/ed-retrato.jpg" alt="Retrato con nombre: Sofía y Tango">
+        <img src="img/ed-retrato.jpg" alt="Retrato con nombre: Sofía y Oakley">
       </div>
       <div class="tira cuatro">
-        <img src="img/ed-arriba.jpg" alt="Título editorial arriba: Tu perro ya te enseñó más de lo que imaginás">
-        <img src="img/ed-abajo.jpg" alt="Título editorial abajo: Cosas para evitar en una casa con perros">
+        <img src="img/ed-arriba.jpg" alt="Título editorial arriba">
+        <img src="img/ed-abajo.jpg" alt="Título editorial abajo">
         <img src="img/ed-cita.jpg" alt="Cita sobre foto: Los mejores planes son los que hacemos juntos">
         <img src="img/ed-mosaico.jpg" alt="Mosaico de palabras: Entender a tu perro es más fácil de lo que parece">
-      </div>
-    </div>
-    <div class="ejemplo">
-      <h3>Para variar · Fondo claro</h3>
-      <p class="nota">Producto con su foto de catálogo sobre el fondo claro de la marca, y avisos solo con texto en blanco o verde. Sin precios ni llamados a la venta: el feed es estético.</p>
-      <div class="tira cuatro">
-        <img src="img/claro-arenero.jpg" alt="Producto sobre fondo claro: arenero de acero inoxidable">
-        <img src="img/claro-snack.jpg" alt="Producto sobre fondo claro: Brit Training S">
-        <img src="img/aviso-envios.jpg" alt="Aviso: envío gratis a todo el país">
-        <img src="img/aviso-programado.jpg" alt="Aviso: tu pedido, siempre a tiempo">
       </div>
     </div>
   </div>
 </section>
 
-<section class="banda seccion" id="semana">
+<section class="banda seccion papel" id="animados">
   <div class="ancho">
     <div class="titulo-seccion">
-      <span class="etiqueta">03 · La semana</span>
+      <span class="etiqueta">04 · Animados</span>
+      <h2>La misma portada, con movimiento</h2>
+      <p>A la marca le gustan mucho. Se anima la portada real, con la misma plantilla: el título sube, el subrayado se dibuja, los globos salen de a uno y la foto se acerca despacio. 8 segundos, 1080×1350.</p>
+    </div>
+    <div class="animados">
+      <figure>
+        <video src="img/anim-ronroneo.mp4" poster="img/anim-ronroneo.jpg" autoplay muted loop playsinline aria-label="Portada animada: ¿Por qué ronronean los gatos?"></video>
+        <figcaption><b>Pregunta en globos.</b> Los globos aparecen uno por uno y al final se asoma el personaje.</figcaption>
+      </figure>
+      <figure>
+        <video src="img/anim-lanzador.mp4" poster="img/anim-lanzador.jpg" autoplay muted loop playsinline aria-label="Portada animada: Tirale la pelota sin cansarte"></video>
+        <figcaption><b>Título sobre foto.</b> El título sube, se dibuja el subrayado y después aparece el «Deslizá».</figcaption>
+      </figure>
+      <figure>
+        <video src="img/anim-gatonuevo.mp4" poster="img/anim-gatonuevo.jpg" autoplay muted loop playsinline aria-label="Portada animada: Cómo presentar un gato nuevo en casa"></video>
+        <figcaption><b>Foto enmarcada.</b> La foto entra y las esquinas del marco se dibujan alrededor.</figcaption>
+      </figure>
+    </div>
+    <ul class="lista-anim">
+      <li>Se publica como reel o como primera slide del carrusel. Uno por semana es un buen ritmo.</li>
+      <li>Se arma con <code>studio/scripts/animar-portada.cjs</code>, que clona la slide real del Studio y la anima cuadro por cuadro.</li>
+      <li>Si el post tiene música, que sea de la biblioteca de Instagram, nunca una canción descargada.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="banda seccion" id="historias">
+  <div class="ancho">
+    <div class="titulo-seccion">
+      <span class="etiqueta">05 · Historias</span>
+      <h2>Consejos cortos y mensajes</h2>
+      <p>Una o dos por día. Un mensaje que se lee de un vistazo, con una foto real: «Ellos siempre te esperan», «Agua fresca, siempre», «Gracias por cuidarlos tanto».</p>
+    </div>
+    <div class="historias">
+      <img src="img/hist-01.jpg" alt="Historia: Ellos siempre te esperan">
+      <img src="img/hist-04.jpg" alt="Historia: Agua fresca, siempre">
+      <img src="img/hist-05.jpg" alt="Historia: Su lugar favorito es donde estás vos">
+      <img src="img/hist-08.jpg" alt="Historia: Una chapita con tu teléfono puede traerlo de vuelta">
+      <img src="img/hist-11.jpg" alt="Historia: Si se asusta con la pirotecnia, acompañalo">
+      <img src="img/hist-15.jpg" alt="Historia: Gracias por cuidarlos tanto">
+    </div>
+    <div class="dos-col">
+      <div class="regla">
+        <h3>Cómo se ven</h3>
+        <ul>
+          <li>1080×1920. El texto va entre los 250 px de arriba y los 300 px de abajo, que tapa Instagram.</li>
+          <li>Tres formas: título arriba sobre la foto, título abajo con velo oscuro, o panel verde arriba con la foto abajo.</li>
+          <li>Una frase corta con una palabra subrayada en verde. Como mucho, una línea más de texto.</li>
+          <li>El logo va solo donde hay aire, nunca sobre la cara de nadie ni sobre una foto recargada.</li>
+        </ul>
+      </div>
+      <div class="regla">
+        <h3>Qué contar</h3>
+        <ul>
+          <li><b>Mensajes:</b> el vínculo con su mascota, siempre en positivo.</li>
+          <li><b>Consejos de un vistazo:</b> agua, paseos, uñas, chapita, pirotecnia.</li>
+          <li><b>Para conversar:</b> encuestas, preguntas y quiz con los stickers de Instagram.</li>
+          <li><b>Productos en uso:</b> con mención al post del producto, sin precio.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="banda seccion papel" id="semana">
+  <div class="ancho">
+    <div class="titulo-seccion">
+      <span class="etiqueta">06 · La semana</span>
       <h2>Ritmo de publicación</h2>
-      <p>Cuatro posts por semana y una historia por día. Mejor menos y bien hechos que todos los días a las apuradas.</p>
+      <p>Cuatro posts por semana y una o dos historias por día. Mejor menos y bien hechos que todos los días a las apuradas.</p>
     </div>
     <div class="semana">
       <div class="dia post"><b>Lunes</b><span>¿Sabías que…?</span></div>
-      <div class="dia"><b>Martes</b><span>Historias: encuesta o pregunta</span></div>
+      <div class="dia"><b>Martes</b><span>Historias: un consejo o un mensaje</span></div>
       <div class="dia post"><b>Miércoles</b><span>Productos</span></div>
-      <div class="dia"><b>Jueves</b><span>Historias: producto en uso</span></div>
-      <div class="dia post"><b>Viernes</b><span>Consejos</span></div>
-      <div class="dia"><b>Sábado</b><span>Historias: compartir menciones</span></div>
+      <div class="dia"><b>Jueves</b><span>Historias: encuesta o producto en uso</span></div>
+      <div class="dia post"><b>Viernes</b><span>Consejos (cada dos semanas, uno que termina en producto)</span></div>
+      <div class="dia"><b>Sábado</b><span>Historias: un mensaje</span></div>
       <div class="dia post"><b>Domingo</b><span>La familia Ser Animal</span></div>
+    </div>
+    <p class="nota-semana">Los temas de temporada se adelantan: el calor y los paseos desde noviembre, la pirotecnia en las semanas antes de Navidad y Año Nuevo, y los viajes en diciembre y enero. Una animación por semana, como reel.</p>
+  </div>
+</section>
+
+<section class="banda seccion" id="como">
+  <div class="ancho">
+    <div class="titulo-seccion">
+      <span class="etiqueta">07 · Cómo se hace</span>
+      <h2>De la idea al post</h2>
+      <p>Cada post va en <code>posts/AAAA-MM-nombre/</code> con las slides, <code>portada.jpg</code>, <code>texto.md</code> y <code>fuente/</code>.</p>
+    </div>
+    <ol class="pasos">
+      <li><b>Tema</b><span>Elegí el pilar del día y una idea útil o linda. Si es producto, uno lindo de seranimal.com.uy, con los datos de su ficha.</span></li>
+      <li><b>Fotos</b><span>Reales de Unsplash (se registra la descarga) o hechas con Nano Banana Pro a partir de la foto real: el producto idéntico y sin logos.</span></li>
+      <li><b>Armado</b><span>En Ser Animal Studio, con sus plantillas. Portada con foto y texto claro, una idea por slide y la ficha al final.</span></li>
+      <li><b>Revisión</b><span>Caras a la vista, nada tapado, una sola flecha, sin precios ni marcas. Si algo roza, se cambia el encuadre.</span></li>
+      <li><b>Animación</b><span>Si el post lo pide, la portada animada con el mismo estilo, para reel.</span></li>
+      <li><b>Texto del posteo</b><span>Con la plantilla de acá abajo. Si la imagen es de IA, se activa «Contenido de IA».</span></li>
+    </ol>
+    <div class="plantilla">
+      <div class="regla">
+        <h3>Plantilla del texto del posteo</h3>
+        <p>Qué es, para quién es y cómo llega. Voseo, sin exclamaciones de más. El WhatsApp y los envíos van acá, nunca en la imagen.</p>
+        <div class="copia">
+          <pre id="caption-texto">[Una línea que engancha] 🐾
+
+[Qué es, para quién es y para qué sirve, en dos o tres líneas]
+
+Envío gratis a todo el país desde $1.500. En compras menores, $200.
+Pedidos y envíos por WhatsApp: 091 380 000.
+
+#seranimal #[especie] #[tema] #uruguay</pre>
+          <button type="button" data-copiar="caption-texto">Copiar plantilla</button>
+        </div>
+      </div>
+      <div class="regla">
+        <h3>Textos que siempre se escriben igual</h3>
+        <ul>
+          <li><b>Envíos:</b> Envío gratis a todo el país desde $1.500. En compras menores, $200.</li>
+          <li><b>Pedido programado:</b> Te avisamos cuando toque reponer. 5% de descuento desde el 2.º pedido.</li>
+          <li><b>WhatsApp:</b> Pedidos y envíos: 091 380 000. Atención al cliente: 092 121 212.</li>
+          <li><b>Redes:</b> @seranimal en Instagram, Facebook y TikTok.</li>
+          <li>En los consejos de salud: «Ante la duda, consultá a tu veterinario».</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -388,13 +569,13 @@ Pedidos por WhatsApp: 091 380 000</pre>
 <section class="banda seccion oscura" id="assets">
   <div class="ancho">
     <div class="titulo-seccion">
-      <span class="etiqueta">04 · Brand assets</span>
+      <span class="etiqueta">08 · Brand assets</span>
       <h2>Todo en un solo lugar</h2>
       <p>Cada carpeta está en el repositorio. Se usan siempre estos archivos; si hace falta uno nuevo, se suma a la carpeta.</p>
     </div>
     <div class="carpetas">
       <div class="carpeta"><div class="vista v-logo"><img src="img/logo-blanco.svg" alt="Logo de Ser Animal en blanco"></div><span class="nombre">Logo</span><span class="ruta">marca/logo/</span></div>
-      <div class="carpeta"><div class="vista v-colores" aria-label="Paleta: verde Ser Animal, verde claro y texto">
+      <div class="carpeta"><div class="vista v-colores" aria-label="Paleta: verde Ser Animal, verde claro y superficie">
         <div style="background:#9ECA1B;color:#253027">9ECA1B</div><div style="background:#CADC8A;color:#253027">CADC8A</div><div style="background:#F8FAF4;color:#253027">F8FAF4</div></div>
         <span class="nombre">Colores</span><span class="ruta">CLAUDE.md · brand board</span></div>
       <div class="carpeta"><div class="vista v-tipo"><b>Aa</b><span>Nunito 900 · DM Sans</span></div><span class="nombre">Tipografía</span><span class="ruta">marca/fuentes/</span></div>
@@ -408,7 +589,7 @@ Pedidos por WhatsApp: 091 380 000</pre>
         <span class="nombre">Elementos gráficos</span><span class="ruta">marca/elementos/</span></div>
       <div class="carpeta"><div class="vista v-anim"><video src="img/anim-roedor.mp4" autoplay muted loop playsinline aria-label="Animación del conejo de marca"></video></div><span class="nombre">Animación</span><span class="ruta">marca/animaciones/</span></div>
       <div class="carpeta"><div class="vista v-foto"><img src="img/estudio.jpg" alt="Perro y gato en estudio sobre fondo verde claro"></div><span class="nombre">Fotografía</span><span class="ruta">marca/fotos/ · Unsplash</span></div>
-      <div class="carpeta"><div class="vista v-apli"><img src="img/cobayos-1.jpg" alt="Post de ejemplo"></div><span class="nombre">Aplicaciones</span><span class="ruta">posts/ · studio/</span></div>
+      <div class="carpeta"><div class="vista v-apli"><img src="img/grilla-6.jpg" alt="Post de ejemplo"></div><span class="nombre">Posts y Studio</span><span class="ruta">posts/ · studio/</span></div>
     </div>
   </div>
 </section>
@@ -416,39 +597,52 @@ Pedidos por WhatsApp: 091 380 000</pre>
 <section class="banda seccion" id="antes">
   <div class="ancho">
     <div class="titulo-seccion">
-      <span class="etiqueta">05 · Antes de publicar</span>
+      <span class="etiqueta">09 · Antes de publicar</span>
       <h2>La última mirada</h2>
     </div>
     <ul class="checks">
-      <li>La portada es una foto real o realista, con la cara del animal a la vista.</li>
-      <li>El texto no tapa al animal y respeta el margen de seguridad 3:4.</li>
+      <li>La portada es una foto real o realista, con un texto claro y sin etiquetas.</li>
+      <li>Ni el texto ni los elementos tapan caras, y todo está dentro del margen 3:4.</li>
+      <li>No aparece ningún precio, ni en la imagen ni en el posteo.</li>
+      <li>No se ve ninguna marca: ni logos, ni textos, ni nombres en el título.</li>
+      <li>No hay WhatsApp, teléfonos ni «pedilo» en la imagen.</li>
+      <li>El tono es positivo: nada que juzgue al dueño.</li>
+      <li>Las fotos se ven nítidas en HD.</li>
       <li>Fondos: solo foto, verde o blanco. Tipografías: solo Nunito y DM Sans.</li>
-      <li>Los elementos salen de marca/elementos, sin redibujar.</li>
       <li>El estilo de portada no repite el del post anterior.</li>
-      <li>No aparece ningún precio de producto.</li>
-      <li>El texto tiene voseo y no inventa plazos ni datos.</li>
+      <li>Hay una sola indicación para deslizar.</li>
+      <li>El texto tiene voseo y no inventa plazos, descuentos ni datos.</li>
       <li>Los datos de salud están verificados con una fuente veterinaria.</li>
-      <li>Si la imagen es de IA, lleva la etiqueta «Contenido de IA».</li>
+      <li>Si hay fotos de IA, se activa «Contenido de IA».</li>
+      <li>Los datos del producto coinciden con su ficha en seranimal.com.uy, y el stock está confirmado.</li>
     </ul>
   </div>
 </section>
 
 <footer class="banda pie">
-  <div class="ancho">Ser Animal · Guía de Instagram. Fotos de ejemplo de Unsplash (licencia libre). Los posts de ejemplo se generaron con las plantillas de Ser Animal Studio.</div>
+  <div class="ancho">Ser Animal · Guía de Instagram. Fotos de ejemplo de Unsplash (licencia libre); las fotos de producto se hicieron con Nano Banana Pro a partir de las fotos de la tienda. Todos los posts de ejemplo se armaron con las plantillas de Ser Animal Studio.</div>
 </footer>
 
 <script>
-  document.getElementById("copiar-bio").addEventListener("click", async (e) => {
-    const texto = document.getElementById("bio-texto").textContent;
-    try {
-      await navigator.clipboard.writeText(texto);
-      e.target.textContent = "Copiada";
-    } catch {
-      const r = document.createRange();
-      r.selectNodeContents(document.getElementById("bio-texto"));
-      const s = getSelection(); s.removeAllRanges(); s.addRange(r);
-      e.target.textContent = "Seleccionada: copiala con Ctrl+C";
-    }
-    setTimeout(() => (e.target.textContent = "Copiar bio"), 2000);
+  // Botones de copiar (bio y plantilla del posteo).
+  document.querySelectorAll("[data-copiar]").forEach((boton) => {
+    const original = boton.textContent;
+    boton.addEventListener("click", async () => {
+      const nodo = document.getElementById(boton.dataset.copiar);
+      try {
+        await navigator.clipboard.writeText(nodo.textContent);
+        boton.textContent = "Copiado";
+      } catch {
+        const r = document.createRange();
+        r.selectNodeContents(nodo);
+        const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        boton.textContent = "Seleccionado: copialo con Ctrl+C";
+      }
+      setTimeout(() => (boton.textContent = original), 2000);
+    });
   });
+  // Con «reducir movimiento», los videos quedan quietos y con controles.
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll("video").forEach((v) => { v.pause(); v.removeAttribute("autoplay"); v.controls = true; });
+  }
 </script>
