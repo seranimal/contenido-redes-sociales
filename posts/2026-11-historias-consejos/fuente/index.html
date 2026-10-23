@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Historias de consejos</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=DM+Sans:wght@400;500;700&display=block" rel="stylesheet">
+<style>
+  :root{
+    --verde:#9ECA1B; --verde-claro:#CADC8A; --verde-hoja:#4C7300;
+    --texto:#253027; --superficie:#F8FAF4; --borde:#E5E9DE;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#111;display:flex;flex-wrap:wrap;gap:40px;padding:40px}
+  body.render{display:block;padding:0;gap:0}
+  /* Historia 1080×1920. Zona segura: entre y=250 y y=1620 (arriba y abajo van los controles de Instagram). */
+  .story{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:"DM Sans",sans-serif;color:#fff;background:var(--verde)}
+  .h{font-family:"Nunito",sans-serif;font-weight:900;letter-spacing:-1px;line-height:1.08}
+  .h em{font-style:normal;text-decoration:underline;text-decoration-color:var(--verde);text-decoration-thickness:8px;text-underline-offset:12px;text-decoration-skip-ink:none}
+  .foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .velo{position:absolute;inset:0}
+  .bloque{position:absolute;left:80px;right:80px}
+  .bloque .h{font-size:96px;text-shadow:0 2px 18px rgba(0,0,0,.18)}
+  .bloque .x{margin-top:30px;font-size:42px;line-height:1.35;font-weight:500}
+  .logo{position:absolute;left:50%;transform:translateX(-50%);bottom:340px;width:230px}
+  body.guia .story::before,body.guia .story::after{content:"";position:absolute;left:0;right:0;height:250px;background:rgba(213,32,46,.18);z-index:5}
+  body.guia .story::before{top:0} body.guia .story::after{bottom:0;height:300px}
+
+  /* Título arriba sobre la foto */
+  .arriba .velo{background:linear-gradient(180deg,rgba(37,48,39,.62) 0%,rgba(37,48,39,.25) 34%,rgba(37,48,39,0) 52%)}
+  .arriba .bloque{top:270px}
+  /* Título abajo sobre la foto, con el logo debajo */
+  .abajo .velo{background:linear-gradient(180deg,rgba(37,48,39,0) 46%,rgba(37,48,39,.32) 64%,rgba(37,48,39,.76) 100%)}
+  .abajo .bloque{bottom:450px}
+  /* Panel verde arriba y foto abajo */
+  .panel{background:var(--verde);color:var(--texto)}
+  .panel .fotobox{position:absolute;left:0;right:0;top:960px;bottom:0;overflow:hidden}
+  .panel .fotobox img{width:100%;height:100%;object-fit:cover}
+  .panel .bloque{top:280px}
+  .panel .bloque .h{text-shadow:none}
+  .panel .bloque .h em{text-decoration-color:#fff}
+  .panel .iso{position:absolute;right:80px;top:820px;width:90px}
+  /* Fondo claro arriba que se funde con la foto */
+  .claro{color:var(--texto)}
+  .claro .velo{background:linear-gradient(180deg,rgba(248,250,244,.95) 0%,rgba(248,250,244,.75) 30%,rgba(248,250,244,0) 50%)}
+  .claro .bloque{top:290px;text-align:center}
+  .claro .bloque .h{font-size:110px;text-shadow:none}
+  .claro .logo{bottom:auto;top:590px}
+</style>
+</head>
+<body>
+<div id="historias"></div>
+<script>
+  // [foto, estilo, título, texto, encuadre de la foto]
+  const H = [
+    ["01", "abajo",  "Ellos siempre <em>te esperan</em>", "", "50% 40%"],
+    ["02", "arriba", "Un paseo corto <em>también cuenta</em>", "Lo importante es salir juntos.", "50% 60%"],
+    ["03", "panel",  "Dejalo <em>olfatear</em>", "Oler es su forma de conocer el mundo: lo entretiene y lo calma.", "50% 45%"],
+    ["04", "abajo",  "Agua fresca, <em>siempre</em>", "Cambiala todos los días y lavá el bebedero seguido.", "50% 30%"],
+    ["05", "arriba", "Su lugar favorito es <em>donde estás vos</em>", "", "50% 70%"],
+    ["06", "arriba", "Hoy, un rato de juego <em>sin apuro</em>", "", "50% 70%"],
+    ["07", "arriba", "En días de calor, paseá <em>temprano o al atardecer</em>", "", "50% 70%"],
+    ["08", "panel",  "Una chapita con tu teléfono <em>puede traerlo de vuelta</em>", "", "50% 40%"],
+    ["09", "arriba", "Los gatos también necesitan <em>jugar todos los días</em>", "", "50% 80%"],
+    ["10", "abajo",  "Paciencia: cada uno <em>tiene sus tiempos</em>", "", "50% 40%"],
+    ["11", "arriba", "Si se asusta con la pirotecnia, <em>acompañalo</em>", "Tu calma lo ayuda.", "50% 60%"],
+    ["12", "panel",  "Lo que más quiere es <em>tiempo con vos</em>", "", "50% 50%"],
+    ["13", "panel",  "Si las uñas suenan en el piso, <em>toca cortarlas</em>", "", "50% 50%"],
+    ["14", "panel",  "Adoptar es darle <em>una segunda oportunidad</em>", "", "50% 18%"],
+    ["15", "claro",  "Gracias por <em>cuidarlos tanto</em>", "", "50% 60%"],
+  ];
+  const caja = document.getElementById("historias");
+  for (const [n, estilo, h, x, pos] of H) {
+    const st = document.createElement("div");
+    st.className = "story " + estilo;
+    const textos = `<div class="bloque"><div class="h">${h}</div>${x ? `<div class="x">${x}</div>` : ""}</div>`;
+    if (estilo === "panel") {
+      st.innerHTML = `<div class="fotobox"><img src="assets/foto-${n}.jpg" style="object-position:${pos}" alt=""></div>
+        <img class="iso" src="assets/isotipo-blanco.png" alt="">${textos}`;
+    } else {
+      // El logo va solo donde hay aire: debajo del texto sobre el velo oscuro o sobre el fondo claro.
+      const logo = estilo === "claro" ? "logo-verde" : "logo-blanco";
+      const conLogo = estilo !== "arriba";
+      st.innerHTML = `<img class="foto" src="assets/foto-${n}.jpg" style="object-position:${pos}" alt="">
+        <div class="velo"></div>${textos}${conLogo ? `<img class="logo" src="assets/${logo}.svg" alt="Ser Animal">` : ""}`;
+    }
+    caja.appendChild(st);
+  }
+  const q = location.search;
+  if (q.includes('render')) document.body.classList.add('render');
+  if (q.includes('guia')) document.body.classList.add('guia');
+</script>
+</body>
+</html>
