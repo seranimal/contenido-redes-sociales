@@ -3,7 +3,7 @@
 **Pilar:** Productos. **Formato:** carrusel de 3 slides, 1080×1350.
 1. Portada con título editorial abajo (estilo 15): «Una palta *para tu gato*» + «Con bola de catnip natural». Imagen de Higgsfield (Nano Banana Pro) con la foto real como referencia; se borró el texto impreso del juguete.
 2. Ficha de producto (estilo 18), sin texto de marca en la foto.
-3. Título editorial arriba sobre foto real (estilo 14), etiqueta «¿Sabías que…?»: «El catnip *no le hace efecto* a todos los gatos». Foto: Mikhail Volkov (Unsplash).
+3. Título editorial arriba sobre foto real (estilo 14): «El catnip *no le hace efecto* a todos los gatos». Foto: Mikhail Volkov (Unsplash).
 
 **Producto:** Juguete giratorio con catnip en forma de palta (seranimal.com.uy). Datos de la web: bola de catnip natural que gira 360°; se pega en superficies lisas; bola reemplazable (tapa desmontable); desde los 3 meses. Sin precio.
 

@@ -10,7 +10,7 @@ const narizFoto = foto("photo-1698522372694-7bf8500a5b63", "Megan Dujardin");
 module.exports = {
   calor: { tema: "calor y paseos", slides: [
     s({ tipo: "portada-pregunta", fondo: "foto", titulo: "¿Hace demasiado calor para pasear?", foto: calorFoto, fotoY: 55 }),
-    s({ tipo: "texto-editorial", fondo: "blanco", etiqueta: "consejos", especie: "perro", titulo: "Apoyá la mano en el piso *7 segundos*: si te quema a vos, *le quema a él*.", texto: "La prueba de los 7 segundos" }),
+    s({ tipo: "texto-editorial", fondo: "blanco", etiqueta: "", especie: "perro", titulo: "Apoyá la mano en el piso *7 segundos*: si te quema a vos, *le quema a él*.", texto: "La prueba de los 7 segundos" }),
     s({ tipo: "dato", numero: 2, fondo: "verde", titulo: "Elegí bien el horario", texto: "Temprano en la mañana o después del atardecer, por la sombra y con agua fresca.", foto: foto("photo-1637441607612-43944d988e5b", "Rafael Hoyos Weht") }),
     s({ tipo: "dato", numero: 3, fondo: "blanco", titulo: "Atento a las señales", texto: "Si jadea mucho, babea de más o está débil: sombra, agua y consultá a tu veterinario.", foto: foto("photo-1597098764494-3b6f9099d00b", "Paul Johnston") }),
     s({ tipo: "cierre", fondo: "verde", titulo: "Guardalo para el verano", texto: "Y compartilo con quien pasea a su perro.", foto: calorFoto }),

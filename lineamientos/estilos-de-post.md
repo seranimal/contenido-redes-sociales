@@ -150,7 +150,6 @@ Todos estos elementos están listos en **`marca/elementos/`** (SVG vectorial y P
 - **Qué es:** un aviso de la tienda, solo con texto: envíos, pedido programado, horarios, feriados, cambios. Se lee de un vistazo.
 - **Fondo:** blanco (superficie) o verde Ser Animal, alternándolos.
 - **Arriba:** logo completo, centrado (verde sobre blanco; blanco sobre verde).
-- **Etiqueta:** pastilla «Aviso» (`marca/elementos/etiqueta-aviso`); para productos nuevos existe «Novedad».
 - **Título:** Nunito 900, 90–100 px, centrado. Las 1 a 3 palabras clave van destacadas: verde hoja `#4C7300` sobre blanco; `#253027` sobre verde.
 - **Texto:** DM Sans 42 px, centrado, con los textos fijos de la marca cuando corresponda.
 - **Abajo:** nada. El dato de contacto, si hace falta, va en el texto del posteo.
@@ -160,9 +159,9 @@ Todos estos elementos están listos en **`marca/elementos/`** (SVG vectorial y P
 
 ## 4b. Estilos editoriales (referencia: Petz)
 
-Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca de Ser Animal: verde, Nunito 900, DM Sans y los personajes de especie. Le dan al feed un aire de revista: mucho aire, globos y tarjetas blancas, palabras subrayadas y etiquetas de serie. Elementos nuevos: `etiqueta-<pilar>`, `flecha-circulo-*`, `flecha-linea-*` y `personaje-<especie>`.
+Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca de Ser Animal: verde, Nunito 900, DM Sans y los personajes de especie. Le dan al feed un aire de revista: mucho aire, globos y tarjetas blancas y palabras subrayadas. Elementos nuevos: `flecha-circulo-*`, `flecha-linea-*` y `personaje-<especie>`.
 
-**Etiquetas de serie.** Cada pilar tiene su pastilla (`etiqueta-sabias-que`, `etiqueta-consejos`, `etiqueta-familia`), como «Guia de Raças» o «Assinatura Petz». Va arriba a la izquierda o arriba del título. Así el seguidor reconoce la serie de un vistazo. **Nunca «Cuidalo mejor»** ni nada que suene a reto al dueño: la serie de consejos se llama «Consejos». **Los posts de producto no llevan etiqueta:** nunca se pone «En la tienda» en las imágenes (solo «Novedad» si el producto es nuevo).
+**Sin etiquetas.** Las imágenes no llevan pastillas de serie («¿Sabías que…?», «Consejos», «En la tienda», «Aviso»…): la portada es la foto y un texto claro, nada más. Nunca «Cuidalo mejor» ni nada que suene a reto al dueño.
 
 ### Estilo 9 · Pregunta en globos
 ![](estilos/9-pregunta-en-globos.jpg)
@@ -175,7 +174,7 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 ### Estilo 10 · Foto con panel
 ![](estilos/10-foto-con-panel.jpg)
 
-- **Qué es:** foto arriba (800 px) y un panel verde o blanco abajo con etiqueta, título y una bajada subrayada que invita a seguir («Mirá cómo darte cuenta»).
+- **Qué es:** foto arriba (800 px) y un panel verde o blanco abajo con título y una bajada subrayada que invita a seguir («Mirá cómo darte cuenta»).
 - **Título:** Nunito 900 `#253027`, 60–66 px, a la izquierda.
 - **Flecha:** `flecha-circulo-oscuro` (panel verde) o `-verde` (panel blanco), sobre el borde entre foto y panel, a la derecha. En este estilo la flecha cumple la función del «Deslizá».
 - **Pestaña con isotipo** arriba a la izquierda, sobre la foto.
@@ -185,21 +184,20 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 
 - **Qué es:** solo texto, grande y alineado a la izquierda, sobre blanco o verde. Una idea fuerte o la pregunta que el carrusel responde.
 - **Título:** Nunito 900, 80–92 px. Las 2 a 5 palabras clave van **subrayadas**: línea verde de 8 px sobre blanco; blanca sobre verde.
-- **Arriba a la izquierda:** el personaje de la especie (o el isotipo) y, debajo, la etiqueta de serie.
+- **Arriba a la izquierda:** el personaje de la especie (o el isotipo).
 - **Abajo:** una línea corta en DM Sans («Te contamos por qué») y el «Deslizá» si es carrusel.
 
 ### Estilo 12 · Foto enmarcada
 ![](estilos/12-foto-enmarcada.jpg)
 
 - **Qué es:** fondo blanco o verde, título centrado arriba, la foto en una tarjeta redondeada con cuatro esquinas verdes alrededor, y el logo abajo.
-- **Título:** Nunito 900, 60–68 px, 1 o 2 renglones, con la etiqueta de serie encima.
+- **Título:** Nunito 900, 60–68 px, 1 o 2 renglones.
 - **Cuándo:** consejos y temas tranquilos. Funciona muy bien con fotos de interiores.
 
 ### Estilo 13 · Retrato con nombre
 ![](estilos/13-retrato-con-nombre.jpg)
 
 - **Qué es:** la foto de un cliente con su mascota, a sangre, con una línea blanca fina por dentro (a 44 px del borde, radio 40). Es la cara del pilar «La familia Ser Animal».
-- **Etiqueta:** «La familia Ser Animal», apoyada sobre la línea de arriba, a la izquierda.
 - **Nombres:** pastilla en dos tonos apoyada sobre la línea de abajo, a la derecha: el nombre de la persona en blanco y el de la mascota en verde («Sofía *y Oakley*»).
 - **Cita:** globo blanco con comillas verdes, DM Sans 700, máximo 3 renglones, con el personaje de la especie asomándose detrás.
 - **Ya no se usa** el marco verde grueso de la primera versión.
@@ -211,7 +209,7 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 - **Qué es:** el recurso que más usa Petz (ver `referencias/petz-analisis.md`). Foto real, mejor con una persona y su mascota, y el título en blanco a la izquierda, sin sombra fuerte: un velo oscuro suave detrás lo hace legible.
 - **Título:** Nunito 800 blanco, 64–76 px. Las palabras clave entre asteriscos se subrayan en verde.
 - **Arriba (14):** título arriba; abajo, una línea corta («Mirá por qué»).
-- **Abajo (15):** título abajo con la bajada subrayada; la etiqueta de serie arriba a la izquierda. Ideal para la serie «Guía de razas».
+- **Abajo (15):** título abajo con la bajada subrayada. Ideal para la serie «Guía de razas».
 - **Sticker «Deslizá»:** blanco, abajo a la derecha.
 
 ### Estilo 16 · Cita sobre foto
@@ -236,7 +234,7 @@ Inspirados en el feed de Petz (`lineamientos/referencias/`), pero con la marca d
 - **Qué es:** la slide con la información, después de una portada linda. Tiene que verse como un catálogo lindo, no como un folleto: mucho aire y poco texto.
 - **Fondo:** degradé suave de verde claro `#CADC8A` en el centro a verde `#9ECA1B` en los bordes. Tarjeta blanca amplia (a 80 px de los bordes, radio 56) con sombra suave.
 - **Producto:** solo, sin perro, grande y recortado sobre blanco. Si viene en varios colores, los colores juntos y superpuestos, como una familia.
-- **Arriba:** nada, o «Novedad» si el producto es nuevo. Nunca «En la tienda».
+- **Arriba:** nada (sin etiquetas).
 - **Colores:** muestras chicas con el nombre, en DM Sans 500.
 - **Nombre:** Nunito 900 `#253027`, centrado.
 - **Descripción:** una sola línea corta en DM Sans 500 gris oscuro.

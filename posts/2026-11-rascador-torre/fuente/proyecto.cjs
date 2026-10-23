@@ -12,6 +12,6 @@ module.exports = {
     s({ tipo: "portada-globos", especie: "gato", titulo: "Para trepar,\njugar y\ndescansar\nen altura", foto: local('rascador-portada.jpg') }),
     ficha({ titulo: "Rascador torre 7 niveles", foto: local('rascador-ficha.jpg'),
       texto: "Miradores, cápsulas transparentes y casita.\nMadera resistente\n7 niveles\n50 × 60 × 147 cm" }),
-    s({ tipo: "foto-titulo-abajo", etiqueta: "sabias-que", titulo: "A los gatos les gusta mirar todo *desde arriba*", texto: "Por eso buscan siempre el lugar más alto", foto: foto("photo-1722698494928-f9398860a415", "Madalyn Cox"), fotoY: 40 }),
+    s({ tipo: "foto-titulo-abajo", etiqueta: "", titulo: "A los gatos les gusta mirar todo *desde arriba*", texto: "Por eso buscan siempre el lugar más alto", foto: foto("photo-1722698494928-f9398860a415", "Madalyn Cox"), fotoY: 40 }),
   ], caption: "", hashtags: [] },
 };

@@ -12,6 +12,6 @@ module.exports = {
     s({ tipo: "foto-panel", fondo: "verde", titulo: "¿Tu perro come muy rápido?", texto: "Mirá cómo ayudarlo", foto: local('lento-portada.jpg'), fotoY: 60 }),
     ficha({ titulo: "Comedero lento", foto: local('lento-ficha.jpg'),
       texto: "Con relieve de huellas que lo hace comer más despacio.\nLo entretiene mientras come\nAyuda a limpiar dientes y lengua\nPara perros" }),
-    s({ tipo: "foto-titulo-arriba", etiqueta: "consejos", titulo: "Más tiempo para *disfrutar cada bocado*", texto: "Guardalo y compartilo", foto: foto("photo-1695023265600-07f536e8ca4c", "Gayatri Malhotra"), fotoY: 55 }),
+    s({ tipo: "foto-titulo-arriba", etiqueta: "", titulo: "Más tiempo para *disfrutar cada bocado*", texto: "Guardalo y compartilo", foto: foto("photo-1695023265600-07f536e8ca4c", "Gayatri Malhotra"), fotoY: 55 }),
   ], caption: "", hashtags: [] },
 };

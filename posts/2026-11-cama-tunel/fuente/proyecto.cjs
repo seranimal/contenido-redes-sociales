@@ -12,6 +12,6 @@ module.exports = {
     s({ tipo: "foto-enmarcada", fondo: "verde", titulo: "Para esconderse, jugar y dormir", foto: local('tunel-portada.jpg') }),
     ficha({ titulo: "Cama Tunnel Tube", colores: "Crema, Gris, Marrón", foto: local('tunel-ficha.jpg'),
       texto: "Túnel para explorar y cama para descansar.\nMaterial suave y resistente\nSe dobla para guardar\n85 × 55 cm" }),
-    s({ tipo: "foto-titulo-abajo", etiqueta: "sabias-que", titulo: "Un rincón para esconderse *le da tranquilidad*", texto: "Los gatos buscan lugares cerrados para descansar", foto: foto("photo-1605190096176-a3a0b04a3b57", "Elena Kloppenburg"), fotoY: 35 }),
+    s({ tipo: "foto-titulo-abajo", etiqueta: "", titulo: "Un rincón para esconderse *le da tranquilidad*", texto: "Los gatos buscan lugares cerrados para descansar", foto: foto("photo-1605190096176-a3a0b04a3b57", "Elena Kloppenburg"), fotoY: 35 }),
   ], caption: "", hashtags: [] },
 };

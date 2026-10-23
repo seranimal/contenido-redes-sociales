@@ -1,6 +1,6 @@
 # Historias · semana de noviembre
 
-**Formato:** 5 historias de 1080×1920, sin precios, sin marcas a la vista y sin la etiqueta «En la tienda». Los textos quedan dentro de la zona segura (Instagram tapa unos 250 px arriba y 300 px abajo). Las imágenes `guia-historia-0N.jpg` muestran dónde va cada sticker: **no se publican**, son solo de referencia.
+**Formato:** 5 historias de 1080×1920, sin precios, sin marcas a la vista y sin etiquetas. Los textos quedan dentro de la zona segura (Instagram tapa unos 250 px arriba y 300 px abajo). Las imágenes `guia-historia-0N.jpg` muestran dónde va cada sticker: **no se publican**, son solo de referencia.
 
 | # | Día | Historia | Sticker que se agrega en Instagram |
 |---|---|---|---|

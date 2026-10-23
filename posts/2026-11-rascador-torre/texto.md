@@ -3,7 +3,7 @@
 **Pilar:** Productos. **Formato:** carrusel de 3 slides, 1080×1350.
 1. Portada con pregunta en globos (estilo 9) y el gatito asomando: «Para trepar, jugar y descansar en altura». Imagen de Higgsfield (Nano Banana Pro) con la foto real del rascador como referencia.
 2. Ficha de producto (estilo 18).
-3. Título editorial abajo sobre foto real (estilo 15), etiqueta «¿Sabías que…?»: «A los gatos les gusta mirar todo *desde arriba*». Foto: Madalyn Cox (Unsplash).
+3. Título editorial abajo sobre foto real (estilo 15): «A los gatos les gusta mirar todo *desde arriba*». Foto: Madalyn Cox (Unsplash).
 
 **Producto:** Rascador torre 7 niveles (seranimal.com.uy). Datos de la web: para trepar, jugar y descansar en altura; 7 niveles con miradores, cápsulas transparentes y casita; madera resistente; 50 × 60 × 147 cm. Sin precio.
 

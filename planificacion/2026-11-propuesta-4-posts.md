@@ -4,6 +4,8 @@
 >
 > **Hecho (octubre, 2.ª tanda):** cinco carruseles de producto más, de 3 slides cada uno (portada editorial de Higgsfield + ficha + slide editorial con foto real de Unsplash): `posts/2026-11-juguete-clasico-caucho/`, `posts/2026-11-rascador-torre/`, `posts/2026-11-juguete-palta/`, `posts/2026-11-comedero-lento/` (reemplaza a Brit, porque la bolsa es toda marca) y `posts/2026-11-cama-tunel/`. Sin marcas a la vista.
 >
+> **Orden sugerido de publicación (octubre–noviembre):** se alternan posts con fotos reales y posts de producto, sin etiquetas en las imágenes. 1. Gatos y cajas · 2. Juguete clásico de caucho · 3. Agua para tu perro · 4. Juguete palta · 5. Perro mayor · 6. Planes juntos · 7. Comedero lento · 8. Rascador torre · 9. Alimentos que no puede comer · 10. Cama túnel. Vista previa de la grilla: `descargas/grilla-sugerida.jpg` (no se sube al repo).
+>
 > **Actualización:** los carruseles de producto (2 y 4) se cambian por **productos nuevos** que todavía no salieron en el feed. Los de collar WAUDOG y DUCK quedan descartados hasta definir los nuevos. Los consejos (1 y 3) siguen en pie.
 
 Dos carruseles de producto y dos de consejos. Todos siguen `lineamientos/estilos-de-post.md`: la slide 1 es imagen real o realista, después se pasa a verde o blanco, con Nunito + DM Sans. Los cuatro pueden tener versión animada.

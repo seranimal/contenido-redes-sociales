@@ -118,7 +118,8 @@
   position: relative; display: inline-block; padding: 10px 30px 16px; border-radius: 26px; background: #fff; color: var(--texto);
   font-size: inherit; line-height: 1.1; box-shadow: 0 10px 26px rgba(37, 48, 39, 0.18);
 }
-.slide .globo .asoma { position: absolute; right: -112px; top: -64px; width: 140px; z-index: -1; transform: rotate(8deg); }
+/* El personaje va entero al lado del último globo, nunca tapado. */
+.slide .globo .asoma { position: absolute; left: calc(100% + 14px); top: 50%; width: 120px; transform: translateY(-50%) rotate(8deg); filter: drop-shadow(0 6px 14px rgba(37, 48, 39, 0.18)); }
 
 /* Foto con panel (estilo 10) */
 .slide .fp-foto { position: absolute; left: 0; right: 0; top: 0; height: 800px; overflow: hidden; }
