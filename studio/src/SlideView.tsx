@@ -313,6 +313,153 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
     );
   }
 
+  // --- Armados modulares (lógica Petz): un mismo sistema, un armado distinto en cada slide ---
+
+  if (tipo === "portada-texto") {
+    // Solo texto en una tarjeta, con el personaje (o el isotipo) y una flecha fina que invita a deslizar.
+    const verde = slide.fondo === "verde";
+    return (
+      <div ref={ref} className={`slide ptx ${fondo}`}>
+        <div className="ptx-tarjeta">
+          {slide.especie ? (
+            <img className="ptx-icono personaje" src={`/elementos/personaje-${slide.especie}.png`} alt="" />
+          ) : (
+            <img className="ptx-icono" src="/brand/isotipo-verde.png" alt="" />
+          )}
+          <div className="h ptx-t" style={{ fontSize: tam(slide.titulo, 104, 44) }}><Destacado texto={slide.titulo} /></div>
+          <div className="ptx-pie">
+            <span>{slide.texto}</span>
+            <img src="/elementos/flecha-linea-oscura.svg" alt="" />
+          </div>
+        </div>
+        {!verde && <img className="ptx-logo" src="/brand/logo-verde.png" alt="Ser Animal" />}
+      </div>
+    );
+  }
+
+  if (tipo === "foto-tarjeta") {
+    // Foto a sangre con una tarjeta clara abajo (título + bajada). La flecha en círculo hace de «Deslizá».
+    return (
+      <div ref={ref} className="slide ftj">
+        <div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div>
+        <div className="ftj-tarjeta">
+          <div className="h ftj-t" style={{ fontSize: tam(slide.titulo, 58, 40) }}><Destacado texto={slide.titulo} /></div>
+          {slide.texto && <div className="ftj-x">{slide.texto}</div>}
+          {conDeslizar && <img className="ftj-flecha" src="/elementos/flecha-circulo-verde.svg" alt="" />}
+        </div>
+      </div>
+    );
+  }
+
+  if (tipo === "panel-foto") {
+    // Panel de texto arriba (título + párrafo) y la foto a sangre abajo.
+    return (
+      <div ref={ref} className={`slide pnf ${fondo}`}>
+        <div className="pnf-panel">
+          <div className="pnf-cab">
+            {slide.numero > 0 && <div className="h insignia pnf-num">{slide.numero}</div>}
+            <div className="h pnf-t" style={{ fontSize: tam(slide.titulo, 60, 34) }}><Destacado texto={slide.titulo} /></div>
+          </div>
+          {slide.texto && <div className="pnf-x">{slide.texto}</div>}
+        </div>
+        <div className="pnf-foto"><div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div></div>
+        {conDeslizar && <img className="pnf-flecha" src="/elementos/flecha-circulo-verde.svg" alt="" />}
+      </div>
+    );
+  }
+
+  if (tipo === "marco-redondo") {
+    // Fondo de marca, título grande con bajada y la foto enmarcada con bordes redondeados.
+    return (
+      <div ref={ref} className={`slide mrd ${fondo}`}>
+        <div className="mrd-texto">
+          <div className="h mrd-t" style={{ fontSize: tam(slide.titulo, 76, 40) }}><Destacado texto={slide.titulo} /></div>
+          {slide.texto && <div className="mrd-x">{slide.texto}</div>}
+        </div>
+        <div className="mrd-foto"><div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div></div>
+        {conDeslizar && <img className="mrd-flecha" src={`/elementos/flecha-circulo-${slide.fondo === "verde" ? "oscuro" : "verde"}.svg`} alt="" />}
+      </div>
+    );
+  }
+
+  if (tipo === "tarjetas") {
+    // Tarjetas apiladas. Cada bloque del texto (separados por una línea en blanco): título, bajada y párrafo.
+    const bloques = slide.texto
+      .split(/\n\s*\n/)
+      .map((b) => b.split("\n").map((r) => r.trim()).filter(Boolean))
+      .filter((b) => b.length > 0)
+      .slice(0, 3);
+    const chica = bloques.length > 2;
+    return (
+      <div ref={ref} className={`slide tjs ${fondo}${chica ? " chica" : ""}`}>
+        {slide.titulo && <div className="h tjs-t" style={{ fontSize: tam(slide.titulo, 58, 36) }}><Destacado texto={slide.titulo} /></div>}
+        <div className="tjs-lista">
+          {bloques.map(([titulo, bajada, ...parrafo], i) => (
+            <div key={i} className="tjs-tarjeta">
+              <div className="tjs-cab">
+                <div className="h insignia tjs-num">{i + 1}</div>
+                <div className="h tjs-tt">{titulo}</div>
+              </div>
+              {bajada && <div className="tjs-bajada">{bajada}</div>}
+              {parrafo.length > 0 && <div className="tjs-p">{parrafo.join(" ")}</div>}
+            </div>
+          ))}
+        </div>
+        {conDeslizar && <img className="deslizar" src={`/elementos/deslizar-${slide.fondo === "verde" ? "blanco" : "verde"}.svg`} alt="" />}
+      </div>
+    );
+  }
+
+  if (tipo === "iconos-foto") {
+    // Banda con una fila de íconos de la biblioteca (renglones «icono: etiqueta») y la foto abajo.
+    const items = slide.texto
+      .split("\n")
+      .map((r) => r.trim())
+      .filter(Boolean)
+      .map((r) => {
+        const [icono, ...resto] = r.split(":");
+        return { icono: icono.trim().toLowerCase(), etiqueta: resto.join(":").trim() };
+      })
+      .slice(0, 4);
+    return (
+      <div ref={ref} className={`slide icf ${fondo}`}>
+        <div className="icf-banda">
+          {slide.titulo && <div className="h icf-t" style={{ fontSize: tam(slide.titulo, 54, 36) }}><Destacado texto={slide.titulo} /></div>}
+          <div className="icf-fila" style={{ gridTemplateColumns: `repeat(${Math.max(items.length, 1)}, 1fr)` }}>
+            {items.map((it) => (
+              <div key={it.icono + it.etiqueta} className="icf-item">
+                <img src={`/elementos/icono-${it.icono}-oscuro.svg`} alt="" />
+                <div className="h">{it.etiqueta}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="icf-foto"><div className="marco-foto"><FotoEncuadrada foto={slide.foto} slide={slide} /></div></div>
+      </div>
+    );
+  }
+
+  if (tipo === "lista-linea") {
+    // Título, foto del producto (opcional) y una lista con puntos unidos por una línea.
+    const items = slide.texto.split("\n").map((r) => r.trim()).filter(Boolean).slice(0, 6);
+    return (
+      <div ref={ref} className={`slide lsl ${fondo}${slide.foto ? " con-foto" : ""}`}>
+        <div className="h lsl-t" style={{ fontSize: tam(slide.titulo, 72, 40) }}><Destacado texto={slide.titulo} /></div>
+        <div className="lsl-cuerpo">
+          <ul className="lsl-lista">
+            {items.map((it) => <li key={it}>{it}</li>)}
+          </ul>
+          {slide.foto && (
+            <div className="lsl-foto">
+              <img src={slide.foto.src} alt="" style={{ transform: `scale(${slide.fotoZoom})`, objectPosition: `${slide.fotoX}% ${slide.fotoY}%` }} />
+            </div>
+          )}
+        </div>
+        <img className="iso-esquina" src={slide.fondo === "verde" ? "/brand/isotipo-blanco.png" : "/brand/isotipo-verde.png"} alt="" />
+      </div>
+    );
+  }
+
   if (tipo === "dato") {
     return (
       <div ref={ref} className={`slide ${fondo}`}>

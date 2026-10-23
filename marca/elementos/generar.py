@@ -282,6 +282,35 @@ def flechas() -> None:
         svg(f"flecha-linea-{nombre}", 180, 32, cuerpo)
 
 
+ICONOS = {
+    # Íconos de línea para las filas de beneficios (armado «iconos-foto»). Trazo del color del texto.
+    "gota": '<path d="M48 14 C48 14 24 42 24 58 A24 24 0 0 0 72 58 C72 42 48 14 48 14 Z"/>',
+    "hoja": '<path d="M22 74 C22 40 44 20 76 20 C76 52 56 74 22 74 Z"/><path d="M22 74 L58 38"/>',
+    "corazon": '<path d="M48 76 C20 58 14 44 14 34 C14 24 22 17 31 17 C39 17 45 22 48 28 C51 22 57 17 65 17 C74 17 82 24 82 34 C82 44 76 58 48 76 Z"/>',
+    "pata": '<ellipse cx="48" cy="62" rx="16" ry="13"/><circle cx="26" cy="42" r="7"/><circle cx="40" cy="28" r="7"/><circle cx="56" cy="28" r="7"/><circle cx="70" cy="42" r="7"/>',
+    "reloj": '<circle cx="48" cy="48" r="32"/><path d="M48 30 V48 L60 56"/>',
+    "casa": '<path d="M16 46 L48 18 L80 46"/><path d="M26 38 V78 H70 V38"/><path d="M42 78 V60 H54 V78"/>',
+    "sol": '<circle cx="48" cy="48" r="14"/>'
+    + "".join(
+        f'<path d="M{48 + 24 * math.cos(a):.1f} {48 + 24 * math.sin(a):.1f} L{48 + 34 * math.cos(a):.1f} {48 + 34 * math.sin(a):.1f}"/>'
+        for a in (i * math.pi / 4 for i in range(8))
+    ),
+    "luna": '<path d="M60 16 A32 32 0 1 0 80 62 A26 26 0 1 1 60 16 Z"/>',
+    "lupa": '<circle cx="42" cy="42" r="22"/><path d="M58 58 L78 78"/>',
+    "pelota": '<circle cx="48" cy="48" r="30"/><path d="M22 36 C38 46 58 46 74 36"/><path d="M22 60 C38 50 58 50 74 60"/>',
+    "plato": '<path d="M14 50 H82 C82 66 67 76 48 76 C29 76 14 66 14 50 Z"/><path d="M28 50 C30 42 38 40 43 45 C47 38 57 39 60 46 C64 42 70 45 69 50"/>',
+    "escudo": '<path d="M48 14 L76 24 V46 C76 64 64 76 48 82 C32 76 20 64 20 46 V24 Z"/><path d="M36 48 L45 57 L62 40"/>',
+}
+
+
+def iconos() -> None:
+    """Íconos de línea (96×96), en oscuro y en blanco, para filas de beneficios y listas."""
+    for nombre, trazos in ICONOS.items():
+        for variante, color in (("oscuro", TEXTO), ("blanco", BLANCO)):
+            cuerpo = f'<g fill="none" stroke="{color}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">{trazos}</g>'
+            svg(f"icono-{nombre}-{variante}", 96, 96, cuerpo)
+
+
 def personajes() -> None:
     """Cabezas de las ilustraciones de especie, recortadas, para «asomarse» junto a los globos de texto."""
     destino = RAIZ / "marca" / "elementos" / "png"
@@ -328,6 +357,7 @@ if __name__ == "__main__":
     sellos()
     pastillas()
     flechas()
+    iconos()
     personajes()
     asistente()
     print("Listo:", len(list(SALIDA.glob("*.svg"))), "elementos en", SALIDA)

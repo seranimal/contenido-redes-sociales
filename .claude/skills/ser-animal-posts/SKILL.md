@@ -47,7 +47,18 @@ Hablarle siempre al usuario en español rioplatense con voseo: no habla inglés.
 3. Tipos de slide (`studio/src/SlideView.tsx`):
    - **Portadas sobre foto:** `foto-titulo-arriba`, `foto-titulo-abajo`, `portada-globos` (con `especie` para el personaje), `foto-panel`, `foto-enmarcada`, `foto-cita`, `portada-numero` (`numero`), `portada-pregunta`, `portada-titulo`, `retrato`.
    - **Sin foto:** `mosaico`, `texto-editorial`.
-   - **Interiores:** `dato` (foto en tarjeta + número), `texto` (número grande), `producto-ficha` (con `colores` para las muestras), `cierre`.
+   - **Portadas nuevas:** `portada-texto` (solo texto con personaje y flecha fina) y `foto-tarjeta` (foto con tarjeta clara abajo).
+   - **Interiores:**
+     - `panel-foto`: panel con título y párrafo, y foto abajo.
+     - `iconos-foto`: renglones «icono: etiqueta», con íconos de `marca/elementos/`.
+     - `tarjetas`: bloques separados por una línea en blanco (título, bajada, párrafo).
+     - `marco-redondo`: título y foto redondeada.
+     - `lista-linea`: un punto por renglón; foto de producto opcional.
+     - `dato`: foto en tarjeta y número.
+     - `texto`: número grande, sin foto.
+     - `producto-ficha`: con `colores` para las muestras.
+     - `cierre`.
+   - **Regla de variedad** (`lineamientos/manual-carruseles-ser-animal.pdf`): nunca dos slides seguidas con el mismo tipo y `dato` como mucho dos veces por carrusel. Seguir las recetas del manual.
 4. Renderizar: `NODE_PATH=$(npm root -g) node studio/scripts/renderizar-carrusel.cjs <salida> <posts.cjs> [claves]`.
 5. **Revisar cada slide** en tiras de miniaturas (ffmpeg `hstack`):
    - caras tapadas;

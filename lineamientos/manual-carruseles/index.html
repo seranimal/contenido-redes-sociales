@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Manual de carruseles · Ser Animal</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  /* Manual de carruseles: mismas piezas que la guía en PDF (base.css), con módulos propios. */
+  .antes-despues { display: grid; gap: 5mm; }
+  .tira { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2.5mm; }
+  .tira.seis { grid-template-columns: repeat(6, 1fr); }
+  .tira.tres { grid-template-columns: repeat(3, 1fr); max-width: 110mm; }
+  .rotulo { display: flex; align-items: baseline; gap: 3mm; margin-bottom: 2mm; }
+  .rotulo b { font: 900 12pt "Nunito", sans-serif; }
+  .rotulo span { color: var(--gris); font-size: 9pt; }
+  .malo b { color: #B4321F; } .bueno b { color: var(--verde-hoja); }
+  .chip { display: inline-block; padding: 1mm 3mm; border-radius: 99px; background: var(--superficie); border: 1px solid var(--verde-claro); color: var(--verde-hoja); font-size: 8pt; font-weight: 700; margin: 0.6mm 0.4mm; }
+  .chip.nuevo { background: var(--verde); border-color: var(--verde); color: var(--texto); }
+  .modulo { display: grid; grid-template-columns: 38mm 1fr; gap: 4mm; align-items: start; background: var(--superficie); border: 1px solid var(--borde); border-radius: 4mm; padding: 3.5mm; }
+  .modulo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2mm; }
+  .modulo h3 { font-size: 11.5pt; margin-bottom: 1mm; }
+  .modulo p { font-size: 8.6pt; color: var(--gris); }
+  .modulo .studio { margin-top: 1.5mm; font-size: 8pt; }
+  .portadas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm 3mm; }
+  .portadas figure { margin: 0; }
+  .portadas figcaption { font-size: 8.2pt; margin-top: 1.2mm; color: var(--gris); }
+  .portadas figcaption b { display: block; font: 900 9.5pt "Nunito", sans-serif; color: var(--texto); }
+  .kit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+  .iconos { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2.5mm; margin-top: 2mm; }
+  .iconos img { width: 9mm; height: 9mm; margin: 0 auto; }
+  .iconos small { display: block; text-align: center; font-size: 6.5pt; color: var(--gris); }
+  .muestra-t { font: 900 17pt/1.1 "Nunito", sans-serif; }
+  .muestra-t em { text-decoration-thickness: 3px; text-underline-offset: 3px; }
+  .mini-tarjeta { background: #fff; border-radius: 3mm; box-shadow: 0 2mm 5mm rgba(37, 48, 39, 0.14); padding: 3mm 4mm; margin-top: 2mm; }
+  .mini-tarjeta .cab { display: flex; align-items: center; gap: 2mm; font: 900 10pt "Nunito", sans-serif; }
+  .mini-tarjeta .cab i { width: 6mm; height: 6mm; border-radius: 50%; background: var(--verde); color: #fff; display: grid; place-items: center; font-style: normal; font-size: 8pt; }
+  .flechas { display: flex; align-items: center; gap: 5mm; margin-top: 2mm; }
+  .personajes { display: flex; gap: 3mm; align-items: flex-end; margin-top: 2mm; }
+  .personajes img { height: 11mm; }
+  .receta { margin-bottom: 6mm; }
+  .receta .pasos { margin: 1.5mm 0 2.5mm; }
+  .reglas-6 .tarjeta { padding: 7mm 6.5mm; } .reglas-6 h3 { font-size: 15pt; } .reglas-6 p { font-size: 11pt; } .reglas-6 .num { width: 10mm; height: 10mm; font-size: 13pt; }
+  .flecha-t { color: var(--verde-hoja); font-weight: 900; margin: 0 0.5mm; }
+</style>
+</head>
+<body>
+
+<!-- 1 · Portada -->
+<section class="pagina portada">
+  <img class="logo" src="../../marca/logo/logo-blanco.svg" alt="Ser Animal">
+  <h1>Manual de carruseles</h1>
+  <p class="bajada">Un mismo sistema, un armado distinto en cada slide. Cómo se piensa, cómo se arma y qué combinar para que ningún carrusel se parezca al anterior.</p>
+  <div class="fotos">
+    <img src="img/olfato-2.jpg" alt=""><img src="img/cachorro-1.jpg" alt=""><img src="img/olfato-3.jpg" alt=""><img src="img/comedero-1.jpg" alt="">
+  </div>
+  <div class="datos"><span>@seranimal · Ser Animal Studio</span><span>Complemento de la Guía de Instagram · 2026</span></div>
+</section>
+
+<!-- 2 · Antes y después -->
+<section class="pagina">
+  <div class="sec">01 · Por qué un manual nuevo</div>
+  <h2>Las portadas variaban. Adentro, todo igual.</h2>
+  <p class="intro">Mirando cómo arma Petz sus carruseles, apareció el problema: cambiábamos la portada, pero por dentro repetíamos siempre la misma slide (foto en tarjeta, número, título y texto). Este manual ordena la solución.</p>
+  <div class="antes-despues">
+    <div>
+      <div class="rotulo malo"><b>Antes</b><span>Cinco slides, el mismo armado tres veces seguidas.</span></div>
+      <div class="tira"><img class="slide" src="img/antes-1.jpg" alt=""><img class="slide" src="img/antes-2.jpg" alt=""><img class="slide" src="img/antes-3.jpg" alt=""><img class="slide" src="img/antes-4.jpg" alt=""><img class="slide" src="img/antes-5.jpg" alt=""></div>
+    </div>
+    <div>
+      <div class="rotulo bueno"><b>Ahora</b><span>Cinco slides, cinco armados distintos, con las mismas piezas de marca.</span></div>
+      <div class="tira"><img class="slide" src="img/olfato-1.jpg" alt=""><img class="slide" src="img/olfato-2.jpg" alt=""><img class="slide" src="img/olfato-3.jpg" alt=""><img class="slide" src="img/olfato-4.jpg" alt=""><img class="slide" src="img/olfato-5.jpg" alt=""></div>
+    </div>
+  </div>
+  <div class="grid g3" style="margin-top:7mm">
+    <div class="tarjeta"><h3>Lo que no cambia</h3><p>Tipografías, verdes, subrayado, tarjetas redondeadas, íconos, personajes y flechas. Así se reconoce que es Ser Animal.</p></div>
+    <div class="tarjeta"><h3>Lo que cambia</h3><p>Cómo se combinan esas piezas en cada slide: panel con foto, íconos, tarjetas, lista, foto redondeada, ficha.</p></div>
+    <div class="tarjeta"><h3>El resultado</h3><p>Cada deslizada sorprende un poco. Se lee mejor, se guarda más y el feed deja de verse repetido.</p></div>
+  </div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Manual de carruseles · Ser Animal</span><span>2</span></div>
+</section>
+
+<!-- 3 · La lógica -->
+<section class="pagina">
+  <div class="sec">02 · La lógica</div>
+  <h2>Seis reglas para armar cualquier carrusel</h2>
+  <p class="intro">Se aplican junto con las reglas de oro de la Guía de Instagram: sin etiquetas, sin precios, sin marcas, sin WhatsApp en la imagen y siempre en positivo.</p>
+  <div class="grid g2 reglas-6" style="gap:5mm">
+    <div class="tarjeta"><div class="num">1</div><h3>Un sistema, muchos armados</h3><p>Las piezas son siempre las mismas. Lo que cambia es la combinación en cada slide.</p></div>
+    <div class="tarjeta"><div class="num">2</div><h3>Una idea por slide, cada una distinta</h3><p>Nunca dos slides seguidas con el mismo armado. El «dato con foto», como mucho dos veces por carrusel.</p></div>
+    <div class="tarjeta"><div class="num">3</div><h3>El arco</h3><p><b>Gancho</b> (foto o frase) → <b>valor</b> (1 a 3 slides que enseñan algo) → <b>solución</b> (el producto, si lo hay) → <b>pregunta</b>, que va en el texto del posteo o en el cierre.</p></div>
+    <div class="tarjeta"><div class="num">4</div><h3>Fondos con ritmo</h3><p>Foto, verde o blanco, alternados. El verde claro y el crema van solo en tarjetas, pastillas, líneas y detalles.</p></div>
+    <div class="tarjeta"><div class="num">5</div><h3>La flecha, dentro del diseño</h3><p>En la portada, una sola indicación para deslizar: el «Deslizá», la flecha en círculo o la flecha fina con una frase. Se alternan entre posts.</p></div>
+    <div class="tarjeta"><div class="num">6</div><h3>Títulos cortos y subrayados</h3><p>Nunito con 1 a 3 palabras clave subrayadas en verde, bajada en DM Sans. Textos de una o dos oraciones: el carrusel se lee de un vistazo.</p></div>
+  </div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Manual de carruseles · Ser Animal</span><span>3</span></div>
+</section>
+
+<!-- 4 · Las piezas -->
+<section class="pagina">
+  <div class="sec">03 · Las piezas</div>
+  <h2>El kit que se repite siempre</h2>
+  <p class="intro">Todo sale de <code>marca/elementos/</code> y de las plantillas del Studio: no se dibuja nada a mano.</p>
+  <div class="kit">
+    <div class="tarjeta">
+      <h3>Títulos</h3>
+      <div class="muestra-t">Un juego de olfato <em>en casa</em></div>
+      <p style="margin-top:2mm">Nunito 900. Las palabras clave, subrayadas en verde (sobre verde, en blanco).</p>
+    </div>
+    <div class="tarjeta">
+      <h3>Tarjeta</h3>
+      <div class="mini-tarjeta"><div class="cab"><i>1</i>Empezá fácil</div><div style="font-size:8pt;text-decoration:underline;text-decoration-color:var(--verde);margin-top:1mm">Con los premios a la vista</div></div>
+      <p style="margin-top:2mm">Blanca, bordes de 28 px y sombra suave. Con número en insignia verde.</p>
+    </div>
+    <div class="tarjeta">
+      <h3>Flechas</h3>
+      <div class="flechas">
+        <img src="../../marca/elementos/svg/deslizar-verde.svg" alt="" style="height:13mm">
+        <img src="../../marca/elementos/svg/flecha-circulo-verde.svg" alt="" style="height:10mm">
+        <img src="../../marca/elementos/svg/flecha-linea-oscura.svg" alt="" style="width:20mm">
+      </div>
+      <p style="margin-top:2mm">Una sola por portada. Se alternan entre posts.</p>
+    </div>
+  </div>
+  <div class="tarjeta" style="margin-top:4mm">
+    <h3>Íconos de línea (nuevos)</h3>
+    <p>Para las filas de beneficios. En el Studio se escriben «icono: etiqueta».</p>
+    <div class="iconos">
+      <div><img src="../../marca/elementos/svg/icono-gota-oscuro.svg" alt=""><small>gota</small></div>
+      <div><img src="../../marca/elementos/svg/icono-hoja-oscuro.svg" alt=""><small>hoja</small></div>
+      <div><img src="../../marca/elementos/svg/icono-corazon-oscuro.svg" alt=""><small>corazon</small></div>
+      <div><img src="../../marca/elementos/svg/icono-pata-oscuro.svg" alt=""><small>pata</small></div>
+      <div><img src="../../marca/elementos/svg/icono-reloj-oscuro.svg" alt=""><small>reloj</small></div>
+      <div><img src="../../marca/elementos/svg/icono-casa-oscuro.svg" alt=""><small>casa</small></div>
+      <div><img src="../../marca/elementos/svg/icono-sol-oscuro.svg" alt=""><small>sol</small></div>
+      <div><img src="../../marca/elementos/svg/icono-luna-oscuro.svg" alt=""><small>luna</small></div>
+      <div><img src="../../marca/elementos/svg/icono-lupa-oscuro.svg" alt=""><small>lupa</small></div>
+      <div><img src="../../marca/elementos/svg/icono-pelota-oscuro.svg" alt=""><small>pelota</small></div>
+      <div><img src="../../marca/elementos/svg/icono-plato-oscuro.svg" alt=""><small>plato</small></div>
+      <div><img src="../../marca/elementos/svg/icono-escudo-oscuro.svg" alt=""><small>escudo</small></div>
+    </div>
+  </div>
+  <div class="grid g2" style="margin-top:4mm">
+    <div class="tarjeta">
+      <h3>Personajes de especie</h3>
+      <div class="personajes">
+        <img src="../../marca/elementos/png/personaje-perro.png" alt=""><img src="../../marca/elementos/png/personaje-gato.png" alt=""><img src="../../marca/elementos/png/personaje-roedor.png" alt=""><img src="../../marca/elementos/png/personaje-pajaro.png" alt=""><img src="../../marca/elementos/png/personaje-pez.png" alt="">
+      </div>
+      <p style="margin-top:2mm">Se asoman en los globos, en la portada de solo texto y en el texto editorial. Siempre enteros.</p>
+    </div>
+    <div class="tarjeta">
+      <h3>Fondos</h3>
+      <div style="display:flex;gap:2mm;margin-top:2mm">
+        <div class="swatch" style="background:#9ECA1B;flex:1;height:14mm">Verde</div>
+        <div class="swatch" style="background:#F8FAF4;flex:1;height:14mm">Blanco</div>
+        <div class="swatch" style="background:#CADC8A;flex:1;height:14mm">Verde claro<small>detalles</small></div>
+      </div>
+      <p style="margin-top:2mm">Foto, verde o blanco, alternados. El verde claro, en líneas y pastillas.</p>
+    </div>
+  </div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Manual de carruseles · Ser Animal</span><span>4</span></div>
+</section>
+
+<!-- 5 · Portadas -->
+<section class="pagina">
+  <div class="sec">04 · Portadas</div>
+  <h2>El gancho</h2>
+  <p class="intro">La portada decide si alguien desliza. Se rotan para que la grilla nunca repita; las marcadas <span class="chip nuevo">nuevo</span> se suman con este manual.</p>
+  <div class="portadas">
+    <figure><img class="slide" src="img/cachorro-1.jpg" alt=""><figcaption><b>Solo texto <span class="chip nuevo">nuevo</span></b>Un dato que sorprende. La más compartida en Petz.</figcaption></figure>
+    <figure><img class="slide" src="img/comedero-1.jpg" alt=""><figcaption><b>Foto con tarjeta <span class="chip nuevo">nuevo</span></b>Foto linda y un título con bajada.</figcaption></figure>
+    <figure><img class="slide" src="img/olfato-1.jpg" alt=""><figcaption><b>Foto con panel</b>Pregunta o tema con «Te contamos por qué».</figcaption></figure>
+    <figure><img class="slide" src="../guia-instagram/img/ed-globos.jpg" alt=""><figcaption><b>Pregunta en globos</b>Con el personaje de la especie.</figcaption></figure>
+    <figure><img class="slide" src="../guia-instagram/img/ed-arriba.jpg" alt=""><figcaption><b>Título arriba</b>Foto con cielo o pared arriba.</figcaption></figure>
+    <figure><img class="slide" src="../guia-instagram/img/ed-abajo.jpg" alt=""><figcaption><b>Título abajo</b>Sujeto arriba, aire abajo.</figcaption></figure>
+    <figure><img class="slide" src="../guia-instagram/img/bigotes-1.jpg" alt=""><figcaption><b>Número grande</b>Listas: «3 cosas que…».</figcaption></figure>
+    <figure><img class="slide" src="../guia-instagram/img/cepillado-1.jpg" alt=""><figcaption><b>Pregunta enmarcada</b>Una pregunta que engancha.</figcaption></figure>
+    <figure><img class="slide" src="../guia-instagram/img/ed-cita.jpg" alt=""><figcaption><b>Cita sobre foto</b>Para la familia Ser Animal.</figcaption></figure>
+    <figure><img class="slide" src="../guia-instagram/img/ed-enmarcada.jpg" alt=""><figcaption><b>Foto enmarcada</b>Fondo verde o blanco.</figcaption></figure>
+    <figure><img class="slide" src="../guia-instagram/img/ed-mosaico.jpg" alt=""><figcaption><b>Mosaico de palabras</b>Sin foto, para variar.</figcaption></figure>
+    <figure><img class="slide" src="../guia-instagram/img/rascador-1.jpg" alt=""><figcaption><b>Producto en uso</b>La portada de producto.</figcaption></figure>
+  </div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Manual de carruseles · Ser Animal</span><span>5</span></div>
+</section>
+
+<!-- 6 · Armados interiores (1) -->
+<section class="pagina">
+  <div class="sec">05 · Armados de adentro</div>
+  <h2>Para contar una idea</h2>
+  <p class="intro">Cada armado tiene su trabajo. Entre paréntesis, el nombre del tipo en Ser Animal Studio.</p>
+  <div class="grid g2" style="gap:4mm">
+    <div class="modulo"><img src="img/olfato-4.jpg" alt=""><div><h3>Panel y foto <span class="chip nuevo">nuevo</span></h3><p>Una idea con su explicación arriba y una foto grande abajo. El más versátil.</p><p class="studio"><code>panel-foto</code> · título + párrafo + foto. Número opcional.</p></div></div>
+    <div class="modulo"><img src="img/olfato-2.jpg" alt=""><div><h3>Fila de íconos y foto <span class="chip nuevo">nuevo</span></h3><p>3 o 4 beneficios de un vistazo. Ideal antes de presentar un producto.</p><p class="studio"><code>iconos-foto</code> · un renglón por ícono: «gota: Más agua».</p></div></div>
+    <div class="modulo"><img src="img/olfato-3.jpg" alt=""><div><h3>Tarjetas apiladas <span class="chip nuevo">nuevo</span></h3><p>2 o 3 pasos o consejos cortos en una misma slide, sin foto.</p><p class="studio"><code>tarjetas</code> · bloques separados por una línea en blanco: título, bajada, párrafo.</p></div></div>
+    <div class="modulo"><img src="img/cachorro-2.jpg" alt=""><div><h3>Título y foto redondeada <span class="chip nuevo">nuevo</span></h3><p>Una idea emotiva o simple, con la foto protagonista.</p><p class="studio"><code>marco-redondo</code> · título + bajada + foto.</p></div></div>
+    <div class="modulo"><img src="img/cachorro-6.jpg" alt=""><div><h3>Lista con línea <span class="chip nuevo">nuevo</span></h3><p>Pasos, checklist o datos de un producto, unidos por una línea.</p><p class="studio"><code>lista-linea</code> · un punto por renglón, hasta 6. Foto de producto opcional.</p></div></div>
+    <div class="modulo"><img src="img/olfato-5.jpg" alt=""><div><h3>Lista con producto <span class="chip nuevo">nuevo</span></h3><p>El producto como solución, con sus datos de la ficha. Alternativa a la ficha clásica.</p><p class="studio"><code>lista-linea</code> + foto del producto sobre blanco.</p></div></div>
+  </div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Manual de carruseles · Ser Animal</span><span>6</span></div>
+</section>
+
+<!-- 7 · Armados interiores (2) -->
+<section class="pagina">
+  <div class="sec">05 · Armados de adentro</div>
+  <h2>Los de siempre, con medida</h2>
+  <p class="intro">Siguen siendo útiles, pero ya no se repiten seguidos.</p>
+  <div class="grid g2" style="gap:4mm">
+    <div class="modulo"><img src="img/antes-2.jpg" alt=""><div><h3>Dato con foto</h3><p>Una idea con foto en tarjeta y su número. Como mucho dos por carrusel, nunca seguidos.</p><p class="studio"><code>dato</code> · número + título + texto + foto.</p></div></div>
+    <div class="modulo"><img src="img/texto-num.jpg" alt=""><div><h3>Número grande, solo texto</h3><p>Para una idea que no necesita foto, o para cerrar una lista.</p><p class="studio"><code>texto</code> · número + título + texto.</p></div></div>
+    <div class="modulo"><img src="img/comedero-2.jpg" alt=""><div><h3>Ficha de producto</h3><p>Foto sobre blanco, nombre por lo que es, una línea y datos en pastillas. Sin precio.</p><p class="studio"><code>producto-ficha</code> · 1.er renglón descripción, después los datos.</p></div></div>
+    <div class="modulo"><img src="../guia-instagram/img/ed-editorial.jpg" alt=""><div><h3>Texto editorial</h3><p>Una frase fuerte con palabras subrayadas, como pausa en el medio del carrusel.</p><p class="studio"><code>texto-editorial</code> · título con *asteriscos*.</p></div></div>
+    <div class="modulo"><img src="img/comedero-3.jpg" alt=""><div><h3>Íconos después de la ficha</h3><p>En los posts de producto, una tercera slide que muestra el producto en la vida real con sus beneficios.</p><p class="studio"><code>iconos-foto</code> con una foto real.</p></div></div>
+    <div class="modulo"><img src="../guia-instagram/img/adoptar-4.jpg" alt=""><div><h3>Cierre</h3><p>Una pregunta para comentar. Opcional: la pregunta también puede ir solo en el texto del posteo.</p><p class="studio"><code>cierre</code> · pregunta + frase corta.</p></div></div>
+  </div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Manual de carruseles · Ser Animal</span><span>7</span></div>
+</section>
+
+<!-- 8 · Recetas -->
+<section class="pagina">
+  <div class="sec">06 · Recetas</div>
+  <h2>Combinaciones que funcionan</h2>
+  <p class="intro">Puntos de partida para cada pilar. Se pueden cambiar, siempre que dos slides seguidas no repitan armado.</p>
+  <div class="receta">
+    <div class="rotulo"><b>Consejo que termina en producto</b><span>5 slides</span></div>
+    <div class="pasos"><span class="chip">Foto con panel</span><span class="flecha-t">→</span><span class="chip">Íconos</span><span class="flecha-t">→</span><span class="chip">Tarjetas</span><span class="flecha-t">→</span><span class="chip">Panel y foto</span><span class="flecha-t">→</span><span class="chip">Lista con producto o ficha</span></div>
+    <div class="tira"><img class="slide" src="img/olfato-1.jpg" alt=""><img class="slide" src="img/olfato-2.jpg" alt=""><img class="slide" src="img/olfato-3.jpg" alt=""><img class="slide" src="img/olfato-4.jpg" alt=""><img class="slide" src="img/olfato-5.jpg" alt=""></div>
+  </div>
+  <div class="receta">
+    <div class="rotulo"><b>Consejos</b><span>6 slides</span></div>
+    <div class="pasos"><span class="chip">Solo texto</span><span class="flecha-t">→</span><span class="chip">Foto redondeada</span><span class="flecha-t">→</span><span class="chip">Tarjetas</span><span class="flecha-t">→</span><span class="chip">Íconos</span><span class="flecha-t">→</span><span class="chip">Panel y foto</span><span class="flecha-t">→</span><span class="chip">Lista</span></div>
+    <div class="tira seis"><img class="slide" src="img/cachorro-1.jpg" alt=""><img class="slide" src="img/cachorro-2.jpg" alt=""><img class="slide" src="img/cachorro-3.jpg" alt=""><img class="slide" src="img/cachorro-4.jpg" alt=""><img class="slide" src="img/cachorro-5.jpg" alt=""><img class="slide" src="img/cachorro-6.jpg" alt=""></div>
+  </div>
+  <div class="receta">
+    <div class="rotulo"><b>Producto</b><span>3 slides</span></div>
+    <div class="pasos"><span class="chip">Foto con tarjeta o producto en uso</span><span class="flecha-t">→</span><span class="chip">Ficha</span><span class="flecha-t">→</span><span class="chip">Íconos con foto real</span></div>
+    <div class="tira tres"><img class="slide" src="img/comedero-1.jpg" alt=""><img class="slide" src="img/comedero-2.jpg" alt=""><img class="slide" src="img/comedero-3.jpg" alt=""></div>
+  </div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Manual de carruseles · Ser Animal</span><span>8</span></div>
+</section>
+
+<!-- 9 · Más recetas y lista -->
+<section class="pagina">
+  <div class="sec">06 · Recetas</div>
+  <div class="grid g2" style="gap:5mm">
+    <div class="tarjeta">
+      <h3>¿Sabías que…?</h3>
+      <div class="pasos" style="margin:2mm 0"><span class="chip">Número grande</span><span class="flecha-t">→</span><span class="chip">Dato</span><span class="flecha-t">→</span><span class="chip">Panel y foto</span><span class="flecha-t">→</span><span class="chip">Tarjetas</span><span class="flecha-t">→</span><span class="chip">Cierre</span></div>
+      <p>O empezar con «Solo texto» cuando el dato sorprende por sí solo.</p>
+    </div>
+    <div class="tarjeta">
+      <h3>La familia Ser Animal</h3>
+      <div class="pasos" style="margin:2mm 0"><span class="chip">Cita sobre foto</span><span class="flecha-t">→</span><span class="chip">Título abajo</span><span class="flecha-t">→</span><span class="chip">Foto redondeada</span><span class="flecha-t">→</span><span class="chip">Cierre</span></div>
+      <p>Fotos de personas con sus mascotas. La pregunta invita a contar su historia.</p>
+    </div>
+    <div class="tarjeta">
+      <h3>Guía o lista</h3>
+      <div class="pasos" style="margin:2mm 0"><span class="chip">Mosaico</span><span class="flecha-t">→</span><span class="chip">Lista</span><span class="flecha-t">→</span><span class="chip">Panel y foto</span><span class="flecha-t">→</span><span class="chip">Tarjetas</span></div>
+      <p>Para «Qué llevar de viaje», «Antes de la primera semana» o «Qué revisar en verano».</p>
+    </div>
+    <div class="tarjeta">
+      <h3>Temporada</h3>
+      <div class="pasos" style="margin:2mm 0"><span class="chip">Título arriba</span><span class="flecha-t">→</span><span class="chip">Íconos</span><span class="flecha-t">→</span><span class="chip">Dato</span><span class="flecha-t">→</span><span class="chip">Lista</span></div>
+      <p>Calor, pirotecnia, viajes: lo urgente arriba, la lista para guardar al final.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:8mm">Antes de dar por terminado un carrusel</h3>
+  <ul class="checks" style="margin-top:3mm">
+    <li>No hay dos slides seguidas con el mismo armado.</li>
+    <li>El «dato con foto» aparece como mucho dos veces.</li>
+    <li>Sigue el arco: gancho, valor, solución, pregunta.</li>
+    <li>Los fondos alternan foto, verde y blanco.</li>
+    <li>Hay una sola indicación para deslizar en la portada.</li>
+    <li>Cada slide se entiende sola, con una idea.</li>
+    <li>Los íconos y elementos salen de la biblioteca de marca.</li>
+    <li>Ningún texto ni elemento tapa caras.</li>
+    <li>No hay etiquetas, precios, marcas ni WhatsApp en las imágenes.</li>
+    <li>El texto del posteo cierra con la pregunta o la invitación a guardar.</li>
+  </ul>
+  <div class="tarjeta verde" style="margin-top:6mm;border-color:var(--verde)">
+    <h3>Dónde está</h3>
+    <p style="color:var(--texto)">Los armados nuevos ya están en Ser Animal Studio (<code>studio/src/SlideView.tsx</code>) y en las reglas que usa la IA para proponer carruseles. Los íconos, en <code>marca/elementos/</code>. El paso a paso, en la skill <code>ser-animal-posts</code>.</p>
+  </div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Manual de carruseles · Ser Animal</span><span>9</span></div>
+</section>
+
+<!-- 10 · Contraportada -->
+<section class="pagina contra">
+  <img src="../../marca/logo/logo-verde.svg" alt="Ser Animal">
+  <p>Un mismo sistema, un armado distinto en cada slide.</p>
+  <p><b>@seranimal</b> en Instagram, Facebook y TikTok · <b>seranimal.com.uy</b></p>
+</section>
+
+</body>
+</html>

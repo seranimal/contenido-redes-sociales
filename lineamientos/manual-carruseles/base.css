@@ -1,0 +1,119 @@
+
+  /* Guía imprimible A4 con la marca Ser Animal (skill brand-guidelines). Se exporta con render.cjs. */
+  @font-face { font-family: "Nunito"; font-weight: 800; src: url(../../marca/fuentes/nunito-latin-800-normal.woff); }
+  @font-face { font-family: "Nunito"; font-weight: 900; src: url(../../marca/fuentes/nunito-latin-900-normal.woff); }
+  @font-face { font-family: "DM Sans"; font-weight: 400; src: url(../../marca/fuentes/dm-sans-latin-400-normal.woff); }
+  @font-face { font-family: "DM Sans"; font-weight: 500; src: url(../../marca/fuentes/dm-sans-latin-500-normal.woff); }
+  @font-face { font-family: "DM Sans"; font-weight: 700; src: url(../../marca/fuentes/dm-sans-latin-700-normal.woff); }
+  :root {
+    --verde: #9ECA1B; --verde-claro: #CADC8A; --verde-hoja: #4C7300; --texto: #253027;
+    --superficie: #F8FAF4; --borde: #E5E9DE; --gris: #444D45;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; color: var(--texto); font: 400 10.5pt/1.5 "DM Sans", sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  img { display: block; max-width: 100%; }
+  .pagina { width: 210mm; height: 297mm; padding: 18mm 17mm 16mm; position: relative; overflow: hidden; page-break-after: always; break-after: page; }
+  .pagina:last-child { page-break-after: auto; break-after: auto; }
+  h1, h2, h3, .n { font-family: "Nunito", sans-serif; font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; }
+  h2 { font-size: 27pt; margin-bottom: 3mm; }
+  h3 { font-size: 13pt; margin-bottom: 1.5mm; }
+  .sec { font: 700 7.5pt "DM Sans", sans-serif; letter-spacing: 0.16em; text-transform: uppercase; color: var(--verde-hoja); margin-bottom: 2mm; }
+  .intro { color: var(--gris); font-size: 11pt; max-width: 150mm; margin-bottom: 7mm; }
+  p + p { margin-top: 2mm; }
+  ul { padding-left: 4.5mm; } li { margin: 0.8mm 0; } li::marker { color: var(--verde-hoja); }
+  b { font-weight: 700; }
+  em { font-style: normal; text-decoration: underline; text-decoration-color: var(--verde); text-decoration-thickness: 2px; text-underline-offset: 2px; }
+  code { font: 500 8.5pt ui-monospace, Menlo, monospace; background: var(--superficie); border: 1px solid var(--borde); border-radius: 4px; padding: 0 1.2mm; }
+  .pie { position: absolute; left: 17mm; right: 17mm; bottom: 8mm; display: flex; justify-content: space-between; align-items: center; font-size: 7.5pt; color: var(--gris); }
+  .pie img { height: 5mm; }
+  .grid { display: grid; gap: 4mm; }
+  .g2 { grid-template-columns: 1fr 1fr; } .g3 { grid-template-columns: repeat(3, 1fr); } .g4 { grid-template-columns: repeat(4, 1fr); } .g5 { grid-template-columns: repeat(5, 1fr); } .g6 { grid-template-columns: repeat(6, 1fr); }
+  .tarjeta { background: var(--superficie); border: 1px solid var(--borde); border-radius: 4mm; padding: 4.5mm; }
+  .tarjeta p, .tarjeta li { color: var(--gris); font-size: 9.5pt; }
+  .slide { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2mm; }
+  .story { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 2.5mm; }
+  .tit-ej { display: flex; align-items: baseline; gap: 3mm; margin: 6mm 0 2.5mm; }
+  .tit-ej h3 { margin: 0; }
+  .tit-ej span { color: var(--gris); font-size: 9pt; }
+  .num { width: 8mm; height: 8mm; border-radius: 50%; background: var(--verde); display: grid; place-items: center; font: 900 11pt "Nunito", sans-serif; margin-bottom: 2.5mm; }
+  .verde { background: var(--verde); }
+  .oscuro { background: var(--texto); color: var(--superficie); }
+
+  /* Portada */
+  .portada { background: var(--verde); display: flex; flex-direction: column; padding: 22mm 20mm 18mm; }
+  .portada .logo { width: 82mm; }
+  .portada h1 { font-size: 54pt; margin-top: 22mm; max-width: 150mm; }
+  .portada .bajada { font-size: 14pt; max-width: 135mm; margin-top: 6mm; }
+  .portada .fotos { margin-top: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3.5mm; }
+  .portada .fotos img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 3mm; box-shadow: 0 3mm 7mm rgba(37, 48, 39, 0.25); }
+  .portada .datos { margin-top: 8mm; display: flex; justify-content: space-between; font-weight: 700; font-size: 10pt; }
+
+  /* Índice */
+  .indice { list-style: none; padding: 0; margin-top: 4mm; columns: 1; }
+  .indice li { display: grid; grid-template-columns: 12mm 1fr auto; align-items: baseline; padding: 3.2mm 0; border-bottom: 1px solid var(--borde); margin: 0; }
+  .indice .n { font-size: 15pt; color: var(--verde-hoja); }
+  .indice b { font: 900 13pt "Nunito", sans-serif; }
+  .indice small { display: block; color: var(--gris); font-size: 9pt; }
+  .indice .pg { font-weight: 700; color: var(--gris); }
+
+  /* Marca */
+  .swatch { border-radius: 3mm; height: 22mm; padding: 2.5mm; display: flex; flex-direction: column; justify-content: flex-end; font-size: 7.5pt; font-weight: 700; border: 1px solid var(--borde); }
+  .swatch small { font-weight: 500; }
+  .especie { display: flex; align-items: center; gap: 2mm; font-weight: 700; font-size: 9pt; }
+  .especie i { width: 4mm; height: 4mm; border-radius: 50%; display: inline-block; }
+  .tipo-a { font: 900 40pt/1 "Nunito", sans-serif; }
+  .tipo-b { font: 500 22pt/1 "DM Sans", sans-serif; }
+  .logo-caja { border-radius: 3mm; height: 30mm; display: grid; place-items: center; border: 1px solid var(--borde); }
+  .logo-caja img { width: 62%; }
+  .elementos { display: flex; align-items: center; justify-content: space-around; gap: 4mm; background: var(--superficie); border: 1px solid var(--borde); border-radius: 3mm; padding: 4mm; }
+  .elementos img { height: 15mm; width: auto; }
+  .asistente { width: 22mm; height: 22mm; border-radius: 50%; border: 1.2mm solid var(--verde); overflow: hidden; background: #fff; }
+
+  /* Perfil */
+  .tel { border: 2.2mm solid #1B1F1C; border-radius: 9mm; overflow: hidden; background: #fff; font: 400 7.5pt -apple-system, "Segoe UI", sans-serif; color: #0C1014; }
+  .tel .barra { padding: 3mm 4mm 1mm; font-weight: 700; font-size: 10pt; }
+  .tel .cab { display: flex; gap: 4mm; align-items: center; padding: 1mm 4mm; }
+  .tel .av { width: 15mm; height: 15mm; border-radius: 50%; background: var(--verde); display: grid; place-items: center; flex: none; }
+  .tel .av img { width: 9mm; }
+  .tel .bio { padding: 1.5mm 4mm 2mm; line-height: 1.35; }
+  .tel .dest { display: flex; gap: 2mm; padding: 1mm 4mm 2.5mm; }
+  .tel .dest div { text-align: center; font-size: 6pt; }
+  .tel .dest span { display: block; width: 10mm; height: 10mm; border-radius: 50%; border: 0.5mm solid var(--verde); background: var(--superficie); overflow: hidden; margin-bottom: 0.6mm; }
+  .tel .dest span img { width: 130%; max-width: none; margin: -1.5mm 0 0 -1.5mm; }
+  .tel .dest span.lleno { background: var(--verde); }
+  .tel .grilla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4mm; }
+  .tel .grilla img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+  .copia { background: var(--superficie); border: 1px solid var(--borde); border-left: 1.2mm solid var(--verde); border-radius: 2mm; padding: 3mm 4mm; font-weight: 500; white-space: pre-line; font-size: 9.5pt; }
+
+  /* Pilares */
+  .pilar { background: var(--superficie); border: 1px solid var(--borde); border-radius: 4mm; overflow: hidden; }
+  .pilar img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .pilar div { padding: 3.5mm; }
+  .pilar .frec { font-weight: 700; font-size: 8pt; color: var(--verde-hoja); display: block; margin-bottom: 1.5mm; }
+  .pilar p { font-size: 8.8pt; color: var(--gris); }
+
+  /* Catálogo */
+  .cat figure { margin: 0; }
+  .cat figcaption { font-size: 8.5pt; margin-top: 1.5mm; }
+  .cat figcaption b { display: block; font: 900 10pt "Nunito", sans-serif; }
+
+  /* Semana */
+  .semana { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2mm; }
+  .dia { border-radius: 3mm; padding: 3mm 2.5mm; min-height: 34mm; border: 1px solid var(--borde); background: var(--superficie); font-size: 8.5pt; color: var(--gris); }
+  .dia b { display: block; font: 900 10.5pt "Nunito", sans-serif; color: var(--texto); margin-bottom: 1mm; }
+  .dia.post { background: var(--verde); border-color: var(--verde); color: var(--texto); }
+
+  /* Pasos y checklist */
+  .paso .n { font-size: 22pt; color: var(--verde-hoja); margin-bottom: 1.5mm; }
+  .checks { list-style: none; padding: 0; columns: 2; column-gap: 9mm; }
+  .checks li { break-inside: avoid; display: grid; grid-template-columns: 6mm 1fr; gap: 2mm; padding: 2mm 0; border-bottom: 1px solid var(--borde); margin: 0; font-size: 9.5pt; }
+  .checks li::before { content: ""; width: 4.2mm; height: 4.2mm; border: 0.5mm solid var(--verde); border-radius: 1.2mm; margin-top: 0.6mm; }
+  .rutas td { padding: 1.6mm 0; border-bottom: 1px solid var(--borde); font-size: 9pt; vertical-align: top; }
+  .rutas td:first-child { font-weight: 700; width: 45mm; }
+
+  /* Contraportada */
+  .contra { background: var(--texto); color: var(--superficie); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8mm; }
+  .contra img { width: 85mm; }
+  .contra p { font-size: 12pt; color: #C9D3C2; }
+  .contra b { color: var(--verde); }

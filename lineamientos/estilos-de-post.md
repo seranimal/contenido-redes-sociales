@@ -293,6 +293,22 @@ Lo que se ve en el perfil es la primera slide de cada post:
 
 ---
 
+## 7 bis. Carruseles modulares
+
+Un mismo sistema, un armado distinto en cada slide. El detalle, con ejemplos y recetas, está en `lineamientos/manual-carruseles-ser-animal.pdf`.
+
+- **Armados de adentro:**
+  - panel y foto (`panel-foto`);
+  - fila de íconos y foto (`iconos-foto`);
+  - tarjetas apiladas (`tarjetas`);
+  - título y foto redondeada (`marco-redondo`);
+  - lista con línea (`lista-linea`), con o sin producto;
+  - dato con foto (`dato`), número grande (`texto`), ficha (`producto-ficha`), texto editorial y cierre.
+- **Portadas nuevas:** solo texto con flecha fina (`portada-texto`) y foto con tarjeta clara (`foto-tarjeta`).
+- **Variedad:** nunca dos slides seguidas con el mismo armado; el «dato con foto», como mucho dos veces por carrusel.
+- **El arco:** gancho → valor (1 a 3 slides) → solución (el producto, si hay) → pregunta en el texto del posteo o en el cierre.
+- **Íconos:** solo los de `marca/elementos/` (`icono-<nombre>-oscuro|blanco`).
+
 ## 8. Imágenes generadas con IA
 
 - **Aspecto:** fotográfico. Luz natural, casas y calles creíbles, poses espontáneas y mascotas con proporciones reales.

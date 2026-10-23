@@ -3,10 +3,10 @@ import { buscarFotos } from "./api";
 import { ESPECIES, ETIQUETAS, NOMBRE_ESPECIE, NOMBRE_ETIQUETA, NOMBRE_TIPO, TIPOS_SLIDE, type TipoSlide } from "./spec";
 import type { Foto, Slide } from "./tipos";
 
-const CON_NUMERO: TipoSlide[] = ["portada-numero", "dato", "texto", "portada-profundidad"];
-const CON_FONDO: TipoSlide[] = ["dato", "texto", "producto", "aviso", "foto-panel", "texto-editorial", "foto-enmarcada"];
+const CON_NUMERO: TipoSlide[] = ["portada-numero", "dato", "texto", "portada-profundidad", "panel-foto"];
+const CON_FONDO: TipoSlide[] = ["dato", "texto", "producto", "aviso", "foto-panel", "texto-editorial", "foto-enmarcada", "portada-texto", "panel-foto", "marco-redondo", "tarjetas", "iconos-foto", "lista-linea"];
 const CON_ETIQUETA: TipoSlide[] = ["foto-titulo-arriba", "foto-titulo-abajo", "foto-panel", "texto-editorial", "foto-enmarcada", "retrato", "producto-claro", "aviso"];
-const CON_ESPECIE: TipoSlide[] = ["portada-globos", "texto-editorial", "mosaico", "retrato"];
+const CON_ESPECIE: TipoSlide[] = ["portada-globos", "texto-editorial", "mosaico", "retrato", "portada-texto"];
 const SIN_BAJADA: TipoSlide[] = ["portada-numero", "portada-pregunta", "portada-globos", "foto-enmarcada"];
 // Fotos de producto: las sube el usuario, no se buscan en Unsplash.
 const DE_PRODUCTO: TipoSlide[] = ["producto", "producto-claro", "producto-ficha"];
@@ -26,6 +26,13 @@ const ETIQUETA_TEXTO: Partial<Record<TipoSlide, string>> = {
   "foto-titulo-abajo": "Bajada subrayada (opcional)",
   "foto-cita": "Línea de abajo (opcional)",
   mosaico: "Texto de abajo (opcional, en mayúsculas)",
+  "portada-texto": "Frase junto a la flecha (ej.: Te contamos por qué)",
+  "foto-tarjeta": "Bajada de la tarjeta (opcional)",
+  "panel-foto": "Párrafo (1 o 2 oraciones)",
+  "marco-redondo": "Bajada (opcional)",
+  tarjetas: "Una tarjeta por bloque, separados por una línea en blanco: 1.er renglón título, 2.º bajada subrayada, después el texto. Hasta 3.",
+  "iconos-foto": "Un ícono por renglón, «icono: etiqueta» (ej.: gota: Más agua). Íconos: gota, hoja, corazon, pata, reloj, casa, sol, luna, lupa, pelota, plato, escudo. Hasta 4.",
+  "lista-linea": "Un punto de la lista por renglón (hasta 6).",
 };
 
 const ETIQUETA_TITULO: Partial<Record<TipoSlide, string>> = {
@@ -39,6 +46,9 @@ const ETIQUETA_TITULO: Partial<Record<TipoSlide, string>> = {
   "foto-titulo-abajo": "Título (lo que va entre *asteriscos* se subraya en verde)",
   "foto-cita": "Cita (sin comillas: la plantilla las agrega)",
   mosaico: "Frase (cada palabra va en un bloque; 6 a 12 palabras)",
+  "portada-texto": "Título (lo que va entre *asteriscos* se subraya en verde)",
+  tarjetas: "Título de arriba (opcional)",
+  "iconos-foto": "Título de la banda (opcional)",
 };
 
 interface Props {

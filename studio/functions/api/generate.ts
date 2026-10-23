@@ -40,11 +40,20 @@ ESTRUCTURA DEL CARRUSEL
   - "texto-editorial": solo texto grande sobre fondo "blanco" o "verde", para una idea fuerte o una pregunta que el carrusel responde (máx. 80 caracteres). Subrayá con *asteriscos* 2 a 5 palabras clave. "texto" = línea de abajo opcional (ej. «Te contamos por qué»).
   - "foto-enmarcada": "titulo" arriba (máx. 50 caracteres) y la foto en un marco sobre fondo "blanco" o "verde".
   - "retrato": foto de un cliente con su mascota, para «La familia Ser Animal». "titulo" = nombres (ej. «Clara *y Milo*»), "texto" = una cita real del cliente o vacío. Nunca inventes nombres ni citas: si el usuario no los dio, dejalos vacíos.
+  - "portada-texto": solo texto en una tarjeta blanca, sin foto, para un dato que sorprende o una idea fuerte (máx. 70 caracteres), con 1 a 3 palabras entre *asteriscos*. "texto" = frase corta junto a la flecha (ej. «Te contamos por qué»). Con "especie", arriba va el personaje. Fondo "verde" o "blanco". Es la portada que más se comparte: usala cada tanto.
+  - "foto-tarjeta": foto real a sangre y una tarjeta clara abajo con "titulo" (máx. 55 caracteres) y "texto" como bajada (máx. 100 caracteres).
   - "producto-claro" también puede ser portada (ver abajo), cuando el post es sobre un producto concreto.
   - "aviso" es la portada (y casi siempre la única slide) de los avisos de la tienda (ver abajo).
 - Slides intermedias:
   - "dato": una idea por slide, con foto. "numero" = número de la idea en la lista (o 0 si no es una lista), "titulo" corto (máx. 40 caracteres) y "texto" de 1 o 2 oraciones (máx. 140 caracteres).
   - "texto": igual que "dato" pero sin foto, para ideas que no necesitan imagen.
+  - Armados modulares (se combinan para que cada slide se vea distinta, como en Petz):
+    - "panel-foto": panel arriba con "titulo" (máx. 45 caracteres) y "texto" como párrafo (máx. 160 caracteres), y la foto a sangre abajo. "numero" opcional.
+    - "marco-redondo": "titulo" grande (máx. 60 caracteres) con *asteriscos*, "texto" como bajada (máx. 90 caracteres) y la foto enmarcada con bordes redondeados abajo.
+    - "tarjetas": 2 o 3 ideas en tarjetas apiladas, sin foto. "titulo" opcional arriba (máx. 45 caracteres). En "texto", cada tarjeta es un bloque separado por una línea en blanco (\n\n): 1.er renglón el título de la idea (máx. 30 caracteres), 2.º una bajada corta (máx. 50 caracteres), 3.º un párrafo (máx. 120 caracteres).
+    - "iconos-foto": banda con 3 o 4 beneficios con ícono y la foto abajo. "titulo" opcional (máx. 45 caracteres). En "texto", un renglón por beneficio con la forma «icono: etiqueta» (etiqueta de máx. 22 caracteres). Íconos posibles: gota, hoja, corazon, pata, reloj, casa, sol, luna, lupa, pelota, plato, escudo.
+    - "lista-linea": "titulo" (máx. 60 caracteres) y en "texto" de 3 a 6 puntos cortos (máx. 45 caracteres), uno por renglón. Si es de un producto, la foto la sube el usuario ("busqueda_foto" vacío); si no, sin foto.
+  - Regla de variedad: en un mismo carrusel nunca repitas el mismo "tipo" en dos slides seguidas, y usá "dato" como mucho 2 veces. Combiná "dato", "texto", "panel-foto", "marco-redondo", "tarjetas", "iconos-foto" y "lista-linea".
   - "producto": un producto de la tienda sobre verde o blanco. Úsalo solo si el usuario nombra un producto concreto. La foto la sube el usuario, así que "busqueda_foto" va vacío.
   - "producto-claro": la foto de catálogo del producto, grande, sobre fondo claro (fondo "blanco"). "titulo" = nombre del producto tal como lo escribió el usuario (máx. 40 caracteres); "texto" = una bajada concreta de 1 oración (máx. 90 caracteres) o vacío; "numero" = 0 (sin precio). "busqueda_foto" vacío.
 - Carrusel de producto (el preferido de la marca): slide 1 "portada-foto" o un editorial con una foto linda del producto en uso, y slide 2 "producto-ficha": la ficha con el nombre en "titulo", en "texto" un primer renglón con una descripción corta (máx. 90 caracteres) y después, separados con \n, 2 a 4 datos clave cortos que se ven como pastillas (ej. «Talles mini, medio y grande», máx. 30 caracteres cada uno), solo con datos que dio el usuario y los colores en "colores" separados por coma («Negro, Turquesa») o "" si no los dio. Sin cierre si son 2 slides.
@@ -54,11 +63,11 @@ ESTRUCTURA DEL CARRUSEL
 - "numero" vale 0 cuando no se usa.
 - "etiqueta": siempre "" (las imágenes no llevan etiquetas de serie: la portada es la foto y un texto claro).
 - "colores": "" salvo en "producto-ficha".
-- "especie": "perro", "gato", "roedor", "pajaro", "pez" o "". Ponela en "portada-globos", "texto-editorial", "mosaico" y "retrato" cuando el post es de una especie; si no, "".
+- "especie": "perro", "gato", "roedor", "pajaro", "pez" o "". Ponela en "portada-globos", "texto-editorial", "mosaico", "retrato" y "portada-texto" cuando el post es de una especie; si no, "".
 - Variá los estilos: no uses siempre el mismo tipo de portada. Los editoriales ("foto-titulo-arriba", "foto-titulo-abajo", "portada-globos", "foto-panel", "texto-editorial", "foto-enmarcada", "foto-cita", "mosaico") le dan aire de revista al feed, como el de Petz. Preferí fotos con personas y sus mascotas.
 
 FOTOS
-- "busqueda_foto": 2 a 5 palabras EN INGLÉS para buscar una foto real en Unsplash que muestre exactamente lo que dice la slide (ej. "guinea pig eating bell pepper"). Vacío en "texto", "texto-editorial", "producto", "producto-claro", "aviso" y "cierre". En "mosaico" y "producto-ficha" también va vacío. En "retrato" también va vacío: la foto del cliente la sube el usuario.
+- "busqueda_foto": 2 a 5 palabras EN INGLÉS para buscar una foto real en Unsplash que muestre exactamente lo que dice la slide (ej. "guinea pig eating bell pepper"). Vacío en "texto", "texto-editorial", "portada-texto", "tarjetas", "producto", "producto-claro", "aviso" y "cierre". En "mosaico" y "producto-ficha" también va vacío. En "retrato" también va vacío: la foto del cliente la sube el usuario.
 - Pensá fotos que existan: animales reales en situaciones cotidianas. Nada de escenas imposibles.
 
 TEXTO DEL POSTEO
