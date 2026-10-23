@@ -56,9 +56,9 @@
 
   /* Índice */
   .indice { list-style: none; padding: 0; margin-top: 4mm; columns: 1; }
-  .indice li { display: grid; grid-template-columns: 12mm 1fr auto; align-items: baseline; padding: 3.2mm 0; border-bottom: 1px solid var(--borde); margin: 0; }
+  .indice li { display: grid; grid-template-columns: 12mm 1fr auto; align-items: baseline; padding: 2.1mm 0; border-bottom: 1px solid var(--borde); margin: 0; }
   .indice .n { font-size: 15pt; color: var(--verde-hoja); }
-  .indice b { font: 900 13pt "Nunito", sans-serif; }
+  .indice b { font: 900 12pt "Nunito", sans-serif; }
   .indice small { display: block; color: var(--gris); font-size: 9pt; }
   .indice .pg { font-weight: 700; color: var(--gris); }
 
@@ -123,7 +123,41 @@
   .contra img { width: 85mm; }
   .contra p { font-size: 12pt; color: #C9D3C2; }
   .contra b { color: var(--verde); }
+
+  /* Destacadas */
+  .tel .dest span.tapa { border: 0; background: none; }
+  .tel .dest span.tapa img { width: 100%; height: 100%; margin: 0; object-fit: cover; }
+  .tapas9 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm 6mm; }
+  .tapas9 figure { margin: 0; display: grid; grid-template-columns: 22mm 1fr; gap: 3mm; align-items: center; }
+  .tapas9 img { width: 22mm; height: 22mm; border-radius: 50%; border: 1px solid var(--borde); padding: 0.8mm; }
+  .tapas9 b { display: block; font: 900 10.5pt "Nunito", sans-serif; }
+  .tapas9 span { font-size: 8.5pt; color: var(--gris); line-height: 1.35; }
+  /* Para quién */
+  .quiere { display: block; font-weight: 700; font-size: 8pt; color: var(--verde-hoja); margin-bottom: 1.5mm; }
+  .voz { width: 100%; border-collapse: collapse; font-size: 9pt; }
+  .voz th, .voz td { text-align: left; vertical-align: top; padding: 2.2mm 2.5mm; border-bottom: 1px solid var(--borde); }
+  .voz th { font: 700 7.5pt "DM Sans", sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: var(--verde-hoja); }
+  .voz td:first-child { font: 900 10.5pt "Nunito", sans-serif; width: 24mm; }
+  .voz td.no { color: var(--gris); text-decoration: line-through; text-decoration-color: var(--verde-claro); }
+  /* El año */
+  .anio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.5mm; }
+  .mes { background: var(--superficie); border: 1px solid var(--borde); border-radius: 3.5mm; padding: 3.5mm; font-size: 8.8pt; color: var(--gris); min-height: 36mm; }
+  .mes b { display: block; font: 900 11.5pt "Nunito", sans-serif; color: var(--texto); margin-bottom: 1mm; }
+  .mes .fecha { display: block; font-weight: 700; font-size: 7.8pt; color: var(--verde-hoja); margin-bottom: 1mm; }
+  .mes.alta { border: 0.6mm solid var(--verde); }
+  /* Comunidad */
+  .resp { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; }
+  .resp .tarjeta { padding: 3.2mm 3.8mm; }
+  .resp .tarjeta h3 { font-size: 11.5pt; }
+  .resp .caso { font-size: 8.4pt; }
+  .resp .dice { margin-top: 1.5mm; font-size: 8.4pt; background: #fff; border: 1px solid var(--borde); border-radius: 3mm 3mm 3mm 1mm; padding: 2.2mm 3mm; font-size: 9pt; color: var(--texto); }
+  .resp .dice::before { content: "Se responde: "; font-weight: 700; color: var(--verde-hoja); }
+  .tablero { width: 100%; border-collapse: collapse; font-size: 8.2pt; }
+  .tablero th, .tablero td { text-align: left; vertical-align: top; padding: 1.4mm 2mm; border-bottom: 1px solid var(--borde); }
+  .tablero th { font: 700 7.5pt "DM Sans", sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: var(--verde-hoja); }
+  .tablero td:first-child { font-weight: 700; }
 </style>
+
 </head>
 <body>
 
@@ -131,7 +165,7 @@
 <section class="pagina portada">
   <img class="logo" src="../../marca/logo/logo-blanco.svg" alt="Ser Animal">
   <h1>Guía de Instagram</h1>
-  <p class="bajada">Cómo se ve Ser Animal en redes, de qué hablamos, las reglas que no se rompen y cómo se arma cada post, paso a paso.</p>
+  <p class="bajada">Cómo se ve Ser Animal en redes, a quién le hablamos, las reglas que no se rompen, el calendario del año, cómo se arma cada post y cómo se responde.</p>
   <div class="fotos">
     <img src="../guia-instagram/img/grilla-6.jpg" alt="">
     <img src="../guia-instagram/img/p-sabias.jpg" alt="">
@@ -149,16 +183,19 @@
   <ol class="indice">
     <li><span class="n">01</span><span><b>La marca</b><small>Colores, tipografías, logo y elementos gráficos</small></span><span class="pg">3</span></li>
     <li><span class="n">02</span><span><b>El perfil</b><small>Bio, destacadas y grilla</small></span><span class="pg">4</span></li>
-    <li><span class="n">03</span><span><b>Reglas de oro</b><small>Lo que no se rompe nunca</small></span><span class="pg">5</span></li>
-    <li><span class="n">04</span><span><b>Pilares de contenido</b><small>De qué hablamos</small></span><span class="pg">6</span></li>
-    <li><span class="n">05</span><span><b>Carruseles de ejemplo</b><small>Consejo que vende, producto, ficha, ¿Sabías que…? y familia</small></span><span class="pg">7</span></li>
-    <li><span class="n">06</span><span><b>Catálogo de portadas</b><small>Los estilos y cuándo usarlos</small></span><span class="pg">9</span></li>
-    <li><span class="n">07</span><span><b>Reels y animados</b><small>Lo que trae gente nueva</small></span><span class="pg">10</span></li>
-    <li><span class="n">08</span><span><b>Historias</b><small>Consejos cortos y mensajes</small></span><span class="pg">11</span></li>
-    <li><span class="n">09</span><span><b>La semana</b><small>Ritmo de publicación y temporadas</small></span><span class="pg">12</span></li>
-    <li><span class="n">10</span><span><b>Cómo se hace un post</b><small>Paso a paso y plantilla del texto</small></span><span class="pg">13</span></li>
-    <li><span class="n">11</span><span><b>Cómo saber si funciona</b><small>Qué mirar y cómo responder</small></span><span class="pg">14</span></li>
-    <li><span class="n">12</span><span><b>Antes de publicar</b><small>La última mirada y dónde está cada cosa</small></span><span class="pg">15</span></li>
+    <li><span class="n">03</span><span><b>Para quién</b><small>Público, promesa y cómo suena la marca</small></span><span class="pg">6</span></li>
+    <li><span class="n">04</span><span><b>Reglas de oro</b><small>Lo que no se rompe nunca</small></span><span class="pg">7</span></li>
+    <li><span class="n">05</span><span><b>Pilares de contenido</b><small>De qué hablamos</small></span><span class="pg">8</span></li>
+    <li><span class="n">06</span><span><b>Carruseles de ejemplo</b><small>Consejo que vende, producto, ficha, ¿Sabías que…? y familia</small></span><span class="pg">9</span></li>
+    <li><span class="n">07</span><span><b>Catálogo de portadas</b><small>Los estilos y cuándo usarlos</small></span><span class="pg">11</span></li>
+    <li><span class="n">08</span><span><b>Reels y animados</b><small>Lo que trae gente nueva</small></span><span class="pg">12</span></li>
+    <li><span class="n">09</span><span><b>Historias</b><small>Consejos cortos y mensajes</small></span><span class="pg">13</span></li>
+    <li><span class="n">10</span><span><b>La semana</b><small>Ritmo de publicación y temporadas</small></span><span class="pg">14</span></li>
+    <li><span class="n">11</span><span><b>El año</b><small>Calendario de temporadas y fechas</small></span><span class="pg">15</span></li>
+    <li><span class="n">12</span><span><b>Cómo se hace un post</b><small>Paso a paso y plantilla del texto</small></span><span class="pg">16</span></li>
+    <li><span class="n">13</span><span><b>Cómo saber si funciona</b><small>Qué mirar y cómo responder</small></span><span class="pg">17</span></li>
+    <li><span class="n">14</span><span><b>Comunidad y mensajes</b><small>Qué se responde y el tablero mensual</small></span><span class="pg">18</span></li>
+    <li><span class="n">15</span><span><b>Antes de publicar</b><small>La última mirada y dónde está cada cosa</small></span><span class="pg">19</span></li>
   </ol>
   <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>2</span></div>
 </section>
@@ -230,11 +267,11 @@
       <div class="cab"><div class="av"><img src="../../marca/logo/isotipo-blanco.svg" alt=""></div><div><b>Ser Animal · Tienda de mascotas</b><br><span style="color:#737373">Tienda de mascotas</span></div></div>
       <div class="bio">Tienda de mascotas en Uruguay 🐾<br>Perros, gatos, roedores, pájaros y peces<br>Envío gratis a todo el país desde $1.500<br>Pedidos por WhatsApp: 091 380 000<br><b style="color:#00376B">seranimal.com.uy</b></div>
       <div class="dest">
-        <div><span class="lleno"><img src="../../marca/elementos/svg/icono-tienda-blanco.svg" alt=""></span>Sucursales</div>
-        <div><span class="lleno"><img src="../../marca/elementos/svg/icono-personas-blanco.svg" alt=""></span>Clientes</div>
-        <div><span class="lleno"><img src="../../marca/elementos/svg/icono-calendario-blanco.svg" alt=""></span>Eventos</div>
-        <div><span class="lleno"><img src="../../marca/elementos/svg/icono-bombilla-blanco.svg" alt=""></span>Consejos</div>
-        <div><span class="lleno"><img src="../../marca/elementos/svg/icono-bolsa-blanco.svg" alt=""></span>Brit</div>
+        <div><span class="tapa"><img src="../../posts/2026-10-destacadas/cuadradas/destacada-01-sucursales.jpg" alt=""></span>Sucursales</div>
+        <div><span class="tapa"><img src="../../posts/2026-10-destacadas/cuadradas/destacada-02-clientes.jpg" alt=""></span>Clientes</div>
+        <div><span class="tapa"><img src="../../posts/2026-10-destacadas/cuadradas/destacada-03-eventos.jpg" alt=""></span>Eventos</div>
+        <div><span class="tapa"><img src="../../posts/2026-10-destacadas/cuadradas/destacada-04-consejos.jpg" alt=""></span>Consejos</div>
+        <div><span class="tapa"><img src="../../posts/2026-10-destacadas/cuadradas/destacada-05-brit.jpg" alt=""></span>Brit</div>
       </div>
       <div class="grilla">
         <img src="../guia-instagram/img/grilla-1.jpg" alt=""><img src="../guia-instagram/img/grilla-2.jpg" alt=""><img src="../guia-instagram/img/grilla-3.jpg" alt="">
@@ -255,7 +292,7 @@ Pedidos por WhatsApp: 091 380 000</div>
         <li>«Uruguay» y «tienda de mascotas» van escritos: Instagram busca por palabras.</li>
       </ul>
       <h3 style="margin-top:6mm">Destacadas</h3>
-      <p>Nueve, en este orden: <b>Sucursales, Clientes, Eventos, Consejos, Brit, Kong, Benebone, Carnilove y Adopciones</b>. Misma tapa en todas: ícono blanco sobre verde Ser Animal. Las de marcas muestran el producto, no el logo.</p>
+      <p>Nueve, en este orden: <b>Sucursales, Clientes, Eventos, Consejos, Brit, Kong, Benebone, Carnilove y Adopciones</b>. Mismo sistema en todas: anillo verde y disco blanco. Las de marcas llevan el logo oficial; las de temas, una foto real con una insignia verde. Es el único lugar del perfil con logos de otras marcas. Detalle en la página siguiente.</p>
       <h3 style="margin-top:6mm">La grilla</h3>
       <ul>
         <li>Mandan las portadas con foto real y un texto claro.</li>
@@ -269,15 +306,82 @@ Pedidos por WhatsApp: 091 380 000</div>
   <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>4</span></div>
 </section>
 
+
+<!-- Destacadas -->
+<section class="pagina">
+  <div class="sec">02 · El perfil</div>
+  <h2>Las nueve destacadas</h2>
+  <p class="intro">Las tapas están listas en <code>posts/2026-10-destacadas/</code>, en 1080×1080 y 1080×1920. Se cargan desde la galería al editar cada destacada. Lo que va adentro se renueva cada tres meses: una destacada vieja dice menos que ninguna.</p>
+  <div class="tapas9">
+    <figure><img src="../../posts/2026-10-destacadas/cuadradas/destacada-01-sucursales.jpg" alt=""><div><b>Sucursales</b><span>Foto de cada local, dirección, horario y cómo llegar.</span></div></figure>
+    <figure><img src="../../posts/2026-10-destacadas/cuadradas/destacada-02-clientes.jpg" alt=""><div><b>Clientes</b><span>Fotos y videos que mandan los clientes, con su permiso.</span></div></figure>
+    <figure><img src="../../posts/2026-10-destacadas/cuadradas/destacada-03-eventos.jpg" alt=""><div><b>Eventos</b><span>Jornadas, ferias y actividades de la tienda.</span></div></figure>
+    <figure><img src="../../posts/2026-10-destacadas/cuadradas/destacada-04-consejos.jpg" alt=""><div><b>Consejos</b><span>Las historias de consejos, agrupadas.</span></div></figure>
+    <figure><img src="../../posts/2026-10-destacadas/cuadradas/destacada-05-brit.jpg" alt=""><div><b>Brit</b><span>Las líneas de alimento y para qué mascota es cada una.</span></div></figure>
+    <figure><img src="../../posts/2026-10-destacadas/cuadradas/destacada-06-kong.jpg" alt=""><div><b>Kong</b><span>Juguetes en uso, cómo rellenarlos, qué tamaño elegir.</span></div></figure>
+    <figure><img src="../../posts/2026-10-destacadas/cuadradas/destacada-07-benebone.jpg" alt=""><div><b>Benebone</b><span>Huesos para morder: sabores, tamaños y para qué perro.</span></div></figure>
+    <figure><img src="../../posts/2026-10-destacadas/cuadradas/destacada-08-carnilove.jpg" alt=""><div><b>Carnilove</b><span>Alimento sin cereales: variedades y para quién es.</span></div></figure>
+    <figure><img src="../../posts/2026-10-destacadas/cuadradas/destacada-09-adopciones.jpg" alt=""><div><b>Adopciones</b><span>Perros y gatos en adopción, con los refugios amigos.</span></div></figure>
+  </div>
+  <div class="grid g2" style="margin-top:7mm">
+    <div class="tarjeta">
+      <h3>El sistema «anillo»</h3>
+      <ul>
+        <li>Anillo verde Ser Animal de borde a borde y disco blanco adentro.</li>
+        <li><b>Marcas:</b> el logo oficial, en sus colores, centrado. Sin fotos de producto.</li>
+        <li><b>Temas:</b> una foto real, con la cara a la vista, y una insignia verde con el ícono de línea de <code>marca/elementos/</code>.</li>
+        <li>Siempre en ese orden, y nunca más de nueve: las primeras cinco son las que se ven sin deslizar.</li>
+      </ul>
+    </div>
+    <div class="tarjeta">
+      <h3>Cómo ponerlas</h3>
+      <ul>
+        <li>Entrar a la destacada (o crearla desde una historia) y tocar <b>Editar destacada</b>.</li>
+        <li>Tocar <b>Editar portada</b> y el ícono de galería; elegir la versión cuadrada y dejarla centrada.</li>
+        <li>Escribir el nombre tal cual: una palabra, con mayúscula inicial.</li>
+        <li>Las de marcas se usan solo mientras Ser Animal venda esas marcas; si una marca pide bajar su logo, se saca.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>5</span></div>
+</section>
+
+<!-- Para quién -->
+<section class="pagina">
+  <div class="sec">03 · Para quién</div>
+  <h2>A quién le hablamos y qué prometemos</h2>
+  <p class="intro">Una cuenta «para todos» no convierte a nadie. Estas tres personas son hipótesis de trabajo: se ajustan cada mes con las estadísticas de Instagram y con lo que preguntan por WhatsApp.</p>
+  <div class="grid g3">
+    <div class="tarjeta"><h3>La que lo cuida como a un hijo</h3><span class="quiere">Quiere saber si lo está haciendo bien</span><p>Perro o gato en apartamento, en Montevideo. Compra online y busca consejos claros, sin sermones. Es la que más guarda y manda los «¿Sabías que…?» y los consejos.</p></div>
+    <div class="tarjeta"><h3>La familia con patio</h3><span class="quiere">Quiere que le llegue a casa</span><p>Perro grande, muchas veces en el interior del país. Compra alimento y accesorios con regularidad y valora el envío gratis a todo el país y el pedido programado.</p></div>
+    <div class="tarjeta"><h3>El que recién empieza</h3><span class="quiere">Quiere una lista de lo que necesita</span><p>Cachorro o gato nuevo en casa, primera mascota. Busca «primeros días», qué comprar y cómo presentarlo. Las fichas de producto y los consejos de inicio son para él.</p></div>
+  </div>
+  <div class="tarjeta verde" style="margin-top:6mm;border-color:var(--verde)">
+    <h3>Todo lo que tu mascota necesita, elegido por gente que sabe, con envío a todo el país.</h3>
+    <p style="color:var(--texto)">Es lo que cada post tiene que dejar claro sin decirlo: sabemos de mascotas, lo hacemos fácil y llega a tu casa.</p>
+  </div>
+  <h3 style="margin-top:7mm">Cómo suena Ser Animal</h3>
+  <table class="voz">
+    <thead><tr><th>Somos</th><th>Así suena</th><th>Así no</th></tr></thead>
+    <tbody>
+      <tr><td>Cercanos</td><td>«Contanos cómo se llama y qué le gusta».</td><td class="no">«¡Holaaa, amigos peludos!».</td></tr>
+      <tr><td>Claros</td><td>«Cepillalo una vez por semana».</td><td class="no">«Se recomienda realizar el cepillado con una frecuencia semanal».</td></tr>
+      <tr><td>Concretos</td><td>«Es para perros de hasta 20 kg y llega a todo el país».</td><td class="no">«¡El mejor producto del mercado!».</td></tr>
+      <tr><td>Positivos</td><td>«Con agua fresca cerca, el paseo es más lindo para los dos».</td><td class="no">«Si no le das agua, lo estás descuidando».</td></tr>
+    </tbody>
+  </table>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>6</span></div>
+</section>
+
 <!-- 5 · Reglas de oro -->
 <section class="pagina">
-  <div class="sec">03 · Reglas de oro</div>
+  <div class="sec">04 · Reglas de oro</div>
   <h2>Lo que no se rompe nunca</h2>
   <p class="intro">Valen para cada post, historia y reel. Si algo no las cumple, no se publica.</p>
   <div class="grid g2">
     <div class="tarjeta"><div class="num">1</div><h3>Sin etiquetas</h3><p>La portada es la foto y un texto claro, nada más. Nada de pastillas como «Consejos», «¿Sabías que…?», «En la tienda» o «Aviso».</p></div>
     <div class="tarjeta"><div class="num">2</div><h3>Sin precios</h3><p>Ni en la imagen ni en el posteo. Los únicos montos son los textos fijos de envíos y pedido programado.</p></div>
-    <div class="tarjeta"><div class="num">3</div><h3>Sin marcas</h3><p>Ni logos ni textos de otras empresas en las fotos: se borran con IA. El producto se nombra por lo que es. Las bolsas de alimento no van al feed.</p></div>
+    <div class="tarjeta"><div class="num">3</div><h3>Sin marcas</h3><p>Ni logos ni textos de otras empresas en las fotos: se borran con IA. El producto se nombra por lo que es. Las bolsas de alimento no van al feed. Única excepción: las destacadas de marcas llevan el logo oficial.</p></div>
     <div class="tarjeta"><div class="num">4</div><h3>Feed estético</h3><p>Nada de «Pedilo por WhatsApp», teléfonos ni llamados a la venta en las imágenes. El WhatsApp va solo en el texto del posteo.</p></div>
     <div class="tarjeta"><div class="num">5</div><h3>Siempre en positivo</h3><p>Nunca retar ni juzgar al dueño. Nada de «Cuidalo mejor»: los consejos se dan como ideas, con calma.</p></div>
     <div class="tarjeta"><div class="num">6</div><h3>HD y nítidas</h3><p>Fotos de 2000 px o más. Se exporta al doble y se reduce. Si una foto se ve borrosa, no se usa.</p></div>
@@ -288,12 +392,12 @@ Pedidos por WhatsApp: 091 380 000</div>
     <h3>El tono</h3>
     <p style="color:var(--texto)">Cercano, claro y concreto, como alguien del local. Español rioplatense con voseo («elegí», «buscá», «sumate»). Mayúscula solo al principio. Decir qué es, para quién es y cómo llega. Sin exclamaciones de más ni frases vacías, y sin inventar descuentos, plazos ni datos.</p>
   </div>
-  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>5</span></div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>7</span></div>
 </section>
 
 <!-- 6 · Pilares -->
 <section class="pagina">
-  <div class="sec">04 · Pilares de contenido</div>
+  <div class="sec">05 · Pilares de contenido</div>
   <h2>De qué hablamos</h2>
   <p class="intro">Cuatro temas fijos. Cada post entra en uno; si no entra en ninguno, no va.</p>
   <div class="grid g2" style="gap:5mm">
@@ -306,12 +410,12 @@ Pedidos por WhatsApp: 091 380 000</div>
     <h3>Carrusel por defecto</h3>
     <p>Slide 1 con foto real y el título claro; después, una idea por slide alternando verde y blanco; al final, un cierre con pregunta o la ficha del producto. Las palabras entre asteriscos (<code>*así*</code>) se subrayan en verde.</p>
   </div>
-  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>6</span></div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>8</span></div>
 </section>
 
 <!-- 7 · Carruseles 1 -->
 <section class="pagina">
-  <div class="sec">05 · Carruseles de ejemplo</div>
+  <div class="sec">06 · Carruseles de ejemplo</div>
   <h2>Así se arman</h2>
   <p class="intro">Posts reales del lote, armados con las plantillas de Ser Animal Studio.</p>
   <div class="tit-ej"><h3>Consejo que termina en producto</h3><span>Enseña primero y vende sin decir «comprá».</span></div>
@@ -324,12 +428,12 @@ Pedidos por WhatsApp: 091 380 000</div>
     <img class="slide" src="../guia-instagram/img/rascador-1.jpg" alt=""><img class="slide" src="../guia-instagram/img/rascador-2.jpg" alt=""><img class="slide" src="../guia-instagram/img/rascador-3.jpg" alt="">
     <div class="tarjeta"><p>La portada se hace con <b>Nano Banana Pro</b> a partir de la foto real: el producto tiene que quedar idéntico y sin logos. Mejor con personas y mascotas en una casa luminosa, con aire arriba para el título.</p></div>
   </div>
-  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>7</span></div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>9</span></div>
 </section>
 
 <!-- 8 · Carruseles 2 -->
 <section class="pagina">
-  <div class="sec">05 · Carruseles de ejemplo</div>
+  <div class="sec">06 · Carruseles de ejemplo</div>
   <div class="tit-ej" style="margin-top:0"><h3>La ficha de producto</h3><span>Foto sobre blanco, nombre, una línea, datos en pastillas y colores. Sin precio.</span></div>
   <div class="grid g4" style="gap:3mm">
     <img class="slide" src="../guia-instagram/img/ficha-bebedero.jpg" alt=""><img class="slide" src="../guia-instagram/img/ficha-dispensador.jpg" alt=""><img class="slide" src="../guia-instagram/img/ficha-lanzador.jpg" alt=""><img class="slide" src="../guia-instagram/img/ficha-comedero.jpg" alt="">
@@ -342,12 +446,12 @@ Pedidos por WhatsApp: 091 380 000</div>
   <div class="grid g4" style="gap:3mm">
     <img class="slide" src="../guia-instagram/img/adoptar-1.jpg" alt=""><img class="slide" src="../guia-instagram/img/adoptar-2.jpg" alt=""><img class="slide" src="../guia-instagram/img/adoptar-3.jpg" alt=""><img class="slide" src="../guia-instagram/img/adoptar-4.jpg" alt="">
   </div>
-  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>8</span></div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>10</span></div>
 </section>
 
 <!-- 9 · Catálogo -->
 <section class="pagina">
-  <div class="sec">06 · Catálogo de portadas</div>
+  <div class="sec">07 · Catálogo de portadas</div>
   <h2>Los estilos</h2>
   <p class="intro">Se rotan para que la grilla nunca repita. Todos están en Ser Animal Studio.</p>
   <div class="grid g4 cat" style="gap:4mm 3.5mm">
@@ -364,12 +468,12 @@ Pedidos por WhatsApp: 091 380 000</div>
     <figure><img class="slide" src="../guia-instagram/img/ed-retrato.jpg" alt=""><figcaption><b>Retrato con nombre</b>Clientes, siempre con permiso.</figcaption></figure>
     <figure><img class="slide" src="../guia-instagram/img/rascador-1.jpg" alt=""><figcaption><b>Producto en uso</b>La portada de producto.</figcaption></figure>
   </div>
-  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>9</span></div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>11</span></div>
 </section>
 
 <!-- 10 · Reels -->
 <section class="pagina">
-  <div class="sec">07 · Reels y animados</div>
+  <div class="sec">08 · Reels y animados</div>
   <h2>Los reels traen gente nueva</h2>
   <p class="intro">Cada formato tiene su trabajo: los <b>reels</b> llegan a quienes todavía no nos siguen, los <b>carruseles</b> se guardan y las <b>historias</b> cuidan a quienes ya nos siguen. Al menos un reel por semana.</p>
   <div class="grid g4" style="gap:3mm">
@@ -399,12 +503,12 @@ Pedidos por WhatsApp: 091 380 000</div>
       </ul>
     </div>
   </div>
-  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>10</span></div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>12</span></div>
 </section>
 
 <!-- 11 · Historias -->
 <section class="pagina">
-  <div class="sec">08 · Historias</div>
+  <div class="sec">09 · Historias</div>
   <h2>Consejos cortos y mensajes</h2>
   <p class="intro">Una o dos por día. Un mensaje que se lee de un vistazo, con una foto real.</p>
   <div class="grid g6" style="gap:2.5mm">
@@ -433,12 +537,12 @@ Pedidos por WhatsApp: 091 380 000</div>
       </ul>
     </div>
   </div>
-  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>11</span></div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>13</span></div>
 </section>
 
 <!-- 12 · La semana -->
 <section class="pagina">
-  <div class="sec">09 · La semana</div>
+  <div class="sec">10 · La semana</div>
   <h2>Ritmo de publicación</h2>
   <p class="intro">Cuatro posts por semana, un reel y una o dos historias por día. Mejor menos y bien hechos que todos los días a las apuradas.</p>
   <div class="semana">
@@ -459,12 +563,39 @@ Pedidos por WhatsApp: 091 380 000</div>
     <h3>La grilla, en orden</h3>
     <p style="color:var(--texto)">Se alternan fotos reales y productos, y nunca se repite el estilo de portada seguido. El orden sugerido del lote está en <code>planificacion/2026-11-lote-20-posts-15-historias.md</code>.</p>
   </div>
-  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>12</span></div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>14</span></div>
+</section>
+
+
+<!-- El año -->
+<section class="pagina">
+  <div class="sec">11 · El año</div>
+  <h2>Calendario de temporadas</h2>
+  <p class="intro">Los temas se adelantan un mes: lo que la gente va a necesitar en diciembre se publica en noviembre. Los meses con borde verde son los de más ventas y consultas. Las fechas especiales se confirman cada año antes de armar el post.</p>
+  <div class="anio">
+    <div class="mes alta"><b>Enero</b>Calor fuerte, playa y viajes. Agua, horarios de paseo, almohadillas. Mascotas que se quedan en casa.</div>
+    <div class="mes"><b>Febrero</b>Sigue el calor. Carnaval y ruido: cómo acompañarlos. Vuelta de las vacaciones.</div>
+    <div class="mes"><b>Marzo</b>Vuelta a la rutina: se queda solo en casa, juguetes para entretenerse. Muda de pelo de otoño: cepillado.</div>
+    <div class="mes"><b>Abril</b>Semana de Turismo: viajar con mascotas. Primeros fríos, camas y mantas.</div>
+    <div class="mes"><b>Mayo</b>Frío y lluvia: abrigos, paseos cortos, secar las patas. Comederos y bebederos para el invierno.</div>
+    <div class="mes"><b>Junio</b>Invierno. Juegos en casa, alfombras de olfateo, huesos para morder. Perros mayores y el frío.</div>
+    <div class="mes"><b>Julio</b>Vacaciones de julio: planes con mascotas y chicos. Gatos de interior: rascadores y escondites.</div>
+    <div class="mes alta"><b>Agosto</b><span class="fecha">8 · Día Internacional del Gato · 26 · Día Internacional del Perro</span>Dos fechas para la familia Ser Animal: fotos de clientes y adopciones.</div>
+    <div class="mes"><b>Setiembre</b>Primavera: pulgas y garrapatas, alergias, más paseos. Muda de pelo de primavera.</div>
+    <div class="mes alta"><b>Octubre</b><span class="fecha">4 · Día Mundial de los Animales</span>Adopciones y refugios. Arranca el calor: bebederos portátiles.</div>
+    <div class="mes alta"><b>Noviembre</b>Calor y paseos. Se adelanta todo lo de diciembre: pirotecnia, viajes, regalos.</div>
+    <div class="mes alta"><b>Diciembre</b>Pirotecnia en las semanas antes de Navidad y Año Nuevo. Viajes. Regalos para mascotas, sin precios.</div>
+  </div>
+  <div class="tarjeta" style="margin-top:6mm">
+    <h3>Cómo se usa</h3>
+    <p>Al planificar cada mes se toman dos o tres temas de la casilla del mes siguiente, se reparten entre los pilares (un «¿Sabías que…?», un consejo, un producto) y se anotan en <code>planificacion/</code>. Lo de temporada va primero; lo atemporal rellena.</p>
+  </div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>15</span></div>
 </section>
 
 <!-- 13 · Cómo se hace -->
 <section class="pagina">
-  <div class="sec">10 · Cómo se hace un post</div>
+  <div class="sec">12 · Cómo se hace un post</div>
   <h2>De la idea al post</h2>
   <p class="intro">Cada post va en <code>posts/AAAA-MM-nombre/</code> con las slides, <code>portada.jpg</code>, <code>texto.md</code> y <code>fuente/</code>. El paso a paso completo está en la skill <code>ser-animal-posts</code>.</p>
   <div class="grid g3" style="gap:3.5mm">
@@ -501,12 +632,12 @@ Pedidos y envíos por WhatsApp: 091 380 000.
       </ul>
     </div>
   </div>
-  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>13</span></div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>16</span></div>
 </section>
 
 <!-- 14 · Medir -->
 <section class="pagina">
-  <div class="sec">11 · Cómo saber si funciona</div>
+  <div class="sec">13 · Cómo saber si funciona</div>
   <h2>Lo que hay que mirar</h2>
   <p class="intro">Una vez por mes, en las estadísticas de Instagram. La meta no son los seguidores: es que el contenido se guarde, se mande y traiga gente al perfil y al WhatsApp.</p>
   <div class="grid g2">
@@ -533,12 +664,42 @@ Pedidos y envíos por WhatsApp: 091 380 000.
       </ul>
     </div>
   </div>
-  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>14</span></div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>17</span></div>
+</section>
+
+
+<!-- Comunidad -->
+<section class="pagina">
+  <div class="sec">14 · Comunidad y mensajes</div>
+  <h2>Responder es parte del contenido</h2>
+  <p class="intro">Cada comentario y cada mensaje es una venta posible o un cliente que vuelve. Se responde en la primera hora después de publicar y, el resto del día, en horario de tienda. Con el tono de los posts y usando el nombre de la mascota si lo dicen.</p>
+  <div class="resp">
+    <div class="tarjeta"><h3>Preguntan el precio en un comentario</h3><p class="caso">Nunca se responde con el precio en público.</p><p class="dice">«Te lo pasamos por mensaje 🙂». Y por mensaje: precio, envío y el WhatsApp de pedidos.</p></div>
+    <div class="tarjeta"><h3>Un cliente sube una foto con su mascota</h3><p class="caso">Es el contenido más valioso: se pide permiso antes de compartir.</p><p class="dice">«¡Qué lindo! ¿Nos dejás compartirlo en @seranimal? Te etiquetamos».</p></div>
+    <div class="tarjeta"><h3>Una queja o un problema con un pedido</h3><p class="caso">En público, con calma y sin discutir; se resuelve en privado el mismo día.</p><p class="dice">«Lo lamentamos. Te escribimos por mensaje ahora para resolverlo».</p></div>
+    <div class="tarjeta"><h3>Una pregunta de salud</h3><p class="caso">Se ayuda con lo general y se deriva lo específico.</p><p class="dice">«Suele pasar por [motivo general]. Ante la duda, consultá a tu veterinario: cada caso es distinto».</p></div>
+    <div class="tarjeta"><h3>Un mensaje fuera de horario</h3><p class="caso">Respuesta automática de Instagram con el horario y el WhatsApp.</p><p class="dice">«Gracias por escribir. Atendemos de [horario]. Para pedidos, WhatsApp 091 380 000».</p></div>
+    <div class="tarjeta"><h3>Un comentario ofensivo o spam</h3><p class="caso">No se discute. Se oculta o se borra; si se repite, se restringe la cuenta.</p><p class="dice">Nada: se oculta y se sigue.</p></div>
+  </div>
+  <h3 style="margin-top:5mm">Tablero mensual</h3>
+  <table class="tablero">
+    <thead><tr><th>Qué se mira</th><th>Dónde</th><th>Qué dice</th><th>Qué se hace</th></tr></thead>
+    <tbody>
+      <tr><td>Guardados por post</td><td>Estadísticas de cada publicación</td><td>Si el contenido es útil.</td><td>Repetir los temas que más se guardan.</td></tr>
+      <tr><td>Compartidos por post</td><td>Estadísticas de cada publicación</td><td>Si la gente lo manda: es lo que más trae gente nueva.</td><td>Más de ese estilo y de ese tema.</td></tr>
+      <tr><td>Alcance a no seguidores</td><td>Estadísticas de cada reel</td><td>Si los reels llegan lejos.</td><td>Si no sube, mejorar el primer segundo.</td></tr>
+      <tr><td>Visitas al perfil y toques al enlace</td><td>Estadísticas de la cuenta</td><td>Si el contenido manda gente a la bio y a la web.</td><td>Visitas sin toques: revisar la bio.</td></tr>
+      <tr><td>Consultas por WhatsApp desde Instagram</td><td>Preguntar «¿cómo nos conociste?»</td><td>Si todo esto vende.</td><td>Es el número que importa de verdad.</td></tr>
+      <tr><td>Seguidores</td><td>Estadísticas de la cuenta</td><td>Solo de referencia, no es la meta.</td><td>Se anota, no se persigue.</td></tr>
+    </tbody>
+  </table>
+  <p style="color:var(--gris);font-size:9pt;margin-top:2.5mm">El primer mes fija la referencia; desde ahí, la meta es que guardados, compartidos y consultas suban mes a mes. Todo se anota en una hoja simple: mes, cada número y qué se cambió.</p>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>18</span></div>
 </section>
 
 <!-- 15 · Antes de publicar -->
 <section class="pagina">
-  <div class="sec">12 · Antes de publicar</div>
+  <div class="sec">15 · Antes de publicar</div>
   <h2>La última mirada</h2>
   <ul class="checks" style="margin-top:4mm">
     <li>La portada es una foto real o realista, con un texto claro y sin etiquetas.</li>
@@ -571,7 +732,7 @@ Pedidos y envíos por WhatsApp: 091 380 000.
     <tr><td>Ser Animal Studio</td><td><code>studio/</code> (plantillas y scripts de render y animación)</td></tr>
     <tr><td>Skills</td><td><code>.claude/skills/</code> (procedencia en <code>ORIGEN.md</code>)</td></tr>
   </table>
-  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>15</span></div>
+  <div class="pie"><img src="../../marca/logo/logo-verde.svg" alt=""><span>Guía de Instagram · Ser Animal</span><span>19</span></div>
 </section>
 
 <!-- 16 · Contraportada -->

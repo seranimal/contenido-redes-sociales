@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Vista previa de las destacadas</title>
+<style>
+  @font-face { font-family: "Nunito"; font-weight: 900; src: url("../../../marca/fuentes/nunito-latin-900-normal.woff") format("woff"); }
+  @font-face { font-family: "DM Sans"; font-weight: 500; src: url("../../../marca/fuentes/dm-sans-latin-500-normal.woff") format("woff"); }
+  * { box-sizing: border-box; margin: 0; }
+  body { margin: 0; }
+  /* Vista previa del perfil (portada.jpg, 1080×1350): las nueve tapas tal como se ven en Instagram. */
+  .vista { width: 1080px; height: 1350px; background: #fff; padding: 90px 70px 0; color: #253027; font-family: "DM Sans", sans-serif; }
+  .vista h1 { font: 900 64px/1.1 "Nunito", sans-serif; text-align: center; }
+  .vista p { font-size: 32px; text-align: center; margin-top: 18px; color: #444D45; }
+  .grilla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px 0; margin-top: 80px; }
+  .d { text-align: center; font-size: 34px; font-weight: 500; }
+  .d .circulo { width: 236px; height: 236px; margin: 0 auto 18px; border-radius: 50%; border: 3px solid #E5E9DE; padding: 8px; }
+  .d .circulo img { width: 100%; height: 100%; border-radius: 50%; display: block; }
+</style>
+</head>
+<body>
+<div class="vista">
+  <h1>Destacadas de @seranimal</h1>
+  <p>Así se ven en el perfil, en este orden.</p>
+  <div class="grilla">
+    <div class="d"><div class="circulo"><img src="../cuadradas/destacada-01-sucursales.jpg" alt=""></div>Sucursales</div>
+    <div class="d"><div class="circulo"><img src="../cuadradas/destacada-02-clientes.jpg" alt=""></div>Clientes</div>
+    <div class="d"><div class="circulo"><img src="../cuadradas/destacada-03-eventos.jpg" alt=""></div>Eventos</div>
+    <div class="d"><div class="circulo"><img src="../cuadradas/destacada-04-consejos.jpg" alt=""></div>Consejos</div>
+    <div class="d"><div class="circulo"><img src="../cuadradas/destacada-05-brit.jpg" alt=""></div>Brit</div>
+    <div class="d"><div class="circulo"><img src="../cuadradas/destacada-06-kong.jpg" alt=""></div>Kong</div>
+    <div class="d"><div class="circulo"><img src="../cuadradas/destacada-07-benebone.jpg" alt=""></div>Benebone</div>
+    <div class="d"><div class="circulo"><img src="../cuadradas/destacada-08-carnilove.jpg" alt=""></div>Carnilove</div>
+    <div class="d"><div class="circulo"><img src="../cuadradas/destacada-09-adopciones.jpg" alt=""></div>Adopciones</div>
+  </div>
+</div>
+</body>
+</html>

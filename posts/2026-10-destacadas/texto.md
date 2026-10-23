@@ -1,39 +1,46 @@
 # Destacadas del perfil · tapas
 
-Nueve tapas, todas iguales en estilo: ícono de línea blanco sobre verde Ser Animal `#9ECA1B`. Los íconos son los de `marca/elementos/` (`icono-*-blanco.svg`). Vista previa: `portada.jpg`.
+Nueve tapas con el mismo sistema, el «anillo»: anillo verde Ser Animal `#9ECA1B` de borde a borde y disco blanco adentro. En el disco va el logo oficial de la marca o una foto real con una insignia verde con el ícono de línea de `marca/elementos/`. Vista previa: `portada.jpg`.
 
-| # | Destacada | Ícono | Archivo |
+| # | Destacada | Qué muestra | Archivo |
 |---|---|---|---|
-| 1 | Sucursales | Local | `destacada-01-sucursales.jpg` |
-| 2 | Clientes | Personas | `destacada-02-clientes.jpg` |
-| 3 | Eventos | Calendario con corazón | `destacada-03-eventos.jpg` |
-| 4 | Consejos | Lamparita | `destacada-04-consejos.jpg` |
-| 5 | Brit | Bolsa de alimento con huella | `destacada-05-brit.jpg` |
-| 6 | Kong | Juguete rellenable | `destacada-06-kong.jpg` |
-| 7 | Benebone | Hueso | `destacada-07-benebone.jpg` |
-| 8 | Carnilove | Plato con alimento | `destacada-08-carnilove.jpg` |
-| 9 | Adopciones | Casa con corazón | `destacada-09-adopciones.jpg` |
+| 1 | Sucursales | Foto real (gato en vidriera) + insignia «tienda» | `destacada-01-sucursales.jpg` |
+| 2 | Clientes | Foto real (persona con su perro) + insignia «personas» | `destacada-02-clientes.jpg` |
+| 3 | Eventos | Foto real (dos perros jugando) + insignia «calendario» | `destacada-03-eventos.jpg` |
+| 4 | Consejos | Foto real (perro tomando agua de la mano) + insignia «bombilla» | `destacada-04-consejos.jpg` |
+| 5 | Brit | Logo oficial de Brit | `destacada-05-brit.jpg` |
+| 6 | Kong | Logo oficial de KONG | `destacada-06-kong.jpg` |
+| 7 | Benebone | Logo oficial de Benebone | `destacada-07-benebone.jpg` |
+| 8 | Carnilove | Logo oficial de Carnilove | `destacada-08-carnilove.jpg` |
+| 9 | Adopciones | Foto real (perro de refugio) + insignia «adopción» | `destacada-09-adopciones.jpg` |
 
 - **En la raíz:** cada tapa en 1080×1920, para subirla como historia.
-- **En `cuadradas/`:** la misma tapa en 1080×1080, para elegirla desde la galería.
+- **En `cuadradas/`:** la misma tapa en 1080×1080, para elegirla desde la galería (la más cómoda).
 
-Las tapas de marcas no llevan el logo de la marca: el nombre lo dice el título de la destacada y la imagen muestra qué producto es. Así el perfil sigue la regla de no mostrar logos de otras marcas.
+Las destacadas de marcas son el único lugar del perfil con logos de otras marcas. Se usan mientras Ser Animal venda esas marcas; si una marca pide bajar su logo, se saca. La foto de Sucursales es provisoria: cuando haya una foto linda del local, se reemplaza en `fuente/fotos/sucursales.jpg` y se vuelve a generar.
 
 ## Cómo ponerlas
 
 1. Entrar a la destacada (o crearla con una historia) y tocar **Editar destacada**.
 2. Tocar **Editar portada** y luego el ícono de galería.
-3. Elegir la versión de `cuadradas/` y dejar el ícono centrado.
+3. Elegir la versión de `cuadradas/` y dejarla centrada.
 4. Escribir el nombre tal cual figura en la tabla.
 
 ## Qué va en cada una
 
 - **Sucursales:** foto de cada local, dirección, horario y cómo llegar.
 - **Clientes:** fotos y videos que mandan los clientes con sus mascotas, siempre con su permiso.
-- **Eventos:** jornadas, ferias y actividades de la tienda.
-- **Consejos:** las historias de `posts/2026-11-historias-consejos/`.
+- **Eventos:** jornadas, ferias y actividades de la tienda, antes y después.
+- **Consejos:** las historias de `posts/2026-11-historias-consejos/`, agrupadas por tema.
 - **Brit, Kong, Benebone y Carnilove:** los productos de cada marca en uso, para qué mascota son y qué variedades hay. Sin precios.
 - **Adopciones:** perros y gatos en adopción junto a los refugios con los que trabajamos.
+
+Lo que va adentro se renueva cada tres meses.
+
+## Fuentes
+
+- Logos: sitios oficiales de cada marca (`fuente/logos/`). El de KONG se vectorizó a partir del logo del sitio oficial.
+- Fotos (Unsplash, descarga registrada): Marc-Philipp Esser (vidriera), Martin Vysoudil (clientes), Zsanna Dnk (eventos), T / tanyabarrow (consejos), Madeline Bowen (adopciones). Están en `fuente/fotos/`.
 
 ## Para volver a generarlas
 

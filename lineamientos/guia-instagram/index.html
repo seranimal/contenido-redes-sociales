@@ -201,23 +201,83 @@
     .seccion { padding-block: 52px; }
     .pilares, .oro, .pasos { grid-template-columns: minmax(0, 1fr); }
   }
+
+  /* Destacadas con tapa real en la maqueta */
+  .destacada .circulo div.tapa { border: 0; background: none; }
+  .destacada .circulo div.tapa img { width: 100%; height: 100%; max-width: none; object-fit: cover; }
+  .tapas { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+  .tapas figure { margin: 0; display: grid; gap: 8px; justify-items: center; text-align: center; }
+  .tapas img { width: 100%; max-width: 110px; border-radius: 50%; border: 1px solid var(--borde); padding: 3px; background: var(--papel); }
+  .tapas b { font: 700 14px var(--texto); }
+  .tapas span { font-size: 12.5px; color: var(--gris); line-height: 1.35; }
+
+  /* Para quién */
+  .personas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .personas article { background: var(--papel); border: 1px solid var(--borde); border-radius: 16px; padding: 20px; display: grid; gap: 8px; align-content: start; }
+  .personas h3 { font-size: 21px; }
+  .personas p { color: var(--gris); font-size: 15px; }
+  .personas .quiere { font: 700 13px var(--texto); color: var(--verde-hoja); }
+  .promesa { margin-top: 28px; background: var(--verde); color: var(--sobre-verde); border-radius: 28px; padding: 28px 32px; display: grid; gap: 8px; }
+  .promesa b { font: 900 clamp(22px, 3vw, 30px)/1.15 var(--display); letter-spacing: -0.02em; }
+  .promesa p { font-size: 15px; }
+  .voz { width: 100%; border-collapse: collapse; margin-top: 28px; font-size: 15px; }
+  .voz th, .voz td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--borde); }
+  .voz th { font: 700 12px var(--texto); letter-spacing: 0.1em; text-transform: uppercase; color: var(--verde-hoja); }
+  .voz td:first-child { font: 900 17px var(--display); }
+  .voz td.si { color: var(--tinta); } .voz td.no { color: var(--gris); text-decoration: line-through; text-decoration-color: var(--borde); }
+
+  /* Calendario del año */
+  .anio { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .mes { background: var(--papel); border: 1px solid var(--borde); border-radius: 16px; padding: 16px; display: grid; gap: 6px; align-content: start; }
+  .mes b { font: 900 17px var(--display); }
+  .mes span { font-size: 14px; color: var(--gris); line-height: 1.4; }
+  .mes .fecha { font: 700 12px var(--texto); color: var(--verde-hoja); }
+  .mes.alta { border-color: var(--verde); box-shadow: inset 0 0 0 2px var(--verde); }
+
+  /* Comunidad */
+  .respuestas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }
+  .respuestas article { background: var(--papel); border: 1px solid var(--borde); border-radius: 16px; padding: 18px 20px; display: grid; gap: 8px; align-content: start; }
+  .respuestas h4 { margin: 0; font: 900 17px var(--display); }
+  .respuestas .caso { font-size: 14px; color: var(--gris); }
+  .respuestas .dice { background: var(--suave); border-radius: 12px 12px 12px 4px; padding: 10px 14px; font-size: 15px; }
+  .respuestas .dice::before { content: "Se responde: "; font-weight: 700; color: var(--verde-hoja); }
+
+  /* Tablero mensual */
+  .tablero { width: 100%; border-collapse: collapse; margin-top: 32px; font-size: 15px; }
+  .tablero th, .tablero td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--borde); }
+  .tablero th { font: 700 12px var(--texto); letter-spacing: 0.1em; text-transform: uppercase; color: var(--verde-hoja); }
+  .tablero td:first-child { font-weight: 700; }
+
+  @media (max-width: 900px) {
+    .tapas { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .personas, .anio { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .respuestas { grid-template-columns: minmax(0, 1fr); }
+    .voz, .tablero { font-size: 14px; } .voz td, .tablero td, .voz th, .tablero th { padding: 10px 8px; }
+  }
+  @media (max-width: 520px) {
+    .personas, .anio { grid-template-columns: minmax(0, 1fr); }
+  }
 </style>
+
 
 <header class="portada banda">
   <div class="ancho">
     <img class="logo" src="img/logo-blanco.svg" alt="Ser Animal">
     <h1>Así se ve Ser Animal en Instagram</h1>
-    <p>Cómo tiene que verse el perfil, las reglas que no se rompen, de qué hablamos, cómo se arma cada post y dónde están los recursos de marca. Los ejemplos son posts reales del lote de noviembre y diciembre, y todo está en el repositorio <b>contenido-redes-sociales</b>.</p>
+    <p>Cómo tiene que verse el perfil, a quién le hablamos, las reglas que no se rompen, de qué hablamos, el calendario del año, cómo se responde, cómo se arma cada post y dónde están los recursos de marca. Los ejemplos son posts reales del lote de noviembre y diciembre, y todo está en el repositorio <b>contenido-redes-sociales</b>.</p>
     <nav class="indice" aria-label="Secciones">
       <a href="#perfil">El perfil</a>
+      <a href="#quien">Para quién</a>
       <a href="#oro">Reglas de oro</a>
       <a href="#pilares">Pilares y carruseles</a>
       <a href="#animados">Reels y animados</a>
       <a href="#historias">Historias</a>
       <a href="#semana">La semana</a>
+      <a href="#anio">El año</a>
       <a href="#como">Cómo se hace</a>
       <a href="#assets">Brand assets</a>
       <a href="#medir">Cómo saber si funciona</a>
+      <a href="#comunidad">Comunidad y mensajes</a>
       <a href="#antes">Antes de publicar</a>
     </nav>
   </div>
@@ -228,7 +288,7 @@
     <div class="titulo-seccion">
       <span class="etiqueta">01 · El perfil</span>
       <h2>La cuenta, de un vistazo</h2>
-      <p>Así tiene que verse @seranimal: foto de perfil verde, bio clara, destacadas con la misma tapa verde y una grilla donde mandan las fotos reales, con mascotas y personas.</p>
+      <p>Así tiene que verse @seranimal: foto de perfil verde, bio clara, destacadas con anillo verde (los logos de las marcas y fotos reales) y una grilla donde mandan las fotos reales, con mascotas y personas.</p>
     </div>
 
     <div class="perfil">
@@ -249,15 +309,15 @@
         </div>
         <div class="tel-botones"><span>Seguir</span><span>Mensaje</span><span>WhatsApp</span></div>
         <div class="destacadas">
-          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-tienda.svg" alt=""></div></div>Sucursales</div>
-          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-personas.svg" alt=""></div></div>Clientes</div>
-          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-calendario.svg" alt=""></div></div>Eventos</div>
-          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-bombilla.svg" alt=""></div></div>Consejos</div>
-          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-bolsa.svg" alt=""></div></div>Brit</div>
-          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-rellenable.svg" alt=""></div></div>Kong</div>
-          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-hueso.svg" alt=""></div></div>Benebone</div>
-          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-plato.svg" alt=""></div></div>Carnilove</div>
-          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-adopcion.svg" alt=""></div></div>Adopciones</div>
+          <div class="destacada"><div class="circulo"><div class="tapa"><img src="img/dest-sucursales.jpg" alt=""></div></div>Sucursales</div>
+          <div class="destacada"><div class="circulo"><div class="tapa"><img src="img/dest-clientes.jpg" alt=""></div></div>Clientes</div>
+          <div class="destacada"><div class="circulo"><div class="tapa"><img src="img/dest-eventos.jpg" alt=""></div></div>Eventos</div>
+          <div class="destacada"><div class="circulo"><div class="tapa"><img src="img/dest-consejos.jpg" alt=""></div></div>Consejos</div>
+          <div class="destacada"><div class="circulo"><div class="tapa"><img src="img/dest-brit.jpg" alt=""></div></div>Brit</div>
+          <div class="destacada"><div class="circulo"><div class="tapa"><img src="img/dest-kong.jpg" alt=""></div></div>Kong</div>
+          <div class="destacada"><div class="circulo"><div class="tapa"><img src="img/dest-benebone.jpg" alt=""></div></div>Benebone</div>
+          <div class="destacada"><div class="circulo"><div class="tapa"><img src="img/dest-carnilove.jpg" alt=""></div></div>Carnilove</div>
+          <div class="destacada"><div class="circulo"><div class="tapa"><img src="img/dest-adopciones.jpg" alt=""></div></div>Adopciones</div>
         </div>
         <div class="tel-pestanas"><span class="activa">▦</span><span>▷</span><span>◫</span></div>
         <div class="grilla">
@@ -293,7 +353,7 @@ Pedidos por WhatsApp: 091 380 000</pre>
         </div>
         <div class="regla">
           <h3>Destacadas</h3>
-          <p>Nueve, siempre en este orden: <b>Sucursales, Clientes, Eventos, Consejos, Brit, Kong, Benebone, Carnilove y Adopciones</b>. Todas con la misma tapa: ícono de línea blanco sobre verde Ser Animal. Las de marcas muestran el producto, no el logo. Tapas listas en <code>posts/2026-10-destacadas/</code>.</p>
+          <p>Nueve, siempre en este orden: <b>Sucursales, Clientes, Eventos, Consejos, Brit, Kong, Benebone, Carnilove y Adopciones</b>. Todas con el mismo sistema: anillo verde Ser Animal y disco blanco. Las de marcas llevan el logo oficial de la marca; las de temas, una foto real con una insignia verde. Es el único lugar del perfil donde van logos de otras marcas.</p>
         </div>
         <div class="regla">
           <h3>La grilla</h3>
@@ -312,20 +372,63 @@ Pedidos por WhatsApp: 091 380 000</pre>
         </div>
       </div>
     </div>
+    <div class="ejemplo">
+      <h3>Las nueve destacadas</h3>
+      <p class="nota">Tapas listas en <code>posts/2026-10-destacadas/</code>, en 1080×1080 y 1080×1920. Se cargan desde la galería al editar cada destacada. Lo que va adentro se renueva cada tres meses: una destacada vieja dice menos que ninguna.</p>
+      <div class="tapas">
+        <figure><img src="img/dest-sucursales.jpg" alt=""><b>Sucursales</b><span>Foto de cada local, dirección, horario y cómo llegar.</span></figure>
+        <figure><img src="img/dest-clientes.jpg" alt=""><b>Clientes</b><span>Fotos y videos que mandan los clientes, con su permiso y su nombre si quieren.</span></figure>
+        <figure><img src="img/dest-eventos.jpg" alt=""><b>Eventos</b><span>Jornadas, ferias y actividades de la tienda, antes y después.</span></figure>
+        <figure><img src="img/dest-consejos.jpg" alt=""><b>Consejos</b><span>Las historias de consejos, agrupadas: agua, paseos, uñas, pirotecnia.</span></figure>
+        <figure><img src="img/dest-brit.jpg" alt=""><b>Brit</b><span>Las líneas de alimento, para qué mascota es cada una. Sin precios.</span></figure>
+        <figure><img src="img/dest-kong.jpg" alt=""><b>Kong</b><span>Juguetes en uso, cómo rellenarlos y qué tamaño elegir.</span></figure>
+        <figure><img src="img/dest-benebone.jpg" alt=""><b>Benebone</b><span>Huesos para morder: sabores, tamaños y para qué perro es cada uno.</span></figure>
+        <figure><img src="img/dest-carnilove.jpg" alt=""><b>Carnilove</b><span>Alimento sin cereales: variedades y para quién es.</span></figure>
+        <figure><img src="img/dest-adopciones.jpg" alt=""><b>Adopciones</b><span>Perros y gatos en adopción, con los refugios con los que trabajamos.</span></figure>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="banda seccion papel" id="oro">
+<section class="banda seccion papel" id="quien">
   <div class="ancho">
     <div class="titulo-seccion">
-      <span class="etiqueta">02 · Reglas de oro</span>
+      <span class="etiqueta">02 · Para quién</span>
+      <h2>A quién le hablamos y qué prometemos</h2>
+      <p>Una cuenta «para todos» no convierte a nadie. Estas tres personas son hipótesis de trabajo: se ajustan cada mes con las estadísticas de Instagram y con lo que preguntan por WhatsApp.</p>
+    </div>
+    <div class="personas">
+      <article><h3>La que lo cuida como a un hijo</h3><span class="quiere">Quiere saber si lo está haciendo bien</span><p>Perro o gato en apartamento, en Montevideo. Compra online y busca consejos claros, sin sermones. Es la que más guarda y manda los «¿Sabías que…?» y los consejos.</p></article>
+      <article><h3>La familia con patio</h3><span class="quiere">Quiere que le llegue a casa</span><p>Perro grande, muchas veces en el interior del país. Compra alimento y accesorios con regularidad y valora el envío gratis a todo el país y el pedido programado.</p></article>
+      <article><h3>El que recién empieza</h3><span class="quiere">Quiere una lista de lo que necesita</span><p>Cachorro o gato nuevo en casa, primera mascota. Busca «primeros días», qué comprar y cómo presentarlo. Las fichas de producto y los consejos de inicio son para él.</p></article>
+    </div>
+    <div class="promesa">
+      <b>Todo lo que tu mascota necesita, elegido por gente que sabe, con envío a todo el país.</b>
+      <p>Es lo que cada post tiene que dejar claro sin decirlo: sabemos de mascotas, lo hacemos fácil y llega a tu casa.</p>
+    </div>
+    <table class="voz" aria-label="Cómo suena Ser Animal y cómo no">
+      <thead><tr><th>Somos</th><th>Así suena</th><th>Así no</th></tr></thead>
+      <tbody>
+        <tr><td>Cercanos</td><td class="si">«Contanos cómo se llama y qué le gusta».</td><td class="no">«¡Holaaa, amigos peludos!».</td></tr>
+        <tr><td>Claros</td><td class="si">«Cepillalo una vez por semana».</td><td class="no">«Se recomienda realizar el cepillado con una frecuencia semanal».</td></tr>
+        <tr><td>Concretos</td><td class="si">«Es para perros de hasta 20 kg y llega a todo el país».</td><td class="no">«¡El mejor producto del mercado!».</td></tr>
+        <tr><td>Positivos</td><td class="si">«Con agua fresca cerca, el paseo es más lindo para los dos».</td><td class="no">«Si no le das agua, lo estás descuidando».</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="banda seccion" id="oro">
+  <div class="ancho">
+    <div class="titulo-seccion">
+      <span class="etiqueta">03 · Reglas de oro</span>
       <h2>Lo que no se rompe nunca</h2>
       <p>Valen para cada post, cada historia y cada animación. Si algo no las cumple, no se publica.</p>
     </div>
     <div class="oro">
       <article><span class="num">1</span><h3>Sin etiquetas</h3><p>La portada es la foto y un texto claro, nada más. Nada de pastillas como «Consejos», «¿Sabías que…?», «En la tienda» o «Aviso».</p></article>
       <article><span class="num">2</span><h3>Sin precios</h3><p>Ni en la imagen ni en el posteo. Los únicos montos son los textos fijos de envíos y pedido programado.</p></article>
-      <article><span class="num">3</span><h3>Sin marcas</h3><p>Ni logos ni textos de otras marcas en las fotos: se borran con IA. El producto se nombra por lo que es. Bolsas de alimento no van al feed.</p></article>
+      <article><span class="num">3</span><h3>Sin marcas</h3><p>Ni logos ni textos de otras marcas en las fotos: se borran con IA. El producto se nombra por lo que es. Bolsas de alimento no van al feed. La única excepción son las destacadas de marcas, que llevan el logo oficial.</p></article>
       <article><span class="num">4</span><h3>Feed estético</h3><p>Nada de «Pedilo por WhatsApp», teléfonos ni llamados a la venta en las imágenes. El WhatsApp va solo en el texto del posteo.</p></article>
       <article><span class="num">5</span><h3>Siempre en positivo</h3><p>Nunca retar ni juzgar al dueño. Nada de «Cuidalo mejor»: los consejos se dan como ideas, con calma.</p></article>
       <article><span class="num">6</span><h3>HD y nítidas</h3><p>Fotos de 2000 px o más. Se exporta al doble y se reduce. Si una foto se ve borrosa, no se usa.</p></article>
@@ -338,7 +441,7 @@ Pedidos por WhatsApp: 091 380 000</pre>
 <section class="banda seccion" id="pilares">
   <div class="ancho">
     <div class="titulo-seccion">
-      <span class="etiqueta">03 · Pilares y carruseles</span>
+      <span class="etiqueta">04 · Pilares y carruseles</span>
       <h2>De qué hablamos</h2>
       <p>Cuatro temas fijos. Cada post entra en uno; si no entra en ninguno, no va.</p>
     </div>
@@ -442,7 +545,7 @@ Pedidos por WhatsApp: 091 380 000</pre>
 <section class="banda seccion papel" id="animados">
   <div class="ancho">
     <div class="titulo-seccion">
-      <span class="etiqueta">04 · Reels y animados</span>
+      <span class="etiqueta">05 · Reels y animados</span>
       <h2>Los reels traen gente nueva</h2>
       <p>Cada formato tiene su trabajo: los <b>reels</b> llegan a gente que todavía no nos sigue, los <b>carruseles</b> se guardan y las <b>historias</b> cuidan a quienes ya nos siguen. Por eso, cada semana, al menos un reel. La forma más fácil: animar la portada real, con la misma plantilla. 8 segundos, 1080×1350.</p>
     </div>
@@ -487,7 +590,7 @@ Pedidos por WhatsApp: 091 380 000</pre>
 <section class="banda seccion" id="historias">
   <div class="ancho">
     <div class="titulo-seccion">
-      <span class="etiqueta">05 · Historias</span>
+      <span class="etiqueta">06 · Historias</span>
       <h2>Consejos cortos y mensajes</h2>
       <p>Una o dos por día. Un mensaje que se lee de un vistazo, con una foto real: «Ellos siempre te esperan», «Agua fresca, siempre», «Gracias por cuidarlos tanto».</p>
     </div>
@@ -525,7 +628,7 @@ Pedidos por WhatsApp: 091 380 000</pre>
 <section class="banda seccion papel" id="semana">
   <div class="ancho">
     <div class="titulo-seccion">
-      <span class="etiqueta">06 · La semana</span>
+      <span class="etiqueta">07 · La semana</span>
       <h2>Ritmo de publicación</h2>
       <p>Cuatro posts por semana y una o dos historias por día. Mejor menos y bien hechos que todos los días a las apuradas.</p>
     </div>
@@ -542,10 +645,34 @@ Pedidos por WhatsApp: 091 380 000</pre>
   </div>
 </section>
 
-<section class="banda seccion" id="como">
+<section class="banda seccion" id="anio">
   <div class="ancho">
     <div class="titulo-seccion">
-      <span class="etiqueta">07 · Cómo se hace</span>
+      <span class="etiqueta">08 · El año</span>
+      <h2>Calendario de temporadas</h2>
+      <p>Los temas se adelantan un mes: lo que la gente va a necesitar en diciembre se publica en noviembre. Los meses marcados en verde son los de más ventas y más consultas. Las fechas especiales se confirman cada año antes de armar el post.</p>
+    </div>
+    <div class="anio">
+      <div class="mes alta"><b>Enero</b><span>Calor fuerte, playa y viajes. Agua, horarios de paseo, almohadillas. Mascotas que se quedan en casa.</span></div>
+      <div class="mes"><b>Febrero</b><span>Sigue el calor. Carnaval y ruido: cómo acompañarlos. Vuelta de las vacaciones.</span></div>
+      <div class="mes"><b>Marzo</b><span>Vuelta a la rutina: se queda solo en casa, juguetes para entretenerse. Muda de pelo de otoño: cepillado.</span></div>
+      <div class="mes"><b>Abril</b><span>Semana de Turismo: viajar con mascotas. Primeros fríos, camas y mantas.</span></div>
+      <div class="mes"><b>Mayo</b><span>Frío y lluvia: abrigos, paseos cortos, secar las patas. Comederos y bebederos para el invierno.</span></div>
+      <div class="mes"><b>Junio</b><span>Invierno. Juegos en casa, alfombras de olfateo, huesos para morder. Perros mayores y el frío.</span></div>
+      <div class="mes"><b>Julio</b><span>Vacaciones de julio: planes con mascotas y chicos. Gatos de interior: rascadores y escondites.</span></div>
+      <div class="mes alta"><b>Agosto</b><span class="fecha">8 · Día Internacional del Gato · 26 · Día Internacional del Perro</span><span>Dos fechas para la familia Ser Animal: fotos de clientes y adopciones.</span></div>
+      <div class="mes"><b>Setiembre</b><span>Primavera: pulgas y garrapatas, alergias, más paseos. Muda de pelo de primavera.</span></div>
+      <div class="mes alta"><b>Octubre</b><span class="fecha">4 · Día Mundial de los Animales</span><span>Adopciones y refugios. Arranca el calor: bebederos portátiles.</span></div>
+      <div class="mes alta"><b>Noviembre</b><span>Calor y paseos. Se adelanta todo lo de diciembre: pirotecnia, viajes, regalos.</span></div>
+      <div class="mes alta"><b>Diciembre</b><span>Pirotecnia en las semanas antes de Navidad y Año Nuevo. Viajes. Regalos para mascotas, sin precios.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="banda seccion papel" id="como">
+  <div class="ancho">
+    <div class="titulo-seccion">
+      <span class="etiqueta">09 · Cómo se hace</span>
       <h2>De la idea al post</h2>
       <p>Cada post va en <code>posts/AAAA-MM-nombre/</code> con las slides, <code>portada.jpg</code>, <code>texto.md</code> y <code>fuente/</code>.</p>
     </div>
@@ -598,7 +725,7 @@ Pedidos y envíos por WhatsApp: 091 380 000.
 <section class="banda seccion oscura" id="assets">
   <div class="ancho">
     <div class="titulo-seccion">
-      <span class="etiqueta">08 · Brand assets</span>
+      <span class="etiqueta">10 · Brand assets</span>
       <h2>Todo en un solo lugar</h2>
       <p>Cada carpeta está en el repositorio. Se usan siempre estos archivos; si hace falta uno nuevo, se suma a la carpeta.</p>
     </div>
@@ -626,7 +753,7 @@ Pedidos y envíos por WhatsApp: 091 380 000.
 <section class="banda seccion papel" id="medir">
   <div class="ancho">
     <div class="titulo-seccion">
-      <span class="etiqueta">09 · Cómo saber si funciona</span>
+      <span class="etiqueta">11 · Cómo saber si funciona</span>
       <h2>Lo que hay que mirar</h2>
       <p>Una vez por mes, en las estadísticas de Instagram. La meta no son los seguidores: es que el contenido se guarde, se mande y traiga gente al perfil y al WhatsApp.</p>
     </div>
@@ -653,13 +780,44 @@ Pedidos y envíos por WhatsApp: 091 380 000.
         </ul>
       </div>
     </div>
+
+    <table class="tablero" aria-label="Tablero mensual">
+      <thead><tr><th>Qué se mira</th><th>Dónde</th><th>Qué dice</th><th>Qué se hace</th></tr></thead>
+      <tbody>
+        <tr><td>Guardados por post</td><td>Estadísticas de cada publicación</td><td>Si el contenido es útil.</td><td>Repetir los temas que más se guardan.</td></tr>
+        <tr><td>Compartidos por post</td><td>Estadísticas de cada publicación</td><td>Si la gente lo manda a alguien: es lo que más trae gente nueva.</td><td>Hacer más de ese estilo y de ese tema.</td></tr>
+        <tr><td>Alcance a no seguidores</td><td>Estadísticas de cada reel</td><td>Si los reels están llegando lejos.</td><td>Si no sube, mejorar el primer segundo.</td></tr>
+        <tr><td>Visitas al perfil y toques al enlace</td><td>Estadísticas de la cuenta, por mes</td><td>Si el contenido manda gente a la bio y a la web.</td><td>Si hay visitas pero pocos toques, revisar la bio.</td></tr>
+        <tr><td>Consultas por WhatsApp desde Instagram</td><td>Preguntar «¿cómo nos conociste?» al pedir</td><td>Si todo esto vende.</td><td>Es el número que importa de verdad.</td></tr>
+        <tr><td>Seguidores</td><td>Estadísticas de la cuenta</td><td>Solo de referencia: no es la meta.</td><td>Se anota, no se persigue.</td></tr>
+      </tbody>
+    </table>
+    <p class="nota-semana">El primer mes fija la referencia; desde ahí, la meta es que guardados, compartidos y consultas suban mes a mes. Se anota todo en una hoja simple: mes, cada número y qué se cambió.</p>
   </div>
 </section>
 
-<section class="banda seccion" id="antes">
+<section class="banda seccion" id="comunidad">
   <div class="ancho">
     <div class="titulo-seccion">
-      <span class="etiqueta">10 · Antes de publicar</span>
+      <span class="etiqueta">12 · Comunidad y mensajes</span>
+      <h2>Responder es parte del contenido</h2>
+      <p>Cada comentario y cada mensaje es una venta posible o un cliente que vuelve. Se responde en la primera hora después de publicar y, el resto del día, en horario de tienda. Siempre con el mismo tono de los posts, y usando el nombre de la mascota si lo dicen.</p>
+    </div>
+    <div class="respuestas">
+      <article><h4>Preguntan el precio en un comentario</h4><p class="caso">Nunca se responde con el precio en público.</p><p class="dice">«Te lo pasamos por mensaje 🙂». Y por mensaje: el precio, el envío y el WhatsApp de pedidos.</p></article>
+      <article><h4>Un cliente sube una foto con su mascota</h4><p class="caso">Es el contenido más valioso: se pide permiso antes de compartir.</p><p class="dice">«¡Qué lindo! ¿Nos dejás compartirlo en @seranimal? Te etiquetamos».</p></article>
+      <article><h4>Una queja o un problema con un pedido</h4><p class="caso">Se responde en público con calma y sin discutir, y se resuelve en privado el mismo día.</p><p class="dice">«Lo lamentamos. Te escribimos por mensaje ahora para resolverlo».</p></article>
+      <article><h4>Una pregunta de salud</h4><p class="caso">Se ayuda con lo general y se deriva lo específico.</p><p class="dice">«Suele pasar por [motivo general]. Ante la duda, consultá a tu veterinario: cada caso es distinto».</p></article>
+      <article><h4>Un mensaje fuera de horario</h4><p class="caso">Respuesta automática de Instagram con el horario y el WhatsApp.</p><p class="dice">«Gracias por escribir. Atendemos de [horario]. Para pedidos, WhatsApp 091 380 000».</p></article>
+      <article><h4>Un comentario ofensivo o spam</h4><p class="caso">No se discute. Se oculta o se borra, y si se repite, se restringe la cuenta.</p><p class="dice">Nada: se oculta y se sigue.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="banda seccion papel" id="antes">
+  <div class="ancho">
+    <div class="titulo-seccion">
+      <span class="etiqueta">13 · Antes de publicar</span>
       <h2>La última mirada</h2>
     </div>
     <ul class="checks">
