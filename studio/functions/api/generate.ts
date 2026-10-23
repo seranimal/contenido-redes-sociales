@@ -62,8 +62,8 @@ FOTOS
 - Pensá fotos que existan: animales reales en situaciones cotidianas. Nada de escenas imposibles.
 
 TEXTO DEL POSTEO
-- "caption": texto para el posteo de Instagram con voseo, 3 a 8 líneas, que resuma el carrusel e invite a comentar o guardar. Podés usar 1 o 2 emojis. Si el carrusel es de producto, terminá con «Pedidos y envíos por WhatsApp: 091 380 000.»
-- "hashtags": 3 a 6 hashtags en español, sin el símbolo #.
+- "caption": texto para el posteo de Instagram con voseo, 3 a 8 líneas, que resuma el carrusel. La primera línea dice el tema con las palabras que usaría alguien al buscarlo en Instagram (ej. «¿Cada cuánto cepillás a tu gato?»), porque Instagram busca por palabras. Invitá a guardarlo o a mandárselo a alguien (ej. «Mandáselo a quien tiene un gato»). Podés usar 1 o 2 emojis. Si el carrusel es de producto, terminá con «Pedidos y envíos por WhatsApp: 091 380 000.»
+- "hashtags": 3 a 5 hashtags en español del tema, sin el símbolo #. El primero siempre es seranimal.
 - "tema": nombre corto del carrusel (máx. 50 caracteres).`;
 
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {

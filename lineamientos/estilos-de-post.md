@@ -313,4 +313,7 @@ Lo que se ve en el perfil es la primera slide de cada post:
 - [ ] El sticker «DESLIZÁ» está en la primera slide del carrusel.
 - [ ] El isotipo está bien usado: sin deformar, sin sombras y con aire.
 - [ ] El texto del posteo tiene voseo y no inventa precios ni datos.
+- [ ] La primera línea del texto dice el tema con palabras que alguien buscaría, invita a guardar o a mandar, y lleva de 3 a 5 hashtags (siempre #seranimal).
+- [ ] La foto tiene su texto alternativo («Configuración avanzada» al publicar).
+- [ ] En los reels, el título se lee en el primer segundo y medio y la música es de la biblioteca de Instagram.
 - [ ] La portada no repite el estilo de la anterior en la grilla.
