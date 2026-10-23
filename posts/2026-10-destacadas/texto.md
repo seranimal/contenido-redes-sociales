@@ -4,9 +4,9 @@ Nueve tapas con el mismo sistema, el «anillo»: anillo verde Ser Animal `#9ECA1
 
 | # | Destacada | Qué muestra | Archivo |
 |---|---|---|---|
-| 1 | Sucursales | Foto real (gato en vidriera) + insignia «tienda» | `destacada-01-sucursales.jpg` |
+| 1 | Sucursales | Logo de Ser Animal: los locales son la marca | `destacada-01-sucursales.jpg` |
 | 2 | Clientes | Foto real (persona con su perro) + insignia «personas» | `destacada-02-clientes.jpg` |
-| 3 | Eventos | Foto real (dos perros jugando) + insignia «calendario» | `destacada-03-eventos.jpg` |
+| 3 | Eventos | Foto real (encuentro de perros con gente) + insignia «calendario» | `destacada-03-eventos.jpg` |
 | 4 | Consejos | Foto real (perro tomando agua de la mano) + insignia «bombilla» | `destacada-04-consejos.jpg` |
 | 5 | Brit | Logo oficial de Brit | `destacada-05-brit.jpg` |
 | 6 | Kong | Logo oficial de KONG | `destacada-06-kong.jpg` |
@@ -17,7 +17,7 @@ Nueve tapas con el mismo sistema, el «anillo»: anillo verde Ser Animal `#9ECA1
 - **En la raíz:** cada tapa en 1080×1920, para subirla como historia.
 - **En `cuadradas/`:** la misma tapa en 1080×1080, para elegirla desde la galería (la más cómoda).
 
-Las destacadas de marcas son el único lugar del perfil con logos de otras marcas. Se usan mientras Ser Animal venda esas marcas; si una marca pide bajar su logo, se saca. La foto de Sucursales es provisoria: cuando haya una foto linda del local, se reemplaza en `fuente/fotos/sucursales.jpg` y se vuelve a generar.
+Las destacadas de marcas son el único lugar del perfil con logos de otras marcas. Se usan mientras Ser Animal venda esas marcas; si una marca pide bajar su logo, se saca. Sucursales lleva el logo de Ser Animal porque ninguna foto de banco muestra nuestros locales. Cuando haya una foto linda de la fachada, se guarda como `fuente/fotos/sucursales.jpg`, se cambia la entrada en `fuente/index.html` por `{ foto, icono: 'tienda' }` y se vuelve a generar.
 
 ## Cómo ponerlas
 
@@ -40,7 +40,7 @@ Lo que va adentro se renueva cada tres meses.
 ## Fuentes
 
 - Logos: sitios oficiales de cada marca (`fuente/logos/`). El de KONG se vectorizó a partir del logo del sitio oficial.
-- Fotos (Unsplash, descarga registrada): Marc-Philipp Esser (vidriera), Martin Vysoudil (clientes), Zsanna Dnk (eventos), T / tanyabarrow (consejos), Madeline Bowen (adopciones). Están en `fuente/fotos/`.
+- Fotos (Unsplash, descarga registrada): Martin Vysoudil (clientes), Judy Beth Morris (eventos), T / tanyabarrow (consejos), Madeline Bowen (adopciones). Están en `fuente/fotos/`.
 
 ## Para volver a generarlas
 

@@ -299,7 +299,7 @@ Nueve, siempre en este orden: Sucursales, Clientes, Eventos, Consejos, Brit, Kon
 
 - **Sistema «anillo»:** anillo verde Ser Animal de borde a borde y disco blanco adentro.
 - **Marcas:** el logo oficial de la marca, en sus colores, centrado. Es el único lugar del perfil donde van logos de otras marcas; se usan mientras Ser Animal venda esas marcas.
-- **Temas:** una foto real con la cara a la vista y una insignia verde abajo con el ícono de línea de `marca/elementos/` (tienda, personas, calendario, bombilla, adopción).
+- **Temas:** una foto real con la cara a la vista y una insignia verde abajo con el ícono de línea de `marca/elementos/` (personas, calendario, bombilla, adopción). **Sucursales** lleva el logo de Ser Animal: los locales son la marca.
 - **Nunca más de nueve.** Lo que va adentro se renueva cada tres meses.
 
 ---

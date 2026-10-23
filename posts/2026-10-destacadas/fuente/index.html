@@ -29,9 +29,10 @@
 <script>
   // [clave, nombre, {logo} o {foto, posicion, icono}]
   const DESTACADAS = [
-    ['sucursales', 'Sucursales', { foto: 'sucursales.jpg', posicion: '58% 40%', icono: 'tienda' }],
+    // Sucursales lleva el logo de Ser Animal: los locales son la marca. Cuando haya una foto linda del local, se cambia por { foto, icono: 'tienda' }.
+    ['sucursales', 'Sucursales', { logo: '../../../marca/logo/logo-verde.svg', ancho: 820 }],
     ['clientes', 'Clientes', { foto: 'clientes.jpg', posicion: '50% 30%', icono: 'personas' }],
-    ['eventos', 'Eventos', { foto: 'eventos.jpg', posicion: '38% 10%', icono: 'calendario' }],
+    ['eventos', 'Eventos', { foto: 'eventos.jpg', posicion: '50% 60%', icono: 'calendario' }],
     ['consejos', 'Consejos', { foto: 'consejos.jpg', posicion: '62% 30%', icono: 'bombilla' }],
     ['brit', 'Brit', { logo: 'brit.svg', ancho: 600 }],
     ['kong', 'Kong', { logo: 'kong.svg', ancho: 640 }],
@@ -42,7 +43,7 @@
   if (location.search.includes('render')) document.body.classList.add('render');
   const tapa = ([clave, , d]) => {
     const interior = d.logo
-      ? `<img class="logo" src="logos/${d.logo}" style="width:${d.ancho}px" alt="">`
+      ? `<img class="logo" src="${d.logo.startsWith('../') ? d.logo : 'logos/' + d.logo}" style="width:${d.ancho}px" alt="">`
       : `<img class="foto" src="fotos/${d.foto}" style="object-position:${d.posicion}" alt="">`;
     const insignia = d.icono ? `<div class="insignia"><img src="../../../marca/elementos/svg/icono-${d.icono}-blanco-grueso.svg" alt=""></div>` : '';
     return `<div class="historia" data-clave="${clave}"><div class="tapa"><div class="anillo"><div class="disco">${interior}</div></div>${insignia}</div></div>`;
