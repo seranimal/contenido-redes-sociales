@@ -16,7 +16,7 @@ Escrita para Ser Animal a partir de la guía `lineamientos/guia-instagram/index.
 - **Historias:** cuidan a quienes ya nos siguen, una o dos por día (consejos cortos, mensajes, encuestas, producto en uso).
 - **Perfil:** convierte visitas en seguidores y consultas.
   - La bio dice «Tienda de mascotas en Uruguay» y las especies.
-  - Las destacadas van por especie, más Envíos y Pedidos.
+  - Destacadas, en este orden: Sucursales, Clientes, Eventos, Consejos, Brit, Kong, Benebone, Carnilove y Adopciones. Tapas en `posts/2026-10-destacadas/` (ícono blanco sobre verde, sin logos de marcas).
 
 ## 2 · Pilares y ritmo semanal
 | Día | Feed | Historias |

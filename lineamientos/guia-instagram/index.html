@@ -84,7 +84,7 @@
   .destacada .circulo div { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; display: grid; place-items: center; background: #F8FAF4; border: 2px solid var(--verde); }
   .destacada .circulo div.relleno { background: var(--verde); border-color: var(--verde); }
   .destacada img { width: 120%; max-width: none; }
-  .destacada .circulo div.relleno svg { width: 26px; height: 26px; }
+  .destacada .circulo div.relleno img { width: 44%; }
   .tel-pestanas { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ig-borde); }
   .tel-pestanas span { text-align: center; padding: 9px 0; color: var(--ig-gris); }
   .tel-pestanas span.activa { color: var(--ig-tinta); border-bottom: 1.5px solid var(--ig-tinta); }
@@ -228,7 +228,7 @@
     <div class="titulo-seccion">
       <span class="etiqueta">01 · El perfil</span>
       <h2>La cuenta, de un vistazo</h2>
-      <p>Así tiene que verse @seranimal: foto de perfil verde, bio clara, destacadas por especie y una grilla donde mandan las fotos reales, con mascotas y personas.</p>
+      <p>Así tiene que verse @seranimal: foto de perfil verde, bio clara, destacadas con la misma tapa verde y una grilla donde mandan las fotos reales, con mascotas y personas.</p>
     </div>
 
     <div class="perfil">
@@ -249,13 +249,15 @@
         </div>
         <div class="tel-botones"><span>Seguir</span><span>Mensaje</span><span>WhatsApp</span></div>
         <div class="destacadas">
-          <div class="destacada"><div class="circulo"><div><img src="img/esp-perro.png" alt=""></div></div>Perros</div>
-          <div class="destacada"><div class="circulo"><div><img src="img/esp-gato.png" alt=""></div></div>Gatos</div>
-          <div class="destacada"><div class="circulo"><div><img src="img/esp-roedor.png" alt=""></div></div>Roedores</div>
-          <div class="destacada"><div class="circulo"><div><img src="img/esp-pajaro.png" alt=""></div></div>Pájaros</div>
-          <div class="destacada"><div class="circulo"><div><img src="img/esp-pez.png" alt=""></div></div>Peces</div>
-          <div class="destacada"><div class="circulo"><div class="relleno"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg></div></div>Envíos</div>
-          <div class="destacada"><div class="circulo"><div><img src="img/asistente.png" alt="" style="width:100%"></div></div>Pedidos</div>
+          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-tienda.svg" alt=""></div></div>Sucursales</div>
+          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-personas.svg" alt=""></div></div>Clientes</div>
+          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-calendario.svg" alt=""></div></div>Eventos</div>
+          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-bombilla.svg" alt=""></div></div>Consejos</div>
+          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-bolsa.svg" alt=""></div></div>Brit</div>
+          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-rellenable.svg" alt=""></div></div>Kong</div>
+          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-hueso.svg" alt=""></div></div>Benebone</div>
+          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-plato.svg" alt=""></div></div>Carnilove</div>
+          <div class="destacada"><div class="circulo"><div class="relleno"><img src="img/icono-adopcion.svg" alt=""></div></div>Adopciones</div>
         </div>
         <div class="tel-pestanas"><span class="activa">▦</span><span>▷</span><span>◫</span></div>
         <div class="grilla">
@@ -291,7 +293,7 @@ Pedidos por WhatsApp: 091 380 000</pre>
         </div>
         <div class="regla">
           <h3>Destacadas</h3>
-          <p>Una por especie, con su ilustración de marca sobre fondo claro y borde verde, más dos de servicio en verde lleno: <b>Envíos</b> y <b>Pedidos</b>, con el perrito asistente. Siempre en este orden.</p>
+          <p>Nueve, siempre en este orden: <b>Sucursales, Clientes, Eventos, Consejos, Brit, Kong, Benebone, Carnilove y Adopciones</b>. Todas con la misma tapa: ícono de línea blanco sobre verde Ser Animal. Las de marcas muestran el producto, no el logo. Tapas listas en <code>posts/2026-10-destacadas/</code>.</p>
         </div>
         <div class="regla">
           <h3>La grilla</h3>

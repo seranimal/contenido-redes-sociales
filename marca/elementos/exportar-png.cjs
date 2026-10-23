@@ -43,6 +43,7 @@ function fondo(nombre) {
     ["Pastillas", /^pastilla/],
     ["Etiquetas", /^etiqueta/],
     ["Flechas", /^flecha/],
+    ["Íconos de línea", /^icono-.*-oscuro/],
   ];
   let html = `<html><head><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Nunito:wght@900&display=block" rel="stylesheet"><style>
     body{margin:0;padding:48px;background:#F8FAF4;font-family:'DM Sans';color:#253027;width:1600px}
