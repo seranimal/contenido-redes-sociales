@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Brit · bolsas que caen</title>
+<style>
+  @font-face { font-family: "Nunito"; font-weight: 900; src: url("../../../marca/fuentes/nunito-latin-900-normal.woff") format("woff"); }
+  @font-face { font-family: "DM Sans"; font-weight: 500; src: url("../../../marca/fuentes/dm-sans-latin-500-normal.woff") format("woff"); }
+  @font-face { font-family: "DM Sans"; font-weight: 700; src: url("../../../marca/fuentes/dm-sans-latin-700-normal.woff") format("woff"); }
+  :root { --verde: #9ECA1B; --verde-claro: #CADC8A; --verde-hoja: #4C7300; --texto: #253027; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111; }
+  /* Historia animada 1080×1920 sobre verde suave. Se dibuja cuadro a cuadro con window.render(t). */
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--verde-claro); color: var(--texto); font-family: "DM Sans", sans-serif; }
+  .h { font-family: "Nunito", sans-serif; font-weight: 900; letter-spacing: -1px; line-height: 1.05; }
+  .capa { position: absolute; left: 0; right: 0; will-change: transform, opacity; }
+
+  /* Intro y cabecera */
+  #logo { top: 300px; text-align: center; }
+  #logo img { height: 150px; }
+  #titulo { top: 480px; text-align: center; font-size: 78px; }
+  #bajada { top: 680px; text-align: center; font-size: 40px; font-weight: 500; color: var(--verde-hoja); }
+  #cab { top: 290px; left: 80px; right: 80px; display: flex; align-items: center; justify-content: space-between; }
+  #cab img { height: 92px; }
+  #cab .linea { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 44px; }
+  #cab .n { font-size: 34px; font-weight: 700; color: var(--verde-hoja); }
+
+  /* Bolsa y su dato */
+  #suelo { top: 1395px; left: 50%; width: 560px; height: 70px; margin-left: -280px; border-radius: 50%; background: rgba(37, 48, 39, .18); filter: blur(10px); }
+  #bolsa { top: 420px; display: grid; place-items: end center; height: 1000px; }
+  #bolsa img { max-height: 960px; max-width: 700px; filter: drop-shadow(0 30px 40px rgba(37, 48, 39, .25)); transform-origin: 50% 100%; }
+  #dato { top: 1490px; left: 80px; right: 80px; display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; background: #fff; border-radius: 28px; padding: 26px 34px; box-shadow: 0 16px 40px rgba(37, 48, 39, .16); }
+  #dato .num { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 92px; color: var(--verde-hoja); line-height: 1; white-space: nowrap; }
+  #dato .txt { display: grid; gap: 4px; }
+  #dato .txt b { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 42px; line-height: 1.1; }
+  #dato .txt span { font-size: 32px; line-height: 1.25; color: #444D45; }
+  #chip { top: 400px; left: 80px; display: inline-block; width: auto; right: auto; background: var(--verde); color: var(--texto); font-weight: 700; font-size: 36px; padding: 14px 30px; border-radius: 999px; }
+
+  /* Cierre */
+  #cierre { top: 0; bottom: 0; background: var(--verde); display: grid; place-items: center; text-align: center; }
+  #cierre .caja { display: grid; gap: 28px; justify-items: center; padding: 0 90px; }
+  #cierre img.b { height: 140px; }
+  #cierre .h { font-size: 96px; }
+  #cierre .x { font-size: 42px; font-weight: 500; }
+  #cierre .link { margin-top: 10px; display: flex; align-items: center; gap: 18px; background: #fff; border-radius: 999px; padding: 22px 44px; font-weight: 700; font-size: 38px; }
+  #cierre .link img { height: 28px; }
+  #cierre .sa { margin-top: 40px; display: flex; align-items: center; gap: 16px; font-size: 32px; font-weight: 700; }
+  #cierre .sa img { height: 56px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="capa" id="logo"><img src="logos/brit.svg" alt="Brit"></div>
+  <div class="capa h" id="titulo"></div>
+  <div class="capa" id="bajada"></div>
+  <div class="capa" id="cab"><img src="logos/brit.svg" alt="Brit"><span class="linea"></span><span class="n"></span></div>
+  <div class="capa" id="suelo"></div>
+  <div class="capa" id="chip"></div>
+  <div class="capa" id="bolsa"><img src="" alt=""></div>
+  <div class="capa" id="dato"><div class="num"></div><div class="txt"><b></b><span></span></div></div>
+  <div class="capa" id="cierre"><div class="caja">
+    <img class="b" src="logos/brit-blanco.svg" alt="Brit">
+    <div class="h" id="cierre-h"></div>
+    <div class="x">Perros, gatos, conejos, cobayos y hámsters.</div>
+    <div class="link">Tocá el link <img src="../../../marca/elementos/svg/flecha-linea-oscura.svg" alt=""></div>
+    <div class="sa">En <img src="../../../marca/logo/logo-blanco.svg" alt="Ser Animal"></div>
+  </div></div>
+</div>
+<script>
+  // Datos de las fichas de seranimal.com.uy (ingrediente principal y su porcentaje).
+  const SECUENCIAS = {
+    premium: {
+      titulo: 'Brit Premium <br>by Nature', bajada: 'Para cada necesidad', linea: 'Premium by Nature',
+      cierre: 'Descubrí toda la <br>línea Premium',
+      bolsas: [
+        ['premium-junior-s', 'Junior S', '55 %', 'pollo deshidratado', 'Cachorros de razas pequeñas, 1 a 12 meses'],
+        ['premium-adult-s', 'Adult S', '50 %', 'pollo deshidratado', 'Adultos de razas pequeñas, 1 a 10 kg'],
+        ['premium-adult-l', 'Adult L', '45 %', 'pollo deshidratado', 'Adultos de razas grandes, 25 a 45 kg'],
+        ['premium-sensitive', 'Sensitive', '35 %', 'cordero deshidratado', 'Digestión delicada, sin trigo'],
+        ['premium-light', 'Light', '40 %', 'pavo y pollo deshidratados', 'Perros con sobrepeso, de todas las razas'],
+        ['premium-sport', 'Sport', '50 %', 'pollo deshidratado', 'Perros con alto gasto de energía'],
+      ],
+    },
+    care: {
+      titulo: 'Brit Care', bajada: 'Sin cereales e hipoalergénico', linea: 'Care · Grain-Free',
+      cierre: 'Descubrí toda la <br>línea Care',
+      bolsas: [
+        ['care-puppy', 'Puppy', '55 %', 'salmón', 'Cachorros de todas las razas, sin cereales'],
+        ['care-junior-lb', 'Junior Large Breed', '52 %', 'salmón', 'De 3 meses a 2 años, razas grandes'],
+        ['care-adult', 'Adult', '50 %', 'salmón', 'Adultos de 1 a 25 kg, sin cereales'],
+        ['care-senior-light', 'Senior & Light', '48 %', 'salmón', 'Perros mayores o con tendencia al sobrepeso'],
+        ['care-sustainable', 'Sustainable', '38 %', 'pollo + 14 % insecto', 'Fórmula sostenible, razas medianas'],
+      ],
+    },
+  };
+  const q = new URLSearchParams(location.search);
+  const S = SECUENCIAS[q.get('seq') || 'premium'];
+
+  // Tiempos (segundos). Rápido: cada bolsa dura 1.9 s en pantalla.
+  const INTRO = 1.6, POR_BOLSA = 1.9, CAIDA = 0.5, SALIDA = 0.3, CIERRE = 3.2;
+  const DUR = INTRO + S.bolsas.length * POR_BOLSA + CIERRE;
+  window.DUR = DUR;
+
+  const $ = (s) => document.querySelector(s);
+  $('#titulo').innerHTML = S.titulo; $('#bajada').textContent = S.bajada;
+  $('#cab .linea').textContent = S.linea; $('#cierre-h').innerHTML = S.cierre;
+
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const easeOut = (x) => 1 - Math.pow(1 - x, 3);
+  const easeIn = (x) => x * x * x;
+  // Caída: acelera, toca el suelo y rebota una vez (chico).
+  const caida = (x) => {
+    if (x < 0.7) return easeIn(x / 0.7);
+    const r = (x - 0.7) / 0.3;
+    return 1 - 0.06 * Math.sin(r * Math.PI);
+  };
+  const set = (el, { y = 0, x = 0, o = 1, s = 1, r = 0 } = {}) => {
+    el.style.opacity = o;
+    el.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg) scale(${s})`;
+  };
+  const bolsaImg = $('#bolsa img');
+  let actual = -1;
+
+  window.render = (t) => {
+    // Intro: logo, título y bajada. Después, la cabecera chica.
+    const enIntro = t < INTRO;
+    const inA = easeOut(clamp(t / 0.5)), inB = easeOut(clamp((t - 0.25) / 0.5)), inC = easeOut(clamp((t - 0.45) / 0.5));
+    const outI = clamp((t - (INTRO - 0.3)) / 0.3);
+    set($('#logo'), { y: 40 * (1 - inA) - 40 * outI, o: inA * (1 - outI) });
+    set($('#titulo'), { y: 60 * (1 - inB) - 40 * outI, o: inB * (1 - outI) });
+    set($('#bajada'), { y: 60 * (1 - inC) - 40 * outI, o: inC * (1 - outI) });
+    const cabIn = easeOut(clamp((t - INTRO + 0.1) / 0.4));
+    set($('#cab'), { y: -30 * (1 - cabIn), o: cabIn });
+
+    // Bolsas
+    const tb = t - INTRO;
+    const i = Math.floor(tb / POR_BOLSA);
+    const enBolsas = tb >= 0 && i < S.bolsas.length;
+    if (enBolsas) {
+      const [arch, nombre, num, ingr, para] = S.bolsas[i];
+      if (i !== actual) {
+        actual = i;
+        bolsaImg.src = `bolsas/${arch}.png`;
+        $('#chip').textContent = nombre;
+        $('#dato .num').textContent = num;
+        $('#dato .txt b').textContent = ingr;
+        $('#dato .txt span').textContent = para;
+        $('#cab .n').textContent = `${i + 1} / ${S.bolsas.length}`;
+      }
+      const u = tb - i * POR_BOLSA;                   // tiempo dentro de esta bolsa
+      const c = caida(clamp(u / CAIDA));              // 0 arriba → 1 en el suelo
+      const sal = clamp((u - (POR_BOLSA - SALIDA)) / SALIDA); // salida rápida hacia la izquierda
+      const aplaste = u > CAIDA * 0.7 && u < CAIDA * 1.1 ? 1 - 0.08 * Math.sin(((u - CAIDA * 0.7) / (CAIDA * 0.4)) * Math.PI) : 1;
+      set($('#bolsa'), { y: -1500 * (1 - c), x: -1300 * easeIn(sal), r: -12 * easeIn(sal), o: 1 });
+      bolsaImg.style.transform = `scaleY(${aplaste}) scaleX(${2 - aplaste})`;
+      set($('#suelo'), { s: 0.6 + 0.4 * c, o: 0.4 + 0.6 * c * (1 - sal) });
+      const datoIn = easeOut(clamp((u - CAIDA + 0.05) / 0.3));
+      set($('#dato'), { y: 80 * (1 - datoIn), o: datoIn * (1 - sal), s: 0.96 + 0.04 * datoIn });
+      const chipIn = easeOut(clamp((u - 0.1) / 0.3));
+      set($('#chip'), { x: -60 * (1 - chipIn), o: chipIn * (1 - sal) });
+    } else {
+      set($('#bolsa'), { o: 0 }); set($('#dato'), { o: 0 }); set($('#chip'), { o: 0 }); set($('#suelo'), { o: enIntro ? 0 : 0 });
+    }
+
+    // Cierre
+    const tc = t - (INTRO + S.bolsas.length * POR_BOLSA);
+    const cIn = easeOut(clamp(tc / 0.45));
+    set($('#cierre'), { y: 1920 * (1 - cIn), o: tc > -0.01 ? 1 : 0 });
+    const caja = $('#cierre .caja');
+    const cajaIn = easeOut(clamp((tc - 0.3) / 0.5));
+    caja.style.opacity = cajaIn; caja.style.transform = `translateY(${40 * (1 - cajaIn)}px)`;
+    const linkIn = clamp((tc - 1.0) / 0.4);
+    $('#cierre .link').style.transform = `scale(${0.9 + 0.1 * easeOut(linkIn)})`;
+    $('#cierre .link').style.opacity = linkIn;
+  };
+  if (q.has('t')) window.render(parseFloat(q.get('t'))); else window.render(0);
+</script>
+</body>
+</html>
