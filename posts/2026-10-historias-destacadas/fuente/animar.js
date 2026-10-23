@@ -21,8 +21,10 @@ const { execFileSync } = require('child_process');
     await Promise.all(seqs.map((a) => new Promise((r) => { const im = new Image(); im.onload = r; im.onerror = r; im.src = `bolsas/${a}.png`; })));
   });
   const dur = await pg.evaluate(() => window.DUR);
+  // En control: la intro, cada bolsa ya apoyada con su dato, y el cierre.
+  const n = await pg.evaluate(() => S.bolsas.length);
   const tiempos = modo === 'check'
-    ? [0.5, 1.4, 1.9, 2.3, 3.2, 3.6, 5.5, 7.4, 9.3, 11.2, 13.0, dur - 2.2, dur - 0.5]
+    ? [0.8, ...[...Array(n).keys()].map((i) => 1.6 + i * 1.9 + 1.2), dur - 0.5]
     : [...Array(Math.round(dur * fps)).keys()].map((i) => i / fps);
   const st = await pg.$('#stage');
   for (let i = 0; i < tiempos.length; i++) {

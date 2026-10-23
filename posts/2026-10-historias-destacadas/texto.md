@@ -20,8 +20,8 @@ Cada cierre repite los textos fijos: envío gratis a todo el país desde $1.500 
 
 En `brit/` hay además dos historias en video (1080×1920, 30 fps, sin audio: la música se agrega en Instagram):
 
-- `brit-premium-animado.mp4` (16 s): intro con el logo y «Para cada necesidad», y después caen seis bolsas de Premium by Nature, una por una, cada una con su dato de la ficha: Junior S 55 % pollo deshidratado, Adult S 50 %, Adult L 45 %, Sensitive 35 % cordero, Light 40 % pavo y pollo, Sport 50 %.
-- `brit-care-animado.mp4` (14 s): lo mismo con cinco de Care: Puppy 55 % salmón, Junior Large Breed 52 %, Adult 50 %, Senior & Light 48 % y Sustainable 38 % pollo + 14 % insecto.
+- `brit-premium-animado.mp4` (16 s): intro con el logo y «Para perros y gatos, según cada necesidad», y después caen seis bolsas de Premium by Nature, tres de perro y tres de gato, cada una con el chip de especie y su dato de la ficha: Junior S 55 % pollo deshidratado, Adult L 45 %, Light 40 % pavo y pollo; Kitten 40 % proteína (la ficha no da el % de carne), Adult Salmon 35 % salmón deshidratado y Sterilized 38 % pollo deshidratado.
+- `brit-care-animado.mp4` (16 s): lo mismo con Care: Puppy 55 % salmón, Adult 50 %, Senior & Light 48 %; y para gatos, Kitten 56 % pavo y pollo, Sensitive 52 % pavo y salmón y Sterilized Urinary 52 % pollo.
 
 Las dos terminan en «Descubrí toda la línea…» con el botón «Tocá el link»: al subirlas se les pone el **sticker de link** a la página de esa línea en la web. Intro sobre verde suave (`#CADC8A`), las bolsas caen sobre blanco (la tarjeta del dato va en verde suave) y el cierre es en verde Ser Animal.
 

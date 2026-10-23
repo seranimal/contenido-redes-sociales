@@ -38,7 +38,9 @@
   #dato .txt { display: grid; gap: 4px; }
   #dato .txt b { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 42px; line-height: 1.1; }
   #dato .txt span { font-size: 32px; line-height: 1.25; color: var(--texto); }
-  #chip { top: 400px; left: 80px; display: inline-block; width: auto; right: auto; background: var(--verde); color: var(--texto); font-weight: 700; font-size: 36px; padding: 14px 30px; border-radius: 999px; }
+  #chip { top: 400px; left: 80px; right: auto; display: flex; align-items: center; gap: 14px; }
+  #chip img { height: 64px; }
+  #chip span { background: var(--verde); color: var(--texto); font-weight: 700; font-size: 36px; padding: 12px 30px; border-radius: 999px; }
 
   /* Cierre */
   #cierre { top: 0; bottom: 0; background: var(--verde); display: grid; place-items: center; text-align: center; }
@@ -60,7 +62,7 @@
   <div class="capa" id="bajada"></div>
   <div class="capa" id="cab"><img src="logos/brit.svg" alt="Brit"><span class="linea"></span><span class="n"></span></div>
   <div class="capa" id="suelo"></div>
-  <div class="capa" id="chip"></div>
+  <div class="capa" id="chip"><img src="" alt=""><span></span></div>
   <div class="capa" id="bolsa"><img src="" alt=""></div>
   <div class="capa" id="dato"><div class="num"></div><div class="txt"><b></b><span></span></div></div>
   <div class="capa" id="cierre"><div class="caja">
@@ -75,26 +77,28 @@
   // Datos de las fichas de seranimal.com.uy (ingrediente principal y su porcentaje).
   const SECUENCIAS = {
     premium: {
-      titulo: 'Brit Premium <br>by Nature', bajada: 'Para cada necesidad', linea: 'Premium by Nature',
-      cierre: 'Descubrí toda la <br>línea Premium', cierreX: 'Para perros de todas las razas, en cada etapa.',
+      titulo: 'Brit Premium <br>by Nature', bajada: 'Para perros y gatos, según cada necesidad', linea: 'Premium by Nature',
+      cierre: 'Descubrí toda la <br>línea Premium', cierreX: 'Para perros y gatos, en cada etapa.',
+      // [archivo, especie, nombre, número, ingrediente, para quién]. En Kitten la ficha no da el % de carne: va la proteína.
       bolsas: [
-        ['premium-junior-s', 'Junior S', '55 %', 'pollo deshidratado', 'Cachorros de razas pequeñas, 1 a 12 meses'],
-        ['premium-adult-s', 'Adult S', '50 %', 'pollo deshidratado', 'Adultos de razas pequeñas, 1 a 10 kg'],
-        ['premium-adult-l', 'Adult L', '45 %', 'pollo deshidratado', 'Adultos de razas grandes, 25 a 45 kg'],
-        ['premium-sensitive', 'Sensitive', '35 %', 'cordero deshidratado', 'Digestión delicada, sin trigo'],
-        ['premium-light', 'Light', '40 %', 'pavo y pollo deshidratados', 'Perros con sobrepeso, de todas las razas'],
-        ['premium-sport', 'Sport', '50 %', 'pollo deshidratado', 'Perros con alto gasto de energía'],
+        ['premium-junior-s', 'perros', 'Junior S', '55 %', 'pollo deshidratado', 'Cachorros de razas pequeñas, 1 a 12 meses'],
+        ['premium-adult-l', 'perros', 'Adult L', '45 %', 'pollo deshidratado', 'Adultos de razas grandes, 25 a 45 kg'],
+        ['premium-light', 'perros', 'Light', '40 %', 'pavo y pollo deshidratados', 'Perros con sobrepeso, de todas las razas'],
+        ['premium-gato-kitten', 'gatos', 'Kitten', '40 %', 'proteína', 'Gatitos de 1 a 12 meses y gatas gestantes'],
+        ['premium-gato-salmon', 'gatos', 'Adult Salmon', '35 %', 'salmón deshidratado', 'Gatos adultos, sin trigo, soja ni maíz'],
+        ['premium-gato-castrado', 'gatos', 'Sterilized', '38 %', 'pollo deshidratado', 'Gatos adultos castrados'],
       ],
     },
     care: {
       titulo: 'Brit Care', bajada: 'Sin cereales e hipoalergénico', linea: 'Care · Grain-Free',
       cierre: 'Descubrí toda la <br>línea Care', cierreX: 'Sin cereales e hipoalergénico, para perros y gatos.',
       bolsas: [
-        ['care-puppy', 'Puppy', '55 %', 'salmón', 'Cachorros de todas las razas, sin cereales'],
-        ['care-junior-lb', 'Junior Large Breed', '52 %', 'salmón', 'De 3 meses a 2 años, razas grandes'],
-        ['care-adult', 'Adult', '50 %', 'salmón', 'Adultos de 1 a 25 kg, sin cereales'],
-        ['care-senior-light', 'Senior & Light', '48 %', 'salmón', 'Perros mayores o con tendencia al sobrepeso'],
-        ['care-sustainable', 'Sustainable', '38 %', 'pollo + 14 % insecto', 'Fórmula sostenible, razas medianas'],
+        ['care-puppy', 'perros', 'Puppy', '55 %', 'salmón', 'Cachorros de todas las razas'],
+        ['care-adult', 'perros', 'Adult', '50 %', 'salmón', 'Adultos de 1 a 25 kg'],
+        ['care-senior-light', 'perros', 'Senior & Light', '48 %', 'salmón', 'Perros mayores o con tendencia al sobrepeso'],
+        ['care-gato-kitten', 'gatos', 'Kitten', '56 %', 'pavo y pollo', 'Gatitos y gatas gestantes o lactantes'],
+        ['care-gato-sensitive', 'gatos', 'Sensitive', '52 %', 'pavo y salmón', 'Gatos de digestión delicada'],
+        ['care-gato-urinary', 'gatos', 'Sterilized Urinary', '52 %', 'pollo', 'Gatos castrados, cuida las vías urinarias'],
       ],
     },
   };
@@ -146,11 +150,12 @@
     const i = Math.floor(tb / POR_BOLSA);
     const enBolsas = tb >= 0 && i < S.bolsas.length;
     if (enBolsas) {
-      const [arch, nombre, num, ingr, para] = S.bolsas[i];
+      const [arch, especie, nombre, num, ingr, para] = S.bolsas[i];
       if (i !== actual) {
         actual = i;
         bolsaImg.src = `bolsas/${arch}.png`;
-        $('#chip').textContent = nombre;
+        $('#chip img').src = `../../../marca/elementos/svg/chip-${especie}.svg`;
+        $('#chip span').textContent = nombre;
         $('#dato .num').textContent = num;
         $('#dato .txt b').textContent = ingr;
         $('#dato .txt span').textContent = para;
