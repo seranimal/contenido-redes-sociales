@@ -20,8 +20,8 @@
   .disco { width: 960px; height: 960px; border-radius: 50%; background: #fff; overflow: hidden; display: grid; place-items: center; position: relative; }
   .disco img.logo { max-width: 700px; max-height: 320px; }
   .disco img.foto { width: 100%; height: 100%; object-fit: cover; }
-  .insignia { position: absolute; left: 50%; top: 960px; width: 230px; height: 230px; transform: translate(-50%, -50%); border-radius: 50%; background: var(--verde); border: 14px solid #fff; display: grid; place-items: center; box-shadow: 0 10px 30px rgba(37, 48, 39, 0.18); }
-  .insignia img { width: 118px; height: 118px; }
+  .insignia { position: absolute; left: 50%; top: 870px; width: 470px; height: 470px; transform: translate(-50%, -50%); border-radius: 50%; background: var(--verde); border: 18px solid #fff; display: grid; place-items: center; box-shadow: 0 10px 30px rgba(37, 48, 39, 0.18); }
+  .insignia img { width: 300px; height: 300px; }
 </style>
 </head>
 <body>
@@ -29,22 +29,22 @@
 <script>
   // [clave, nombre, {logo} o {foto, posicion, icono}]
   const DESTACADAS = [
-    ['sucursales', 'Sucursales', { foto: 'sucursales.jpg', posicion: '58% 52%', icono: 'tienda' }],
-    ['clientes', 'Clientes', { foto: 'clientes.jpg', posicion: '50% 40%', icono: 'personas' }],
-    ['eventos', 'Eventos', { foto: 'eventos.jpg', posicion: '38% 22%', icono: 'calendario' }],
-    ['consejos', 'Consejos', { foto: 'consejos.jpg', posicion: '62% 45%', icono: 'bombilla' }],
+    ['sucursales', 'Sucursales', { foto: 'sucursales.jpg', posicion: '58% 40%', icono: 'tienda' }],
+    ['clientes', 'Clientes', { foto: 'clientes.jpg', posicion: '50% 30%', icono: 'personas' }],
+    ['eventos', 'Eventos', { foto: 'eventos.jpg', posicion: '38% 10%', icono: 'calendario' }],
+    ['consejos', 'Consejos', { foto: 'consejos.jpg', posicion: '62% 30%', icono: 'bombilla' }],
     ['brit', 'Brit', { logo: 'brit.svg', ancho: 600 }],
     ['kong', 'Kong', { logo: 'kong.svg', ancho: 640 }],
     ['benebone', 'Benebone', { logo: 'benebone.png', ancho: 700 }],
     ['carnilove', 'Carnilove', { logo: 'carnilove.svg', ancho: 640 }],
-    ['adopciones', 'Adopciones', { foto: 'adopciones.jpg', posicion: '50% 42%', icono: 'adopcion' }],
+    ['adopciones', 'Adopciones', { foto: 'adopciones.jpg', posicion: '50% 25%', icono: 'adopcion' }],
   ];
   if (location.search.includes('render')) document.body.classList.add('render');
   const tapa = ([clave, , d]) => {
     const interior = d.logo
       ? `<img class="logo" src="logos/${d.logo}" style="width:${d.ancho}px" alt="">`
       : `<img class="foto" src="fotos/${d.foto}" style="object-position:${d.posicion}" alt="">`;
-    const insignia = d.icono ? `<div class="insignia"><img src="../../../marca/elementos/svg/icono-${d.icono}-blanco.svg" alt=""></div>` : '';
+    const insignia = d.icono ? `<div class="insignia"><img src="../../../marca/elementos/svg/icono-${d.icono}-blanco-grueso.svg" alt=""></div>` : '';
     return `<div class="historia" data-clave="${clave}"><div class="tapa"><div class="anillo"><div class="disco">${interior}</div></div>${insignia}</div></div>`;
   };
   document.getElementById('raiz').outerHTML = DESTACADAS.map(tapa).join('');

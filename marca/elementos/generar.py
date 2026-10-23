@@ -323,8 +323,9 @@ ICONOS = {
 def iconos() -> None:
     """Íconos de línea (96×96), en oscuro y en blanco, para filas de beneficios y listas."""
     for nombre, trazos in ICONOS.items():
-        for variante, color in (("oscuro", TEXTO), ("blanco", BLANCO)):
-            cuerpo = f'<g fill="none" stroke="{color}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">{trazos}</g>'
+        for variante, color, grosor in (("oscuro", TEXTO, 5), ("blanco", BLANCO, 5), ("blanco-grueso", BLANCO, 9)):
+            # La variante gruesa es para verse chica (tapas de destacadas, insignias).
+            cuerpo = f'<g fill="none" stroke="{color}" stroke-width="{grosor}" stroke-linecap="round" stroke-linejoin="round">{trazos}</g>'
             svg(f"icono-{nombre}-{variante}", 96, 96, cuerpo)
 
 
