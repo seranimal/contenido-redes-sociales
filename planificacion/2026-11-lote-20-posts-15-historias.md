@@ -21,7 +21,7 @@ Todo sigue `lineamientos/estilos-de-post.md`:
 
 - Cada uno tiene `animada.mp4` en su carpeta: la misma portada, animada, de 8 s y 1080×1350.
 - Se puede subir como reel o como primera slide del carrusel.
-- Se renderizan con `animar.cjs`: clona la slide real del Studio y la anima cuadro por cuadro.
+- Se renderizan con `studio/scripts/animar-portada.cjs`: clona la slide real del Studio y la anima cuadro por cuadro.
 
 **Historias (15):** `posts/2026-11-historias-consejos/`. Son consejos cortos y mensajes como «Ellos siempre te esperan».
 
