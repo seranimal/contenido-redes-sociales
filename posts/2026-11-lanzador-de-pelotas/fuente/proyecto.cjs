@@ -43,13 +43,13 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l25",
-      "tipo": "foto-titulo-abajo",
+      "id": "n10",
+      "tipo": "marco-redondo",
       "numero": 0,
       "titulo": "Jugar todos los días *lo mantiene activo*",
-      "texto": "",
+      "texto": "Elegís la distancia y la pelota sale sola.",
       "busqueda_foto": "",
-      "fondo": "foto",
+      "fondo": "verde",
       "etiqueta": "",
       "especie": "",
       "colores": "",

@@ -1,9 +1,9 @@
 # Comedero doble con orejitas
 
 **Pilar:** Productos. **Formato:** carrusel de 3 slides, 1080×1350.
-1. foto con panel: «Comida y agua, cada una en su lugar». Foto generada con Nano Banana Pro (Higgsfield) a partir de las fotos reales del producto.
+1. foto con tarjeta: «Comida y agua, cada una en su lugar». Foto generada con Nano Banana Pro (Higgsfield) a partir de las fotos reales del producto.
 2. ficha de producto: «Comedero doble con orejitas». Foto de estudio generada con Nano Banana Pro a partir de la foto real.
-3. texto editorial: «Cambiale el agua todos los días».
+3. fila de íconos y foto: «Pensado para todos los días». Foto: Windah Limbai (Unsplash).
 
 **Producto:** Comedero doble forma de gato (seranimal.com.uy). Datos tomados de la ficha de la web. Sin precio.
 

@@ -1,10 +1,9 @@
 # De viaje con tu perro
 
-**Pilar:** Consejos. **Formato:** carrusel de 4 slides, 1080×1350.
+**Pilar:** Consejos. **Formato:** carrusel de 3 slides, 1080×1350.
 1. título editorial abajo sobre foto: «De viaje con tu perro». Foto: Lorren & Loki (Unsplash).
-2. solo texto 1: «Siempre sujeto».
-3. dato con foto 2: «Paradas cada dos horas». Foto: Florian Hahn (Unsplash).
-4. solo texto 3: «Nunca solo en el auto».
+2. fila de íconos y foto: «Para el viaje». Foto: Audri Van Gores (Unsplash).
+3. tarjetas apiladas: «Dos reglas de oro».
 
 ## Texto del posteo
 

@@ -25,6 +25,12 @@ Todo sigue `lineamientos/estilos-de-post.md`:
 
 **Historias (15):** `posts/2026-11-historias-consejos/`. Son consejos cortos y mensajes como «Ellos siempre te esperan».
 
+**Interiores rehechos con el Manual de carruseles** (`lineamientos/manual-carruseles-ser-animal.pdf`):
+
+- Cada slide usa un armado distinto: panel y foto, íconos, tarjetas, foto redondeada, lista, ficha.
+- Ningún carrusel repite armado en dos slides seguidas.
+- Las portadas son las mismas, salvo comedero (pasa a foto con tarjeta) y cachorro (pasa a solo texto).
+
 ## Orden sugerido de publicación
 
 Se alternan fotos reales y producto, y no se repite el mismo estilo de portada seguido. Pirotecnia y viajes quedan para diciembre.
@@ -40,8 +46,8 @@ Se alternan fotos reales y producto, y no se repite el mismo estilo de portada s
 | 7 | Gato nuevo en casa | Foto enmarcada | Sí |
 | 8 | Olfatear lo relaja | Foto con panel | Sí |
 | 9 | Si tu gato hace esto | Texto editorial | |
-| 10 | Comedero doble | Foto con panel | |
-| 11 | Primeros días del cachorro | Título abajo | |
+| 10 | Comedero doble | Foto con tarjeta | |
+| 11 | Primeros días del cachorro | Solo texto | |
 | 12 | Gato de interior | Título arriba | |
 | 13 | Bigotes del gato | Número grande | |
 | 14 | Platos de bambú | Foto enmarcada | |

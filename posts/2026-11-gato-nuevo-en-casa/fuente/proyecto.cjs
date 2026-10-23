@@ -26,10 +26,10 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l54",
-      "tipo": "dato",
+      "id": "n22",
+      "tipo": "panel-foto",
       "numero": 1,
-      "titulo": "Un cuarto propio al principio",
+      "titulo": "Un cuarto propio *al principio*",
       "texto": "Con comida, agua, arenero y un lugar para esconderse.",
       "busqueda_foto": "",
       "fondo": "blanco",
@@ -47,49 +47,23 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l55",
-      "tipo": "dato",
-      "numero": 2,
-      "titulo": "Que se conozcan por el olor",
-      "texto": "Intercambiá mantas entre los dos antes de que se vean.",
+      "id": "n23",
+      "tipo": "tarjetas",
+      "numero": 0,
+      "titulo": "Después, *de a poco*",
+      "texto": "Que se conozcan por el olor\nAntes de verse\nIntercambiá mantas entre los dos.\n\nSin apuro\nCada gato tiene sus tiempos\nPuede llevar días o semanas.",
       "busqueda_foto": "",
       "fondo": "verde",
       "etiqueta": "",
       "especie": "",
       "colores": "",
-      "foto": {
-        "src": "https://images.unsplash.com/photo-1642420919369-b61654081244?ixlib=rb-4.1.0&q=90&fm=jpg&crop=entropy&cs=srgb&w=2400",
-        "thumb": "https://images.unsplash.com/photo-1642420919369-b61654081244?ixlib=rb-4.1.0&q=90&fm=jpg&crop=entropy&cs=srgb&w=2400",
-        "autor": "Lennon Cheng",
-        "downloadLocation": "registrada"
-      },
+      "foto": null,
       "fotoX": 50,
-      "fotoY": 45,
+      "fotoY": 50,
       "fotoZoom": 1
     },
     {
-      "id": "l56",
-      "tipo": "dato",
-      "numero": 3,
-      "titulo": "Sin apuro",
-      "texto": "Puede llevar días o semanas: cada gato tiene sus tiempos.",
-      "busqueda_foto": "",
-      "fondo": "blanco",
-      "etiqueta": "",
-      "especie": "",
-      "colores": "",
-      "foto": {
-        "src": "https://images.unsplash.com/photo-1622273413883-265d478feda3?ixlib=rb-4.1.0&q=90&fm=jpg&crop=entropy&cs=srgb&w=2400",
-        "thumb": "https://images.unsplash.com/photo-1622273413883-265d478feda3?ixlib=rb-4.1.0&q=90&fm=jpg&crop=entropy&cs=srgb&w=2400",
-        "autor": "little plant",
-        "downloadLocation": "registrada"
-      },
-      "fotoX": 50,
-      "fotoY": 40,
-      "fotoZoom": 1
-    },
-    {
-      "id": "l57",
+      "id": "n24",
       "tipo": "foto-titulo-abajo",
       "numero": 0,
       "titulo": "Con paciencia, *se hacen amigos*",

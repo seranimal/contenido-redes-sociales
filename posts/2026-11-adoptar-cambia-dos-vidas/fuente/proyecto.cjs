@@ -47,13 +47,13 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l83",
-      "tipo": "foto-titulo-abajo",
+      "id": "n40",
+      "tipo": "marco-redondo",
       "numero": 0,
       "titulo": "Y te da *compañía de verdad*",
       "texto": "",
       "busqueda_foto": "",
-      "fondo": "foto",
+      "fondo": "verde",
       "etiqueta": "",
       "especie": "",
       "colores": "",

@@ -26,10 +26,10 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l11",
-      "tipo": "dato",
-      "numero": 1,
-      "titulo": "Un rato de juego por día",
+      "id": "n3",
+      "tipo": "panel-foto",
+      "numero": 0,
+      "titulo": "Un rato de juego *por día*",
       "texto": "Imitá una presa: que corra, salte y atrape.",
       "busqueda_foto": "",
       "fondo": "verde",
@@ -47,10 +47,10 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l12",
-      "tipo": "dato",
-      "numero": 2,
-      "titulo": "Lugares altos",
+      "id": "n4",
+      "tipo": "marco-redondo",
+      "numero": 0,
+      "titulo": "Lugares *altos*",
       "texto": "Les gusta mirar todo desde arriba.",
       "busqueda_foto": "",
       "fondo": "blanco",
@@ -68,22 +68,17 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l13",
-      "tipo": "dato",
-      "numero": 3,
-      "titulo": "Que la comida sea un juego",
-      "texto": "Buscar y ganarse la comida lo entretiene.",
+      "id": "n5",
+      "tipo": "tarjetas",
+      "numero": 0,
+      "titulo": "Que la comida *sea un juego*",
+      "texto": "Que la busque\nY se la gane\nBuscar su comida lo entretiene y lo mantiene activo.\n\nDe a poco\nSin apuro\nUn dispensador suelta su comida de a poco mientras juega.",
       "busqueda_foto": "",
       "fondo": "verde",
       "etiqueta": "",
       "especie": "",
       "colores": "",
-      "foto": {
-        "src": "https://images.unsplash.com/photo-1787129398822-72025bee8294?ixlib=rb-4.1.0&q=90&fm=jpg&crop=entropy&cs=srgb&w=2400",
-        "thumb": "https://images.unsplash.com/photo-1787129398822-72025bee8294?ixlib=rb-4.1.0&q=90&fm=jpg&crop=entropy&cs=srgb&w=2400",
-        "autor": "Mikhail Volkov",
-        "downloadLocation": "registrada"
-      },
+      "foto": null,
       "fotoX": 50,
       "fotoY": 50,
       "fotoZoom": 1

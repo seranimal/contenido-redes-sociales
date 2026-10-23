@@ -338,3 +338,15 @@
 .slide .lsl-lista li:last-child::after { display: none; }
 .slide.bg-verde .lsl-lista li::before { background: #fff; box-shadow: 0 0 0 9px rgba(255, 255, 255, 0.45); }
 .slide.bg-verde .lsl-lista li::after { background: rgba(255, 255, 255, 0.6); }
+
+/* Con dos tarjetas o una lista corta sin foto, todo más grande para llenar la slide. */
+.slide.tjs:not(.chica) .tjs-tarjeta { padding: 64px 62px; }
+.slide.tjs:not(.chica) .tjs-lista { gap: 40px; }
+.slide.tjs:not(.chica) .tjs-tt { font-size: 66px; }
+.slide.tjs:not(.chica) .tjs-bajada { font-size: 40px; }
+.slide.tjs:not(.chica) .tjs-p { font-size: 40px; }
+.slide.tjs:not(.chica) .insignia.tjs-num { width: 84px; height: 84px; font-size: 50px; }
+.slide.lsl:not(.con-foto) .lsl-lista li { font-size: 52px; margin-bottom: 72px; padding-left: 84px; }
+.slide.lsl:not(.con-foto) .lsl-lista li::before { width: 40px; height: 40px; top: 12px; }
+.slide.lsl:not(.con-foto) .lsl-lista li::after { left: 19px; top: 64px; bottom: -72px; }
+.slide.lsl:not(.con-foto) .lsl-lista li:last-child { margin-bottom: 0; }

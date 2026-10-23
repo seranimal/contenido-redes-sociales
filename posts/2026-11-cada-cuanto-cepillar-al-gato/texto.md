@@ -2,9 +2,9 @@
 
 **Pilar:** Consejos que llevan a un producto. **Formato:** carrusel de 5 slides, 1080×1350.
 1. pregunta enmarcada: «¿Cada cuánto cepillar a tu gato?». Foto: Margarita Zueva (Unsplash).
-2. dato con foto 1: «Pelo corto: una vez por semana». Foto: noelle (Unsplash).
-3. dato con foto 2: «Pelo largo: casi todos los días». Foto: Mikhail Blinov (Unsplash).
-4. dato con foto 3: «Menos pelo en casa». Foto: Joyful (Unsplash).
+2. fila de íconos y foto: «Lo que le da el cepillado». Foto: noelle (Unsplash).
+3. tarjetas apiladas: «¿Cada cuánto?».
+4. panel y foto: «Menos bolas de pelo». Foto: Joyful (Unsplash).
 5. ficha de producto: «Peine con botón de autolimpieza». Foto de estudio generada con Nano Banana Pro a partir de la foto real.
 
 **Producto:** Peine con botón de autolimpieza (seranimal.com.uy). Datos tomados de la ficha de la web. Sin precio.

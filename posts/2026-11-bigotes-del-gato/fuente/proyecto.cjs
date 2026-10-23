@@ -26,7 +26,7 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l45",
+      "id": "n19",
       "tipo": "dato",
       "numero": 1,
       "titulo": "Miden espacios",
@@ -47,10 +47,10 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l46",
-      "tipo": "dato",
+      "id": "n20",
+      "tipo": "panel-foto",
       "numero": 2,
-      "titulo": "Sienten el aire",
+      "titulo": "Sienten *el aire*",
       "texto": "Notan movimientos mínimos a su alrededor.",
       "busqueda_foto": "",
       "fondo": "blanco",
@@ -68,7 +68,7 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l47",
+      "id": "n21",
       "tipo": "dato",
       "numero": 3,
       "titulo": "No se cortan nunca",

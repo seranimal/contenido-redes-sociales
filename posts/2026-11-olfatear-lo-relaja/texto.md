@@ -2,10 +2,10 @@
 
 **Pilar:** Consejos que llevan a un producto. **Formato:** carrusel de 5 slides, 1080×1350. Incluye `animada.mp4` (8 s, 1080×1350): la misma portada animada, para publicar como reel o como primera slide.
 1. foto con panel: «Olfatear lo cansa y lo relaja». Foto: Mathias Reding (Unsplash).
-2. dato con foto 1: «Usa su mejor sentido». Foto: Beer Drinker (Unsplash).
-3. dato con foto 2: «Lo ayuda a calmarse». Foto: Silvan Schuppisser (Unsplash).
-4. texto editorial: «Esconderle premios en casa es un juego de olfato».
-5. ficha de producto: «Alfombra de olfateo». Foto de estudio generada con Nano Banana Pro a partir de la foto real.
+2. fila de íconos y foto: «Lo que le da usar la nariz». Foto: Beer Drinker (Unsplash).
+3. tarjetas apiladas: «Un juego de olfato en casa».
+4. panel y foto: «Ideal para los que comen rápido». Foto: Silvan Schuppisser (Unsplash).
+5. lista con línea: «Alfombra de olfateo». Foto generada con Nano Banana Pro (Higgsfield) a partir de las fotos reales del producto.
 
 **Producto:** Alfombra de olfateo (seranimal.com.uy). Datos tomados de la ficha de la web. Sin precio.
 

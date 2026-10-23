@@ -3,7 +3,7 @@
 **Pilar:** Productos. **Formato:** carrusel de 3 slides, 1080×1350.
 1. título editorial arriba sobre foto: «Para dormir, rascar y jugar». Foto generada con Nano Banana Pro (Higgsfield) a partir de las fotos reales del producto.
 2. ficha de producto: «Cama y rascador de madera XL». Foto de estudio generada con Nano Banana Pro a partir de la foto real.
-3. título editorial abajo sobre foto: «Rascar es parte de ser gato». Foto: Sandesh Nayak (Unsplash).
+3. fila de íconos y foto: «Todo en uno». Foto: Sandesh Nayak (Unsplash).
 
 **Producto:** Cama para gato y rascador de madera XL (seranimal.com.uy). Datos tomados de la ficha de la web. Sin precio.
 

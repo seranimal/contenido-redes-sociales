@@ -358,7 +358,7 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
         <div className="pnf-panel">
           <div className="pnf-cab">
             {slide.numero > 0 && <div className="h insignia pnf-num">{slide.numero}</div>}
-            <div className="h pnf-t" style={{ fontSize: tam(slide.titulo, 60, 34) }}><Destacado texto={slide.titulo} /></div>
+            <div className="h pnf-t" style={{ fontSize: tam(slide.titulo, 68, 32) }}><Destacado texto={slide.titulo} /></div>
           </div>
           {slide.texto && <div className="pnf-x">{slide.texto}</div>}
         </div>
@@ -392,7 +392,7 @@ export const SlideView = forwardRef<HTMLDivElement, Props>(function SlideView({ 
     const chica = bloques.length > 2;
     return (
       <div ref={ref} className={`slide tjs ${fondo}${chica ? " chica" : ""}`}>
-        {slide.titulo && <div className="h tjs-t" style={{ fontSize: tam(slide.titulo, 58, 36) }}><Destacado texto={slide.titulo} /></div>}
+        {slide.titulo && <div className="h tjs-t" style={{ fontSize: tam(slide.titulo, 72, 30) }}><Destacado texto={slide.titulo} /></div>}
         <div className="tjs-lista">
           {bloques.map(([titulo, bajada, ...parrafo], i) => (
             <div key={i} className="tjs-tarjeta">

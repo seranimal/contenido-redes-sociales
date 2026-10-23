@@ -2,9 +2,9 @@
 
 **Pilar:** Consejos que llevan a un producto. **Formato:** carrusel de 5 slides, 1080×1350.
 1. título editorial abajo sobre foto: «En verano, llevá agua al paseo». Foto: sander traa (Unsplash).
-2. dato con foto 1: «Temprano o al atardecer». Foto: Lala Azizli (Unsplash).
-3. dato con foto 2: «Paradas a la sombra». Foto: Mauro Lima (Unsplash).
-4. dato con foto 3: «Atento a las señales». Foto: atelierbyvineeth (Unsplash).
+2. fila de íconos y foto: «Para salir con calor». Foto: Lala Azizli (Unsplash).
+3. panel y foto: «Atento a las señales». Foto: Mauro Lima (Unsplash).
+4. lista con línea: «Qué llevar al paseo».
 5. ficha de producto: «Bebedero portátil». Foto de estudio generada con Nano Banana Pro a partir de la foto real.
 
 **Producto:** Bebedero portátil (seranimal.com.uy). Datos tomados de la ficha de la web. Sin precio.

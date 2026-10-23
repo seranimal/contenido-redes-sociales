@@ -26,10 +26,10 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l33",
-      "tipo": "dato",
-      "numero": 1,
-      "titulo": "Suelta y moviéndose",
+      "id": "n11",
+      "tipo": "panel-foto",
+      "numero": 0,
+      "titulo": "Suelta y *moviéndose*",
       "texto": "Está contento y relajado.",
       "busqueda_foto": "",
       "fondo": "verde",
@@ -47,10 +47,10 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l34",
-      "tipo": "dato",
-      "numero": 2,
-      "titulo": "Alta y quieta",
+      "id": "n12",
+      "tipo": "marco-redondo",
+      "numero": 0,
+      "titulo": "Alta y *quieta*",
       "texto": "Algo le llamó la atención: está atento.",
       "busqueda_foto": "",
       "fondo": "blanco",
@@ -68,7 +68,7 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l35",
+      "id": "n13",
       "tipo": "texto",
       "numero": 3,
       "titulo": "Baja o entre las patas",

@@ -21,7 +21,7 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l72",
+      "id": "n33",
       "tipo": "foto-titulo-abajo",
       "numero": 0,
       "titulo": "Te sigue *a todos lados*",
@@ -42,13 +42,13 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l73",
-      "tipo": "foto-titulo-abajo",
+      "id": "n34",
+      "tipo": "marco-redondo",
       "numero": 0,
       "titulo": "Se apoya *en vos*",
       "texto": "",
       "busqueda_foto": "",
-      "fondo": "foto",
+      "fondo": "verde",
       "etiqueta": "",
       "especie": "",
       "colores": "",
@@ -63,13 +63,13 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l74",
-      "tipo": "foto-titulo-abajo",
+      "id": "n35",
+      "tipo": "panel-foto",
       "numero": 0,
       "titulo": "Duerme *cerca tuyo*",
-      "texto": "",
+      "texto": "Elige dormir donde estás vos.",
       "busqueda_foto": "",
-      "fondo": "foto",
+      "fondo": "blanco",
       "etiqueta": "",
       "especie": "",
       "colores": "",
@@ -84,7 +84,7 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l75",
+      "id": "n36",
       "tipo": "foto-titulo-abajo",
       "numero": 0,
       "titulo": "Te mira *a los ojos*",

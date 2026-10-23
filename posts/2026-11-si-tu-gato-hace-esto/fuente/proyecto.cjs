@@ -21,7 +21,7 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l77",
+      "id": "n37",
       "tipo": "foto-titulo-abajo",
       "numero": 0,
       "titulo": "Te mira y *parpadea lento*",
@@ -42,13 +42,13 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l78",
-      "tipo": "foto-titulo-abajo",
+      "id": "n38",
+      "tipo": "marco-redondo",
       "numero": 0,
       "titulo": "Duerme *pegado a vos*",
       "texto": "",
       "busqueda_foto": "",
-      "fondo": "foto",
+      "fondo": "blanco",
       "etiqueta": "",
       "especie": "",
       "colores": "",
@@ -63,13 +63,13 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l79",
-      "tipo": "foto-titulo-abajo",
+      "id": "n39",
+      "tipo": "panel-foto",
       "numero": 0,
       "titulo": "Te muestra *la panza*",
-      "texto": "",
+      "texto": "Es una señal de que se siente seguro con vos.",
       "busqueda_foto": "",
-      "fondo": "foto",
+      "fondo": "verde",
       "etiqueta": "",
       "especie": "",
       "colores": "",

@@ -43,13 +43,13 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l22",
-      "tipo": "foto-titulo-abajo",
+      "id": "n9",
+      "tipo": "iconos-foto",
       "numero": 0,
-      "titulo": "Rascar es parte de *ser gato*",
-      "texto": "Mejor que lo haga en algo suyo",
+      "titulo": "Todo *en uno*",
+      "texto": "luna: Para dormir\npata: Para rascar\npelota: Para jugar\ncasa: Cuida tus muebles",
       "busqueda_foto": "",
-      "fondo": "foto",
+      "fondo": "blanco",
       "etiqueta": "",
       "especie": "",
       "colores": "",

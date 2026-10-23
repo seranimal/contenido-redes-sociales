@@ -3,8 +3,8 @@
 **Pilar:** La familia Ser Animal. **Formato:** carrusel de 5 slides, 1080×1350.
 1. mosaico de palabras: «Señales de que tu perro te quiere».
 2. título editorial abajo sobre foto: «Te sigue a todos lados». Foto: Dasha Urvachova (Unsplash).
-3. título editorial abajo sobre foto: «Se apoya en vos». Foto: Sasha Sashina (Unsplash).
-4. título editorial abajo sobre foto: «Duerme cerca tuyo». Foto: serjan midili (Unsplash).
+3. título y foto redondeada: «Se apoya en vos». Foto: Sasha Sashina (Unsplash).
+4. panel y foto: «Duerme cerca tuyo». Foto: serjan midili (Unsplash).
 5. título editorial abajo sobre foto: «Te mira a los ojos». Foto: Glen Carrie (Unsplash).
 
 ## Texto del posteo

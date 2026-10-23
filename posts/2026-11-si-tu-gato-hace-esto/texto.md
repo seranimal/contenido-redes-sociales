@@ -3,8 +3,8 @@
 **Pilar:** La familia Ser Animal. **Formato:** carrusel de 5 slides, 1080×1350.
 1. texto editorial: «Si tu gato hace esto, te quiere».
 2. título editorial abajo sobre foto: «Te mira y parpadea lento». Foto: Windah Limbai (Unsplash).
-3. título editorial abajo sobre foto: «Duerme pegado a vos». Foto: Chris Abney (Unsplash).
-4. título editorial abajo sobre foto: «Te muestra la panza». Foto: Mathias Reding (Unsplash).
+3. título y foto redondeada: «Duerme pegado a vos». Foto: Chris Abney (Unsplash).
+4. panel y foto: «Te muestra la panza». Foto: Mathias Reding (Unsplash).
 5. cierre: «¿Cuál hace el tuyo?». Foto: Windah Limbai (Unsplash).
 
 ## Texto del posteo

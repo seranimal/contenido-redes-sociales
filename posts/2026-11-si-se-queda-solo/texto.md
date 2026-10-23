@@ -2,9 +2,9 @@
 
 **Pilar:** Consejos. **Formato:** carrusel de 4 slides, 1080×1350.
 1. foto con panel: «Si se queda solo en casa». Foto: Daniel J. Schwarz (Unsplash).
-2. dato con foto 1: «Un paseo antes de salir». Foto: Barnabas Davoti (Unsplash).
-3. solo texto 2: «Algo para hacer».
-4. dato con foto 3: «Despedidas cortas». Foto: Lesli Whitecotton (Unsplash).
+2. título y foto redondeada: «Un paseo antes de salir». Foto: Barnabas Davoti (Unsplash).
+3. tarjetas apiladas: «Mientras no estás».
+4. título editorial abajo sobre foto: «Ellos siempre te esperan». Foto: Lesli Whitecotton (Unsplash).
 
 ## Texto del posteo
 

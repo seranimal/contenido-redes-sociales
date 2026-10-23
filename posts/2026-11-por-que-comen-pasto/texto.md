@@ -1,10 +1,9 @@
 # ¿Por qué los perros comen pasto?
 
-**Pilar:** ¿Sabías que?. **Formato:** carrusel de 4 slides, 1080×1350.
+**Pilar:** ¿Sabías que?. **Formato:** carrusel de 3 slides, 1080×1350.
 1. título editorial abajo sobre foto: «¿Por qué los perros comen pasto?». Foto: Shivansh Upadhyay (Unsplash).
-2. dato con foto 1: «Porque les gusta». Foto: Laura Roberts (Unsplash).
-3. solo texto 2: «Por aburrimiento».
-4. solo texto 3: «Si vomita seguido».
+2. título y foto redondeada: «Porque les gusta». Foto: Laura Roberts (Unsplash).
+3. tarjetas apiladas: «Otras razones».
 
 ## Texto del posteo
 

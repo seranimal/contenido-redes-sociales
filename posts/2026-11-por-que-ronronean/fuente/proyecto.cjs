@@ -26,7 +26,7 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l37",
+      "id": "n14",
       "tipo": "dato",
       "numero": 1,
       "titulo": "Cuando están a gusto",
@@ -47,10 +47,10 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l38",
-      "tipo": "dato",
+      "id": "n15",
+      "tipo": "panel-foto",
       "numero": 2,
-      "titulo": "Para pedirte algo",
+      "titulo": "Para *pedirte algo*",
       "texto": "Algunos ronronean distinto cuando quieren comida o mimos.",
       "busqueda_foto": "",
       "fondo": "blanco",
@@ -68,10 +68,10 @@ module.exports = {
       "fotoZoom": 1
     },
     {
-      "id": "l39",
-      "tipo": "dato",
-      "numero": 3,
-      "titulo": "También para calmarse",
+      "id": "n16",
+      "tipo": "marco-redondo",
+      "numero": 0,
+      "titulo": "También para *calmarse*",
       "texto": "Si están nerviosos o doloridos, ronronear los ayuda. Ante la duda, consultá a tu veterinario.",
       "busqueda_foto": "",
       "fondo": "verde",

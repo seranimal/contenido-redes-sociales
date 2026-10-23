@@ -2,8 +2,8 @@
 
 **Pilar:** ¿Sabías que?. **Formato:** carrusel de 4 slides, 1080×1350.
 1. título editorial arriba sobre foto: «Lo que te dice su cola». Foto: Barnabas Davoti (Unsplash).
-2. dato con foto 1: «Suelta y moviéndose». Foto: Roberto Nickson (Unsplash).
-3. dato con foto 2: «Alta y quieta». Foto: roma (Unsplash).
+2. panel y foto: «Suelta y moviéndose». Foto: Roberto Nickson (Unsplash).
+3. título y foto redondeada: «Alta y quieta». Foto: roma (Unsplash).
 4. solo texto 3: «Baja o entre las patas».
 
 ## Texto del posteo
