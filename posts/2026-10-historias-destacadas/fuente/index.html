@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Historias para las destacadas</title>
+<style>
+  @font-face { font-family: "Nunito"; font-weight: 900; src: url("../../../marca/fuentes/nunito-latin-900-normal.woff") format("woff"); }
+  @font-face { font-family: "DM Sans"; font-weight: 400; src: url("../../../marca/fuentes/dm-sans-latin-400-normal.woff") format("woff"); }
+  @font-face { font-family: "DM Sans"; font-weight: 500; src: url("../../../marca/fuentes/dm-sans-latin-500-normal.woff") format("woff"); }
+  @font-face { font-family: "DM Sans"; font-weight: 700; src: url("../../../marca/fuentes/dm-sans-latin-700-normal.woff") format("woff"); }
+  :root { --verde: #9ECA1B; --verde-claro: #CADC8A; --verde-hoja: #4C7300; --texto: #253027; --superficie: #F8FAF4; --borde: #E5E9DE; --gris: #444D45; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111; display: flex; flex-wrap: wrap; gap: 40px; padding: 40px; }
+  body.render { display: block; padding: 0; gap: 0; }
+
+  /* Historia 1080×1920. Zona segura: entre y=250 y y=1620 (arriba y abajo van los controles de Instagram). */
+  .story { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: "DM Sans", sans-serif; color: var(--texto); background: var(--superficie); }
+  .h { font-family: "Nunito", sans-serif; font-weight: 900; letter-spacing: -1px; line-height: 1.08; }
+  .h em { font-style: normal; text-decoration: underline; text-decoration-color: var(--verde); text-decoration-thickness: 8px; text-underline-offset: 12px; text-decoration-skip-ink: none; }
+  .x { font-size: 40px; line-height: 1.35; font-weight: 500; }
+  .bloque { position: absolute; left: 80px; right: 80px; }
+  .marca { position: absolute; left: 80px; top: 290px; height: 96px; width: auto; }
+  .marca.ancha { height: 76px; }
+  .iso { position: absolute; right: 80px; top: 1480px; width: 90px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+  .chip { font-size: 30px; font-weight: 700; color: var(--verde-hoja); background: #fff; border: 3px solid var(--verde-claro); border-radius: 999px; padding: 12px 28px; }
+  body.guia .story::before, body.guia .story::after { content: ""; position: absolute; left: 0; right: 0; height: 250px; background: rgba(213, 32, 46, .18); z-index: 5; }
+  body.guia .story::before { top: 0; } body.guia .story::after { bottom: 0; height: 300px; }
+
+  /* Portada de marca: fondo verde, logo blanco grande y una frase. */
+  .portada { background: var(--verde); }
+  .portada .logo-grande { position: absolute; left: 50%; top: 560px; transform: translate(-50%, -50%); max-width: 720px; max-height: 300px; }
+  .portada .bloque { top: 820px; text-align: center; }
+  .portada .h { font-size: 92px; }
+  .portada .x { margin-top: 30px; font-size: 42px; }
+  .portada .pie-sa { position: absolute; left: 50%; transform: translateX(-50%); bottom: 340px; font-size: 32px; font-weight: 700; color: var(--texto); display: flex; align-items: center; gap: 16px; }
+  .portada .pie-sa img { width: 220px; }
+
+  /* Líneas: logo de la marca arriba, título y tarjetas apiladas. */
+  .lineas .bloque { top: 410px; }
+  .lineas .h { font-size: 72px; margin-bottom: 30px; }
+  .lineas .iso { top: 1520px; right: 60px; width: 76px; }
+  .tarjeta { background: #fff; border: 2px solid var(--borde); border-radius: 28px; padding: 26px 36px; margin-top: 14px; display: grid; grid-template-columns: 1fr; gap: 4px; }
+  .tarjeta b { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 42px; line-height: 1.1; }
+  .tarjeta span { font-size: 31px; line-height: 1.3; color: var(--gris); }
+  .tarjeta.verde { background: var(--verde); border-color: var(--verde); }
+  .tarjeta.verde span { color: var(--texto); }
+
+  /* Producto: foto sobre blanco, nombre, una línea y chips. */
+  .producto { background: #fff; }
+  .producto .foto { position: absolute; left: 50%; top: 430px; transform: translateX(-50%); max-width: 820px; max-height: 700px; }
+  .producto .bloque { top: 1180px; }
+  .producto .h { font-size: 64px; }
+  .producto .x { margin-top: 22px; font-size: 36px; color: var(--gris); }
+
+  /* Consejo: panel verde arriba con texto, foto del producto abajo. */
+  .consejo { background: var(--verde); }
+  .consejo .bloque { top: 300px; }
+  .consejo .h { font-size: 84px; }
+  .consejo .h em { text-decoration-color: #fff; }
+  .consejo .x { margin-top: 28px; }
+  .consejo .fotobox { position: absolute; left: 0; right: 0; top: 900px; bottom: 0; background: #fff; display: grid; place-items: center; }
+  .consejo .fotobox img { max-width: 760px; max-height: 760px; margin-bottom: 120px; }
+
+  /* Cierre: fondo verde, logo Ser Animal y los textos fijos. */
+  .cierre { background: var(--verde); }
+  .cierre .logo-sa { position: absolute; left: 50%; top: 520px; transform: translateX(-50%); width: 560px; }
+  .cierre .bloque { top: 800px; text-align: center; }
+  .cierre .h { font-size: 88px; }
+  .cierre .x { margin-top: 36px; font-size: 38px; }
+  .cierre .x + .x { margin-top: 20px; }
+
+  /* Sucursales */
+  .suc-portada .fotoFondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .suc-portada .velo { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(37,48,39,0) 42%, rgba(37,48,39,.35) 60%, rgba(37,48,39,.8) 100%); }
+  .suc-portada .bloque { bottom: 470px; color: #fff; }
+  .suc-portada .h { font-size: 104px; text-shadow: 0 2px 18px rgba(0,0,0,.18); }
+  .suc-portada .x { margin-top: 26px; font-size: 42px; }
+  .suc-portada .logo { position: absolute; left: 50%; transform: translateX(-50%); bottom: 340px; width: 230px; }
+  .suc-lista { background: var(--verde); }
+  .suc-lista .bloque { top: 330px; }
+  .suc-lista .h { font-size: 80px; margin-bottom: 30px; }
+  .suc-lista .zona { margin-top: 34px; }
+  .suc-lista .zona b { display: block; font-family: "Nunito", sans-serif; font-weight: 900; font-size: 40px; color: var(--verde-hoja); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+  .suc-lista .zona span { display: block; font-size: 42px; line-height: 1.45; font-weight: 500; }
+  .local { background: var(--superficie); }
+  .local .icono { position: absolute; left: 80px; top: 330px; width: 150px; height: 150px; border-radius: 50%; background: var(--verde); display: grid; place-items: center; }
+  .local .icono img { width: 84px; }
+  .local .bloque { top: 560px; }
+  .local .zona { font-size: 34px; font-weight: 700; color: var(--verde-hoja); letter-spacing: 1px; text-transform: uppercase; }
+  .local .h { font-size: 108px; margin-top: 18px; }
+  .local .calle { margin-top: 30px; font-size: 48px; font-weight: 500; }
+  .local .link { position: absolute; left: 80px; right: 80px; top: 1000px; background: #fff; border: 2px solid var(--borde); border-radius: 28px; padding: 34px 40px; font-size: 34px; line-height: 1.35; color: var(--gris); }
+  .local .link b { color: var(--texto); }
+</style>
+</head>
+<body>
+<div id="historias"></div>
+<script>
+  const SA = '../../../marca';
+  const ENVIO = 'Envío gratis a todo el país desde $1.500. En compras menores, $200.';
+  const PROGRAMADO = 'Pedido programado: te avisamos cuando toque reponer. 5% de descuento desde el 2.º pedido.';
+  const LOGOS = {
+    brit: { blanco: 'logos/brit-blanco.svg', color: 'logos/brit.svg', alto: 110 },
+    kong: { blanco: 'logos/kong-blanco.svg', color: 'logos/kong.svg', alto: 90 },
+    benebone: { blanco: 'logos/benebone-blanco.png', color: 'logos/benebone.png', alto: 70 },
+    carnilove: { blanco: 'logos/carnilove-blanco.svg', color: 'logos/carnilove.svg', alto: 100 },
+  };
+
+  // Cada historia: { marca, tipo, ... }. Los textos salen de las fichas de seranimal.com.uy.
+  const H = [
+    // ---------- BRIT ----------
+    { marca: 'brit', tipo: 'portada', h: 'Alimento premium hecho en <em>República Checa</em>', x: 'Para perros, gatos, conejos, cobayos y hámsters.' },
+    { marca: 'brit', tipo: 'lineas', h: 'Una línea para cada <em>etapa</em>', tarjetas: [
+      ['Brit Premium by Nature', 'El de todos los días. Para cachorros, adultos, seniors y light.'],
+      ['Brit Care', 'Sin cereales e hipoalergénico, con salmón o cordero. Para perros y gatos.'],
+      ['Brit Veterinary', 'Dietas renales, urinarias, hipoalergénicas y para obesidad. Con indicación de tu veterinario.'],
+      ['Brit Animals', 'Para conejos, cobayos y hámsters, con vitamina C y mucha fibra.'],
+      ['Snacks y patés', 'Premios de entrenamiento, patés mono proteína y pouches para gatos.'],
+    ] },
+    { marca: 'brit', tipo: 'producto', foto: 'productos/brit-care-adulto-1.jpg', h: 'Brit Care Grain-Free Adulto', x: 'Salmón y papa, sin cereales. Para perros adultos de 1 a 25 kg.', chips: ['Sin cereales', 'Hipoalergénico', '1 a 25 kg'] },
+    { marca: 'brit', tipo: 'producto', foto: 'productos/brit-premium-gato.png', h: 'Brit Premium Gato Adulto Salmón', x: 'Con salsa de hígado de pollo, pulpa de manzana y prebióticos.', chips: ['Sin trigo, soja ni maíz', 'Gatos adultos'] },
+    { marca: 'brit', tipo: 'cierre' },
+
+    // ---------- KONG ----------
+    { marca: 'kong', tipo: 'portada', h: 'El juguete de caucho que <em>se rellena</em>', x: 'Para morder, lanzar y entretenerse un buen rato.' },
+    { marca: 'kong', tipo: 'lineas', h: '¿Cuál es para <em>tu perro</em>?', tarjetas: [
+      ['Kong Puppy', 'Goma más suave, para cachorros en dentición.'],
+      ['Kong Classic', 'El rojo de siempre, para perros adultos.'],
+      ['Kong Extreme', 'El negro: el caucho más resistente, para los masticadores más tenaces.'],
+      ['Kitty Kong', 'La versión para gatos.'],
+      ['Pelotas, cuerdas y peluches', 'Para buscar, tironear y acurrucarse.'],
+    ] },
+    { marca: 'kong', tipo: 'producto', foto: 'productos/kong-extreme.jpg', h: 'Kong Extreme', x: 'Rellenalo con comida o snacks y lo entretiene un buen rato.', chips: ['Masticadores tenaces', 'Se rellena', 'Caucho natural'] },
+    { marca: 'kong', tipo: 'consejo', foto: 'productos/kong-puppy.jpg', h: 'Rellenalo y <em>congelalo</em>', x: 'Dura el doble y lo ayuda con la dentición y los ratos solo en casa.' },
+    { marca: 'kong', tipo: 'cierre' },
+
+    // ---------- BENEBONE ----------
+    { marca: 'benebone', tipo: 'portada', h: 'Huesos para morder con <em>sabor real</em>', x: 'Hechos en Estados Unidos, con tocino, pollo o salmón de verdad.' },
+    { marca: 'benebone', tipo: 'lineas', h: 'Elegí por <em>forma</em> y por tamaño', tarjetas: [
+      ['Wishbone', 'Curvo, para agarrarlo con las patas.'],
+      ['Maplestick y Zaggler', 'Con textura, para masticar largo rato.'],
+      ['Dental Chew', 'Con relieves que limpian los dientes mientras muerde.'],
+      ['Puppy', 'Más blando, para cachorros en dentición.'],
+      ['Rubber', 'De goma, para jugar y morder más suave.'],
+    ] },
+    { marca: 'benebone', tipo: 'producto', foto: 'productos/benebone-wishbone.jpg', h: 'Benebone Wishbone', x: 'Curvo para que lo agarre con las patas y lo muerda bien.', chips: ['100 % tocino real', 'Masticadores fuertes'] },
+    { marca: 'benebone', tipo: 'consejo', foto: 'productos/benebone-puppy-wishbone-bacon.jpg', h: 'Cambialo <em>cada mes</em>', x: 'O antes, si ya está gastado. Así siempre muerde seguro.' },
+    { marca: 'benebone', tipo: 'cierre' },
+
+    // ---------- CARNILOVE ----------
+    { marca: 'carnilove', tipo: 'portada', h: 'Carne fresca, <em>sin cereales</em> ni papa', x: 'Alimento para perros y gatos con carne fresca de granjas locales.' },
+    { marca: 'carnilove', tipo: 'lineas', h: 'Elegí por <em>sabor</em> y por etapa', tarjetas: [
+      ['Perros adultos', 'Pavo, vaca, pescado para razas pequeñas y pato para razas grandes.'],
+      ['Cachorros y junior', 'Pavo para cachorros y pollo junior para razas grandes.'],
+      ['Gatos', 'Pavo, pescado y pollo.'],
+    ] },
+    { marca: 'carnilove', tipo: 'producto', foto: 'productos/carnilove-true-fresh-turkey-adult.jpg', h: 'True Fresh Turkey Adult', x: 'Pavo fresco con lenteja roja, espirulina y arándanos.', chips: ['Perros adultos', 'Sin cereales', 'Carne fresca'] },
+    { marca: 'carnilove', tipo: 'producto', foto: 'productos/carnilove-true-fresh-cat-chicken.jpg', h: 'True Fresh Cat Chicken', x: 'Pollo fresco con trigo sarraceno y lentejas. Ayuda a mantener el peso.', chips: ['Gatos adultos', 'Sin cereales'] },
+    { marca: 'carnilove', tipo: 'cierre' },
+
+    // ---------- SUCURSALES ----------
+    { marca: 'sucursales', tipo: 'suc-portada', foto: SA + '/fotos/estudio-perro-gato.png', h: '7 locales en Montevideo <em>y Canelones</em>', x: 'Y si no podés pasar, te lo llevamos a tu casa.' },
+    { marca: 'sucursales', tipo: 'suc-lista', h: '¿Cuál te queda <em>más cerca</em>?', zonas: [
+      ['Montevideo', 'Punta Gorda · Malvín · Jacinto Vera'],
+      ['Ciudad de la Costa', 'Parque Miramar · San José de Carrasco · Solymar'],
+      ['Las Piedras', 'Vista Linda'],
+    ] },
+    { marca: 'sucursales', tipo: 'local', zona: 'Montevideo', h: 'Punta Gorda', calle: 'Avenida Italia' },
+    { marca: 'sucursales', tipo: 'local', zona: 'Montevideo', h: 'Malvín', calle: 'Avenida Italia' },
+    { marca: 'sucursales', tipo: 'local', zona: 'Montevideo', h: 'Jacinto Vera', calle: 'Gualeguay' },
+    { marca: 'sucursales', tipo: 'local', zona: 'Ciudad de la Costa', h: 'Parque Miramar', calle: 'Avenida al Parque' },
+    { marca: 'sucursales', tipo: 'local', zona: 'Ciudad de la Costa', h: 'San José de Carrasco', calle: 'Avenida Giannattasio' },
+    { marca: 'sucursales', tipo: 'local', zona: 'Ciudad de la Costa', h: 'Solymar', calle: 'Adela Reta' },
+    { marca: 'sucursales', tipo: 'local', zona: 'Las Piedras', h: 'Vista Linda', calle: 'Francisca Arnal de Artigas' },
+    { marca: 'sucursales', tipo: 'cierre', h: 'Te lo llevamos <em>a tu casa</em>', x: ENVIO, x2: 'Pedidos por mensaje o por WhatsApp.' },
+  ];
+
+  const caja = document.getElementById('historias');
+  const bloque = (h, x, extra = '') => `<div class="bloque"><div class="h">${h}</div>${x ? `<div class="x">${x}</div>` : ''}${extra}</div>`;
+  const chips = (c) => c && c.length ? `<div class="chips">${c.map((t) => `<span class="chip">${t}</span>`).join('')}</div>` : '';
+  const logoMarca = (m) => `<img class="marca" src="${LOGOS[m].color}" style="height:${LOGOS[m].alto}px" alt="">`;
+  const iso = `<img class="iso" src="${SA}/logo/isotipo-verde.svg" alt="">`;
+  let n = 0, marcaActual = '';
+  for (const d of H) {
+    if (d.marca !== marcaActual) { marcaActual = d.marca; n = 0; }
+    n += 1;
+    const st = document.createElement('div');
+    st.className = 'story ' + d.tipo;
+    st.dataset.nombre = `${d.marca}-${String(n).padStart(2, '0')}`;
+    switch (d.tipo) {
+      case 'portada':
+        st.innerHTML = `<img class="logo-grande" src="${LOGOS[d.marca].blanco}" alt="">${bloque(d.h, d.x)}
+          <div class="pie-sa">En <img src="${SA}/logo/logo-blanco.svg" alt="Ser Animal"></div>`;
+        break;
+      case 'lineas':
+        st.innerHTML = `${logoMarca(d.marca)}${bloque(d.h, '', d.tarjetas.map(([t, s], i) => `<div class="tarjeta${i === 0 ? ' verde' : ''}"><b>${t}</b><span>${s}</span></div>`).join(''))}${iso}`;
+        break;
+      case 'producto':
+        st.innerHTML = `${logoMarca(d.marca)}<img class="foto" src="${d.foto}" alt="">${bloque(d.h, d.x, chips(d.chips))}${iso}`;
+        break;
+      case 'consejo':
+        st.innerHTML = `${bloque(d.h, d.x)}<div class="fotobox"><img src="${d.foto}" alt=""></div>${iso}`;
+        break;
+      case 'cierre':
+        st.innerHTML = `<img class="logo-sa" src="${SA}/logo/logo-blanco.svg" alt="Ser Animal">
+          <div class="bloque"><div class="h">${d.h || 'Lo tenés en <em>Ser Animal</em>'}</div><div class="x">${d.x || ENVIO}</div><div class="x">${d.x2 || PROGRAMADO}</div></div>`;
+        break;
+      case 'suc-portada':
+        st.innerHTML = `<img class="fotoFondo" src="${d.foto}" style="object-position:50% 40%" alt=""><div class="velo"></div>${bloque(d.h, d.x)}
+          <img class="logo" src="${SA}/logo/logo-blanco.svg" alt="Ser Animal">`;
+        break;
+      case 'suc-lista':
+        st.innerHTML = `${bloque(d.h, '', d.zonas.map(([z, l]) => `<div class="zona"><b>${z}</b><span>${l}</span></div>`).join(''))}
+          <img class="iso" src="${SA}/logo/isotipo-blanco.svg" alt="">`;
+        break;
+      case 'local':
+        st.innerHTML = `<div class="icono"><img src="${SA}/elementos/svg/icono-tienda-blanco-grueso.svg" alt=""></div>
+          <div class="bloque"><div class="zona">${d.zona}</div><div class="h">${d.h}</div><div class="calle">${d.calle}</div></div>
+          <div class="link"><b>Dirección exacta, horarios y cómo llegar:</b> tocá el link de esta historia.</div>${iso}`;
+        break;
+    }
+    caja.appendChild(st);
+  }
+  const q = location.search;
+  if (q.includes('render')) document.body.classList.add('render');
+  if (q.includes('guia')) document.body.classList.add('guia');
+</script>
+</body>
+</html>
